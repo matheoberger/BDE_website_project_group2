@@ -1,11 +1,29 @@
 .header {
-  padding: 10px;
   background: black;
-  display: -webkit-box;
-  display: flex;
+  padding: 5px;
 }
 
-.header__logo {
+.navbar {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+}
+
+.navbar--right {
+  -webkit-box-pack: end;
+          justify-content: flex-end;
+}
+
+.navbar--right .navbar {
+  margin-right: 10px;
+  -webkit-box-pack: end;
+          justify-content: flex-end;
+}
+
+.navbar__logo {
   -webkit-filter: invert(1);
           filter: invert(1);
 }

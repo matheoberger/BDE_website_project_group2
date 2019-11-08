@@ -1,8 +1,19 @@
 .header {
-    padding: 10px;
     background: hsla(0, 0%, 0%, 1);
-    display: flex;
+    padding: 5px;
 }
-.header__logo {
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar--right {
+    justify-content: flex-end;
+}
+.navbar--right .navbar {
+    margin-right: 10px;
+    justify-content: flex-end;
+}
+.navbar__logo {
     filter: invert(1);
 }
