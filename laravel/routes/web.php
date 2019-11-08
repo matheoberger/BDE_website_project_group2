@@ -12,5 +12,12 @@
 */
 
 Route::get('/', function () {
+
+    return view('welcome');
+});
+Route::get('/header', function () {
+    return view('headerHandler');
+});
+Route::get('/event', function () {
     return view('event');
 });
