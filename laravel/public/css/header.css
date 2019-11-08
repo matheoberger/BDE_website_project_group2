@@ -1,0 +1,12 @@
+.header {
+  padding: 10px;
+  background: black;
+  display: -webkit-box;
+  display: flex;
+}
+
+.header__logo {
+  -webkit-filter: invert(1);
+          filter: invert(1);
+}
+
