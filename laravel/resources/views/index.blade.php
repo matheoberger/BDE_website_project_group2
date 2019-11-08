@@ -9,5 +9,14 @@
 </head>
 
 <body>
-    <h1 class="Test">Hello World</h1>
+    <main>
+        <a class="main__link main__link--shop" href="">
+            <h2 class="main__link__tittle"> Boutique </h2>
+        </a>
+        <a class="main__link main__link--event" href="">
+            <h2 class="main__link__tittle"> Evénements</h2>
+        </a>
+        <div class="main__caroussel"></div>
+        <div class="main__caroussel"></div>
+    </main>
 </body>
