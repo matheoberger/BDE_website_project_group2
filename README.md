@@ -10,5 +10,7 @@ We were asked to make a new website for the Cesi Bordeaux's students.
    ```bash
    git clone github.com/matheoberger/BDE_website_project_group2
    ```
-2. run the start.bash file
-   > Note : This will install all the dependencies and run the webserver
+2. run the install.cmd file
+   > Note : This will install all the dependencies
+2. run the start.cmd file
+   > Note : This will start laravel, the SASS compiler and the nodeJS API

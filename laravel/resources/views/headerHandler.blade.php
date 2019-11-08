@@ -1,7 +1,7 @@
 
 @component('header');
 @slot('notification')
-<a class="navbar navbar__notifications" href="#"> aze </a>
+<img src="/images/bell.png" class="navbar navbar__notification"/>
 @endslot
 
 @slot('search')

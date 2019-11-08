@@ -2,10 +2,26 @@
     background: hsla(0, 0%, 0%, 1);
     padding: 5px;
 }
+@font-face {
+    font-family: "Lemon/Milk";
+    src: url("/fonts/LemonMilk/LemonMilk.otf") format("truetype");
+}
+@font-face {
+    font-family: "Roboto";
+    src: url("/fonts/Roboto/Roboto-Black.ttf") format("truetype");
+}
 .navbar {
+    font-family: "Roboto";
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+.navbar h1 {
+    font-family: "Lemon/Milk";
+    margin: 0;
+}
+.navbar img {
+    height: 55px;
 }
 .navbar--right {
     justify-content: flex-end;
@@ -16,4 +32,10 @@
 }
 .navbar__logo {
     filter: invert(1);
+    margin-left: 5px;
+}
+.navbar__notification {
+    cursor: pointer;
+    filter: invert(4%) sepia(99%) saturate(7455%) hue-rotate(4deg)
+        brightness(88%) contrast(101%);
 }
