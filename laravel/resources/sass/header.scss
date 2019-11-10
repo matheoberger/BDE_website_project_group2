@@ -16,12 +16,20 @@
     align-items: center;
     justify-content: space-between;
 }
+
 .navbar h1 {
     font-family: "Lemon/Milk";
     margin: 0;
 }
+
 .navbar img {
-    height: 55px;
+    cursor: pointer;
+    height: 50px;
+    filter: invert(1);
+}
+.navbar .navbar__notification {
+    filter: invert(4%) sepia(99%) saturate(7455%) hue-rotate(4deg)
+        brightness(88%) contrast(101%);
 }
 .navbar--right {
     justify-content: flex-end;
@@ -31,11 +39,17 @@
     justify-content: flex-end;
 }
 .navbar__logo {
-    filter: invert(1);
     margin-left: 5px;
 }
-.navbar__notification {
-    cursor: pointer;
-    filter: invert(4%) sepia(99%) saturate(7455%) hue-rotate(4deg)
-        brightness(88%) contrast(101%);
+
+.navbar--mobile {
+    display: none;
+}
+@media only screen and (max-device-width: 768px), (max-width: 768px) {
+    .navbar--desktop {
+        display: none;
+    }
+    .navbar--mobile {
+        display: flex;
+    }
 }
