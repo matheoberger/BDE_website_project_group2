@@ -2,6 +2,16 @@ body {
   background-color: brown;
 }
 
+.block {
+  padding: 5px 12px;
+  background: #0fb8e2;
+  color: #FFF;
+}
+
+.block:hover {
+  background: #a30e0e;
+}
+
 .main {
   border: 5px solid #000000;
   margin: 2px 2px 2px 2px;
@@ -14,11 +24,6 @@ header {
   border: 3px solid #ff8800;
   margin: 2px 2px 20px 2px;
   padding: 20px 0 20px 0;
-}
-
-nav {
-  border: 3px solid #0fb8e2;
-  margin: 2px 2px 2px 2px;
 }
 
 .section {

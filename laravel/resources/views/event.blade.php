@@ -8,7 +8,7 @@
   <body>
     <header>Header</header>
     <div class="main">
-    <nav>
+    <nav class="block">
     navbar
     </nav>
     <div class="section">
