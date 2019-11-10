@@ -2,10 +2,34 @@
     background: hsla(0, 0%, 0%, 1);
     padding: 5px;
 }
+@font-face {
+    font-family: "Lemon/Milk";
+    src: url("/fonts/LemonMilk/LemonMilk.otf") format("truetype");
+}
+@font-face {
+    font-family: "Roboto";
+    src: url("/fonts/Roboto/Roboto-Black.ttf") format("truetype");
+}
 .navbar {
+    font-family: "Roboto";
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.navbar h1 {
+    font-family: "Lemon/Milk";
+    margin: 0;
+}
+
+.navbar img {
+    cursor: pointer;
+    height: 50px;
+    filter: invert(1);
+}
+.navbar .navbar__notification {
+    filter: invert(4%) sepia(99%) saturate(7455%) hue-rotate(4deg)
+        brightness(88%) contrast(101%);
 }
 .navbar--right {
     justify-content: flex-end;
@@ -15,5 +39,17 @@
     justify-content: flex-end;
 }
 .navbar__logo {
-    filter: invert(1);
+    margin-left: 5px;
+}
+
+.navbar--mobile {
+    display: none;
+}
+@media only screen and (max-device-width: 768px), (max-width: 768px) {
+    .navbar--desktop {
+        display: none;
+    }
+    .navbar--mobile {
+        display: flex;
+    }
 }
