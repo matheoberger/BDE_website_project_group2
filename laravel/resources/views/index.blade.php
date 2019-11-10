@@ -10,13 +10,27 @@
 
 <body>
     <main>
-        <a class="main__link main__link--shop" href="">
-            <h2 class="main__link__tittle"> Boutique </h2>
-        </a>
-        <a class="main__link main__link--event" href="">
-            <h2 class="main__link__tittle"> Evénements</h2>
-        </a>
-        <div class="main__caroussel"></div>
-        <div class="main__caroussel"></div>
+        <section class="main__pannel">
+            <a class="main__pannel__box main__pannel__box--shop" href="">
+                <h2 class="main__pannel__box__title"> Boutique </h2>
+            </a>
+            <a class="main__pannel__box main__pannel__box--event" href="">
+                <h2 class="main__pannel__box__title"> Evénements</h2>
+            </a>
+            <div class="main__pannel__box">
+                <a class="main__pannel__box__caroussel" href="">
+                    <img class="caroussel__image" src="../images/temp.jpg" alt=>
+                    <img class="caroussel__image" src="../images/temp.jpg" alt=>
+                    <img class="caroussel__image" src="../images/temp.jpg" alt=>
+                </a>
+            </div>
+            <div class="main__pannel__box">
+                <a class="main__pannel__box__caroussel" href="">
+                    <img class="caroussel__image" src="../images/temp.jpg" alt=>
+                    <img class="caroussel__image" src="../images/temp.jpg" alt=>
+                    <img class="caroussel__image" src="../images/temp.jpg" alt=>
+                </a>
+            </div>
+        </section>
     </main>
 </body>
