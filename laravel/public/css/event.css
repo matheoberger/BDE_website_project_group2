@@ -13,7 +13,7 @@ img {
 }
 
 h2 {
-  font-family: "Roboto", bolder;
+  font-family: "'Roboto', bolder";
 }
 
 .main {
@@ -50,9 +50,7 @@ section {
   font-family: "Roboto", sans-serif;
 }
 
-article,
-aside {
-  margin: 2px 2px 2px 2px;
+article {
   font-family: "Roboto", sans-serif;
   min-height: 200px;
   max-height: 500px;
@@ -60,13 +58,18 @@ aside {
   max-width: 500px;
 }
 
-article:hover,
-aside:hover {
-  background: #00a390;
+article:hover {
+  background: #336bd1;
   margin: 4px 4px 4px 4px;
 }
 
 aside {
+  margin: 2px 2px 2px 2px;
+  font-family: "Roboto", sans-serif;
+  min-height: 200px;
+  max-height: 500px;
+  min-width: 200px;
+  max-width: 500px;
   background-color: #eb7500;
 }
 

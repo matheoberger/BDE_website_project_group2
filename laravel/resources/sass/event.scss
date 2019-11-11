@@ -1,11 +1,4 @@
-$grey_1: #9d9f9d;
-$grey_2: #757575;
-$orange_3: #eb7500;
-$orange_1: #ffc252;
-$orange_2: #eb7500;
-$green: #d1e000;
-$blue_1: #5d89DA;
-$blue_2: #00a390;
+@import "./responsive.scss";
 
 
 body {
@@ -24,12 +17,12 @@ img {
 }
 
 h2 {
-    font-family: 'Roboto', bolder;
+    font-family: $roboto;
 }
 
 .main {
     background-color: $grey_2;
-    margin: 2px 2px 2px 2px;
+    margin: $px_2;
     display: flex;
     flex-wrap: wrap;
     text-align: center;
@@ -56,7 +49,7 @@ header {
 
 section {
     background-color: $blue_1;
-    margin: 20px 20px 20px 20px;
+    margin: $px_20;
     display: flex;
     flex-wrap: wrap;
 
@@ -70,11 +63,10 @@ section {
 article {
 
 
-    margin: 2px 2px 2px 2px;
     font-family: 'Roboto', sans-serif;
 
     &:hover {
-        background: $blue_2;
+        background: darken($blue_1, $amount: 10);
         margin: 4px 4px 4px 4px;
 
     }
@@ -89,7 +81,18 @@ article {
 }
 
 aside {
-    @extend article;
+    margin: 2px 2px 2px 2px;
+    font-family: 'Roboto', sans-serif;
+
+
+
+    min-height: 200px;
+
+    max-height: 500px;
+
+    min-width: 200px;
+
+    max-width: 500px;
     background-color: $orange_2;
 
 
@@ -109,3 +112,5 @@ footer {
     padding: 0 0 200px 0;
     background-color: $grey_2;
 }
+
+@media #{$medium-up} {}
