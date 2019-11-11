@@ -20,15 +20,15 @@ $src3 = $nextEvents[2]['url'];
     </ul>
 
     <div class="carousel-inner">
-        <div class="carousel-item active">
+        <a class="carousel-item active" href="">
             <img class="caroussel__image" <?php echo "src=\"../$src1\" alt=\"$title1\"" ?>>
-        </div>
-        <div class="carousel-item">
+        </a>
+        <a class="carousel-item" href="">
             <img class="caroussel__image" <?php echo "src=\"$src2\" alt=\"$title2\"" ?>>
-        </div>
-        <div class="carousel-item">
+        </a>
+        <a class="carousel-item" href="">
             <img class="caroussel__image" <?php echo "src=\"$src3\" alt=\"$title3\"" ?>>
-        </div>
+        </a>
     </div>
     <a class="carousel-control-prev" href="#demo" data-slide="prev">
         <span class="carousel-control-prev-icon"></span>

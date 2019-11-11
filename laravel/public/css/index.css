@@ -1,10 +1,18 @@
-.main__pannel {
+body {
+  background-color: #757575;
+}
+
+main {
   position: absolute;
   left: 0px;
   top: 0px;
   right: 0px;
+  max-width: 100%;
+  height: 100%;
+}
+
+.main__pannel {
   padding: 50px;
-  background-color: #757575;
   max-width: 100%;
   height: 100%;
   display: -webkit-box;
@@ -16,21 +24,15 @@
 }
 
 .main__pannel__box {
+  margin: 0px;
   width: 40%;
-  height: 30%;
+  height: 40%;
   box-shadow: 1px 2px 2px black;
   display: -webkit-box;
   display: flex;
   -webkit-box-align: center;
           align-items: center;
   text-decoration: none;
-  opacity: 1;
-  -webkit-transition: 0.4s ease-in-out;
-  transition: 0.4s ease-in-out;
-}
-
-.main__pannel__box:hover {
-  opacity: 0.7;
 }
 
 .main__pannel__box--shop {
@@ -82,5 +84,93 @@
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.carousel-indicators li {
+  border: solid 1px black;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  opacity: 1;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-size: 70%;
+  background-color: rgba(75, 75, 75, 0.116);
+  padding: 20%;
+  border-radius: 20%/50%;
+}
+
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+  background-color: rgba(75, 75, 75, 0.699);
+}
+
+.main__pannel__networkbox {
+  display: -webkit-box;
+  display: flex;
+  background-color: #2b2b2b;
+  width: 50%;
+  height: 500px;
+  border-bottom-left-radius: 250px 100px;
+  box-shadow: -1px 2px 5px 1px black;
+  -webkit-box-pack: end;
+          justify-content: flex-end;
+  margin-bottom: 50px;
+}
+
+.main__pannel__contactbox {
+  background-color: black;
+  width: 30%;
+  height: 500px;
+  box-shadow: -1px 2px 5px 1px black;
+  margin-bottom: 50px;
+}
+
+.main__pannel__contactbox input,
+textarea {
+  width: 80%;
+  border-radius: 3px;
+  margin: 10px;
+}
+
+.main__pannel__contactbox h2 {
+  margin: 10px;
+  color: white;
+  font-size: 80%;
+}
+
+.main__pannel__networkbox span {
+  background-color: black;
+  width: 20%;
+  height: 500px;
+  border-bottom-left-radius: 100px 250px;
+}
+
+@media (max-width: 640px) {
+  .main__pannel {
+    padding: 0px;
+  }
+
+  .main__pannel__box {
+    width: 50%;
+  }
+
+  .main__pannel__contactbox {
+    width: 100%;
+    margin-bottom: 0px;
+  }
+
+  .main__pannel__networkbox {
+    width: 100%;
+    border-bottom-left-radius: 0px;
+    margin-bottom: 0px;
+  }
+
+  .main__pannel__networkbox span {
+    display: none;
+  }
 }
 

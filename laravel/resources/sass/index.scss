@@ -1,11 +1,18 @@
 //npm run watch
-.main__pannel {
+body {
+    background-color: hsla(60, 0%, 46%, 1);
+}
+main {
     position: absolute; //tmp
     left: 0px; //tmp
     top: 0px; //tmp
     right: 0px; //tmp
+    max-width: 100%;
+    height: 100%;
+}
+//css for the main pannel
+.main__pannel {
     padding: 50px;
-    background-color: hsla(60, 0%, 46%, 1);
     max-width: 100%;
     height: 100%;
     display: flex;
@@ -15,17 +22,13 @@
 }
 
 .main__pannel__box {
+    margin: 0px;
     width: 40%;
-    height: 30%;
+    height: 40%;
     box-shadow: 1px 2px 2px black;
     display: flex;
     align-items: center;
     text-decoration: none;
-    opacity: 1;
-    transition: 0.4s ease-in-out;
-}
-.main__pannel__box:hover {
-    opacity: 0.7;
 }
 
 .main__pannel__box--shop {
@@ -77,6 +80,86 @@
     object-fit: cover;
 }
 
-.carousel-control-prev-icon {
-    //  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='black' …3cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3e%3c/svg%3e");
+.carousel-indicators li {
+    border: solid 1px black;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    opacity: 1;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-size: 70%;
+    background-color: rgba(75, 75, 75, 0.116);
+    padding: 20%;
+    border-radius: 20% / 50%;
+}
+
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+    background-color: rgba(75, 75, 75, 0.699);
+}
+
+.main__pannel__networkbox {
+    display: flex;
+    background-color: #2b2b2b;
+    width: 50%;
+    height: 500px;
+    border-bottom-left-radius: 250px 100px;
+    box-shadow: -1px 2px 5px 1px black;
+    justify-content: flex-end;
+    margin-bottom: 50px;
+}
+
+.main__pannel__contactbox {
+    background-color: black;
+    width: 30%;
+    height: 500px;
+    box-shadow: -1px 2px 5px 1px black;
+    margin-bottom: 50px;
+}
+.main__pannel__contactbox input,
+textarea {
+    width: 80%;
+    border-radius: 3px;
+    margin: 10px;
+}
+
+.main__pannel__contactbox h2 {
+    margin: 10px;
+    color: white;
+    font-size: 80%;
+}
+
+.main__pannel__networkbox span {
+    background-color: black;
+    width: 20%;
+    height: 500px;
+    border-bottom-left-radius: 100px 250px;
+}
+
+@media (max-width: 640px) {
+    .main__pannel {
+        padding: 0px;
+    }
+    .main__pannel__box {
+        width: 50%;
+    }
+
+    .main__pannel__contactbox {
+        width: 100%;
+        margin-bottom: 0px;
+    }
+
+    .main__pannel__networkbox {
+        width: 100%;
+        border-bottom-left-radius: 0px;
+        margin-bottom: 0px;
+    }
+
+    .main__pannel__networkbox span {
+        display: none;
+    }
 }
