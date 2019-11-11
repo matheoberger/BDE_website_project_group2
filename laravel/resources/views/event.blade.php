@@ -4,6 +4,9 @@
     <title>Event</title>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="css/event.css" />
+
+<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
   </head>
   <body>
 
@@ -11,9 +14,9 @@
     navbar
     </nav></header>
     <div class="main">
+<h2>Les évènements</h2>
 
-
-<section> <article><input type="image" src="../../../laravel/public/images/party_merica.jpg" alt="Meilleur photo + Button">
+<section><article><input type="image" src="images/party_merica.jpg" alt="Meilleur photo + Button">
 </article>
 <div class="aside">
 <aside>Nom et description de l'évènement</aside>
@@ -56,9 +59,9 @@
 </div>
 </section>
 
+
+
 </div>
-
-
     <footer>Footer</footer>
   </body>
 </html>

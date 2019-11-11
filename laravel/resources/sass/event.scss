@@ -12,12 +12,16 @@ body {
     background-color: $grey_1;
 }
 
+h2 {
+    font-family: 'Roboto', bolder;
+}
 
 .main {
     background-color: $grey_2;
     margin: 2px 2px 2px 2px;
     display: flex;
     flex-wrap: wrap;
+    text-align: center;
 
 }
 
@@ -40,19 +44,43 @@ header {
 }
 
 section {
-    background-color: $orange_1;
+    background-color: $blue_1;
     margin: 20px 20px 20px 20px;
     display: flex;
     flex-wrap: wrap;
+
+
+    font-family: 'Roboto', sans-serif;
+
+
 }
 
+
 article {
+
+
     margin: 2px 2px 2px 2px;
+    font-family: 'Roboto', sans-serif;
+
+    &:hover {
+        background: $blue_2;
+        margin: 4px 4px 4px 4px;
+
+    }
+
+    min-height: 200px;
+
+    max-height: 500px;
+
+    min-width: 200px;
+
+    max-width: 500px
 }
 
 aside {
-    margin: 2px 2px 2px 2px;
+    @extend article;
     background-color: $orange_2;
+
 
 }
 
@@ -62,6 +90,7 @@ aside {
     border: 5px solid $orange_3;
     margin: 0 0 0 0;
     justify-content: flex-end;
+
 }
 
 footer {
