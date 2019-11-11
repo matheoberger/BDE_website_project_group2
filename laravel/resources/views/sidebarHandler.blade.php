@@ -1,5 +1,5 @@
 
-@component('navbar');
+@component('sidebar');
 @slot('notification')
 <img src="/images/bell.png" class="navbar navbar__notification"/>
 @endslot
