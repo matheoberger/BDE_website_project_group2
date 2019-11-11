@@ -1,19 +1,20 @@
+$grey_1: #9d9f9d;
+$grey_2: #757575;
+$orange_3: #eb7500;
+$orange_1: #ffc252;
+$orange_2: #eb7500;
+$green: #d1e000;
+$blue_1: #5d89DA;
+$blue_2: #00a390;
+
+
 body {
-    background-color: brown;
+    background-color: $grey_1;
 }
 
-.block {
-    padding: 5px 12px;
-    background: #0fb8e2;
-    color: #FFF;
-
-    &:hover {
-        background: #a30e0e;
-    }
-}
 
 .main {
-    border: 5px solid #000000;
+    background-color: $grey_2;
     margin: 2px 2px 2px 2px;
     display: flex;
     flex-wrap: wrap;
@@ -21,7 +22,7 @@ body {
 }
 
 header {
-    border: 3px solid #ff8800;
+    background-color: $blue_1;
     margin: 2px 2px 20px 2px;
     padding: 20px 0 20px 0;
 
@@ -34,39 +35,37 @@ header {
     margin: 0 0 0 5%;
     justify-content: flex-end;
     text-align: right;
+    background-color: $blue_1;
 
 }
 
 section {
-    border: 3px solid #d953eb;
+    background-color: $orange_1;
     margin: 20px 20px 20px 20px;
     display: flex;
     flex-wrap: wrap;
 }
 
 article {
-    border: 3px solid #300ef0;
     margin: 2px 2px 2px 2px;
-
 }
 
 aside {
-    border: 3px solid #a30e0e;
     margin: 2px 2px 2px 2px;
+    background-color: $orange_2;
 
 }
 
 .aside {
     display: inline-block;
     flex-wrap: wrap;
-    border: 5px solid #a30e0e;
+    border: 5px solid $orange_3;
     margin: 0 0 0 0;
     justify-content: flex-end;
 }
 
 footer {
-    border: 3px solid #e79a41;
     margin: 20px 2px 2px 2px;
     padding: 0 0 200px 0;
-
+    background-color: $grey_2;
 }

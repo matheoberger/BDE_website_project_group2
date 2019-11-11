@@ -1,36 +1,63 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>||Working with elements||</title>
+    <title>Event</title>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="css/event.css" />
   </head>
   <body>
-  <?php include "./header.blade.php";?>
 
-    <header>Header</header>
-    <div class="main">
-    <nav class="block">
+    <header>Header    <nav class="nav">
     navbar
-    </nav>
-    <div class="section">
-<section>Section <article>Article
+    </nav></header>
+    <div class="main">
+
+
+<section> <article><input type="image" src="../../../laravel/public/images/party_merica.jpg" alt="Meilleur photo + Button">
 </article>
 <div class="aside">
-<aside>Aside</aside>
-<aside>Aside</aside>
+<aside>Nom et description de l'évènement</aside>
+<aside>Meilleurs photos de l'évènement</aside>
 </div>
 </section>
 
 
-<section>Section 2
+<section> <article>Photo + Bouton
+</article>
 <div class="aside">
-
-<Aside>Aside</Aside>
+<aside>Nom et description de l'évènement</aside>
+<aside>Meilleurs photos de l'évènement</aside>
 </div>
 </section>
+
+<section> <article>Photo + Bouton
+</article>
+<div class="aside">
+<aside>Nom et description de l'évènement</aside>
+<aside>Meilleurs photos de l'évènement</aside>
 </div>
-    </div>
+</section><section> <article>Photo + Bouton
+</article>
+<div class="aside">
+<aside>Nom et description de l'évènement</aside>
+<aside>Meilleurs photos de l'évènement</aside>
+</div>
+</section><section> <article>Photo + Bouton
+</article>
+<div class="aside">
+<aside>Nom et description de l'évènement</aside>
+<aside>Meilleurs photos de l'évènement</aside>
+</div>
+</section><section> <article>Photo + Bouton
+</article>
+<div class="aside">
+<aside>Nom et description de l'évènement</aside>
+<aside>Meilleurs photos de l'évènement</aside>
+</div>
+</section>
+
+</div>
+
 
     <footer>Footer</footer>
   </body>
