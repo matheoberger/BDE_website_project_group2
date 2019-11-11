@@ -5,6 +5,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-tofit=no" />
     <title>BDE CESI Bordeaux</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="css/index.css" />
 </head>
 
@@ -18,18 +20,10 @@
                 <h2 class="main__pannel__box__title"> Evénements</h2>
             </a>
             <div class="main__pannel__box">
-                <a class="main__pannel__box__caroussel" href="">
-                    <img class="caroussel__image" src="../images/temp.jpg" alt=>
-                    <img class="caroussel__image" src="../images/temp.jpg" alt=>
-                    <img class="caroussel__image" src="../images/temp.jpg" alt=>
-                </a>
+                @include('templates.shopCarousel')
             </div>
             <div class="main__pannel__box">
-                <a class="main__pannel__box__caroussel" href="">
-                    <img class="caroussel__image" src="../images/temp.jpg" alt=>
-                    <img class="caroussel__image" src="../images/temp.jpg" alt=>
-                    <img class="caroussel__image" src="../images/temp.jpg" alt=>
-                </a>
+                @include('templates.eventCarousel')
             </div>
         </section>
     </main>
