@@ -18,7 +18,7 @@
 .main__pannel__box {
   width: 40%;
   height: 30%;
-  box-shadow: 1px 2px 2px #6e6e6e;
+  box-shadow: 1px 2px 2px black;
   display: -webkit-box;
   display: flex;
   -webkit-box-align: center;
