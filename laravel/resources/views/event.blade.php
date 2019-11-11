@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="css/event.css" />
   </head>
   <body>
+  <?php include "./header.blade.php";?>
+
     <header>Header</header>
     <div class="main">
     <nav class="block">
