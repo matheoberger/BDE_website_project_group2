@@ -1,25 +1,3 @@
-vendor/
-node_modules/
-npm-debug.log
-
-# Laravel 4 specific
-bootstrap/compiled.php
-app/storage/
-
-# Laravel 5 & Lumen specific
-public/storage
-public/hot
-storage/*.key
-.env.*.php
-.env.php
-.env
-Homestead.yaml
-Homestead.json
-
-# Rocketeer PHP task runner and deployment package. https://github.com/rocketeers/rocketeer
-.rocketeer/
-
-# nodeJS
 # Logs
 logs
 *.log
@@ -55,6 +33,7 @@ bower_components
 build/Release
 
 # Dependency directories
+node_modules/
 jspm_packages/
 
 # TypeScript v1 declaration files
@@ -75,6 +54,8 @@ typings/
 # Yarn Integrity file
 .yarn-integrity
 
+# dotenv environment variables file
+.env
 
 # next.js build output
 .next
