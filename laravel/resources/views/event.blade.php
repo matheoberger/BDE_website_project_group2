@@ -16,7 +16,7 @@
     <div class="main">
 <h2>Les évènements</h2>
 
-<section><article><input type="image" src="images/party_merica.jpg" alt="Meilleur photo + Button">
+<section><article>Photo + Bouton
 </article>
 <div class="aside">
 <aside>Nom et description de l'évènement</aside>
