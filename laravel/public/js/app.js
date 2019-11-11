@@ -19302,11 +19302,19 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
-/***/ 0:
-/*!**********************************************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/header.scss ./resources/sass/event.scss ***!
-  \**********************************************************************************************************************/
+/***/ "./resources/sass/sidebar.scss":
+/*!*************************************!*\
+  !*** ./resources/sass/sidebar.scss ***!
+  \*************************************/
 /*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ 0:
+
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! C:\Users\Cthulhu\Documents\Programmation\Laravel\laravel\resources\js\app.js */"./resources/js/app.js");
@@ -19314,6 +19322,13 @@ __webpack_require__(/*! C:\Users\Cthulhu\Documents\Programmation\Laravel\laravel
 __webpack_require__(/*! C:\Users\Cthulhu\Documents\Programmation\Laravel\laravel\resources\sass\header.scss */"./resources/sass/header.scss");
 module.exports = __webpack_require__(/*! C:\Users\Cthulhu\Documents\Programmation\Laravel\laravel\resources\sass\event.scss */"./resources/sass/event.scss");
 
+
+
+__webpack_require__(/*! D:\home\jambon\Documents\Code\CESI\BDE_website_project_group2\laravel\resources\js\app.js */"./resources/js/app.js");
+__webpack_require__(/*! D:\home\jambon\Documents\Code\CESI\BDE_website_project_group2\laravel\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! D:\home\jambon\Documents\Code\CESI\BDE_website_project_group2\laravel\resources\sass\header.scss */"./resources/sass/header.scss");
+__webpack_require__(/*! D:\home\jambon\Documents\Code\CESI\BDE_website_project_group2\laravel\resources\sass\sidebar.scss */"./resources/sass/sidebar.scss");
+module.exports = __webpack_require__(/*! D:\home\jambon\Documents\Code\CESI\BDE_website_project_group2\laravel\resources\sass\event.scss */"./resources/sass/event.scss");
 
 /***/ })
 

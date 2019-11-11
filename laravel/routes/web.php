@@ -18,6 +18,9 @@ Route::get('/', function () {
 Route::get('/header', function () {
     return view('headerHandler');
 });
+Route::get('/sidebar', function () {
+    return view('sidebarHandler');
+});
 Route::get('/event', function () {
     return view('event');
 });
