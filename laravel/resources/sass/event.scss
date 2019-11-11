@@ -31,17 +31,13 @@ h2 {
     flex-wrap: wrap;
     text-align: center;
     font-family: $roboto;
-
-
 }
 
 header {
     background-color: $blue_1;
     margin: 2px 2px 20px 2px;
     padding: 20px 0 20px 0;
-
 }
-
 
 
 section {
@@ -50,33 +46,38 @@ section {
     display: flex;
     flex-wrap: wrap;
     font-family: 'Roboto', sans-serif;
+
+    @media screen and (max-width: 880px) {
+        display: inline;
+        flex-wrap: wrap;
+    }
 }
 
 
 article {
-
-
     font-family: 'Roboto', sans-serif;
 
     &:hover {
         background: darken($red, $amount: 10);
         margin: 4px 4px 4px 4px;
-
     }
 
     min-height: 200px;
-
     max-height: 500px;
-
     min-width: 200px;
-
     max-width: 500px
+}
+
+article img {
+
+    max-height: 100%;
+    max-width: 100%;
+    margin: 1% 1% 1% 1%;
 }
 
 aside {
     margin: $px_2;
     font-family: 'Roboto', sans-serif;
-
     min-height: 200px;
     max-height: 500px;
     min-width: 200px;

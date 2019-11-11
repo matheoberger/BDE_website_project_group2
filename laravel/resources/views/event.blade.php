@@ -10,16 +10,16 @@
   </head>
   <body>
 
-    <header>Header    <nav class="nav">
-    navbar
-    </nav></header>
+    <header>Header
+        <nav class="nav">navbar</nav>
+    </header>
     <div>
             <h2>Les évènements</h2>
         </div>
     <div class="main">
 
         <section>
-            <article>Photo + Bouton
+            <article>
                 <div class="img"><img src="../images/party_merica.jpg" alt="merica"></div>
             </article>
             <div class="aside">

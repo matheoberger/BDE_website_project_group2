@@ -43,6 +43,13 @@ section {
   font-family: "Roboto", sans-serif;
 }
 
+@media screen and (max-width: 880px) {
+  section {
+    display: inline;
+    flex-wrap: wrap;
+  }
+}
+
 article {
   font-family: "Roboto", sans-serif;
   min-height: 200px;
@@ -54,6 +61,12 @@ article {
 article:hover {
   background: #d13333;
   margin: 4px 4px 4px 4px;
+}
+
+article img {
+  max-height: 100%;
+  max-width: 100%;
+  margin: 1% 1% 1% 1%;
 }
 
 aside {
