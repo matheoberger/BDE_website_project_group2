@@ -13,16 +13,19 @@ img {
 }
 
 h2 {
-  font-family: "'Roboto', bolder";
+  font-family: "Roboto", bolder;
+  text-align: center;
+  font-size: 50px;
 }
 
 .main {
-  background-color: #757575;
+  background: #838683;
   margin: 2px 2px 2px 2px;
   display: -webkit-box;
   display: flex;
   flex-wrap: wrap;
   text-align: center;
+  font-family: "Roboto", bolder;
 }
 
 header {
@@ -31,18 +34,8 @@ header {
   padding: 20px 0 20px 0;
 }
 
-.section {
-  display: inline-block;
-  flex-wrap: wrap;
-  margin: 0 0 0 5%;
-  -webkit-box-pack: end;
-          justify-content: flex-end;
-  text-align: right;
-  background-color: #5d89DA;
-}
-
 section {
-  background-color: #5d89DA;
+  background-color: #da5d5d;
   margin: 20px 20px 20px 20px;
   display: -webkit-box;
   display: flex;
@@ -59,7 +52,7 @@ article {
 }
 
 article:hover {
-  background: #336bd1;
+  background: #d13333;
   margin: 4px 4px 4px 4px;
 }
 
@@ -70,13 +63,13 @@ aside {
   max-height: 500px;
   min-width: 200px;
   max-width: 500px;
-  background-color: #eb7500;
+  background-color: #da5d5d;
 }
 
 .aside {
   display: inline-block;
   flex-wrap: wrap;
-  border: 5px solid #eb7500;
+  border: 5px solid #2e0a0a;
   margin: 0 0 0 0;
   -webkit-box-pack: end;
           justify-content: flex-end;

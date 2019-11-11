@@ -18,14 +18,20 @@ img {
 
 h2 {
     font-family: $roboto;
+    text-align: center;
+    font-size: 50px;
+
 }
 
 .main {
-    background-color: $grey_2;
+
+    background: darken($grey_1, 10);
     margin: $px_2;
     display: flex;
     flex-wrap: wrap;
     text-align: center;
+    font-family: $roboto;
+
 
 }
 
@@ -37,26 +43,13 @@ header {
 }
 
 
-.section {
-    display: inline-block;
-    flex-wrap: wrap;
-    margin: 0 0 0 5%;
-    justify-content: flex-end;
-    text-align: right;
-    background-color: $blue_1;
-
-}
 
 section {
-    background-color: $blue_1;
+    background-color: $red;
     margin: $px_20;
     display: flex;
     flex-wrap: wrap;
-
-
     font-family: 'Roboto', sans-serif;
-
-
 }
 
 
@@ -66,7 +59,7 @@ article {
     font-family: 'Roboto', sans-serif;
 
     &:hover {
-        background: darken($blue_1, $amount: 10);
+        background: darken($red, $amount: 10);
         margin: 4px 4px 4px 4px;
 
     }
@@ -81,27 +74,22 @@ article {
 }
 
 aside {
-    margin: 2px 2px 2px 2px;
+    margin: $px_2;
     font-family: 'Roboto', sans-serif;
 
-
-
     min-height: 200px;
-
     max-height: 500px;
-
     min-width: 200px;
-
     max-width: 500px;
-    background-color: $orange_2;
 
+    background-color: $red;
 
 }
 
 .aside {
     display: inline-block;
     flex-wrap: wrap;
-    border: 5px solid $orange_3;
+    border: 5px solid darken($red, 50);
     margin: 0 0 0 0;
     justify-content: flex-end;
 
