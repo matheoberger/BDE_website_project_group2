@@ -2,6 +2,16 @@ body {
     background-color: brown;
 }
 
+.block {
+    padding: 5px 12px;
+    background: #0fb8e2;
+    color: #FFF;
+
+    &:hover {
+        background: #a30e0e;
+    }
+}
+
 .main {
     border: 5px solid #000000;
     margin: 2px 2px 2px 2px;
@@ -17,11 +27,6 @@ header {
 
 }
 
-nav {
-    border: 3px solid #0fb8e2;
-    margin: 2px 2px 2px 2px;
-
-}
 
 .section {
     display: inline-block;
