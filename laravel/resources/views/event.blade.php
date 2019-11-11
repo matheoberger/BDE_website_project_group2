@@ -14,31 +14,34 @@
     navbar
     </nav></header>
     <div class="main">
-<h2>Les évènements</h2>
+        <div>
+            <h2>Les évènements</h2>
+        </div>
+        <section>
+            <article>Photo + Bouton
+                <div class="img"><img src="../images/party_merica.jpg" alt="merica"></div>
+            </article>
+            <div class="aside">
+                <aside>Nom et description de l'évènement</aside>
+                <aside>Meilleurs photos de l'évènement</aside>
+            </div>
+        </section>
 
-<section><article>Photo + Bouton
-</article>
-<div class="aside">
-<aside>Nom et description de l'évènement</aside>
-<aside>Meilleurs photos de l'évènement</aside>
-</div>
-</section>
 
+        <section>
+            <article>Photo + Bouton</article>
+            <div class="aside">
+                <aside>Nom et description de l'évènement</aside>
+                <aside>Meilleurs photos de l'évènement</aside>
+            </div>
+        </section>
 
-<section> <article>Photo + Bouton
-</article>
-<div class="aside">
-<aside>Nom et description de l'évènement</aside>
-<aside>Meilleurs photos de l'évènement</aside>
-</div>
-</section>
-
-<section> <article>Photo + Bouton
-</article>
-<div class="aside">
-<aside>Nom et description de l'évènement</aside>
-<aside>Meilleurs photos de l'évènement</aside>
-</div>
+        <section>
+            <article>Photo + Bouton</article>
+            <div class="aside">
+                <aside>Nom et description de l'évènement</aside>
+                <aside>Meilleurs photos de l'évènement</aside>
+            </div>
 </section><section> <article>Photo + Bouton
 </article>
 <div class="aside">

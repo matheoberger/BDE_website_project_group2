@@ -9,7 +9,18 @@ $blue_2: #00a390;
 
 
 body {
-    background-color: $grey_1;
+    background: $grey_1;
+    //background: linear-gradient(70deg, red, rgb(218, 93, 93));
+}
+
+.img {
+    width: 500px;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
 }
 
 h2 {
