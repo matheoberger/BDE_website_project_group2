@@ -37,8 +37,6 @@ section {
 
 article {
   font-family: "Roboto", sans-serif;
-  -webkit-box-pack: center;
-          justify-content: center;
   /*
   &:hover {
       margin: 4px 4px 4px 4px;
@@ -51,11 +49,12 @@ article {
 }
 
 article img {
-  -o-object-fit: none;
-     object-fit: none;
+  -o-object-fit: fill;
+     object-fit: fill;
+  min-height: 500px;
 }
 
-@media only screen and (max-width: 860px) {
+@media only screen and (max-width: 880px) {
   article img {
     height: 50%;
     width: 50%;
@@ -64,20 +63,26 @@ article img {
 
 aside {
   margin: 2px 2px 2px 2px;
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto", italic;
   min-height: 200px;
   max-height: 500px;
   min-width: 200px;
   max-width: 500px;
+  overflow: auto;
+  padding: bottom;
   background-color: #da5d5d;
 }
 
-.aside {
+aside:hover {
+  background-color: #d13333;
+}
+
+.event_description {
   display: inline-block;
   flex-wrap: wrap;
   -webkit-box-pack: end;
           justify-content: flex-end;
-  background-color: #da5d5d;
+  background-color: #d54848;
 }
 
 footer {
