@@ -13,6 +13,7 @@
 
 Route::get('/', function () {
 
+
     return view('welcome');
 });
 /*Route::get('/header', function () {
@@ -29,6 +30,8 @@ Route::get('/example', function () {
 });
 Route::get('/event', function () {
     return view('event');
+
+    return view('index');
 });
 Route::get('/CGV', function () {
     return view('CGV');

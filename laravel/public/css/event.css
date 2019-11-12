@@ -56,8 +56,9 @@ article img {
 
 @media only screen and (max-width: 880px) {
   article img {
-    height: 50%;
     width: 50%;
+    height: 100%;
+    min-height: 30%;
   }
 }
 
@@ -86,7 +87,6 @@ aside:hover {
 }
 
 footer {
-  margin: 20px 2px 2px 2px;
   padding: 0 0 200px 0;
   background-color: #757575;
 }
