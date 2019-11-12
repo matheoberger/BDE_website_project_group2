@@ -1,3 +1,8 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto&display=swap);@font-face {
+  font-family: "Lemon/Milk";
+  src: url("/fonts/LemonMilk/LemonMilk.otf") format("truetype");
+}
+
 body {
   background: #9d9f9d;
   /*background: linear-gradient(70deg, red, rgb(218, 93, 93));*/
@@ -42,6 +47,13 @@ article {
   }
 }
 
+@media only screen and (max-device-width: 468px), (max-width: 468px) {
+  article {
+    width: 100px;
+    height: 100px;
+  }
+}
+
 article img {
   -o-object-fit: cover;
      object-fit: cover;
@@ -56,6 +68,13 @@ article img {
   article img {
     width: 200px;
     height: 200px;
+  }
+}
+
+@media only screen and (max-device-width: 468px), (max-width: 468px) {
+  article img {
+    width: 100px;
+    height: 100px;
   }
 }
 
@@ -77,6 +96,13 @@ aside:hover {
   aside {
     width: 200px;
     height: 200px;
+  }
+}
+
+@media only screen and (max-device-width: 468px), (max-width: 468px) {
+  aside {
+    width: 100px;
+    height: 100px;
   }
 }
 

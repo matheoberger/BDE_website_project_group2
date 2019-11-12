@@ -1,6 +1,18 @@
-$small: 768px !default;
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+
+@font-face {
+    font-family: "Lemon/Milk";
+    src: url("/fonts/LemonMilk/LemonMilk.otf") format("truetype");
+}
+
+$very_small: 434px !default;
+$small: 468px !default;
 $medium: 880px !default;
 $large: 1000px !default;
+
+
+$very_small-up: "only screen and (min-device-width: #{$very_small}), (min-width: #{$very_small})";
+$very_small-down: "only screen and (max-device-width: #{$very_small}), (max-width: #{$very_small})";
 
 $small-up: "only screen and (min-device-width: #{$small}), (min-width: #{$small})";
 $small-down: "only screen and (max-device-width: #{$small}), (max-width: #{$small})";
@@ -27,3 +39,4 @@ $px_2: 2px 2px 2px 2px;
 $px_20: 20px 20px 20px 20px;
 $cube_dimension: 400px;
 $cube_dimension_small: 200px;
+$cube_dimension_very_small: 100px;
