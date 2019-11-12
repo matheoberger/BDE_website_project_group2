@@ -2,9 +2,14 @@
 
 
 body {
-    background: $grey_1;
+    background: linear-gradient(70deg, $red, darken($red, 30));
     /*background: linear-gradient(70deg, red, rgb(218, 93, 93));*/
     text-align: center;
+    background-image: url("../images/party-wallpapers-1.jpg");
+}
+
+.background-image {
+    filter: url(flou.svg);
 }
 
 
@@ -19,7 +24,7 @@ h2 {
 
 .conteneur {
 
-    background: $grey_2;
+    background: linear-gradient(70deg, $grey_1, darken($grey_1, 30));
     margin: $px_2;
     display: inline-block;
     flex-wrap: wrap;
