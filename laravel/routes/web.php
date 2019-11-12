@@ -15,14 +15,17 @@ Route::get('/', function () {
 
     return view('welcome');
 });
-Route::get('/header', function () {
+/*Route::get('/header', function () {
     return view('header');
 });
 Route::get('/navbar', function () {
     return view('navbar');
 });
-Route::get('/sidebar', function () {
-    return view('sidebarHandler');
+Route::get('/footer', function () {
+    return view('footer');
+});*/
+Route::get('/example', function () {
+    return view('example');
 });
 Route::get('/event', function () {
     return view('event');

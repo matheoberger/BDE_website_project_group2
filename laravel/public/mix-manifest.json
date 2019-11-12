@@ -3,5 +3,7 @@
     "/css/app.css": "/css/app.css",
     "/css/header.css": "/css/header.css",
     "/css/navbar.css": "/css/navbar.css",
-    "/css/event.css": "/css/event.css"
+    "/css/sidebar.css": "/css/sidebar.css",
+    "/css/event.css": "/css/event.css",
+    "/css/footer.css": "/css/footer.css"
 }

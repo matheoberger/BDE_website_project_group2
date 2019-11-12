@@ -1,3 +1,5 @@
+@import "./responsive.scss";
+
 nav.sidebar {
     background: black;
     font-family: "Roboto";
@@ -10,7 +12,7 @@ nav.sidebar {
 }
 nav.sidebar--desktop {
     width: 250px;
-    height: calc(100% - 60px);
+    height: calc(100% - 110px);
     transition: 0.5s;
 }
 nav.sidebar--mobile {
@@ -27,7 +29,7 @@ nav.sidebar a:hover {
     border-bottom: 1px solid white;
     padding: 15px;
     position: relative;
-    color: hsla(39, 100%, 66%, 1);
+    color: $orange_1;
 }
 nav.sidebar a::before {
     content: "";
@@ -43,7 +45,7 @@ nav.sidebar a::before {
 }
 nav.sidebar a:hover::before {
     transform: scaleX(1);
-    background-color: hsla(39, 100%, 66%, 1);
+    background-color: $orange_1;
 }
 
 .sidebar img {
@@ -53,7 +55,7 @@ nav.sidebar a:hover::before {
     object-fit: cover;
 }
 
-@media only screen and (max-device-width: 768px), (max-width: 768px) {
+@media #{$small-down} {
     nav.sidebar--desktop {
         transform: translateX(-250px);
     }

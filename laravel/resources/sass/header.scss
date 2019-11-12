@@ -1,13 +1,9 @@
+@import "./responsive.scss";
+
 .header {
     background: hsla(0, 0%, 0%, 1);
     padding: 5px;
 }
-@font-face {
-    font-family: "Lemon/Milk";
-    src: url("/fonts/LemonMilk/LemonMilk.otf") format("truetype");
-}
-@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
-
 .navbar {
     font-family: "Roboto";
     display: flex;

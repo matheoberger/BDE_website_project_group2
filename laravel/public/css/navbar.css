@@ -13,7 +13,7 @@ nav.sidebar {
 
 nav.sidebar--desktop {
   width: 250px;
-  height: calc(100% - 60px);
+  height: calc(100% - 110px);
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }

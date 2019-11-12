@@ -16,4 +16,5 @@ mix.js("resources/js/app.js", "public/js")
     .sass("resources/sass/header.scss", "public/css")
     .sass("resources/sass/navbar.scss", "public/css")
     .sass("resources/sass/sidebar.scss", "public/css")
-    .sass("resources/sass/event.scss", "public/css");
+    .sass("resources/sass/event.scss", "public/css")
+    .sass("resources/sass/footer.scss", "public/css");

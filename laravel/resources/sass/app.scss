@@ -1,7 +1,11 @@
+@font-face {
+    font-family: "Lemon/Milk";
+    src: url("/fonts/LemonMilk/LemonMilk.otf") format("truetype");
+}
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
 html {
     background: hsla(0, 0%, 100%, 1);
 }
-
 body {
     padding: 0;
     margin: 0 auto;
