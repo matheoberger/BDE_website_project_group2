@@ -27,6 +27,17 @@
             </div>
             <section class="main__pannel__com">
                 <div class="main__pannel__box --networkbox">
+                    <div class="networkbox__container">
+                        <h2>Rejoignez nous sur les réseaux sociaux !</h2>
+                        <div class="networkbox__logocontainer">
+                            <a class="networkbox__logo" href=""><img src="../images/twitterLogo.png" alt="logo_twitter"></img></a>
+                            <a class="networkbox__logo" href=""><img src="../images/fblogo.png" alt="logo_fb"></img></a>
+                            <a class="networkbox__logo" href=""><img src="../images/instalogo.png" alt="logo_insta"></img></a>
+                            <a class="networkbox__logo" href=""><img src="../images/linkedinlogo.png" alt="logo_linkedin"></img></a>
+                            <a class="networkbox__logo" href=""><img src="../images/ytblogo.png" alt="logo_youtube"></img></a>
+                            <a class="networkbox__logo" href=""><img src="../images/pinterestlogo.jpg" alt="logo_pinterest"></img></a>
+                        </div>
+                    </div>
                 </div>
                 <div class="main__pannel__box --contactbox">
                     <h2>Contactez nous ! Donnez nous des idées !</h2>

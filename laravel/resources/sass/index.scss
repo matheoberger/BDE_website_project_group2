@@ -1,6 +1,7 @@
 //npm run watch
 body {
     background-color: hsla(60, 0%, 46%, 1);
+    overflow-x: hidden;
 }
 main {
     position: absolute; //tmp
@@ -8,11 +9,11 @@ main {
     top: 0px; //tmp
     right: 0px; //tmp
     max-width: 100%;
+
     height: 100%;
 }
 //css for the main pannel
 .main__pannel {
-    padding: 50px;
     max-width: 100%;
     height: 100%;
     display: flex;
@@ -157,18 +158,51 @@ textarea {
 }
 
 .--networkbox {
-    display: block;
+    display: flex;
+    justify-content: center;
     width: 50%;
     height: 100%;
     margin-bottom: 50px;
 }
 
+.networkbox__container {
+    border: solid 1px hsla(39, 100%, 66%, 1);
+    width: 80%;
+    border-bottom-left-radius: 250px 100px;
+}
 .--networkbox h2 {
+    margin-top: 20px;
+    margin-bottom: 20px;
     color: hsla(39, 100%, 66%, 1);
     font-weight: bold;
+    font-size: 30px;
+    text-align: center;
 }
 
-@media (max-width: 640px) {
+.networkbox__logocontainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: 10%;
+    width: 80%;
+    height: 60%;
+    margin-top: 10px;
+}
+.networkbox__logo {
+    margin-bottom: 10px;
+    width: 100px;
+    height: 30%;
+}
+
+.networkbox__logo img {
+    border-radius: 10px;
+    margin: 10%;
+    width: 80%;
+    height: 80%;
+    object-fit: cover;
+}
+//<img src="../images/twitterLogo.png" alt="logo_twitter"></img>
+@media (max-width: 800px) {
     .main__pannel {
         padding: 0px;
     }
@@ -213,5 +247,11 @@ textarea {
         margin-left: 20%;
         margin-right: 20%;
         padding-bottom: 30px;
+    }
+
+    .networkbox__container {
+        height: 95%;
+        width: 95%;
+        border-bottom-left-radius: 0px;
     }
 }
