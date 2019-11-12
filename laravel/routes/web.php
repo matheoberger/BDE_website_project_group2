@@ -21,3 +21,6 @@ Route::get('/header', function () {
 Route::get('/event', function () {
     return view('event');
 });
+Route::get('/CGV', function () {
+    return view('CGV');
+});

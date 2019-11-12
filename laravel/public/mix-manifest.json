@@ -2,5 +2,6 @@
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
     "/css/header.css": "/css/header.css",
-    "/css/event.css": "/css/event.css"
+    "/css/event.css": "/css/event.css",
+    "/css/CGV.css": "/css/CGV.css"
 }
