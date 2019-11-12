@@ -33,28 +33,18 @@ h2 {
 section {
     margin: $px_20;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     font-family: $roboto;
 
-    @media screen and (max-width: 880px) {
-        display: inline;
-        flex-wrap: wrap;
-    }
+
 }
 
 
 article {
-    font-family: 'Roboto', sans-serif;
-
+    font-family: $roboto;
     height: $cube_dimension;
-    //max-height: 500px;
     width: $cube_dimension;
-    /*
-    min-height: 200px;
-    max-height: 500px;
-    min-width: 200px;
-    max-width: 500px;
-*/
+
 }
 
 article img {
@@ -62,11 +52,8 @@ article img {
     justify-content: flex-end;
 
     @media #{$medium-down} {
-        width: 100%;
-        height: 100%;
-        min-height: 50%;
-
-
+        width: $cube_dimension_small;
+        height: $cube_dimension_small;
     }
 
     width: $cube_dimension;
@@ -92,6 +79,12 @@ aside {
         background-color: darken($red, 10)
     }
 
+
+    @media #{$medium-down} {
+        width: $cube_dimension_small;
+        height: $cube_dimension_small;
+    }
+
 }
 
 .event_description {
@@ -101,10 +94,4 @@ aside {
     height: $cube_dimension;
     width: $cube_dimension;
     margin: -2px 0 0 -2px;
-
-
 }
-
-
-
-@media #{$medium-up} {}

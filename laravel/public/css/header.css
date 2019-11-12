@@ -15,9 +15,6 @@
 
 .navbar {
   font-family: "Roboto";
-
-.navbar {
-
   display: -webkit-box;
   display: flex;
   -webkit-box-align: center;
@@ -71,8 +68,5 @@
     display: -webkit-box;
     display: flex;
   }
-
-  -webkit-filter: invert(1);
-          filter: invert(1);
 }
 
