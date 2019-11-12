@@ -12,18 +12,12 @@
 */
 
 Route::get('/', function () {
-
-
-    return view('welcome');
+    return view('index');
 });
 Route::get('/header', function () {
     return view('headerHandler');
 });
-Route::get('/sidebar', function () {
-    return view('sidebarHandler');
-});
 Route::get('/event', function () {
     return view('event');
-
     return view('index');
 });

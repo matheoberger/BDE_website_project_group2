@@ -1,15 +1,15 @@
-//npm run watch
+@import "./responsive.scss";
 html {
     overflow-x: hidden;
 }
 body {
-    background-color: hsla(60, 0%, 46%, 1);
+    background-color: $grey_2;
     overflow: hidden;
 }
 main {
     width: 100%;
 }
-//css for the main pannel
+//Definir le CSS pour le pannel principal
 .main__pannel {
     width: 100%;
     height: 100%;
@@ -19,15 +19,16 @@ main {
     align-content: flex-start;
 }
 
+//Definir le CSS pour un box du pannel principal
 .main__pannel__box {
     width: 40%;
     height: 400px;
-    //box-shadow: 1px 2px 2px black;
     display: flex;
     align-items: center;
     text-decoration: none;
 }
 
+//Definir le CSS pour le lien event du pannel principal
 .main__pannel__box_image--event {
     height: 100%;
     width: 100%;
@@ -36,6 +37,7 @@ main {
     background-position: center center;
 }
 
+//Definir le CSS pour le lien shop du pannel principal
 .main__pannel__box_image--shop {
     height: 100%;
     width: 100%;
@@ -44,14 +46,10 @@ main {
     background-position: center center;
 }
 
-.main__pannel__box_image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+//Definir le CSS pour le titre d'un lien dans le pannel principal
 .main__pannel__box__title {
     color: white;
-    background-color: rgba(80, 80, 80, 0.507);
+    background-color: #49494980;
     width: 100%;
     text-align: center;
     margin-top: 20%;
@@ -60,46 +58,50 @@ main {
     padding-bottom: 2%;
 }
 
+//Enlever soulignement titre d'un lien dans le pannel principal au passage de la souris
 .main__pannel__box_image--shop:hover,
 .main__pannel__box_image--event:hover {
     text-decoration: none;
 }
+
+//Definir le taille d'un caroussel
 .carousel {
     width: 101%;
     height: 100%;
 }
+
+//Definir le taille du conteneur des images d'un caroussel
 .carousel-inner {
     overflow: hidden;
     height: 100%;
     width: 100%;
 }
 
+//Definir le taille du d'une lien d'un caroussel
 .carousel-item {
     height: 100%;
     width: 100%;
 }
 
-.main__pannel__box__caroussel {
-    width: 101%;
-    height: 100%;
-    overflow: hidden;
-}
-
+//Definir le taille du d'une image d'un caroussel
 .caroussel__image {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
+//Definir la bordure des indicateurs de l'image dans un caroussel
 .carousel-indicators li {
     border: solid 1px black;
 }
 
+//Definir l'opcité des flèches dans un caroussel
 .carousel-control-prev,
 .carousel-control-next {
     opacity: 1;
 }
 
+//Definir background des flèches dans un caroussel
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
     background-size: 70%;
@@ -108,55 +110,52 @@ main {
     border-radius: 20% / 50%;
 }
 
+//Definir background des flèches dans un caroussel au passage de la souris
 .carousel-control-prev-icon:hover,
 .carousel-control-next-icon:hover {
-    background-color: rgba(75, 75, 75, 0.699);
+    background-color: rgb(75, 75, 75);
 }
 
-.--degrade {
-    background: linear-gradient(black, #2b2b2b);
-}
-
+//OPT: Definir bordure à droite d'un box
 .--bordered-right {
     padding-right: 60px;
     background-color: black;
-    box-shadow: 5px 5px 2px #2b2b2b;
+    box-shadow: 5px 5px 2px $grey_3;
 }
 
+//OPT: Definir bordure au dessus d'un box
 .--bordered-top {
     padding-top: 60px;
     background-color: black;
-    box-shadow: 5px 5px 2px #2b2b2b;
+    box-shadow: 5px 5px 2px $grey_3;
 }
 
+//OPT: Definir bordure à gauche d'un box
 .--bordered-left {
     background-color: black;
     padding-left: 60px;
     box-shadow: 5px 5px 1px black;
 }
 
+//OPT: Definir background en dégradé pour un box
 .--gradient {
-    background: linear-gradient(black, #2b2b2b);
+    background: linear-gradient(black, $grey_3);
 }
 
+//Definir CSS de la section communication
 .main__pannel__com {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-content: flex-start;
-    background-color: #2b2b2b;
-    box-shadow: 5px 5px 2px #2b2b2b;
-    border-bottom-left-radius: 250px 100px;
+    background-color: $grey_3;
+    box-shadow: 5px 5px 2px $grey_3;
+    border-bottom-left-radius: 100px 100px;
     width: 80%;
     height: 500px;
 }
-.--networkbox {
-    width: 50%;
-    height: 100%;
-    justify-content: flex-end;
-    margin-bottom: 50px;
-}
 
+//Definir CSS du box contact
 .--contactbox {
     display: block;
     background-color: black;
@@ -165,6 +164,8 @@ main {
     margin-bottom: 50px;
     border-bottom-left-radius: 150px 250px;
 }
+
+//Definir CSS du des input du formulaire
 .--contactbox input,
 textarea {
     margin-bottom: 10px;
@@ -174,12 +175,14 @@ textarea {
     border-radius: 3px;
 }
 
+//Definir CSS du des label du formulaire
 .--contactbox label {
     margin-left: 20%;
     width: 100%;
     color: white;
 }
 
+//Definir CSS du du trite du box contact
 .--contactbox h2 {
     margin-left: 20%;
     margin-right: 10%;
@@ -188,11 +191,13 @@ textarea {
     font-size: 15px;
 }
 
+//Definirdu bouton du formulaire
 .--contactbox__button {
     background-color: hsla(39, 100%, 66%, 1);
     border: none;
 }
 
+//Definir CSS du box réseaux sociaux
 .--networkbox {
     display: flex;
     justify-content: center;
@@ -201,11 +206,14 @@ textarea {
     margin-bottom: 50px;
 }
 
+//Definir CSS du contenaire réseaux sociaux
 .networkbox__container {
     border: solid 1px hsla(39, 100%, 66%, 1);
     width: 80%;
-    border-bottom-left-radius: 250px 100px;
+    border-bottom-left-radius: 100px 100px;
 }
+
+//Definir CSS du titre du box réseaux sociaux
 .--networkbox h2 {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -215,6 +223,7 @@ textarea {
     text-align: center;
 }
 
+//Definir CSS du contenaire des logos
 .networkbox__logocontainer {
     display: flex;
     flex-wrap: wrap;
@@ -224,12 +233,15 @@ textarea {
     height: 60%;
     margin-top: 10px;
 }
+
+//Definir taille des logos
 .networkbox__logo {
     margin-bottom: 10px;
     width: 100px;
     height: 30%;
 }
 
+//Definir taille des images des logos
 .networkbox__logo img {
     border-radius: 10px;
     margin: 10%;
@@ -237,39 +249,40 @@ textarea {
     height: 80%;
     object-fit: cover;
 }
-//<img src="../images/twitterLogo.png" alt="logo_twitter"></img>
+
+//Definir mise en page pour mobile
 @media (max-width: 800px) {
+    //enlever bordures grises sur les cotés
     .main__pannel {
         padding: 0px;
     }
     .main__pannel__box {
         width: 50%;
     }
-
+    //mettre caroussel les un en dessous des autres.
     .--carousel {
         width: 100%;
     }
-
+    //enlever bordures grises
     .main__pannel__com {
         padding: 0px;
         width: 100%;
         height: 1200px;
         border-bottom-left-radius: 0px;
     }
-
+    //metrre box de communication les  uns à la suite des autres
     .--contactbox {
         height: 50%;
         width: 100%;
         margin-bottom: 0px;
         border-bottom-left-radius: 0px;
     }
-
     .--networkbox {
         height: 50%;
         width: 100%;
         margin-bottom: 0px;
     }
-
+    //reajuster le formulaire
     .--contactbox input,
     textarea {
         margin-left: 15%;
@@ -284,7 +297,7 @@ textarea {
         margin-right: 20%;
         padding-bottom: 30px;
     }
-
+    //supprimer les bordures
     .networkbox__container {
         height: 95%;
         width: 95%;
@@ -292,20 +305,20 @@ textarea {
     }
 
     .--bordered-right {
-        padding-right: 5px;
+        padding-right: 0px;
         background-color: black;
         box-shadow: 0px;
     }
 
     .--bordered-top {
-        padding-top: 5px;
+        padding-top: 0px;
         background-color: black;
         box-shadow: 0px;
     }
 
     .--bordered-left {
         background-color: black;
-        padding-left: 5px;
+        padding-left: 0px;
         box-shadow: 0px;
     }
 }
