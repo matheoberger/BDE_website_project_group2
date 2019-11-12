@@ -18,9 +18,9 @@ Route::get('/', function () {
 /*Route::get('/header', function () {
     return view('header');
 });
-Route::get('/navbar', function () {
+*/Route::get('/navbar', function () {
     return view('navbar');
-});
+});/*
 Route::get('/footer', function () {
     return view('footer');
 });*/

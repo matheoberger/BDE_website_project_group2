@@ -1,5 +1,4 @@
-<link rel="stylesheet" type="text/css" href="css/app.css">
-<link rel="stylesheet" type="text/css" href="css/header.css">
+
 
 <header class="header">
 <nav class="navbar navbar--desktop">
