@@ -16,6 +16,8 @@ h2 {
   flex-wrap: wrap;
   text-align: center;
   font-family: "Roboto", bolder;
+  -webkit-box-pack: center;
+          justify-content: center;
 }
 
 section {
@@ -64,8 +66,6 @@ aside {
 .aside {
   display: inline-block;
   flex-wrap: wrap;
-  border: 5px solid #2e0a0a;
-  margin: 0 0 0 0;
   -webkit-box-pack: end;
           justify-content: flex-end;
 }
