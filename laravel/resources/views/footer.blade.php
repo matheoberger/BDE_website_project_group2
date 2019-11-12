@@ -1,3 +1,5 @@
+@include("header")
+@include("navbar")
 <link rel="stylesheet" type="text/css" href="css/app.css">
 <link rel="stylesheet" type="text/css" href="css/navbar.css">
 
@@ -15,5 +17,4 @@
 <a href="/html/">LINK3</a -->
 
 </nav>
-
 
