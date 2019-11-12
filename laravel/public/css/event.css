@@ -12,7 +12,7 @@ body {
 h2 {
   font-family: "Roboto", sans-serif;
   text-align: center;
-  font-size: 50px;
+  font-size: 5vw;
 }
 
 .conteneur {
@@ -36,22 +36,8 @@ section {
 
 article {
   font-family: "Roboto", sans-serif;
-  height: 400px;
-  width: 400px;
-}
-
-@media only screen and (max-width: 880px) {
-  article {
-    width: 200px;
-    height: 200px;
-  }
-}
-
-@media only screen and (max-device-width: 468px), (max-width: 468px) {
-  article {
-    width: 100px;
-    height: 100px;
-  }
+  height: 30vw;
+  width: 30vw;
 }
 
 article img {
@@ -59,51 +45,24 @@ article img {
      object-fit: cover;
   -webkit-box-pack: end;
           justify-content: flex-end;
-  width: 400px;
-  height: 400px;
+  width: 30vw;
+  height: 30vw;
   display: block;
-}
-
-@media only screen and (max-width: 880px) {
-  article img {
-    width: 200px;
-    height: 200px;
-  }
-}
-
-@media only screen and (max-device-width: 468px), (max-width: 468px) {
-  article img {
-    width: 100px;
-    height: 100px;
-  }
 }
 
 aside {
   margin: 2px 2px 2px 2px;
   font-family: "Roboto", italic;
-  height: 400px;
-  width: 400px;
+  height: 30vw;
+  width: 30vw;
   overflow: auto;
   padding: bottom;
   background-color: #5d89DA;
+  font-size: 2vw;
 }
 
 aside:hover {
   background-color: #d13333;
-}
-
-@media only screen and (max-width: 880px) {
-  aside {
-    width: 200px;
-    height: 200px;
-  }
-}
-
-@media only screen and (max-device-width: 468px), (max-width: 468px) {
-  aside {
-    width: 100px;
-    height: 100px;
-  }
 }
 
 .event_description {

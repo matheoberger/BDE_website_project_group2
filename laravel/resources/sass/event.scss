@@ -13,7 +13,7 @@ body {
 h2 {
     font-family: $roboto;
     text-align: center;
-    font-size: 50px;
+    font-size: 5vw;
 
 }
 
@@ -43,32 +43,12 @@ article {
     font-family: $roboto;
     height: $cube_dimension;
     width: $cube_dimension;
-
-    @media #{$medium-down} {
-        width: $cube_dimension_small;
-        height: $cube_dimension_small;
-    }
-
-    @media #{$small-down} {
-        width: $cube_dimension_very_small;
-        height: $cube_dimension_very_small;
-    }
-
 }
 
 article img {
     object-fit: cover;
     justify-content: flex-end;
 
-    @media #{$medium-down} {
-        width: $cube_dimension_small;
-        height: $cube_dimension_small;
-    }
-
-    @media #{$small-down} {
-        width: $cube_dimension_very_small;
-        height: $cube_dimension_very_small;
-    }
 
     width: $cube_dimension;
     height: $cube_dimension;
@@ -91,16 +71,7 @@ aside {
         background-color: darken($red, 10)
     }
 
-
-    @media #{$medium-down} {
-        width: $cube_dimension_small;
-        height: $cube_dimension_small;
-    }
-
-    @media #{$small-down} {
-        width: $cube_dimension_very_small;
-        height: $cube_dimension_very_small;
-    }
+    font-size: 2vw;
 
 }
 
