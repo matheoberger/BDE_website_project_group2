@@ -6,15 +6,8 @@ body {
     //background: linear-gradient(70deg, red, rgb(218, 93, 93));
 }
 
-.img {
-    width: 500px;
-}
 
-img {
-    display: block;
-    width: 100%;
-    height: auto;
-}
+
 
 h2 {
     font-family: $roboto;
@@ -33,11 +26,6 @@ h2 {
     font-family: $roboto;
 }
 
-header {
-    background-color: $blue_1;
-    margin: 2px 2px 20px 2px;
-    padding: 20px 0 20px 0;
-}
 
 
 section {
@@ -57,8 +45,8 @@ section {
 article {
     font-family: 'Roboto', sans-serif;
 
+
     &:hover {
-        background: darken($red, $amount: 10);
         margin: 4px 4px 4px 4px;
     }
 
@@ -72,7 +60,9 @@ article img {
 
     max-height: 100%;
     max-width: 100%;
-    margin: 1% 1% 1% 1%;
+
+
+
 }
 
 aside {

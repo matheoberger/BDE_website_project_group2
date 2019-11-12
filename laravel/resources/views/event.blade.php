@@ -10,9 +10,9 @@
   </head>
   <body>
 
-    <header>Header
-        <nav class="nav">navbar</nav>
-    </header>
+@include('headerHandler')
+
+
     <div>
             <h2>Les évènements</h2>
         </div>

@@ -2,16 +2,6 @@ body {
   background: #9d9f9d;
 }
 
-.img {
-  width: 500px;
-}
-
-img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
 h2 {
   font-family: "Roboto", bolder;
   text-align: center;
@@ -26,12 +16,6 @@ h2 {
   flex-wrap: wrap;
   text-align: center;
   font-family: "Roboto", bolder;
-}
-
-header {
-  background-color: #5d89DA;
-  margin: 2px 2px 20px 2px;
-  padding: 20px 0 20px 0;
 }
 
 section {
@@ -59,14 +43,12 @@ article {
 }
 
 article:hover {
-  background: #d13333;
   margin: 4px 4px 4px 4px;
 }
 
 article img {
   max-height: 100%;
   max-width: 100%;
-  margin: 1% 1% 1% 1%;
 }
 
 aside {
