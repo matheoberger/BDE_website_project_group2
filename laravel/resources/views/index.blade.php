@@ -14,7 +14,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
     <link rel="stylesheet" href="css/index.css" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/app.css" />
     <link rel="stylesheet" type="text/css" href="css/header.css">
     <link rel="stylesheet" type="text/css" href="css/navbar.css">
@@ -72,7 +71,8 @@
                         <div class="main__pannel__box --contactbox">
                             <!-- Titre de la division-->
                             <h2>Contactez nous ! Donnez nous des idées !</h2>
-                            <form action="" onsubmit="return verifForm(this)">
+                            <form action="contactForm" method="post" onsubmit="return verifForm(this)">
+                                @csrf
                                 <!-- Champ Email -->
                                 <label for="email">Email :</label>
                                 <input type="text" id="email" name="email" placeholder=" Entrez votre adresse E-mail" required="required">

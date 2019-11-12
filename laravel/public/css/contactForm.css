@@ -1,0 +1,88 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto&display=swap%22);@font-face {
+  font-family: "Lemon/Milk";
+  src: url("/fonts/LemonMilk/LemonMilk.otf") format("truetype");
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  background-color: #757575;
+  display: -webkit-box;
+  display: flex;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+          justify-content: center;
+  align-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  height: 100%;
+}
+
+main {
+  display: -webkit-box;
+  display: flex;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+          justify-content: center;
+  align-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  border: ridge 2px #ffc252;
+  background-color: black;
+  padding: 20px;
+}
+
+.formTitle {
+  font-family: "Roboto", bolder;
+  font-size: xx-large;
+  color: #ffc252;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+form {
+  display: -webkit-box;
+  display: flex;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+          justify-content: center;
+}
+
+form input,
+textarea {
+  width: 60%;
+  margin-top: 5px;
+  margin-bottom: 30px;
+}
+
+textarea {
+  height: 300px;
+}
+
+form label {
+  color: white;
+  font-family: "Roboto", bolder;
+  width: 60%;
+}
+
+.submit_button {
+  font-family: "Roboto", bolder;
+  border: none;
+  background: -webkit-gradient(linear, left top, right top, color-stop(50%, #eb7500), color-stop(50%, #ffc252));
+  background: linear-gradient(to right, #eb7500 50%, #ffc252 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+.submit_button:hover {
+  background-position: left bottom;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+

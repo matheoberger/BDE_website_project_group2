@@ -14,6 +14,13 @@
 Route::get('/', function () {
     return view('index');
 });
+
+Route::get('/contactForm', function () {
+    return view('contactForm');
+});
+Route::post('/contactForm', function () {
+    return view('contactForm');
+});
 /*Route::get('/header', function () {
     return view('header');
 });
@@ -31,7 +38,6 @@ Route::get('/example', function () {
 
 Route::get('/event', function () {
     return view('event');
-    return view('index');
 });
 Route::get('/CGV', function () {
     return view('CGV');
