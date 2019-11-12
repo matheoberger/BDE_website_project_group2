@@ -1,4 +1,4 @@
-.header {
+@import url(https://fonts.googleapis.com/css?family=Roboto&display=swap);.header {
   background: black;
   padding: 5px;
 }
@@ -6,11 +6,6 @@
 @font-face {
   font-family: "Lemon/Milk";
   src: url("/fonts/LemonMilk/LemonMilk.otf") format("truetype");
-}
-
-@font-face {
-  font-family: "Roboto";
-  src: url("/fonts/Roboto/Roboto-Black.ttf") format("truetype");
 }
 
 .navbar {

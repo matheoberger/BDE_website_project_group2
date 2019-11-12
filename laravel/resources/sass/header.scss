@@ -6,10 +6,8 @@
     font-family: "Lemon/Milk";
     src: url("/fonts/LemonMilk/LemonMilk.otf") format("truetype");
 }
-@font-face {
-    font-family: "Roboto";
-    src: url("/fonts/Roboto/Roboto-Black.ttf") format("truetype");
-}
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+
 .navbar {
     font-family: "Roboto";
     display: flex;
