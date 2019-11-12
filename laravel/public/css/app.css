@@ -1,15 +1,35 @@
-html {
-  background: white;
+@import url(https://fonts.googleapis.com/css?family=Roboto&display=swap);@font-face {
+  font-family: "Lemon/Milk";
+  src: url("/fonts/LemonMilk/LemonMilk.otf") format("truetype");
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
 }
 
 body {
   padding: 0;
-  margin: 0 auto;
   color: white;
+}
+
+main {
+  display: -webkit-box;
+  display: flex;
+  height: calc(100% - 60px);
 }
 
 a {
   text-decoration: none;
   color: white;
+}
+
+.conteneur {
+  width: 100%;
+}
+
+.contenu {
+  height: calc(100% - 50px);
 }
 

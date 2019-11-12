@@ -1,0 +1,25 @@
+$small: 768px !default;
+$medium: 880px !default;
+$large: 1000px !default;
+
+$small-up: "only screen and (min-device-width: #{$small}), (min-width: #{$small})";
+$small-down: "only screen and (max-device-width: #{$small}), (max-width: #{$small})";
+
+$medium-up: "only screen and (min-width: #{$medium})";
+$medium-down: "only screen and (max-width: #{$medium})";
+
+$large-up: "only screen and (min-width: #{$medium})";
+$large-down: "only screen and (max-width: #{$medium})";
+
+$grey_1: #9d9f9d;
+$grey_2: #757575;
+$orange_3: #eb7500;
+$orange_1: #ffc252;
+$orange_2: #eb7500;
+$green: #d1e000;
+$red: #da5d5d;
+$blue_1: #5d89da;
+$blue_2: #00a390;
+$roboto: "Roboto", bolder;
+$px_2: 2px 2px 2px 2px;
+$px_20: 20px 20px 20px 20px;
