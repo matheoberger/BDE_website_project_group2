@@ -8,11 +8,11 @@ nav.sidebar {
   height: 100%;
 }
 
-.sidebar--desktop {
+nav.sidebar--desktop {
   width: 250px;
 }
 
-.sidebar--mobile {
+nav.sidebar--mobile {
   display: none;
 }
 
@@ -25,11 +25,11 @@ nav.sidebar {
 }
 
 @media only screen and (max-device-width: 768px), (max-width: 768px) {
-  .sidebar--desktop {
+  nav.sidebar--desktop {
     display: none;
   }
 
-  .sidebar--mobile {
+  nav.sidebar--mobile {
     display: -webkit-box;
     display: flex;
   }

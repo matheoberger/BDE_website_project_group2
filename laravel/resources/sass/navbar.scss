@@ -6,10 +6,10 @@ nav.sidebar {
     justify-content: space-between;
     height: 100%;
 }
-.sidebar--desktop {
+nav.sidebar--desktop {
     width: 250px;
 }
-.sidebar--mobile {
+nav.sidebar--mobile {
     display: none;
 }
 .sidebar img {
@@ -20,10 +20,10 @@ nav.sidebar {
 }
 
 @media only screen and (max-device-width: 768px), (max-width: 768px) {
-    .sidebar--desktop {
+    nav.sidebar--desktop {
         display: none;
     }
-    .sidebar--mobile {
+    nav.sidebar--mobile {
         display: flex;
     }
 }
