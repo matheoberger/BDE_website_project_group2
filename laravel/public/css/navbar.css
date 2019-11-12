@@ -8,12 +8,14 @@ nav.sidebar {
           flex-direction: column;
   -webkit-box-pack: start;
           justify-content: flex-start;
-  height: calc(100% - 60px);
   font-size: 20px;
 }
 
 nav.sidebar--desktop {
   width: 250px;
+  height: calc(100% - 60px);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 nav.sidebar--mobile {
@@ -68,12 +70,12 @@ nav.sidebar a:hover::before {
 
 @media only screen and (max-device-width: 768px), (max-width: 768px) {
   nav.sidebar--desktop {
-    display: none;
+    -webkit-transform: translateX(-250px);
+            transform: translateX(-250px);
   }
 
-  nav.sidebar--mobile {
-    display: -webkit-box;
-    display: flex;
-  }
+  /*nav.sidebar--mobile {
+      display: flex;
+  }*/
 }
 

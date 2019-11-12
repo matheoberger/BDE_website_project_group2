@@ -5,11 +5,13 @@ nav.sidebar {
     // align-items: center;
     flex-direction: column;
     justify-content: flex-start;
-    height: calc(100% - 60px);
+
     font-size: 20px;
 }
 nav.sidebar--desktop {
     width: 250px;
+    height: calc(100% - 60px);
+    transition: 0.5s;
 }
 nav.sidebar--mobile {
     display: none;
@@ -53,9 +55,9 @@ nav.sidebar a:hover::before {
 
 @media only screen and (max-device-width: 768px), (max-width: 768px) {
     nav.sidebar--desktop {
-        display: none;
+        transform: translateX(-250px);
     }
-    nav.sidebar--mobile {
+    /*nav.sidebar--mobile {
         display: flex;
-    }
+    }*/
 }
