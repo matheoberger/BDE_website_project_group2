@@ -18,13 +18,11 @@
     @include('partials/header')
     <main>
         @include("partials/navbar")
-        <div class="conteneur">
             <div class="contenu">
                 
                 @include("partials/footer")
             </div>
             
-        </div>
         </div>
 
     </main>
