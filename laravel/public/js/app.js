@@ -19302,6 +19302,17 @@ window.axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
 
 /***/ }),
 
+/***/ "./resources/sass/index.scss":
+/*!***********************************!*\
+  !*** ./resources/sass/index.scss ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "./resources/sass/sidebar.scss":
 /*!*************************************!*\
   !*** ./resources/sass/sidebar.scss ***!
@@ -19314,9 +19325,9 @@ window.axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
 /***/ }),
 
 /***/ 0:
-/*!****************************************************************************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/header.scss ./resources/sass/sidebar.scss ./resources/sass/event.scss ***!
-  \****************************************************************************************************************************************************/
+/*!********************************************************************************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/header.scss ./resources/sass/sidebar.scss ./resources/sass/event.scss ./resources/sass/index.scss ***!
+  \********************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -19324,7 +19335,8 @@ __webpack_require__(/*! C:\Users\Cthulhu\Documents\Programmation\Laravel\laravel
 __webpack_require__(/*! C:\Users\Cthulhu\Documents\Programmation\Laravel\laravel\resources\sass\app.scss */"./resources/sass/app.scss");
 __webpack_require__(/*! C:\Users\Cthulhu\Documents\Programmation\Laravel\laravel\resources\sass\header.scss */"./resources/sass/header.scss");
 __webpack_require__(/*! C:\Users\Cthulhu\Documents\Programmation\Laravel\laravel\resources\sass\sidebar.scss */"./resources/sass/sidebar.scss");
-module.exports = __webpack_require__(/*! C:\Users\Cthulhu\Documents\Programmation\Laravel\laravel\resources\sass\event.scss */"./resources/sass/event.scss");
+__webpack_require__(/*! C:\Users\Cthulhu\Documents\Programmation\Laravel\laravel\resources\sass\event.scss */"./resources/sass/event.scss");
+module.exports = __webpack_require__(/*! C:\Users\Cthulhu\Documents\Programmation\Laravel\laravel\resources\sass\index.scss */"./resources/sass/index.scss");
 
 
 /***/ })

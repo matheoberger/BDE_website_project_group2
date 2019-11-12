@@ -35,6 +35,13 @@ article {
   width: 400px;
 }
 
+@media only screen and (max-width: 880px) {
+  article {
+    width: 200px;
+    height: 200px;
+  }
+}
+
 article img {
   -o-object-fit: cover;
      object-fit: cover;
@@ -78,8 +85,6 @@ aside:hover {
   flex-wrap: wrap;
   -webkit-box-pack: end;
           justify-content: flex-end;
-  height: 400px;
-  width: 400px;
   margin: -2px 0 0 -2px;
 }
 

@@ -36,7 +36,6 @@ section {
     flex-wrap: nowrap;
     font-family: $roboto;
 
-
 }
 
 
@@ -44,6 +43,11 @@ article {
     font-family: $roboto;
     height: $cube_dimension;
     width: $cube_dimension;
+
+    @media #{$medium-down} {
+        width: $cube_dimension_small;
+        height: $cube_dimension_small;
+    }
 
 }
 
@@ -91,7 +95,8 @@ aside {
     display: inline-block;
     flex-wrap: wrap;
     justify-content: flex-end;
-    height: $cube_dimension;
-    width: $cube_dimension;
+
     margin: -2px 0 0 -2px;
+
+
 }
