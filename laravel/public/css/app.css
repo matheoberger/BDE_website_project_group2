@@ -11,25 +11,18 @@ body {
 
 body {
   padding: 0;
-  color: white;
 }
 
 main {
   display: -webkit-box;
   display: flex;
-  height: calc(100% - 60px);
 }
 
 a {
   text-decoration: none;
-  color: white;
 }
 
 .conteneur {
   width: 100%;
-}
-
-.contenu {
-  height: calc(100% - 50px);
 }
 

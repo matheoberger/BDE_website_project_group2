@@ -1,9 +1,10 @@
 .header {
   background: black;
   padding: 5px;
+  color: white;
 }
 
-.navbar {
+.customNavbar {
   font-family: "Roboto";
   display: -webkit-box;
   display: flex;
@@ -13,48 +14,48 @@
           justify-content: space-between;
 }
 
-.navbar h1 {
+.customNavbar h1 {
   font-family: "Lemon/Milk";
   margin: 0;
 }
 
-.navbar img {
+.customNavbar img {
   cursor: pointer;
   height: 50px;
   -webkit-filter: invert(1);
           filter: invert(1);
 }
 
-.navbar .navbar__notification {
+.customNavbar .customNavbar__notification {
   -webkit-filter: invert(4%) sepia(99%) saturate(7455%) hue-rotate(4deg) brightness(88%) contrast(101%);
           filter: invert(4%) sepia(99%) saturate(7455%) hue-rotate(4deg) brightness(88%) contrast(101%);
 }
 
-.navbar--right {
+.customNavbar--right {
   -webkit-box-pack: end;
           justify-content: flex-end;
 }
 
-.navbar--right .navbar {
+.customNavbar--right .customNavbar {
   margin-right: 10px;
   -webkit-box-pack: end;
           justify-content: flex-end;
 }
 
-.navbar__logo {
+.customNavbar__logo {
   margin-left: 5px;
 }
 
-.navbar--mobile {
+.customNavbar--mobile {
   display: none;
 }
 
 @media only screen and (max-device-width: 768px), (max-width: 768px) {
-  .navbar--desktop {
+  .customNavbar--desktop {
     display: none;
   }
 
-  .navbar--mobile {
+  .customNavbar--mobile {
     display: -webkit-box;
     display: flex;
   }
