@@ -13,14 +13,14 @@
   </head>
   <body>
 
-@include('header')
+@include('partials/header')
 <main>
-@include("navbar")
+@include("partials/navbar")
     <div class="conteneur">
         <div class="contenu">
     
         </div>
-        @include("footer")
+        @include("partials/footer")
     </div>
 </div>
 

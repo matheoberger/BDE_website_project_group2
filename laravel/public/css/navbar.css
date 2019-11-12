@@ -14,8 +14,10 @@ nav.sidebar {
 nav.sidebar--desktop {
   width: 250px;
   height: 100%;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
 }
 
 nav.sidebar--mobile {
@@ -25,10 +27,7 @@ nav.sidebar--mobile {
 nav.sidebar a {
   border-bottom: 1px solid white;
   padding: 15px;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
   position: relative;
-  transition: 0.5s;
 }
 
 nav.sidebar a:hover {

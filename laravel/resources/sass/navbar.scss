@@ -4,7 +4,6 @@ nav.sidebar {
     background: black;
     font-family: "Roboto";
     display: flex;
-    // align-items: center;
     flex-direction: column;
     justify-content: flex-start;
 
@@ -13,7 +12,7 @@ nav.sidebar {
 nav.sidebar--desktop {
     width: 250px;
     height: 100%;
-    transition: 0.5s;
+    transition: transform 0.5s;
 }
 nav.sidebar--mobile {
     display: none;
@@ -21,9 +20,7 @@ nav.sidebar--mobile {
 nav.sidebar a {
     border-bottom: 1px solid white;
     padding: 15px;
-    transition: 0.5s;
     position: relative;
-    transition: 0.5s;
 }
 nav.sidebar a:hover {
     border-bottom: 1px solid white;
