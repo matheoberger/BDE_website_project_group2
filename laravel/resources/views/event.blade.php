@@ -11,19 +11,19 @@
   <body>
 
 @include('headerHandler')
-
+<main>
 
     <div>
-            <h2>Les évènements</h2>
-        </div>
-    <div class="main">
+        <h2> <u>Les évènements</u></h2>
+    </div>
+    <div class="conteneur">
 
         <section>
             <article>
                 <div class="img"><img src="../images/party_merica.jpg" alt="merica"></div>
             </article>
             <div class="aside">
-                <aside>Nom et description de l'évènement</aside>
+                <aside><u>Nom et description de l'évènement</u></aside>
                 <aside>Meilleurs photos de l'évènement</aside>
             </div>
         </section>
@@ -66,6 +66,8 @@
 
 
 </div>
+
+</main>
     <footer>Footer</footer>
   </body>
 </html>

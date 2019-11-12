@@ -8,7 +8,7 @@ h2 {
   font-size: 50px;
 }
 
-.main {
+.conteneur {
   background: #838683;
   margin: 2px 2px 2px 2px;
   display: -webkit-box;
@@ -21,7 +21,6 @@ h2 {
 }
 
 section {
-  background-color: #da5d5d;
   margin: 20px 20px 20px 20px;
   display: -webkit-box;
   display: flex;
@@ -38,19 +37,29 @@ section {
 
 article {
   font-family: "Roboto", sans-serif;
+  -webkit-box-pack: center;
+          justify-content: center;
+  /*
+  &:hover {
+      margin: 4px 4px 4px 4px;
+  }
+  */
   min-height: 200px;
   max-height: 500px;
   min-width: 200px;
   max-width: 500px;
 }
 
-article:hover {
-  margin: 4px 4px 4px 4px;
+article img {
+  -o-object-fit: none;
+     object-fit: none;
 }
 
-article img {
-  max-height: 100%;
-  max-width: 100%;
+@media only screen and (max-width: 860px) {
+  article img {
+    height: 50%;
+    width: 50%;
+  }
 }
 
 aside {
@@ -68,6 +77,7 @@ aside {
   flex-wrap: wrap;
   -webkit-box-pack: end;
           justify-content: flex-end;
+  background-color: #da5d5d;
 }
 
 footer {

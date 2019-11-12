@@ -16,7 +16,7 @@ h2 {
 
 }
 
-.main {
+.conteneur {
 
     background: darken($grey_1, 10);
     margin: $px_2;
@@ -30,7 +30,6 @@ h2 {
 
 
 section {
-    background-color: $red;
     margin: $px_20;
     display: flex;
     flex-wrap: wrap;
@@ -45,11 +44,13 @@ section {
 
 article {
     font-family: 'Roboto', sans-serif;
+    justify-content: center;
 
-
+    /*
     &:hover {
         margin: 4px 4px 4px 4px;
     }
+    */
 
     min-height: 200px;
     max-height: 500px;
@@ -58,12 +59,12 @@ article {
 }
 
 article img {
+    object-fit: none;
 
-    max-height: 100%;
-    max-width: 100%;
-
-
-
+    @media #{$medium-down} {
+        height: 50%;
+        width: 50%;
+    }
 }
 
 aside {
@@ -82,7 +83,7 @@ aside {
     display: inline-block;
     flex-wrap: wrap;
     justify-content: flex-end;
-
+    background-color: $red;
 }
 
 footer {
