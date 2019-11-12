@@ -1,65 +1,93 @@
 body {
-  background-color: brown;
+  background: #9d9f9d;
 }
 
-.main {
-  border: 5px solid #000000;
+h2 {
+  font-family: "Roboto", bolder;
+  text-align: center;
+  font-size: 50px;
+}
+
+.conteneur {
+  background: #838683;
   margin: 2px 2px 2px 2px;
   display: -webkit-box;
   display: flex;
   flex-wrap: wrap;
-}
-
-header {
-  border: 3px solid #ff8800;
-  margin: 2px 2px 20px 2px;
-  padding: 20px 0 20px 0;
-}
-
-nav {
-  border: 3px solid #0fb8e2;
-  margin: 2px 2px 2px 2px;
-}
-
-.section {
-  display: inline-block;
-  flex-wrap: wrap;
-  margin: 0 0 0 5%;
-  -webkit-box-pack: end;
-          justify-content: flex-end;
-  text-align: right;
+  text-align: center;
+  font-family: "Roboto", bolder;
+  -webkit-box-pack: center;
+          justify-content: center;
 }
 
 section {
-  border: 3px solid #d953eb;
   margin: 20px 20px 20px 20px;
   display: -webkit-box;
   display: flex;
   flex-wrap: wrap;
+  font-family: "Roboto", sans-serif;
+}
+
+@media screen and (max-width: 880px) {
+  section {
+    display: inline;
+    flex-wrap: wrap;
+  }
 }
 
 article {
-  border: 3px solid #300ef0;
-  margin: 2px 2px 2px 2px;
+  font-family: "Roboto", sans-serif;
+  /*
+  &:hover {
+      margin: 4px 4px 4px 4px;
+  }
+  */
+  min-height: 200px;
+  max-height: 500px;
+  min-width: 200px;
+  max-width: 500px;
+}
+
+article img {
+  -o-object-fit: fill;
+     object-fit: fill;
+  min-height: 500px;
+}
+
+@media only screen and (max-width: 880px) {
+  article img {
+    height: 50%;
+    width: 50%;
+  }
 }
 
 aside {
-  border: 3px solid #a30e0e;
   margin: 2px 2px 2px 2px;
+  font-family: "Roboto", italic;
+  min-height: 200px;
+  max-height: 500px;
+  min-width: 200px;
+  max-width: 500px;
+  overflow: auto;
+  padding: bottom;
+  background-color: #da5d5d;
 }
 
-.aside {
+aside:hover {
+  background-color: #d13333;
+}
+
+.event_description {
   display: inline-block;
   flex-wrap: wrap;
-  border: 5px solid #a30e0e;
-  margin: 0 0 0 0;
   -webkit-box-pack: end;
           justify-content: flex-end;
+  background-color: #d54848;
 }
 
 footer {
-  border: 3px solid #e79a41;
   margin: 20px 2px 2px 2px;
   padding: 0 0 200px 0;
+  background-color: #757575;
 }
 

@@ -19314,6 +19314,7 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /***/ }),
 
 /***/ 0:
+
 /*!***************************************************************************************************************************************************!*\
   !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/header.scss ./resources/sass/navbar.scss ./resources/sass/event.scss ***!
   \***************************************************************************************************************************************************/
@@ -19325,6 +19326,7 @@ __webpack_require__(/*! D:\home\Documents\Code\Projet WEB\BDE_website_project_gr
 __webpack_require__(/*! D:\home\Documents\Code\Projet WEB\BDE_website_project_group2\laravel\resources\sass\header.scss */"./resources/sass/header.scss");
 __webpack_require__(/*! D:\home\Documents\Code\Projet WEB\BDE_website_project_group2\laravel\resources\sass\navbar.scss */"./resources/sass/navbar.scss");
 module.exports = __webpack_require__(/*! D:\home\Documents\Code\Projet WEB\BDE_website_project_group2\laravel\resources\sass\event.scss */"./resources/sass/event.scss");
+
 
 
 /***/ })
