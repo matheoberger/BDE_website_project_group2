@@ -5,8 +5,7 @@
 
 html,
 body {
-  margin: 0;
-  height: 100%;
+  min-height: 100vh;
 }
 
 body {
@@ -16,6 +15,7 @@ body {
 main {
   display: -webkit-box;
   display: flex;
+  min-height: calc(100vh - 60px);
 }
 
 a {
@@ -24,5 +24,9 @@ a {
 
 .conteneur {
   width: 100%;
+}
+
+.contenu {
+  min-height: 100%;
 }
 
