@@ -20,7 +20,7 @@
 
         <section>
             <article>
-                <div class="img"><img src="../images/party_merica.jpg" alt="merica"></div>
+                <img src="../images/party_merica.jpg" alt="merica">
             </article>
             <div class="event_description">
                 <aside><u>Nom et description de l'évènement</u></aside>
