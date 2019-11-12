@@ -13,7 +13,7 @@
 </head>
 
 <body>
-@include('templates/header')
+    @include('partials/header')
     <main>
         <!-- Composant principal de la page WEB-->
         <section class="main__pannel">
@@ -31,11 +31,11 @@
             </div>
             <!-- Carousel comportant les trois produits les plus vendus à Bordeaux -->
             <div class="main__pannel__box --carousel --bordered-left --gradient">
-                @include('templates.shopCarousel')
+                @include('partials.shopCarousel')
             </div>
             <!-- Carousel comportant les trois prochains événements se déroulant Bordeaux -->
             <div class="main__pannel__box --carousel --bordered-right">
-                @include('templates.eventCarousel')
+                @include('partials.eventCarousel')
             </div>
             <!-- Division comportant les moyens de communication entre BDE et utilisateurs-->
             <section class="main__pannel__com">
