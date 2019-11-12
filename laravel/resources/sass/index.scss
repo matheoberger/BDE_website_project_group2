@@ -6,11 +6,13 @@ body {
     background-color: $grey_2;
     overflow: hidden;
 }
+
 main {
     width: 100%;
 }
 //Definir le CSS pour le pannel principal
 .main__pannel {
+    padding-top: 50px;
     width: 100%;
     height: 100%;
     display: flex;
@@ -119,14 +121,14 @@ main {
 
 //OPT: Definir bordure à droite d'un box
 .--bordered-right {
-    padding-right: 60px;
+    padding-right: 5%;
     background-color: black;
     box-shadow: 5px 5px 2px $grey_3;
 }
 
 //OPT: Definir bordure au dessus d'un box
 .--bordered-top {
-    padding-top: 60px;
+    padding-top: 5%;
     background-color: black;
     box-shadow: 5px 5px 2px $grey_3;
 }
@@ -134,7 +136,7 @@ main {
 //OPT: Definir bordure à gauche d'un box
 .--bordered-left {
     background-color: black;
-    padding-left: 60px;
+    padding-left: 5%;
     box-shadow: 5px 5px 1px black;
 }
 
@@ -191,13 +193,17 @@ textarea {
     margin-right: 10%;
     margin-top: 15px;
     color: white;
-    font-size: 15px;
+    font-size: 20px;
     font-family: $roboto;
+}
+
+#subject {
+    height: 150px;
 }
 
 //Definirdu bouton du formulaire
 .--contactbox__button {
-    background-color: hsla(39, 100%, 66%, 1);
+    background-color: $orange_1;
     border: none;
 }
 
@@ -212,8 +218,9 @@ textarea {
 
 //Definir CSS du contenaire réseaux sociaux
 .networkbox__container {
-    border: solid 1px hsla(39, 100%, 66%, 1);
+    border: solid 1px $orange_1;
     width: 80%;
+    height: 90%;
     border-bottom-left-radius: 100px 100px;
 }
 
@@ -221,9 +228,9 @@ textarea {
 .--networkbox h2 {
     margin-top: 20px;
     margin-bottom: 20px;
-    color: hsla(39, 100%, 66%, 1);
+    color: $orange_1;
     font-weight: bold;
-    font-size: 30px;
+    font-size: 25px;
     text-align: center;
     font-family: $roboto;
 }
@@ -233,9 +240,9 @@ textarea {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-left: 10%;
+    margin: 10%;
     width: 80%;
-    height: 60%;
+    height: 80%;
     margin-top: 10px;
 }
 
@@ -243,7 +250,7 @@ textarea {
 .networkbox__logo {
     margin-bottom: 10px;
     width: 100px;
-    height: 30%;
+    height: 100px;
 }
 
 //Definir taille des images des logos

@@ -17,6 +17,7 @@ main {
 }
 
 .main__pannel {
+  padding-top: 50px;
   width: 100%;
   height: 100%;
   display: -webkit-box;
@@ -116,20 +117,20 @@ main {
 }
 
 .\--bordered-right {
-  padding-right: 60px;
+  padding-right: 5%;
   background-color: black;
   box-shadow: 5px 5px 2px #383838;
 }
 
 .\--bordered-top {
-  padding-top: 60px;
+  padding-top: 5%;
   background-color: black;
   box-shadow: 5px 5px 2px #383838;
 }
 
 .\--bordered-left {
   background-color: black;
-  padding-left: 60px;
+  padding-left: 5%;
   box-shadow: 5px 5px 1px black;
 }
 
@@ -183,8 +184,12 @@ textarea {
   margin-right: 10%;
   margin-top: 15px;
   color: white;
-  font-size: 15px;
+  font-size: 20px;
   font-family: "Roboto", bolder;
+}
+
+#subject {
+  height: 150px;
 }
 
 .\--contactbox__button {
@@ -205,6 +210,7 @@ textarea {
 .networkbox__container {
   border: solid 1px #ffc252;
   width: 80%;
+  height: 90%;
   border-bottom-left-radius: 100px 100px;
 }
 
@@ -213,7 +219,7 @@ textarea {
   margin-bottom: 20px;
   color: #ffc252;
   font-weight: bold;
-  font-size: 30px;
+  font-size: 25px;
   text-align: center;
   font-family: "Roboto", bolder;
 }
@@ -224,16 +230,16 @@ textarea {
   flex-wrap: wrap;
   -webkit-box-pack: center;
           justify-content: center;
-  margin-left: 10%;
+  margin: 10%;
   width: 80%;
-  height: 60%;
+  height: 80%;
   margin-top: 10px;
 }
 
 .networkbox__logo {
   margin-bottom: 10px;
   width: 100px;
-  height: 30%;
+  height: 100px;
 }
 
 .networkbox__logo img {

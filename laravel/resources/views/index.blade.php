@@ -52,7 +52,7 @@
                     <!-- Division comportant les moyens de communication entre BDE et utilisateurs-->
                     <section class="main__pannel__com">
                         <!-- Division réseaux sociaux-->
-                        <div class="main__pannel__box --networkbox">
+                        <div class="main__pannel__box --networkbox ">
                             <div class="networkbox__container">
                                 <!--Titre de la division-->
                                 <h2>Rejoignez nous sur les réseaux sociaux !</h2>
@@ -80,7 +80,7 @@
                             <input type="text" id="object" name="object" placeholder=" Entrez l'objet de votre message">
                             <!-- Champ Texte -->
                             <label for="subject">Message (min 50 caractères) :</label>
-                            <textarea id="subject" name="subject" placeholder=" Ecrivez votre message..." style="height:200px"></textarea>
+                            <textarea id="subject" name="subject" placeholder=" Ecrivez votre message..."></textarea>
                             <!-- Bouton envoyer -->
                             <input class="--contactbox__button" type="submit" value="Envoyer">
                         </div>

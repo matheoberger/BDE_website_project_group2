@@ -2,6 +2,9 @@
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
     "/css/header.css": "/css/header.css",
+    "/css/index.css": "/css/index.css",
+    "/css/navbar.css": "/css/navbar.css",
     "/css/event.css": "/css/event.css",
-    "/css/index.css": "/css/index.css"
+    "/css/footer.css": "/css/footer.css",
+    "/css/CGV.css": "/css/CGV.css"
 }
