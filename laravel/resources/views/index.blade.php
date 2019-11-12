@@ -6,23 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-tofit=no" />
     <title>BDE CESI Bordeaux</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="css/index.css" />
 </head>
 
 <body>
     <main>
         <section class="main__pannel">
-            <a class="main__pannel__box main__pannel__box--shop" href="">
-                <h2 class="main__pannel__box__title"> Boutique </h2>
-            </a>
-            <a class="main__pannel__box main__pannel__box--event" href="">
-                <h2 class="main__pannel__box__title"> Evénements</h2>
-            </a>
-            <div class="main__pannel__box --carousel">
+            <div class="main__pannel__box --bordered-left --bordered-top">
+                <a class="main__pannel__box_image--shop" href="">
+                    <h2 class="main__pannel__box__title"> Boutique </h2>
+                </a>
+            </div>
+            <div class="main__pannel__box --bordered-right --bordered-top">
+                <a class="main__pannel__box_image--event" href="">
+                    <h2 class="main__pannel__box__title"> Evénements</h2>
+                </a>
+            </div>
+            <div class="main__pannel__box --carousel --bordered-left --gradient">
                 @include('templates.shopCarousel')
             </div>
-            <div class="main__pannel__box --carousel">
+            <div class="main__pannel__box --carousel --bordered-right">
                 @include('templates.eventCarousel')
             </div>
             <section class="main__pannel__com">
