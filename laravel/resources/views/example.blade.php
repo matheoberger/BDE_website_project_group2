@@ -20,9 +20,10 @@
         @include("partials/navbar")
         <div class="conteneur">
             <div class="contenu">
-
+                
+                @include("partials/footer")
             </div>
-            @include("partials/footer")
+            
         </div>
         </div>
 
