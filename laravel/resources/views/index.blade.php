@@ -13,6 +13,7 @@
 </head>
 
 <body>
+@include('templates/header')
     <main>
         <!-- Composant principal de la page WEB-->
         <section class="main__pannel">
