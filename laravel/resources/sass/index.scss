@@ -207,6 +207,13 @@ textarea {
     border: none;
 }
 
+.errorMessage {
+    color: red;
+    margin-left: 20%;
+    margin-right: 10%;
+    width: 70%;
+}
+
 //Definir CSS du box réseaux sociaux
 .--networkbox {
     display: flex;

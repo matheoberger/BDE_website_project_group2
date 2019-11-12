@@ -12,6 +12,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
     <link rel="stylesheet" href="css/index.css" />
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/app.css" />
@@ -71,18 +72,23 @@
                         <div class="main__pannel__box --contactbox">
                             <!-- Titre de la division-->
                             <h2>Contactez nous ! Donnez nous des idées !</h2>
-                            <form action="/action_page.php"></form>
-                            <!-- Champ Email -->
-                            <label for="email">Email :</label>
-                            <input type="text" id="email" name="email" placeholder=" Entrez votre adresse E-mail">
-                            <!-- Champ Objet -->
-                            <label for="object">Objet (min 10 caractères) :</label>
-                            <input type="text" id="object" name="object" placeholder=" Entrez l'objet de votre message">
-                            <!-- Champ Texte -->
-                            <label for="subject">Message (min 50 caractères) :</label>
-                            <textarea id="subject" name="subject" placeholder=" Ecrivez votre message..."></textarea>
-                            <!-- Bouton envoyer -->
-                            <input class="--contactbox__button" type="submit" value="Envoyer">
+                            <form action="" onsubmit="return verifForm(this)">
+                                <!-- Champ Email -->
+                                <label for="email">Email :</label>
+                                <input type="text" id="email" name="email" placeholder=" Entrez votre adresse E-mail" required="required">
+                                <!-- Champ Objet -->
+                                <label for="object">Objet (min 10 caractères) :</label>
+                                <input type="text" id="object" name="object" placeholder=" Entrez l'objet de votre message" required="required" ">
+                                <!-- Champ Texte -->
+                                <label for=" subject">Message (min 50 caractères) :</label>
+                                <textarea id="subject" name="subject" placeholder=" Ecrivez votre message..." required="required"></textarea>
+                                <?php if (isset($_POST['error'])) {
+                                    echo "<p class='errorMessage'>" . "mdp incorect" . "</p>";
+                                };
+                                ?>
+                                <!-- Bouton envoyer -->
+                                <input class=" --contactbox__button" type="submit" value="Envoyer">
+                            </form>
                         </div>
                     </section>
                 </section>

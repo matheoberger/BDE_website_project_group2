@@ -197,6 +197,13 @@ textarea {
   border: none;
 }
 
+.errorMessage {
+  color: red;
+  margin-left: 20%;
+  margin-right: 10%;
+  width: 70%;
+}
+
 .\--networkbox {
   display: -webkit-box;
   display: flex;
