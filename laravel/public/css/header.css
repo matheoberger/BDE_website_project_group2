@@ -4,6 +4,10 @@
   color: white;
 }
 
+.header a {
+  color: white;
+}
+
 .customNavbar {
   font-family: "Roboto";
   display: -webkit-box;
