@@ -19346,6 +19346,17 @@ window.axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
 
 /***/ }),
 
+/***/ "./resources/sass/login.scss":
+/*!***********************************!*\
+  !*** ./resources/sass/login.scss ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "./resources/sass/navbar.scss":
 /*!************************************!*\
   !*** ./resources/sass/navbar.scss ***!
@@ -19358,9 +19369,9 @@ window.axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
 /***/ }),
 
 /***/ 0:
-/*!************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/header.scss ./resources/sass/index.scss ./resources/sass/contactForm.scss ./resources/sass/navbar.scss ./resources/sass/event.scss ./resources/sass/footer.scss ./resources/sass/CGV.scss ***!
-  \************************************************************************************************************************************************************************************************************************************************************************/
+/*!****************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/header.scss ./resources/sass/index.scss ./resources/sass/contactForm.scss ./resources/sass/login.scss ./resources/sass/navbar.scss ./resources/sass/event.scss ./resources/sass/footer.scss ./resources/sass/CGV.scss ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -19369,6 +19380,7 @@ __webpack_require__(/*! C:\Users\axelb\Documents\GitHub\BDE_website_project_grou
 __webpack_require__(/*! C:\Users\axelb\Documents\GitHub\BDE_website_project_group2\laravel\resources\sass\header.scss */"./resources/sass/header.scss");
 __webpack_require__(/*! C:\Users\axelb\Documents\GitHub\BDE_website_project_group2\laravel\resources\sass\index.scss */"./resources/sass/index.scss");
 __webpack_require__(/*! C:\Users\axelb\Documents\GitHub\BDE_website_project_group2\laravel\resources\sass\contactForm.scss */"./resources/sass/contactForm.scss");
+__webpack_require__(/*! C:\Users\axelb\Documents\GitHub\BDE_website_project_group2\laravel\resources\sass\login.scss */"./resources/sass/login.scss");
 __webpack_require__(/*! C:\Users\axelb\Documents\GitHub\BDE_website_project_group2\laravel\resources\sass\navbar.scss */"./resources/sass/navbar.scss");
 __webpack_require__(/*! C:\Users\axelb\Documents\GitHub\BDE_website_project_group2\laravel\resources\sass\event.scss */"./resources/sass/event.scss");
 __webpack_require__(/*! C:\Users\axelb\Documents\GitHub\BDE_website_project_group2\laravel\resources\sass\footer.scss */"./resources/sass/footer.scss");
