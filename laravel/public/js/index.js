@@ -94,16 +94,10 @@
 /***/ (function(module, exports) {
 
 window.verifForm = function (form) {
-  /*  if (
-      verifMail(form.email) &&
-      verifObject(form.object) &&
-      verifText(form.subject)
-  )
-      return true;
-  else {
-      alert("Veuillez remplir correctement tous les champs");
-      return false;
-  }*/
+  if (verifMail(form.email) && verifObject(form.object) && verifText(form.subject)) return true;else {
+    alert("Veuillez remplir correctement tous les champs");
+    return false;
+  }
 };
 
 window.verifMail = function (champ) {

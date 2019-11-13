@@ -197,14 +197,14 @@ textarea {
     font-family: $roboto;
 }
 
-#subject {
-    height: 150px;
-}
-
 //Definirdu bouton du formulaire
 .--contactbox__button {
     background-color: $orange_1;
     border: none;
+}
+
+#message {
+    height: 150px;
 }
 
 .errorMessage {

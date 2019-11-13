@@ -188,13 +188,13 @@ textarea {
   font-family: "Roboto", bolder;
 }
 
-#subject {
-  height: 150px;
-}
-
 .\--contactbox__button {
   background-color: #ffc252;
   border: none;
+}
+
+#message {
+  height: 150px;
 }
 
 .errorMessage {
