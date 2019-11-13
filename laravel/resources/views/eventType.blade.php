@@ -38,6 +38,12 @@
                     [button signaler]
                     [button supprimer]
                 </div>
+                <div class="public_img">
+                    <img src="../images/party_merica.jpg" alt="party">
+                    <p>Like : [nb_like]</p>
+                    [button signaler]
+                    [button supprimer]
+                </div>
 
             </div>
             <aside>Commentaires :<br>
@@ -45,11 +51,18 @@
                     <div class="comment">
                         [comments]
                     </div>
+                    <div class="comment">
+                        [comments]
+                    </div>
+                    <div class="comment">
+                        [comments]
+                    </div>
 
 
                 </div>
             </aside>
-            <aside>[[user]ajout/supp Like][[user]ajout commentaire][[admin]ajout photo][[admin]editer nom/descr][[user]inscription/désinscription event]</aside>
+            <aside>Pannel event :
+                <br></br>[[user]ajout/supp Like][[user]ajout commentaire][[admin]ajout photo][[admin]editer nom/descr][[user]inscription/désinscription event]</aside>
 
 
 

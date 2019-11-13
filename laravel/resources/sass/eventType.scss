@@ -7,7 +7,7 @@ body {
 
 .comment {
 
-    border: 0.5vw solid #6a6666;
+    border: 0.3vw solid #6a6666;
     margin: 0 10% 5% 10%;
 }
 
@@ -62,12 +62,11 @@ article {
 .picture_gallery img {
     width: $cube_dimension;
     height: $cube_dimension;
-    border: 1px dashed #000000;
 }
 
 .public_img {
-    display: flex;
-    flex-wrap: nowrap;
+    border: 1px dashed #000000;
+
 }
 
 aside {
