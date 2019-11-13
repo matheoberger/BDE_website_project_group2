@@ -38,3 +38,6 @@ Route::get('/CGV', function () {
 Route::get('/mentionsLegales', function () {
     return view('mentionsLegales');
 });
+Route::get('/CGU', function () {
+    return view('mentionsLegales');
+});

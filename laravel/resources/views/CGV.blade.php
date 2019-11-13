@@ -57,8 +57,8 @@
                                     <div class="card-header" id="headingOne">
                                         <h2 class="mb-0">
                                             <button class="btn btn-link" type="button" data-toggle="collapse"
-                                                data-target="#collapseOne" aria-expanded="true"
-                                                aria-controls="collapseOne">
+                                                data-target="#collapseOne" aria-controls="collapseOne"
+                                                aria-expanded="false">
                                                 Définitions
                                             </button>
                                         </h2>
