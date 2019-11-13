@@ -13,6 +13,7 @@
 
 Route::get('/', function () {
 
+
     return view('welcome');
 });
 Route::get('/navbar', function () {
@@ -24,6 +25,10 @@ Route::get('/example', function () {
 Route::get('/event', function () {
     return view('event');
 });
+
 Route::get('/CGV', function () {
     return view('CGV');
+});
+Route::get('/event/type', function () {
+    return view('eventType');
 });
