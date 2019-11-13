@@ -5,14 +5,20 @@
 
 body {
   background: linear-gradient(70deg, #da5d5d, #811d1d);
-  /*background: linear-gradient(70deg, red, rgb(218, 93, 93));*/
   text-align: center;
   background-image: url(/images/party-wallpapers-1.jpg?fa92d7ecb27e5c98aba7f5ebaccbc3b0);
+  -webkit-backdrop-filter: blur(50px);
+          backdrop-filter: blur(50px);
 }
 
-.background-image {
-  -webkit-filter: blur(50px);
-          filter: blur(50px);
+body img {
+  -webkit-filter: blur(4px);
+          filter: blur(4px);
+}
+
+body img:hover {
+  -webkit-filter: blur(0px);
+          filter: blur(0px);
 }
 
 h2 {
@@ -44,6 +50,23 @@ article {
   font-family: "Roboto", sans-serif;
   height: 30vw;
   width: 30vw;
+}
+
+.btTxt_submit {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-box-pack: end;
+          justify-content: flex-end;
+  width: 30vw;
+  height: 30vw;
+  display: block;
+  -webkit-filter: blur(4px);
+          filter: blur(4px);
+}
+
+.btTxt_submit:hover {
+  -webkit-filter: blur(0px);
+          filter: blur(0px);
 }
 
 article img {

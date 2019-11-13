@@ -5,12 +5,16 @@ body {
     background: linear-gradient(70deg, $red, darken($red, 30));
     text-align: center;
     background-image: url("../images/party-wallpapers-1.jpg");
+    backdrop-filter: blur(50px);
 }
 
-.background-image {
-    filter: url(flou.svg);
-}
+body img {
+    filter: blur(4px);
 
+    &:hover {
+        filter: blur(0px);
+    }
+}
 
 
 
@@ -49,15 +53,28 @@ article {
     width: $cube_dimension;
 }
 
+.btTxt_submit {
+    object-fit: cover;
+    justify-content: flex-end;
+    width: $cube_dimension;
+    height: $cube_dimension;
+    display: block;
+
+    filter: blur(4px);
+
+    &:hover {
+        filter: blur(0px);
+    }
+
+}
+
 article img {
     object-fit: cover;
     justify-content: flex-end;
-
-
     width: $cube_dimension;
     height: $cube_dimension;
+    display: block;
 
-    display: block
 }
 
 aside {

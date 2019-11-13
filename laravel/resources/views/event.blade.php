@@ -10,7 +10,7 @@
   </head>
   <body>
 
-@include('headerHandler')
+@include('headerHandler');
 <main>
 
     <div>
@@ -20,7 +20,7 @@
 
         <section>
             <article>
-                <img src="../images/party_merica.jpg" alt="merica">
+            <input type="image" src="../images/party_merica.jpg" name="saveForm" class="btTxt_submit" id="saveForm" />
             </article>
             <div class="event_description">
                 <aside>Nom et description de l'évènement</aside>
