@@ -19291,6 +19291,17 @@ window.axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
 
 /***/ }),
 
+/***/ "./resources/sass/event.type.scss":
+/*!****************************************!*\
+  !*** ./resources/sass/event.type.scss ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "./resources/sass/header.scss":
 /*!************************************!*\
   !*** ./resources/sass/header.scss ***!
@@ -19325,9 +19336,9 @@ window.axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
 /***/ }),
 
 /***/ 0:
-/*!********************************************************************************************************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/header.scss ./resources/sass/sidebar.scss ./resources/sass/event.scss ./resources/sass/index.scss ***!
-  \********************************************************************************************************************************************************************************/
+/*!*****************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/header.scss ./resources/sass/sidebar.scss ./resources/sass/event.scss ./resources/sass/index.scss ./resources/sass/event.type.scss ***!
+  \*****************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -19336,7 +19347,8 @@ __webpack_require__(/*! C:\Users\Cthulhu\Documents\Programmation\Laravel\laravel
 __webpack_require__(/*! C:\Users\Cthulhu\Documents\Programmation\Laravel\laravel\resources\sass\header.scss */"./resources/sass/header.scss");
 __webpack_require__(/*! C:\Users\Cthulhu\Documents\Programmation\Laravel\laravel\resources\sass\sidebar.scss */"./resources/sass/sidebar.scss");
 __webpack_require__(/*! C:\Users\Cthulhu\Documents\Programmation\Laravel\laravel\resources\sass\event.scss */"./resources/sass/event.scss");
-module.exports = __webpack_require__(/*! C:\Users\Cthulhu\Documents\Programmation\Laravel\laravel\resources\sass\index.scss */"./resources/sass/index.scss");
+__webpack_require__(/*! C:\Users\Cthulhu\Documents\Programmation\Laravel\laravel\resources\sass\index.scss */"./resources/sass/index.scss");
+module.exports = __webpack_require__(/*! C:\Users\Cthulhu\Documents\Programmation\Laravel\laravel\resources\sass\event.type.scss */"./resources/sass/event.type.scss");
 
 
 /***/ })

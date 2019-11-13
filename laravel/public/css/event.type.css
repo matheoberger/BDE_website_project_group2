@@ -11,15 +11,13 @@ body {
 }
 
 body img {
-  -webkit-filter: blur(0px);
-          filter: blur(0px);
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
+  -webkit-filter: blur(4px);
+          filter: blur(4px);
 }
 
 body img:hover {
-  -webkit-filter: blur(4px);
-          filter: blur(4px);
+  -webkit-filter: blur(0px);
+          filter: blur(0px);
 }
 
 h2 {
@@ -61,15 +59,13 @@ article {
   width: 30vw;
   height: 30vw;
   display: block;
-  -webkit-filter: blur(0px);
-          filter: blur(0px);
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
+  -webkit-filter: blur(4px);
+          filter: blur(4px);
 }
 
 .btTxt_submit:hover {
-  -webkit-filter: blur(4px);
-          filter: blur(4px);
+  -webkit-filter: blur(0px);
+          filter: blur(0px);
 }
 
 article img {
@@ -90,8 +86,6 @@ aside {
   overflow: auto;
   padding: bottom;
   background-color: #5d89DA;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
   font-size: 2vw;
 }
 
