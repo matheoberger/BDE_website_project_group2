@@ -1,0 +1,111 @@
+@import "./responsive.scss";
+
+
+body {
+    background: linear-gradient(70deg, $red, darken($red, 30));
+    text-align: center;
+    background-image: url("../images/party-wallpapers-1.jpg");
+    ;
+    //   -webkit-filter: blur(50px);
+    /* Safari 6.0 - 9.0 */
+    //    filter: grayscale(100%);
+}
+
+body img {
+    filter: blur(4px);
+
+
+    &:hover {
+        filter: blur(0px);
+    }
+}
+
+
+
+h2 {
+    font-family: $roboto;
+    text-align: center;
+    font-size: 5vw;
+
+}
+
+.conteneur {
+
+    background: linear-gradient(70deg, $grey_1, darken($grey_1, 30));
+    margin: $px_2;
+    display: inline-block;
+    flex-wrap: wrap;
+    text-align: center;
+    font-family: $roboto;
+    justify-content: center;
+}
+
+
+
+section {
+    margin: $px_20;
+    display: flex;
+    flex-wrap: nowrap;
+    font-family: $roboto;
+
+}
+
+
+article {
+    font-family: $roboto;
+    height: $cube_dimension;
+    width: $cube_dimension;
+}
+
+.btTxt_submit {
+    object-fit: cover;
+    justify-content: flex-end;
+    width: $cube_dimension;
+    height: $cube_dimension;
+    display: block;
+
+    filter: blur(4px);
+
+    &:hover {
+        filter: blur(0px);
+    }
+
+}
+
+article img {
+    object-fit: cover;
+    justify-content: flex-end;
+    width: $cube_dimension;
+    height: $cube_dimension;
+    display: block;
+
+}
+
+aside {
+    margin: $px_2;
+    font-family: 'Roboto', italic;
+    height: $cube_dimension;
+    width: $cube_dimension;
+    overflow: auto;
+
+    padding: bottom;
+
+    background-color: $blue_1;
+
+    &:hover {
+        background-color: darken($red, 10)
+    }
+
+    font-size: 2vw;
+
+}
+
+.event_description {
+    display: inline-block;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+
+    margin: -2px 0 0 -2px;
+
+
+}
