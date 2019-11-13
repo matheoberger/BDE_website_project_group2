@@ -4,79 +4,47 @@
     <title>Event Type</title>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="/css/eventType.css" />
+    <link rel="stylesheet" href="/css/header.css" />
+
 
 <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 
   </head>
   <body>
 
-@include('headerHandler');
+  @include('partials/header')
+
 <main>
 
     <div>
-        <h2> <u>Les évènements</u></h2>
+        <h2>[Nom de l'event]</h2>
     </div>
     <div class="conteneur">
 
         <section>
             <article>
-            <input type="image" src="../images/party_merica.jpg" name="saveForm" class="btTxt_submit" id="saveForm" />
+                <h3>[Titre event]</h3>
+                <p>[Description de l'event]</p>
             </article>
-            <div class="event_description">
-                <aside>Nom et description de l'évènement</aside>
+            <div class="picture_gallery">Galerie de photos de l'event<br>
+                Mettre les photos au même forma à la suite, respecter le responsive et mettre en dessous de chaque photos:<br>
+                -[user] Button like<br>
+                -[modo] Button signaler<br>
+                -[Admin] Button supprimer<br></br>
+                [imgs]
             </div>
-        </section>
+            <aside>Commentaires :
+                <div class="comments">
+                    [comments]
+                </div>
+            </aside>
+            <aside>[[user]ajout/supp Like][[user]ajout commentaire][[admin]ajout photo][[admin]editer nom/descr][[user]inscription/désinscription event]</aside>
 
 
-        <section>
-            <article>
-                <img src="../images/party.jpg" alt="party">
-            </article>
-            <div class="event_description">
-                <aside>Nom et description de l'évènement</aside>
-            </div>
-        </section>
-        <section>
-            <article>Photo + Bouton
-            </article>
-            <div class="event_description">
-                <aside>Nom et description de l'évènement</aside>
-            </div>
+
         </section>
 
-        <section>
-            <article>Photo + Bouton
-            </article>
-            <div class="event_description">
-                <aside>Nom et description de l'évènement</aside>
-            </div>
-        </section>
-
-        <section>
-            <article>Photo + Bouton
-            </article>
-            <div class="event_description">
-                <aside>Nom et description de l'évènement</aside>
-            </div>
-        </section>
-
-        <section>
-            <article>Photo + Bouton
-            </article>
-            <div class="event_description">
-                <aside>Nom et description de l'évènement</aside>
-            </div>
-        </section>
-
-        <section>
-            <article>Photo + Bouton
-            </article>
-            <div class="event_description">
-                <aside>Nom et description de l'évènement</aside>
-            </div>
-        </section>
-
-</div>
+    </div>
 
 </main>
   </body>

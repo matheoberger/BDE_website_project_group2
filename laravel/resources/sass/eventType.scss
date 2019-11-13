@@ -2,70 +2,50 @@
 
 
 body {
-    background: linear-gradient(70deg, $red, darken($red, 30));
-
+    background: linear-gradient(70deg, $red, darken($blue_1, 20));
 }
 
+main {
+    text-align: center;
+}
 
 h2 {
     font-family: $roboto;
     text-align: center;
     font-size: 5vw;
+}
+
+h3 {
+    font-family: $roboto;
 
 }
 
 .conteneur {
 
     background: linear-gradient(70deg, $grey_1, darken($grey_1, 30));
-    margin: $px_2;
-    display: inline-block;
+    display: flex;
     flex-wrap: wrap;
-    text-align: center;
     font-family: $roboto;
-    justify-content: center;
 }
-
-
 
 section {
     margin: $px_20;
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     font-family: $roboto;
-
+    justify-content: center;
 }
-
 
 article {
     font-family: $roboto;
-    height: $cube_dimension;
-    width: $cube_dimension;
 }
 
-.btTxt_submit {
+.picture_gallery img {
     object-fit: cover;
     justify-content: flex-end;
     width: $cube_dimension;
     height: $cube_dimension;
     display: block;
-
-    filter: blur(0px);
-    transition: 0.5s;
-
-    &:hover {
-
-        filter: blur(4px);
-    }
-
-}
-
-article img {
-    object-fit: cover;
-    justify-content: flex-end;
-    width: $cube_dimension;
-    height: $cube_dimension;
-    display: block;
-
 }
 
 aside {
@@ -74,26 +54,14 @@ aside {
     height: $cube_dimension;
     width: $cube_dimension;
     overflow: auto;
-
     padding: bottom;
-
     background-color: $blue_1;
-    transition: 0.5s;
+    transition: 0.2s;
 
     &:hover {
-        background-color: darken($red, 10)
+        background-color: darken($red, 10);
+
     }
 
     font-size: 2vw;
-
-}
-
-.event_description {
-    display: inline-block;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-
-    margin: -2px 0 0 -2px;
-
-
 }

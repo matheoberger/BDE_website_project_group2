@@ -4,7 +4,11 @@
 }
 
 body {
-  background: linear-gradient(70deg, #da5d5d, #811d1d);
+  background: linear-gradient(70deg, #da5d5d, #2755aa);
+}
+
+main {
+  text-align: center;
 }
 
 h2 {
@@ -13,51 +17,33 @@ h2 {
   font-size: 5vw;
 }
 
+h3 {
+  font-family: "Roboto", sans-serif;
+}
+
 .conteneur {
   background: linear-gradient(70deg, #9d9f9d, #515251);
-  margin: 2px 2px 2px 2px;
-  display: inline-block;
+  display: -webkit-box;
+  display: flex;
   flex-wrap: wrap;
-  text-align: center;
   font-family: "Roboto", sans-serif;
-  -webkit-box-pack: center;
-          justify-content: center;
 }
 
 section {
   margin: 20px 20px 20px 20px;
   display: -webkit-box;
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   font-family: "Roboto", sans-serif;
+  -webkit-box-pack: center;
+          justify-content: center;
 }
 
 article {
   font-family: "Roboto", sans-serif;
-  height: 30vw;
-  width: 30vw;
 }
 
-.btTxt_submit {
-  -o-object-fit: cover;
-     object-fit: cover;
-  -webkit-box-pack: end;
-          justify-content: flex-end;
-  width: 30vw;
-  height: 30vw;
-  display: block;
-  -webkit-filter: blur(0px);
-          filter: blur(0px);
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-}
-
-.btTxt_submit:hover {
-  -webkit-filter: blur(4px);
-          filter: blur(4px);
-}
-
-article img {
+.picture_gallery img {
   -o-object-fit: cover;
      object-fit: cover;
   -webkit-box-pack: end;
@@ -74,21 +60,13 @@ aside {
   width: 30vw;
   overflow: auto;
   padding: bottom;
-  background-color: #5d89DA;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
+  background-color: #5d89da;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
   font-size: 2vw;
 }
 
 aside:hover {
   background-color: #d13333;
-}
-
-.event_description {
-  display: inline-block;
-  flex-wrap: wrap;
-  -webkit-box-pack: end;
-          justify-content: flex-end;
-  margin: -2px 0 0 -2px;
 }
 
