@@ -77,11 +77,11 @@
                                 <label for="email">Email :</label>
                                 <input type="text" id="email" name="email" placeholder=" Entrez votre adresse E-mail" required="required">
                                 <!-- Champ Objet -->
-                                <label for="object">Objet (min 10 caractères) :</label>
-                                <input type="text" id="object" name="object" placeholder=" Entrez l'objet de votre message" required="required" ">
+                                <label for="subject">Objet (min 10 caractères) :</label>
+                                <input type="text" id="subject" name="subject" placeholder=" Entrez l'objet de votre message" required="required" ">
                                 <!-- Champ Texte -->
-                                <label for=" subject">Message (min 50 caractères) :</label>
-                                <textarea id="subject" name="subject" placeholder=" Ecrivez votre message..." required="required"></textarea>
+                                <label for=" message">Message (min 50 caractères) :</label>
+                                <textarea id="message" name="message" placeholder=" Ecrivez votre message..." required="required"></textarea>
                                 <?php if (isset($_POST['error'])) {
                                     echo "<p class='errorMessage'>" . "mdp incorect" . "</p>";
                                 };

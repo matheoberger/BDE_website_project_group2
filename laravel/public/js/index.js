@@ -94,8 +94,7 @@
 /***/ (function(module, exports) {
 
 window.verifForm = function (form) {
-  /*
-  if (
+  /*  if (
       verifMail(form.email) &&
       verifObject(form.object) &&
       verifText(form.subject)
@@ -104,8 +103,7 @@ window.verifForm = function (form) {
   else {
       alert("Veuillez remplir correctement tous les champs");
       return false;
-  }
-  */
+  }*/
 };
 
 window.verifMail = function (champ) {

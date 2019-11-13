@@ -1,4 +1,5 @@
 <?php
+/*
 if (isset($_POST['email']) && isset($_POST['object']) && isset($_POST['subject'])) {
     $color = "red";
     if (PHPverifSubject($_POST['subject'])) $message = "Champ message trop court";
@@ -48,7 +49,7 @@ function PHPverifSubject($subject)
     } else { }
 }
 
-
+*/
 
 ?>
 
@@ -94,17 +95,18 @@ function PHPverifSubject($subject)
                                                                                                                                                 echo "value='" . $_POST['email'] . "'";
                                                                                                                                             }; ?>>
                                 <!-- Champ Objet -->
-                                <label for="object">Objet (min 10 caractères) :</label>
-                                <input type="text" id="object" name="object" placeholder=" Entrez l'objet de votre message" required="required" <?php if (isset($_POST['object'])) {
-                                                                                                                                                    echo "value='" . $_POST['object'] . "'";
-                                                                                                                                                }; ?>>
+                                <label for="subject">Objet (5 - 50 caractères) :</label>
+                                <input type="text" id="subject" name="subject" placeholder=" Entrez l'objet de votre message" required="required" <?php if (isset($_POST['subject'])) {
+                                                                                                                                                        echo "value='" . $_POST['subject'] . "'";
+                                                                                                                                                    }; ?>>
                                 <!-- Champ Texte -->
-                                <label for="subject">Message (min 50 caractères) :</label>
-                                <textarea id="subject" name="subject" placeholder=" Ecrivez votre message..." required="required"><?php if (isset($_POST['subject'])) {
-                                                                                                                                        echo $_POST['subject'];
+                                <label for="message">Message (min 50 caractères) :</label>
+                                <textarea id="message" name="message" placeholder=" Ecrivez votre message..." required="required"><?php if (isset($_POST['message'])) {
+                                                                                                                                        echo $_POST['message'];
                                                                                                                                     }; ?></textarea>
-                                <?php if (isset($message) && isset($color)) {
-                                    echo "<p class='errorMessage' style='color:$color'>" . $message . "</p>";
+                                <?php if (isset($error) && isset($color)) {
+
+                                    echo "<p class='errorMessage' style='color:$color'>" . $error . "</p>";
                                 };
                                 ?>
                                 <!-- Bouton envoyer -->
