@@ -19,10 +19,10 @@
     <main>
         @include("partials/navbar")
             <div class="contenu">
-                
+                a
                 @include("partials/footer")
             </div>
-            
+
         </div>
 
     </main>

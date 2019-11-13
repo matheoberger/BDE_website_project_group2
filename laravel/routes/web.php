@@ -12,16 +12,26 @@
 */
 
 Route::get('/', function () {
-
-
-    return view('welcome');
+    return view('index');
 });
+
+Route::get('/contactForm', 'contactController@getContact');
+Route::post('/contactForm', 'contactController@postContact');
+
+Route::get('/register', 'registerController@gethtml');
+Route::get('/login', 'loginController@gethtml');
+/*Route::get('/header', function () {
+    return view('header');
+});
+
+*/
 Route::get('/navbar', function () {
     return view('navbar');
 });
 Route::get('/example', function () {
     return view('example');
 });
+
 Route::get('/event', function () {
     return view('event');
 });
