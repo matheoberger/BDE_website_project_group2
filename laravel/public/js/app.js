@@ -19287,7 +19287,18 @@ window.axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed (from ./node_modules/css-loader/index.js):\nModuleBuildError: Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\n\r\n>>>>>>> origin/remi_laravelTemplate_v1\r\n                                     ^\r\n      Expected \"{\".\n   ╷\n25 │ >>>>>>> origin/remi_laravelTemplate_v1\r\n   │                                       ^\n   ╵\n  stdin 25:39  root stylesheet\r\n      in D:\\Multimedia\\Desktop\\EXIA\\A2\\Projet\\WEB\\BDE_website_project_group2\\laravel\\resources\\sass\\app.scss (line 25, column 39)\n    at D:\\Multimedia\\Desktop\\EXIA\\A2\\Projet\\WEB\\BDE_website_project_group2\\laravel\\node_modules\\webpack\\lib\\NormalModule.js:316:20\n    at D:\\Multimedia\\Desktop\\EXIA\\A2\\Projet\\WEB\\BDE_website_project_group2\\laravel\\node_modules\\loader-runner\\lib\\LoaderRunner.js:367:11\n    at D:\\Multimedia\\Desktop\\EXIA\\A2\\Projet\\WEB\\BDE_website_project_group2\\laravel\\node_modules\\loader-runner\\lib\\LoaderRunner.js:233:18\n    at context.callback (D:\\Multimedia\\Desktop\\EXIA\\A2\\Projet\\WEB\\BDE_website_project_group2\\laravel\\node_modules\\loader-runner\\lib\\LoaderRunner.js:111:13)\n    at D:\\Multimedia\\Desktop\\EXIA\\A2\\Projet\\WEB\\BDE_website_project_group2\\laravel\\node_modules\\sass-loader\\dist\\index.js:89:7\n    at Function.call$2 (D:\\Multimedia\\Desktop\\EXIA\\A2\\Projet\\WEB\\BDE_website_project_group2\\laravel\\node_modules\\sass\\sass.dart.js:54311:16)\n    at _render_closure1.call$2 (D:\\Multimedia\\Desktop\\EXIA\\A2\\Projet\\WEB\\BDE_website_project_group2\\laravel\\node_modules\\sass\\sass.dart.js:33509:12)\n    at _RootZone.runBinary$3$3 (D:\\Multimedia\\Desktop\\EXIA\\A2\\Projet\\WEB\\BDE_website_project_group2\\laravel\\node_modules\\sass\\sass.dart.js:19817:18)\n    at _RootZone.runBinary$3 (D:\\Multimedia\\Desktop\\EXIA\\A2\\Projet\\WEB\\BDE_website_project_group2\\laravel\\node_modules\\sass\\sass.dart.js:19821:19)\n    at _FutureListener.handleError$1 (D:\\Multimedia\\Desktop\\EXIA\\A2\\Projet\\WEB\\BDE_website_project_group2\\laravel\\node_modules\\sass\\sass.dart.js:18286:19)\n    at _Future__propagateToListeners_handleError.call$0 (D:\\Multimedia\\Desktop\\EXIA\\A2\\Projet\\WEB\\BDE_website_project_group2\\laravel\\node_modules\\sass\\sass.dart.js:18574:40)\n    at Object._Future__propagateToListeners (D:\\Multimedia\\Desktop\\EXIA\\A2\\Projet\\WEB\\BDE_website_project_group2\\laravel\\node_modules\\sass\\sass.dart.js:3484:88)\n    at _Future._completeError$2 (D:\\Multimedia\\Desktop\\EXIA\\A2\\Projet\\WEB\\BDE_website_project_group2\\laravel\\node_modules\\sass\\sass.dart.js:18410:9)\n    at _AsyncAwaitCompleter.completeError$2 (D:\\Multimedia\\Desktop\\EXIA\\A2\\Projet\\WEB\\BDE_website_project_group2\\laravel\\node_modules\\sass\\sass.dart.js:17809:12)\n    at Object._asyncRethrow (D:\\Multimedia\\Desktop\\EXIA\\A2\\Projet\\WEB\\BDE_website_project_group2\\laravel\\node_modules\\sass\\sass.dart.js:3240:17)\n    at D:\\Multimedia\\Desktop\\EXIA\\A2\\Projet\\WEB\\BDE_website_project_group2\\laravel\\node_modules\\sass\\sass.dart.js:10538:20\n    at _wrapJsFunctionForAsync_closure.$protected (D:\\Multimedia\\Desktop\\EXIA\\A2\\Projet\\WEB\\BDE_website_project_group2\\laravel\\node_modules\\sass\\sass.dart.js:3263:15)\n    at _wrapJsFunctionForAsync_closure.call$2 (D:\\Multimedia\\Desktop\\EXIA\\A2\\Projet\\WEB\\BDE_website_project_group2\\laravel\\node_modules\\sass\\sass.dart.js:17830:12)\n    at _awaitOnObject_closure0.call$2 (D:\\Multimedia\\Desktop\\EXIA\\A2\\Projet\\WEB\\BDE_website_project_group2\\laravel\\node_modules\\sass\\sass.dart.js:17822:25)\n    at _RootZone.runBinary$3$3 (D:\\Multimedia\\Desktop\\EXIA\\A2\\Projet\\WEB\\BDE_website_project_group2\\laravel\\node_modules\\sass\\sass.dart.js:19817:18)\n    at _RootZone.runBinary$3 (D:\\Multimedia\\Desktop\\EXIA\\A2\\Projet\\WEB\\BDE_website_project_group2\\laravel\\node_modules\\sass\\sass.dart.js:19821:19)\n    at _FutureListener.handleError$1 (D:\\Multimedia\\Desktop\\EXIA\\A2\\Projet\\WEB\\BDE_website_project_group2\\laravel\\node_modules\\sass\\sass.dart.js:18286:19)\n    at _Future__propagateToListeners_handleError.call$0 (D:\\Multimedia\\Desktop\\EXIA\\A2\\Projet\\WEB\\BDE_website_project_group2\\laravel\\node_modules\\sass\\sass.dart.js:18574:40)\n    at Object._Future__propagateToListeners (D:\\Multimedia\\Desktop\\EXIA\\A2\\Projet\\WEB\\BDE_website_project_group2\\laravel\\node_modules\\sass\\sass.dart.js:3484:88)\n    at _Future._completeError$2 (D:\\Multimedia\\Desktop\\EXIA\\A2\\Projet\\WEB\\BDE_website_project_group2\\laravel\\node_modules\\sass\\sass.dart.js:18410:9)\n    at _Future__asyncCompleteError_closure.call$0 (D:\\Multimedia\\Desktop\\EXIA\\A2\\Projet\\WEB\\BDE_website_project_group2\\laravel\\node_modules\\sass\\sass.dart.js:18500:18)\n    at Object._microtaskLoop (D:\\Multimedia\\Desktop\\EXIA\\A2\\Projet\\WEB\\BDE_website_project_group2\\laravel\\node_modules\\sass\\sass.dart.js:3534:21)\n    at StaticClosure._startMicrotaskLoop (D:\\Multimedia\\Desktop\\EXIA\\A2\\Projet\\WEB\\BDE_website_project_group2\\laravel\\node_modules\\sass\\sass.dart.js:3540:11)\n    at _AsyncRun__scheduleImmediateJsOverride_internalCallback.call$0 (D:\\Multimedia\\Desktop\\EXIA\\A2\\Projet\\WEB\\BDE_website_project_group2\\laravel\\node_modules\\sass\\sass.dart.js:17731:21)\n    at invokeClosure (D:\\Multimedia\\Desktop\\EXIA\\A2\\Projet\\WEB\\BDE_website_project_group2\\laravel\\node_modules\\sass\\sass.dart.js:1358:26)\n    at Immediate.<anonymous> (D:\\Multimedia\\Desktop\\EXIA\\A2\\Projet\\WEB\\BDE_website_project_group2\\laravel\\node_modules\\sass\\sass.dart.js:1379:18)\n    at processImmediate (internal/timers.js:439:21)");
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./resources/sass/breadcrumb.scss":
+/*!****************************************!*\
+  !*** ./resources/sass/breadcrumb.scss ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ }),
 
@@ -19324,10 +19335,32 @@ throw new Error("Module build failed (from ./node_modules/css-loader/index.js):\
 
 /***/ }),
 
+/***/ "./resources/sass/mentionsLegales.scss":
+/*!*********************************************!*\
+  !*** ./resources/sass/mentionsLegales.scss ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "./resources/sass/navbar.scss":
 /*!************************************!*\
   !*** ./resources/sass/navbar.scss ***!
   \************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./resources/sass/responsive.scss":
+/*!****************************************!*\
+  !*** ./resources/sass/responsive.scss ***!
+  \****************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -19347,9 +19380,9 @@ throw new Error("Module build failed (from ./node_modules/css-loader/index.js):\
 /***/ }),
 
 /***/ 0:
-/*!****************************************************************************************************************************************************************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/header.scss ./resources/sass/navbar.scss ./resources/sass/sidebar.scss ./resources/sass/event.scss ./resources/sass/footer.scss ./resources/sass/CGV.scss ***!
-  \****************************************************************************************************************************************************************************************************************************************/
+/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/header.scss ./resources/sass/navbar.scss ./resources/sass/sidebar.scss ./resources/sass/event.scss ./resources/sass/footer.scss ./resources/sass/responsive.scss ./resources/sass/mentionsLegales.scss ./resources/sass/breadcrumb.scss ./resources/sass/CGV.scss ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -19360,6 +19393,9 @@ __webpack_require__(/*! D:\Multimedia\Desktop\EXIA\A2\Projet\WEB\BDE_website_pro
 __webpack_require__(/*! D:\Multimedia\Desktop\EXIA\A2\Projet\WEB\BDE_website_project_group2\laravel\resources\sass\sidebar.scss */"./resources/sass/sidebar.scss");
 __webpack_require__(/*! D:\Multimedia\Desktop\EXIA\A2\Projet\WEB\BDE_website_project_group2\laravel\resources\sass\event.scss */"./resources/sass/event.scss");
 __webpack_require__(/*! D:\Multimedia\Desktop\EXIA\A2\Projet\WEB\BDE_website_project_group2\laravel\resources\sass\footer.scss */"./resources/sass/footer.scss");
+__webpack_require__(/*! D:\Multimedia\Desktop\EXIA\A2\Projet\WEB\BDE_website_project_group2\laravel\resources\sass\responsive.scss */"./resources/sass/responsive.scss");
+__webpack_require__(/*! D:\Multimedia\Desktop\EXIA\A2\Projet\WEB\BDE_website_project_group2\laravel\resources\sass\mentionsLegales.scss */"./resources/sass/mentionsLegales.scss");
+__webpack_require__(/*! D:\Multimedia\Desktop\EXIA\A2\Projet\WEB\BDE_website_project_group2\laravel\resources\sass\breadcrumb.scss */"./resources/sass/breadcrumb.scss");
 module.exports = __webpack_require__(/*! D:\Multimedia\Desktop\EXIA\A2\Projet\WEB\BDE_website_project_group2\laravel\resources\sass\CGV.scss */"./resources/sass/CGV.scss");
 
 

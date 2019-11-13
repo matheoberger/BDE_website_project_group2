@@ -12,14 +12,13 @@
 */
 
 Route::get('/', function () {
-
-
-    return view('welcome');
+    return view('index');
 });
 /*Route::get('/header', function () {
     return view('header');
 });
-*/Route::get('/navbar', function () {
+*/
+Route::get('/navbar', function () {
     return view('navbar');
 });/*
 Route::get('/footer', function () {
@@ -35,4 +34,7 @@ Route::get('/event', function () {
 });
 Route::get('/CGV', function () {
     return view('CGV');
+});
+Route::get('/mentionsLegales', function () {
+    return view('mentionsLegales');
 });
