@@ -7,6 +7,11 @@ body {
   background: linear-gradient(70deg, #da5d5d, #2755aa);
 }
 
+.comment {
+  border: 0.5vw solid #6a6666;
+  margin: 0 10% 5% 10%;
+}
+
 main {
   text-align: center;
 }
@@ -19,6 +24,11 @@ h2 {
 
 h3 {
   font-family: "Roboto", sans-serif;
+  font-size: 3vw;
+}
+
+p {
+  font-size: 2vw;
 }
 
 .conteneur {
@@ -37,20 +47,28 @@ section {
   font-family: "Roboto", sans-serif;
   -webkit-box-pack: center;
           justify-content: center;
+  border: 1px dashed #000000;
 }
 
 article {
   font-family: "Roboto", sans-serif;
+  border: 1px dashed #000000;
+}
+
+.picture_gallery {
+  border: 1px dashed #000000;
 }
 
 .picture_gallery img {
-  -o-object-fit: cover;
-     object-fit: cover;
-  -webkit-box-pack: end;
-          justify-content: flex-end;
   width: 30vw;
   height: 30vw;
-  display: block;
+  border: 1px dashed #000000;
+}
+
+.public_img {
+  display: -webkit-box;
+  display: flex;
+  flex-wrap: nowrap;
 }
 
 aside {

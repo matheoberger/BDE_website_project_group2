@@ -32,10 +32,21 @@
                 -[modo] Button signaler<br>
                 -[Admin] Button supprimer<br></br>
                 [imgs]
+                <div class="public_img">
+                    <img src="../images/party.jpg" alt="party">
+                    <p>Like : [nb_like]</p>
+                    [button signaler]
+                    [button supprimer]
+                </div>
+
             </div>
-            <aside>Commentaires :
+            <aside>Commentaires :<br>
                 <div class="comments">
-                    [comments]
+                    <div class="comment">
+                        [comments]
+                    </div>
+
+
                 </div>
             </aside>
             <aside>[[user]ajout/supp Like][[user]ajout commentaire][[admin]ajout photo][[admin]editer nom/descr][[user]inscription/désinscription event]</aside>
