@@ -7,21 +7,11 @@ html {
   height: 100%;
 }
 
-body {
+.contenu {
   background-color: #757575;
-  display: -webkit-box;
-  display: flex;
-  flex-wrap: wrap;
-  -webkit-box-pack: center;
-          justify-content: center;
-  align-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-          flex-direction: column;
-  height: 100%;
 }
 
-main {
+section {
   display: -webkit-box;
   display: flex;
   flex-wrap: wrap;
@@ -34,6 +24,8 @@ main {
   border: ridge 2px #ffc252;
   background-color: black;
   padding: 20px;
+  margin: 100px;
+  height: 100%;
 }
 
 .formTitle {
@@ -84,5 +76,45 @@ form label {
   background-position: left bottom;
   -webkit-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out;
+}
+
+.errorMessage {
+  text-align: center;
+  width: 100%;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-family: "Roboto", bolder;
+}
+
+.footer--desktop {
+  width: 100%;
+}
+
+@media (max-width: 800px) {
+  main {
+    height: 100%;
+  }
+
+  .formTitle {
+    font-size: large;
+  }
+
+  form input,
+  textarea {
+    width: 100%;
+  }
+
+  form label {
+    width: 100%;
+  }
+
+  section {
+    margin: 0px;
+    height: 80%;
+  }
+
+  .footer--desktop {
+    margin-top: 0px;
+  }
 }
 

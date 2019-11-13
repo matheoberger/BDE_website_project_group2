@@ -2,17 +2,12 @@
 html {
     height: 100%;
 }
-body {
+
+.contenu {
     background-color: $grey_2;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
-    flex-direction: column;
-    height: 100%;
 }
 
-main {
+section {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -21,6 +16,8 @@ main {
     border: ridge 2px $orange_1;
     background-color: black;
     padding: 20px;
+    margin: 100px;
+    height: 100%;
 }
 .formTitle {
     font-family: $roboto;
@@ -64,4 +61,42 @@ form label {
 .submit_button:hover {
     background-position: left bottom;
     transition: all 0.5s ease-out;
+}
+
+.errorMessage {
+    text-align: center;
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-family: $roboto;
+}
+
+.footer--desktop {
+    width: 100%;
+}
+
+@media (max-width: 800px) {
+    main {
+        height: 100%;
+    }
+    .formTitle {
+        font-size: large;
+    }
+    form input,
+    textarea {
+        width: 100%;
+    }
+
+    form label {
+        width: 100%;
+    }
+
+    section {
+        margin: 0px;
+        height: 80%;
+    }
+
+    .footer--desktop {
+        margin-top: 0px;
+    }
 }
