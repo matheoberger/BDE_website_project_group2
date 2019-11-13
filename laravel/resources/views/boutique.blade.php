@@ -32,6 +32,8 @@
                 
                 @include("partials/shopCarousel")
                 </div>
+                <div class=products>
+                </div>
             </div>
                 @include("partials/footer")
             </div>
@@ -39,6 +41,7 @@
         
 
     </main>
+    <script src="js/products.js"></script>
 </body>
 
 </html>
