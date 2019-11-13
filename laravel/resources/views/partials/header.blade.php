@@ -1,7 +1,8 @@
 <header class="header">
     <nav class="customNavbar customNavbar--desktop">
-        <a>
-            <img src="https://www.cesi.fr/wp-content/uploads/2018/09/cesi-logo.png" class="customNavbar customNavbar__logo" />
+        <a href="https://www.cesi.fr">
+            <img src="https://www.cesi.fr/wp-content/uploads/2018/09/cesi-logo.png"
+                class="customNavbar customNavbar__logo" />
         </a>
         <h1>BDE CESI BORDEAUX</h1>
         <div class="customNavbar customNavbar--right">

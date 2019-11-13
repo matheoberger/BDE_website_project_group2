@@ -28,20 +28,20 @@ nav.sidebar--mobile {
   display: none;
 }
 
-nav.sidebar a {
+nav.sidebar .link {
   border-bottom: 1px solid white;
   padding: 15px;
   position: relative;
 }
 
-nav.sidebar a:hover {
+nav.sidebar .link:hover {
   border-bottom: 1px solid white;
   padding: 15px;
   position: relative;
   color: #ffc252;
 }
 
-nav.sidebar a::before {
+nav.sidebar .link::before {
   content: "";
   width: 100%;
   position: absolute;
@@ -57,7 +57,7 @@ nav.sidebar a::before {
           transform-origin: bottom left;
 }
 
-nav.sidebar a:hover::before {
+nav.sidebar .link:hover::before {
   -webkit-transform: scaleX(1);
           transform: scaleX(1);
   background-color: #ffc252;

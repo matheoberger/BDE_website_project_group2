@@ -16,18 +16,18 @@ nav.sidebar--desktop {
 nav.sidebar--mobile {
     display: none;
 }
-nav.sidebar a {
+nav.sidebar .link {
     border-bottom: 1px solid white;
     padding: 15px;
     position: relative;
 }
-nav.sidebar a:hover {
+nav.sidebar .link:hover {
     border-bottom: 1px solid white;
     padding: 15px;
     position: relative;
     color: $orange_1;
 }
-nav.sidebar a::before {
+nav.sidebar .link::before {
     content: "";
     width: 100%;
     position: absolute;
@@ -39,7 +39,7 @@ nav.sidebar a::before {
     transform: scaleX(0);
     transform-origin: bottom left;
 }
-nav.sidebar a:hover::before {
+nav.sidebar .link:hover::before {
     transform: scaleX(1);
     background-color: $orange_1;
 }

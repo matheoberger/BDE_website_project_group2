@@ -20,7 +20,7 @@
         @include("partials/navbar")
         <div class="conteneur">
             <div class="contenu">
-                <h1>Conditions générales d'utilisation</h1>
+                <h1>Conditions générales d'utilisation des cookies</h1>
             </div>
             @include("partials/footer")
         </div>

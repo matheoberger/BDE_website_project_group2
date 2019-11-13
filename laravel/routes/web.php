@@ -39,5 +39,11 @@ Route::get('/mentionsLegales', function () {
     return view('mentionsLegales');
 });
 Route::get('/CGU', function () {
-    return view('mentionsLegales');
+    return view('CGU');
+});
+Route::get('/CGcookies', function () {
+    return view('CGcookies');
+});
+Route::get('/CGRDP', function () {
+    return view('CGRDP');
 });
