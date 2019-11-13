@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto&display=swap);@font-face {
+@import url(https://fonts.googleapis.com/css?family=Roboto&display=swap%22);@font-face {
   font-family: "Lemon/Milk";
   src: url("/fonts/LemonMilk/LemonMilk.otf") format("truetype");
 }
@@ -74,7 +74,7 @@ aside {
   width: 30vw;
   overflow: auto;
   padding: bottom;
-  background-color: #5d89DA;
+  background-color: #5d89da;
   -webkit-transition: 0.5s;
   transition: 0.5s;
   font-size: 2vw;
