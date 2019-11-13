@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Event type</title>
+    <title>Event Type</title>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="css/event.css" />
+    <link rel="stylesheet" href="/css/eventType.css" />
 
 <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 

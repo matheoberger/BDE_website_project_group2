@@ -24,6 +24,7 @@ Route::get('/sidebar', function () {
 });
 Route::get('/event', function () {
     return view('event');
-
-    return view('index');
+});
+Route::get('/event/type', function () {
+    return view('eventType');
 });

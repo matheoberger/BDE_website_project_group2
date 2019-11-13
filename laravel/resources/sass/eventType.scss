@@ -3,22 +3,10 @@
 
 body {
     background: linear-gradient(70deg, $red, darken($red, 30));
-    text-align: center;
-    background-image: url("../images/party-wallpapers-1.jpg");
-    ;
-    //   -webkit-filter: blur(50px);
-    /* Safari 6.0 - 9.0 */
-    //    filter: grayscale(100%);
+
 }
 
-body img {
-    filter: blur(4px);
 
-
-    &:hover {
-        filter: blur(0px);
-    }
-}
 
 
 
@@ -64,10 +52,12 @@ article {
     height: $cube_dimension;
     display: block;
 
-    filter: blur(4px);
+    filter: blur(0px);
+    transition: 0.5s;
 
     &:hover {
-        filter: blur(0px);
+
+        filter: blur(4px);
     }
 
 }
@@ -91,6 +81,7 @@ aside {
     padding: bottom;
 
     background-color: $blue_1;
+    transition: 0.5s;
 
     &:hover {
         background-color: darken($red, 10)
