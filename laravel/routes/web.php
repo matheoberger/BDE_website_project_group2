@@ -16,14 +16,18 @@ Route::get('/', function () {
 
     return view('welcome');
 });
-Route::get('/header', function () {
-    return view('headerHandler');
+Route::get('/navbar', function () {
+    return view('navbar');
 });
-Route::get('/sidebar', function () {
-    return view('sidebarHandler');
+Route::get('/example', function () {
+    return view('example');
 });
 Route::get('/event', function () {
     return view('event');
+});
+
+Route::get('/CGV', function () {
+    return view('CGV');
 });
 Route::get('/event/type', function () {
     return view('eventType');
