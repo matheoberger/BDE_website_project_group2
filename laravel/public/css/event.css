@@ -1,21 +1,41 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto&display=swap);@font-face {
+  font-family: "Lemon/Milk";
+  src: url("/fonts/LemonMilk/LemonMilk.otf") format("truetype");
+}
+
 body {
-  background: #9d9f9d;
+  background: linear-gradient(70deg, #da5d5d, #811d1d);
+  text-align: center;
+  background-image: url(/images/party-wallpapers-1.jpg?fa92d7ecb27e5c98aba7f5ebaccbc3b0);
+  /* Safari 6.0 -
+   9.0 */
+}
+
+body img {
+  -webkit-filter: blur(0px);
+          filter: blur(0px);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+body img:hover {
+  -webkit-filter: blur(4px);
+          filter: blur(4px);
 }
 
 h2 {
-  font-family: "Roboto", bolder;
+  font-family: "Roboto", sans-serif;
   text-align: center;
-  font-size: 50px;
+  font-size: 5vw;
 }
 
 .conteneur {
-  background: #838683;
+  background: linear-gradient(70deg, #9d9f9d, #515251);
   margin: 2px 2px 2px 2px;
-  display: -webkit-box;
-  display: flex;
+  display: inline-block;
   flex-wrap: wrap;
   text-align: center;
-  font-family: "Roboto", bolder;
+  font-family: "Roboto", sans-serif;
   -webkit-box-pack: center;
           justify-content: center;
 }
@@ -24,53 +44,56 @@ section {
   margin: 20px 20px 20px 20px;
   display: -webkit-box;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   font-family: "Roboto", sans-serif;
-}
-
-@media screen and (max-width: 880px) {
-  section {
-    display: inline;
-    flex-wrap: wrap;
-  }
 }
 
 article {
   font-family: "Roboto", sans-serif;
-  /*
-  &:hover {
-      margin: 4px 4px 4px 4px;
-  }
-  */
-  min-height: 200px;
-  max-height: 500px;
-  min-width: 200px;
-  max-width: 500px;
+  height: 30vw;
+  width: 30vw;
+}
+
+.btTxt_submit {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-box-pack: end;
+          justify-content: flex-end;
+  width: 30vw;
+  height: 30vw;
+  display: block;
+  -webkit-filter: blur(0px);
+          filter: blur(0px);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.btTxt_submit:hover {
+  -webkit-filter: blur(4px);
+          filter: blur(4px);
 }
 
 article img {
-  -o-object-fit: fill;
-     object-fit: fill;
-  min-height: 500px;
-}
-
-@media only screen and (max-width: 880px) {
-  article img {
-    height: 50%;
-    width: 50%;
-  }
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-box-pack: end;
+          justify-content: flex-end;
+  width: 30vw;
+  height: 30vw;
+  display: block;
 }
 
 aside {
   margin: 2px 2px 2px 2px;
   font-family: "Roboto", italic;
-  min-height: 200px;
-  max-height: 500px;
-  min-width: 200px;
-  max-width: 500px;
+  height: 30vw;
+  width: 30vw;
   overflow: auto;
   padding: bottom;
-  background-color: #da5d5d;
+  background-color: #5d89DA;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  font-size: 2vw;
 }
 
 aside:hover {
@@ -82,12 +105,6 @@ aside:hover {
   flex-wrap: wrap;
   -webkit-box-pack: end;
           justify-content: flex-end;
-  background-color: #d54848;
-}
-
-footer {
-  margin: 20px 2px 2px 2px;
-  padding: 0 0 200px 0;
-  background-color: #757575;
+  margin: -2px 0 0 -2px;
 }
 
