@@ -8,7 +8,7 @@
             <img src="/images/bell.png" class="customNavbar customNavbar__notification" />
 
             <input type="text" class="customNavbar customNavbar_search">
-
+            <img src="/images/panier.png" class="customNavbar customNavbar__panier" />
             <a class="customNavbar customNavbar__user" href="#"> login </a>
         </div>
 

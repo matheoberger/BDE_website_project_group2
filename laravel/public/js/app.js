@@ -19291,6 +19291,28 @@ window.axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
 
 /***/ }),
 
+/***/ "./resources/sass/boutique.scss":
+/*!**************************************!*\
+  !*** ./resources/sass/boutique.scss ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./resources/sass/contactForm.scss":
+/*!*****************************************!*\
+  !*** ./resources/sass/contactForm.scss ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "./resources/sass/event.scss":
 /*!***********************************!*\
   !*** ./resources/sass/event.scss ***!
@@ -19341,12 +19363,14 @@ window.axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
   \***********************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
+/***/ "./resources/sass/login.scss":
 /***/ }),
 
+/*! no static exports found */
+/***/ (function(module, exports) {
 /***/ "./resources/sass/navbar.scss":
+/***/ }),
+
 /*!************************************!*\
   !*** ./resources/sass/navbar.scss ***!
   \************************************/
@@ -19357,18 +19381,8 @@ window.axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
 
 /***/ }),
 
-/***/ "./resources/sass/sidebar.scss":
-/*!*************************************!*\
-  !*** ./resources/sass/sidebar.scss ***!
-  \*************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
 /***/ 0:
+
 /*!****************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/header.scss ./resources/sass/navbar.scss ./resources/sass/sidebar.scss ./resources/sass/event.scss ./resources/sass/footer.scss ./resources/sass/CGV.scss ./resources/sass/index.scss ./resources/sass/eventType.scss ***!
   \****************************************************************************************************************************************************************************************************************************************************************************************************/

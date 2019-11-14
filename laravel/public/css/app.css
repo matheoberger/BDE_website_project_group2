@@ -23,11 +23,24 @@ a {
   text-decoration: none;
 }
 
-.conteneur {
+.contenu__main {
+  background: #757575;
+  height: 100%;
   width: 100%;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  -webkit-box-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+          align-items: center;
+  padding-bottom: 50px;
 }
 
 .contenu {
+  background: #9d9f9d;
   width: 100%;
   min-height: 100%;
   display: -webkit-box;
