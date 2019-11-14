@@ -57,6 +57,8 @@ article {
     &:hover {
         background-color: darken($red, 10);
     }
+    justify-content: center;
+    text-align: center;
 }
 
 .btn {
@@ -69,6 +71,7 @@ article {
     cursor: pointer;
     /* Add a pointer cursor on mouse-over */
     font-size: 2vw;
+    margin: $px_2;
 }
 
 .fa {
@@ -79,6 +82,8 @@ article {
 
 .warning {
     background-color: #ff9800;
+    padding: 1vw 2vw;
+    font-size: 1vw;
 }
 
 /* Orange */
@@ -114,6 +119,8 @@ article {
 
 .delete {
     background-color: #f44336;
+    padding: 1vw 2vw;
+    font-size: 1vw;
 }
 
 /* Red */
@@ -154,11 +161,6 @@ aside {
     width: $cube_dimension;
     padding: bottom;
     transition: 0.2s;
-
-    &:hover {
-        background-color: darken($red, 10);
-    }
-
     font-size: 2vw;
 }
 
@@ -169,12 +171,6 @@ aside {
     width: $cube_dimension;
     overflow: auto;
     padding: bottom;
-    background-color: $blue_1;
     transition: 0.2s;
-
-    &:hover {
-        background-color: darken($red, 10);
-    }
-
     font-size: 2vw;
 }

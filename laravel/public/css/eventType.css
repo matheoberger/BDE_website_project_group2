@@ -62,6 +62,9 @@ article:hover {
 .picture_gallery {
   -webkit-transition: 0.2s;
   transition: 0.2s;
+  -webkit-box-pack: center;
+          justify-content: center;
+  text-align: center;
 }
 
 .picture_gallery:hover {
@@ -78,6 +81,7 @@ article:hover {
   cursor: pointer;
   /* Add a pointer cursor on mouse-over */
   font-size: 2vw;
+  margin: 2px 2px 2px 2px;
 }
 
 .fa {
@@ -91,6 +95,8 @@ article:hover {
 
 .warning {
   background-color: #ff9800;
+  padding: 1vw 2vw;
+  font-size: 1vw;
 }
 
 /* Orange */
@@ -129,6 +135,8 @@ article:hover {
 
 .delete {
   background-color: #f44336;
+  padding: 1vw 2vw;
+  font-size: 1vw;
 }
 
 /* Red */
@@ -178,10 +186,6 @@ aside {
   font-size: 2vw;
 }
 
-aside:hover {
-  background-color: #d13333;
-}
-
 .comments {
   margin: 2px 2px 2px 2px;
   font-family: "Roboto", italic;
@@ -189,13 +193,8 @@ aside:hover {
   width: 30vw;
   overflow: auto;
   padding: bottom;
-  background-color: #5d89da;
   -webkit-transition: 0.2s;
   transition: 0.2s;
   font-size: 2vw;
-}
-
-.comments:hover {
-  background-color: #d13333;
 }
 
