@@ -5,28 +5,48 @@ var connection = mysql.createConnection({
   password: "",
   database: "bde_cesi"
 });
+connection.connect();
+
+async function mapped(results) {
+  return Promise.all(
+    results.map(async function(element) {
+      await new Promise(resolve => {
+        connection.query(
+          `CALL ${"`getPhotoFromProduct`"}(${element.id_products})`,
+          function test(error, results2, fields) {
+            element.image = results2[0][0].url;
+            resolve(element);
+          }
+        );
+      }).then(() => {
+        console.log("returned");
+      });
+      return element;
+    })
+  );
+}
 
 module.exports = {
   route: "/produits/:start/:number",
   get: (req, res) => {
-    connection.connect();
-    if (typeof req.params.id == Number && typeof req.params.number == Number) {
+    if (!isNaN(Number(req.params.start)) && !isNaN(Number(req.params.number))) {
       connection.query(
         `CALL ${"`getProducts`"}(${req.params.start}, ${req.params.number})`,
         function(error, results, fields) {
           if (error) throw error;
-          console.log(req.params);
-          res.send(results[1]);
+          mapped(results[0]).then(() => {
+            res.send(results[0]);
+          });
         }
       );
     } else {
-      res.send(405);
+      res.sendStatus(405);
     }
-
-    connection.end();
-    res.send(req.params);
   },
   post: (req, res) => {},
   put: (req, res) => {},
-  delete: (req, res) => {}
+  delete: (req, res) => {},
+  quit: () => {
+    connection.end();
+  }
 };
