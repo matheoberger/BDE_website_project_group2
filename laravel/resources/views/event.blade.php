@@ -10,6 +10,7 @@
     <link rel="stylesheet" type="text/css" href="css/header.css">
     <link rel="stylesheet" type="text/css" href="css/navbar.css">
     <link rel="stylesheet" href="css/event.css" />
+    <link rel="stylesheet" href="css/header.css" />
 
     <link rel="stylesheet" type="text/css" href="css/footer.css">
 
