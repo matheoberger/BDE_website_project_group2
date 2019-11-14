@@ -22,7 +22,7 @@ Route::get('/register', 'registerController@gethtml');
 Route::get('/login', 'loginController@gethtml');
 
 Route::post('/ConnexionVerif', 'loginController@verification');
-Route::post('/InscriptionVerif', 'loginController@verification');
+Route::post('/InscriptionVerif', 'registerController@verification');
 /*Route::get('/header', function () {
     return view('header');
 });

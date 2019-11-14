@@ -5,7 +5,7 @@ Connexion
 @endsection
 
 @section('check')
-Se souvenir de moi
+<input type="checkbox" name="check"> Se souvenir de moi
 @endsection
 
 @section('endlink1')

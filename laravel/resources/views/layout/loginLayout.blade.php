@@ -48,16 +48,14 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-key"></i></span>
                             </div>
-                            <input type="password" name="password" class="form-control" placeholder="Mot de passe" required="required" <?php if (isset($password)) {
-                                                                                                                                            echo "value = '$password'";
-                                                                                                                                        } ?>>
+                            <input type="password" name="password" class="form-control" placeholder="Mot de passe" required="required">
                         </div>
                         @yield('form')
                         <?php if (isset($error)) {
                             echo "<p class='errorMessage'> $error </p>";
                         } ?>
                         <div class="row align-items-center remember">
-                            <input type="checkbox" name="check">@yield('check')
+                            @yield('check')
                         </div>
                         <div class="form-group">
                             <input type="submit" name="checkbox" value="@yield('Title')" class="btn float-right login_btn">

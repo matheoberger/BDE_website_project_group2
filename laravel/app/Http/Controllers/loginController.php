@@ -17,7 +17,7 @@ class loginController extends Controller
     public function verification(Request $request)
     {
         //on test les entrées
-        $validator = Validator::make($request->all(), ['email' => 'required|email', 'password' => 'required']);
+        $validator = Validator::make($request->all(), ['email' => 'required|email:rfc,dns', 'password' => 'required']);
         if ($validator->messages()->first()) {
             //si il y a des erreurs on renvoi la première
             $error = $validator->messages()->first();
