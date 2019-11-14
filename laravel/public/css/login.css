@@ -1,4 +1,9 @@
-@import url(https://fonts.googleapis.com/css?family=Numans);/* Made with love by Mutiullah Samim*/
+@import url(https://fonts.googleapis.com/css?family=Numans);@import url(https://fonts.googleapis.com/css?family=Roboto&display=swap%22);/* Made with love by Mutiullah Samim*/
+
+@font-face {
+  font-family: "Lemon/Milk";
+  src: url("/fonts/LemonMilk/LemonMilk.otf") format("truetype");
+}
 
 html,
 body {
@@ -15,17 +20,22 @@ body {
 }
 
 .card {
-  height: 370px;
   margin-top: auto;
   margin-bottom: auto;
-  width: 400px;
-  background-color: rgba(0, 0, 0, 0.5) !important;
+  background-color: rgba(0, 0, 0, 0.575) !important;
+}
+
+.social_icon {
+  top: -20px !important;
 }
 
 .social_icon span {
-  font-size: 60px;
+  font-size: 35px;
   margin-left: 10px;
-  color: #ffc312;
+}
+
+.social_icon span a {
+  color: #ffc252;
 }
 
 .social_icon span:hover {
@@ -37,6 +47,10 @@ body {
   color: white;
 }
 
+.card-footer a {
+  color: #ffc252;
+}
+
 .social_icon {
   position: absolute;
   right: 20px;
@@ -44,8 +58,7 @@ body {
 }
 
 .input-group-prepend span {
-  width: 50px;
-  background-color: #ffc312;
+  background-color: #ffc252;
   color: black;
   border: 0 !important;
 }
@@ -67,9 +80,9 @@ input:focus {
 }
 
 .login_btn {
+  margin-top: 15px;
   color: black;
-  background-color: #ffc312;
-  width: 100px;
+  background-color: #ffc252;
 }
 
 .login_btn:hover {
@@ -78,10 +91,15 @@ input:focus {
 }
 
 .links {
+  display: -webkit-box;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
   color: white;
 }
 
 .links a {
+  width: 100%;
   margin-left: 4px;
 }
 
