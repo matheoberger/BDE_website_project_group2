@@ -97,6 +97,15 @@ article {
     background-color: $orange_3;
 }
 
+.participate {
+    background-color: #4CAF50;
+}
+
+/* Green */
+.participate:hover {
+    background-color: #46a049;
+}
+
 /* Orange */
 .add_picture:hover {
     background: darken($orange_3, 10);
@@ -147,7 +156,23 @@ aside {
 
     &:hover {
         background-color: darken($red, 10);
+    }
 
+    font-size: 2vw;
+}
+
+.comments {
+    margin: $px_2;
+    font-family: 'Roboto', italic;
+    height: $cube_dimension;
+    width: $cube_dimension;
+    overflow: auto;
+    padding: bottom;
+    background-color: $blue_1;
+    transition: 0.2s;
+
+    &:hover {
+        background-color: darken($red, 10);
     }
 
     font-size: 2vw;

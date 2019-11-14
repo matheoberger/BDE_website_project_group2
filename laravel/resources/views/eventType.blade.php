@@ -36,6 +36,17 @@
                     <p>Like : [nb_like]</p>
                     <button class="btn warning">Signaler</button>
                     <button class="btn delete">Supprimer</button>
+                    <div class="comments">Commentaires :<br>
+                        <div class="comment">
+                            [comments]
+                        </div>
+                        <div class="comment">
+                            [comments]
+                        </div>
+                        <div class="comment">
+                            [comments]
+                        </div>
+                    </div>
                 </div>
                 <div class="public_img">
                     <img src=${image} alt="image de l'event">
@@ -43,24 +54,20 @@
                     <p>Like : [nb_like]</p>
                     <button class="btn warning">Signaler</button>
                     <button class="btn delete">Supprimer</button>
+                    <div class="comments">Commentaires :<br>
+                        <div class="comment">
+                            [comments]
+                        </div>
+                        <div class="comment">
+                            [comments]
+                        </div>
+                        <div class="comment">
+                            [comments]
+                        </div>
+                    </div>
                 </div>
 
             </div>
-            <aside>Commentaires :<br>
-                <div class="comments">
-                    <div class="comment">
-                        [comments]
-                    </div>
-                    <div class="comment">
-                        [comments]
-                    </div>
-                    <div class="comment">
-                        [comments]
-                    </div>
-
-
-                </div>
-            </aside>
             <aside>Pannel event :
                 <br></br>
                 <i onclick="likeDislike(this)" class="fa fa-thumbs-up"></i>
@@ -68,8 +75,9 @@
                 <button class="btn add_comment">Ajouter un commentaire</button>
                 <button class="btn add_picture">Ajouter photo</button>
                 <button class="btn edit_event">Modifier l'event</button>
+                <button class="btn participate">Participer à l'event</button>
 
-                [[admin]editer nom/descr][[user]inscription/désinscription event]</aside>
+            </aside>
 
 
 

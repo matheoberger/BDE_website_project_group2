@@ -101,6 +101,16 @@ article {
   background-color: #eb7500;
 }
 
+.participate {
+  background-color: #4CAF50;
+}
+
+/* Green */
+
+.participate:hover {
+  background-color: #46a049;
+}
+
 /* Orange */
 
 .add_picture:hover {
@@ -156,6 +166,23 @@ aside {
 }
 
 aside:hover {
+  background-color: #d13333;
+}
+
+.comments {
+  margin: 2px 2px 2px 2px;
+  font-family: "Roboto", italic;
+  height: 30vw;
+  width: 30vw;
+  overflow: auto;
+  padding: bottom;
+  background-color: #5d89da;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  font-size: 2vw;
+}
+
+.comments:hover {
   background-color: #d13333;
 }
 
