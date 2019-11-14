@@ -31,7 +31,7 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <form action="@yield('Title')/verif" method="post">
+                    <form action="@yield('Title')Verif" method="post">
                         @csrf
                         <div class="input-group form-group">
                             <div class="input-group-prepend">
@@ -51,8 +51,8 @@
                                                                                                                                         } ?>>
                         </div>
                         @yield('form')
-                        <?php if (isset($_POST['error'])) {
-                            echo "<p class='errorMessage'>" . $_POST['error'] . "</p>";
+                        <?php if (isset($error)) {
+                            echo "<p class='errorMessage'> $error </p>";
                         } ?>
                         <div class="row align-items-center remember">
                             <input type="checkbox">@yield('check')

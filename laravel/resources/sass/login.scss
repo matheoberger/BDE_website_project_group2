@@ -13,11 +13,13 @@ body {
 }
 
 .container {
+    width: 100%;
     height: 100%;
     align-content: center;
 }
 
 .card {
+    min-width: 50%;
     margin-top: auto;
     margin-bottom: auto;
     background-color: rgba(0, 0, 0, 0.575) !important;
@@ -43,6 +45,7 @@ body {
 
 .card-header h3 {
     color: white;
+    font-family: $roboto;
 }
 
 .card-footer a {
@@ -81,6 +84,7 @@ input:focus {
     margin-top: 15px;
     color: black;
     background-color: $orange_1;
+    font-family: $roboto;
 }
 
 .login_btn:hover {
@@ -93,9 +97,16 @@ input:focus {
     flex-wrap: wrap;
     text-align: center;
     color: white;
+    font-family: $roboto;
 }
 
 .links a {
     width: 100%;
     margin-left: 4px;
+}
+
+.errorMessage {
+    color: red;
+    text-align: center;
+    font-family: $roboto;
 }
