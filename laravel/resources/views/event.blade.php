@@ -4,13 +4,14 @@
     <title>Event</title>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="css/event.css" />
+    <link rel="stylesheet" href="css/header.css" />
 
 <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 
   </head>
   <body>
 
-@include('headerHandler');
+@include('partials/header')
 <main>
 
     <div>
