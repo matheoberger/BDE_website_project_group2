@@ -29,24 +29,20 @@
                 <p>[Description de l'event]</p>
             </article>
             <div class="picture_gallery">Galerie de photos de l'event<br>
-                Mettre les photos au même forma à la suite, respecter le responsive et mettre en dessous de chaque photos:<br>
-                -[user] Button like<br>
-                -[modo] Button signaler<br>
-                -[Admin] Button supprimer<br></br>
-                [imgs]
+
                 <div class="public_img">
-                    <img src="../images/party.jpg" alt="party">
+                    <img src=${image} alt="party">
                     <i onclick="likeDislike(this)" class="fa fa-thumbs-up"></i>
                     <p>Like : [nb_like]</p>
-                    [button signaler]
-                    [button supprimer]
+                    <button class="btn warning">Signaler</button>
+                    <button class="btn delete">Supprimer</button>
                 </div>
                 <div class="public_img">
-                    <img src="../images/party_merica.jpg" alt="party">
+                    <img src=${image} alt="image de l'event">
                     <i onclick="likeDislike(this)" class="fa fa-thumbs-up"></i>
                     <p>Like : [nb_like]</p>
-                    [button signaler]
-                    [button supprimer]
+                    <button class="btn warning">Signaler</button>
+                    <button class="btn delete">Supprimer</button>
                 </div>
 
             </div>
@@ -66,7 +62,14 @@
                 </div>
             </aside>
             <aside>Pannel event :
-                <br></br>[[user]ajout/supp Like][[user]ajout commentaire][[admin]ajout photo][[admin]editer nom/descr][[user]inscription/désinscription event]</aside>
+                <br></br>
+                <i onclick="likeDislike(this)" class="fa fa-thumbs-up"></i>
+                <p>Like : [nb_like]</p>
+                <button class="btn add_comment">Ajouter un commentaire</button>
+                <button class="btn add_picture">Ajouter photo</button>
+                <button class="btn edit_event">Modifier l'event</button>
+
+                [[admin]editer nom/descr][[user]inscription/désinscription event]</aside>
 
 
 

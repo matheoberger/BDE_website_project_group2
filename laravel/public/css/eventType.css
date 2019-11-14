@@ -59,6 +59,17 @@ article {
   border: 1px dashed #000000;
 }
 
+.btn {
+  border: none;
+  /* Remove borders */
+  color: white;
+  /* Add a text color */
+  padding: 14px 28px;
+  /* Add some padding */
+  cursor: pointer;
+  /* Add a pointer cursor on mouse-over */
+}
+
 .fa {
   font-size: 15vw;
   cursor: pointer;
@@ -66,6 +77,54 @@ article {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+}
+
+.warning {
+  background-color: #ff9800;
+}
+
+/* Orange */
+
+.warning:hover {
+  background: #e68a00;
+}
+
+.edit_event {
+  background-color: #eb7500;
+}
+
+.edit_event:hover {
+  background: #b85c00;
+}
+
+.add_picture {
+  background-color: #eb7500;
+}
+
+/* Orange */
+
+.add_picture:hover {
+  background: #b85c00;
+}
+
+.delete {
+  background-color: #f44336;
+}
+
+/* Red */
+
+.delete:hover {
+  background: #da190b;
+}
+
+.add_comment {
+  background-color: #2196F3;
+}
+
+/* Blue */
+
+.add_comment:hover {
+  background: #0b7dda;
 }
 
 .fa:hover {
