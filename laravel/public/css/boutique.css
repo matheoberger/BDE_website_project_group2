@@ -14,8 +14,6 @@
 }
 
 .topSelling {
-  color: white;
-  font-size: 130%;
   margin: 10px;
   width: 50%;
   font-family: "Roboto";
@@ -24,5 +22,25 @@
 
 .carousel img {
   width: 100%;
+}
+
+p {
+  color: white;
+  font-size: 130%;
+}
+
+#js-productContainer {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+          align-items: center;
+  flex-wrap: wrap;
+}
+
+.product {
+  width: 200px;
+  background: white;
 }
 
