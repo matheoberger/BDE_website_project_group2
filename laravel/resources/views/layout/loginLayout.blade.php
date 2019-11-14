@@ -39,6 +39,8 @@
                             </div>
                             <input type="text" name="email" class="form-control" placeholder="Email" required="required" <?php if (isset($_POST['email'])) {
                                                                                                                                 echo "value = '" . $_POST['email'] . "'";
+                                                                                                                            } elseif (session()->exists('email')) {
+                                                                                                                                echo "value = '" . session('email') . "'";
                                                                                                                             } ?>>
 
                         </div>
@@ -46,8 +48,8 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-key"></i></span>
                             </div>
-                            <input type="password" name="password" class="form-control" placeholder="Mot de passe" required="required" <?php if (isset($_POST['password'])) {
-                                                                                                                                            echo "value = '" . $_POST['password'] . "'";
+                            <input type="password" name="password" class="form-control" placeholder="Mot de passe" required="required" <?php if (isset($password)) {
+                                                                                                                                            echo "value = '$password'";
                                                                                                                                         } ?>>
                         </div>
                         @yield('form')
@@ -55,7 +57,7 @@
                             echo "<p class='errorMessage'> $error </p>";
                         } ?>
                         <div class="row align-items-center remember">
-                            <input type="checkbox">@yield('check')
+                            <input type="checkbox" name="check">@yield('check')
                         </div>
                         <div class="form-group">
                             <input type="submit" name="checkbox" value="@yield('Title')" class="btn float-right login_btn">
