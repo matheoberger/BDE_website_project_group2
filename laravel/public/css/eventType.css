@@ -47,16 +47,25 @@ section {
   font-family: "Roboto", sans-serif;
   -webkit-box-pack: center;
           justify-content: center;
-  border: 1px dashed #000000;
 }
 
 article {
   font-family: "Roboto", sans-serif;
-  border: 1px dashed #000000;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+article:hover {
+  background-color: #d13333;
 }
 
 .picture_gallery {
-  border: 1px dashed #000000;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.picture_gallery:hover {
+  background-color: #d13333;
 }
 
 .btn {
@@ -64,10 +73,11 @@ article {
   /* Remove borders */
   color: white;
   /* Add a text color */
-  padding: 14px 28px;
+  padding: 2vw 4vw;
   /* Add some padding */
   cursor: pointer;
   /* Add a pointer cursor on mouse-over */
+  font-size: 2vw;
 }
 
 .fa {
@@ -102,7 +112,7 @@ article {
 }
 
 .participate {
-  background-color: #4CAF50;
+  background-color: #4caf50;
 }
 
 /* Green */
@@ -128,7 +138,7 @@ article {
 }
 
 .add_comment {
-  background-color: #2196F3;
+  background-color: #2196f3;
 }
 
 /* Blue */
@@ -149,17 +159,20 @@ article {
 }
 
 .public_img {
-  border: 1px dashed #000000;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.public_img:hover {
+  background-color: #d13333;
 }
 
 aside {
   margin: 2px 2px 2px 2px;
   font-family: "Roboto", italic;
-  height: 30vw;
+  height: 40vw;
   width: 30vw;
-  overflow: auto;
   padding: bottom;
-  background-color: #5d89da;
   -webkit-transition: 0.2s;
   transition: 0.2s;
   font-size: 2vw;

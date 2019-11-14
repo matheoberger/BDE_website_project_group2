@@ -19291,6 +19291,28 @@ window.axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
 
 /***/ }),
 
+/***/ "./resources/sass/boutique.scss":
+/*!**************************************!*\
+  !*** ./resources/sass/boutique.scss ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./resources/sass/contactForm.scss":
+/*!*****************************************!*\
+  !*** ./resources/sass/contactForm.scss ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "./resources/sass/event.scss":
 /*!***********************************!*\
   !*** ./resources/sass/event.scss ***!
@@ -19346,6 +19368,17 @@ window.axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
 
 /***/ }),
 
+/***/ "./resources/sass/login.scss":
+/*!***********************************!*\
+  !*** ./resources/sass/login.scss ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "./resources/sass/navbar.scss":
 /*!************************************!*\
   !*** ./resources/sass/navbar.scss ***!
@@ -19357,34 +19390,25 @@ window.axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
 
 /***/ }),
 
-/***/ "./resources/sass/sidebar.scss":
-/*!*************************************!*\
-  !*** ./resources/sass/sidebar.scss ***!
-  \*************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-throw new Error("Module build failed (from ./node_modules/css-loader/index.js):\nModuleBuildError: Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\nError: ENOENT: no such file or directory, open 'C:\\Users\\Cthulhu\\Documents\\Programmation\\Laravel\\laravel\\resources\\sass\\sidebar.scss'\n    at runLoaders (C:\\Users\\Cthulhu\\Documents\\Programmation\\Laravel\\laravel\\node_modules\\webpack\\lib\\NormalModule.js:316:20)\n    at C:\\Users\\Cthulhu\\Documents\\Programmation\\Laravel\\laravel\\node_modules\\loader-runner\\lib\\LoaderRunner.js:367:11\n    at C:\\Users\\Cthulhu\\Documents\\Programmation\\Laravel\\laravel\\node_modules\\loader-runner\\lib\\LoaderRunner.js:203:19\n    at process.nextTick (C:\\Users\\Cthulhu\\Documents\\Programmation\\Laravel\\laravel\\node_modules\\enhanced-resolve\\lib\\CachedInputFileSystem.js:85:15)\n    at process._tickCallback (internal/process/next_tick.js:61:11)");
-
-/***/ }),
-
 /***/ 0:
-/*!****************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/header.scss ./resources/sass/navbar.scss ./resources/sass/sidebar.scss ./resources/sass/event.scss ./resources/sass/footer.scss ./resources/sass/CGV.scss ./resources/sass/index.scss ./resources/sass/eventType.scss ***!
-  \****************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/header.scss ./resources/sass/index.scss ./resources/sass/contactForm.scss ./resources/sass/login.scss ./resources/sass/navbar.scss ./resources/sass/event.scss ./resources/sass/footer.scss ./resources/sass/CGV.scss ./resources/sass/eventType.scss ./resources/sass/boutique.scss ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! C:\Users\Cthulhu\Documents\Programmation\Laravel\laravel\resources\js\app.js */"./resources/js/app.js");
 __webpack_require__(/*! C:\Users\Cthulhu\Documents\Programmation\Laravel\laravel\resources\sass\app.scss */"./resources/sass/app.scss");
 __webpack_require__(/*! C:\Users\Cthulhu\Documents\Programmation\Laravel\laravel\resources\sass\header.scss */"./resources/sass/header.scss");
+__webpack_require__(/*! C:\Users\Cthulhu\Documents\Programmation\Laravel\laravel\resources\sass\index.scss */"./resources/sass/index.scss");
+__webpack_require__(/*! C:\Users\Cthulhu\Documents\Programmation\Laravel\laravel\resources\sass\contactForm.scss */"./resources/sass/contactForm.scss");
+__webpack_require__(/*! C:\Users\Cthulhu\Documents\Programmation\Laravel\laravel\resources\sass\login.scss */"./resources/sass/login.scss");
 __webpack_require__(/*! C:\Users\Cthulhu\Documents\Programmation\Laravel\laravel\resources\sass\navbar.scss */"./resources/sass/navbar.scss");
-__webpack_require__(/*! C:\Users\Cthulhu\Documents\Programmation\Laravel\laravel\resources\sass\sidebar.scss */"./resources/sass/sidebar.scss");
 __webpack_require__(/*! C:\Users\Cthulhu\Documents\Programmation\Laravel\laravel\resources\sass\event.scss */"./resources/sass/event.scss");
 __webpack_require__(/*! C:\Users\Cthulhu\Documents\Programmation\Laravel\laravel\resources\sass\footer.scss */"./resources/sass/footer.scss");
 __webpack_require__(/*! C:\Users\Cthulhu\Documents\Programmation\Laravel\laravel\resources\sass\CGV.scss */"./resources/sass/CGV.scss");
-__webpack_require__(/*! C:\Users\Cthulhu\Documents\Programmation\Laravel\laravel\resources\sass\index.scss */"./resources/sass/index.scss");
-module.exports = __webpack_require__(/*! C:\Users\Cthulhu\Documents\Programmation\Laravel\laravel\resources\sass\eventType.scss */"./resources/sass/eventType.scss");
+__webpack_require__(/*! C:\Users\Cthulhu\Documents\Programmation\Laravel\laravel\resources\sass\eventType.scss */"./resources/sass/eventType.scss");
+module.exports = __webpack_require__(/*! C:\Users\Cthulhu\Documents\Programmation\Laravel\laravel\resources\sass\boutique.scss */"./resources/sass/boutique.scss");
 
 
 /***/ })
