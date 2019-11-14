@@ -31,21 +31,29 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <form action="/loginverif" method="post">
+                    <form action="@yield('Title')/verif" method="post">
+                        @csrf
                         <div class="input-group form-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-user"></i></span>
                             </div>
-                            <input type="text" name="email" class="form-control" placeholder="Email" required="required">
+                            <input type="text" name="email" class="form-control" placeholder="Email" required="required" <?php if (isset($_POST['email'])) {
+                                                                                                                                echo "value = '" . $_POST['email'] . "'";
+                                                                                                                            } ?>>
 
                         </div>
                         <div class="input-group form-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-key"></i></span>
                             </div>
-                            <input type="password" name="password" class="form-control" placeholder="Mot de passe" required="required">
+                            <input type="password" name="password" class="form-control" placeholder="Mot de passe" required="required" <?php if (isset($_POST['password'])) {
+                                                                                                                                            echo "value = '" . $_POST['password'] . "'";
+                                                                                                                                        } ?>>
                         </div>
                         @yield('form')
+                        <?php if (isset($_POST['error'])) {
+                            echo "<p class='errorMessage'>" . $_POST['error'] . "</p>";
+                        } ?>
                         <div class="row align-items-center remember">
                             <input type="checkbox">@yield('check')
                         </div>

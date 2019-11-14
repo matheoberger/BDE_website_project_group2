@@ -20,6 +20,9 @@ Route::post('/contactForm', 'contactController@postContact');
 
 Route::get('/register', 'registerController@gethtml');
 Route::get('/login', 'loginController@gethtml');
+
+Route::post('/Connexion/verif', 'loginController@verification');
+Route::post('/Inscription/verif', 'loginController@verification');
 /*Route::get('/header', function () {
     return view('header');
 });
