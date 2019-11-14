@@ -47,3 +47,6 @@ Route::get('/CGcookies', function () {
 Route::get('/CGRDP', function () {
     return view('CGRDP');
 });
+Route::get('/panier', function () {
+    return view('panier');
+});
