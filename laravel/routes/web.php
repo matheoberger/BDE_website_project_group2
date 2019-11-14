@@ -55,3 +55,6 @@ Route::get('/boutique', function () {
 Route::get('/event/type', function () {
     return view('eventType');
 });
+Route::get('/boutique2', function () {
+    return view('boutique2');
+});

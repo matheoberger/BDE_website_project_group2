@@ -15,6 +15,8 @@
     <link rel="stylesheet" type="text/css" href="css/header.css">
     <link rel="stylesheet" type="text/css" href="css/navbar.css">
     <link rel="stylesheet" type="text/css" href="css/footer.css">
+    <script scr="js/insertProduct.js"></script>
+
 
 </head>
 
@@ -26,21 +28,8 @@
 
         <div class="contenu">
             <div class="contenu__main">
-                <div class=welcome--boutique><img class=welcome--boutique__image
-                        src='https://mir-s3-cdn-cf.behance.net/project_modules/fs/a3ea7277681027.5c8f34c397dcf.jpg'>
-                </div>
-                <div class=topSelling>
-                    <p>Les trois les plus vendus</p>
 
 
-                    @include("partials/shopCarousel")
-                </div>
-                <p class=title>Produits</p>
-                <div id="js-productContainer">
-
-                    <div class="product"><img src="../images/defaultProduct.jpg" />product1</div>
-                    <div class="product">product2</div>
-                </div>
             </div>
             @include("partials/footer")
         </div>
