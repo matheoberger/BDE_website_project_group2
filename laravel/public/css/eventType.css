@@ -59,9 +59,24 @@ article {
   border: 1px dashed #000000;
 }
 
+.fa {
+  font-size: 15vw;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.fa:hover {
+  color: darkblue;
+}
+
 .picture_gallery img {
-  width: 30vw;
-  height: 30vw;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .public_img {

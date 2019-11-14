@@ -5,6 +5,8 @@
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="/css/eventType.css" />
     <link rel="stylesheet" href="/css/header.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 
 
 <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
@@ -34,12 +36,14 @@
                 [imgs]
                 <div class="public_img">
                     <img src="../images/party.jpg" alt="party">
+                    <i onclick="likeDislike(this)" class="fa fa-thumbs-up"></i>
                     <p>Like : [nb_like]</p>
                     [button signaler]
                     [button supprimer]
                 </div>
                 <div class="public_img">
                     <img src="../images/party_merica.jpg" alt="party">
+                    <i onclick="likeDislike(this)" class="fa fa-thumbs-up"></i>
                     <p>Like : [nb_like]</p>
                     [button signaler]
                     [button supprimer]
@@ -72,4 +76,11 @@
 
 </main>
   </body>
+
+  <script>
+                            function likeDislike(x) {
+                            x.classList.toggle("fa-thumbs-down");
+                            }
+                            </script>
+
 </html>
