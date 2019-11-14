@@ -19291,10 +19291,21 @@ window.axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
 
 /***/ }),
 
-/***/ "./resources/sass/breadcrumb.scss":
-/*!****************************************!*\
-  !*** ./resources/sass/breadcrumb.scss ***!
-  \****************************************/
+/***/ "./resources/sass/boutique.scss":
+/*!**************************************!*\
+  !*** ./resources/sass/boutique.scss ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./resources/sass/contactForm.scss":
+/*!*****************************************!*\
+  !*** ./resources/sass/contactForm.scss ***!
+  \*****************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -19306,6 +19317,17 @@ window.axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
 /*!***********************************!*\
   !*** ./resources/sass/event.scss ***!
   \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./resources/sass/eventType.scss":
+/*!***************************************!*\
+  !*** ./resources/sass/eventType.scss ***!
+  \***************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -19384,7 +19406,7 @@ window.axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
   !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/header.scss ./resources/sass/navbar.scss ./resources/sass/sidebar.scss ./resources/sass/event.scss ./resources/sass/footer.scss ./resources/sass/responsive.scss ./resources/sass/mentionsLegales.scss ./resources/sass/breadcrumb.scss ./resources/sass/CGV.scss ***!
   \************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
 __webpack_require__(/*! D:\Multimedia\Desktop\EXIA\A2\Projet\WEB\BDE_website_project_group2\laravel\resources\js\app.js */"./resources/js/app.js");
 __webpack_require__(/*! D:\Multimedia\Desktop\EXIA\A2\Projet\WEB\BDE_website_project_group2\laravel\resources\sass\app.scss */"./resources/sass/app.scss");

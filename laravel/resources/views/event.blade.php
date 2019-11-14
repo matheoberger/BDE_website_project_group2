@@ -29,38 +29,28 @@
 
                     <section>
                         <article>
-                            <img src="../images/party_merica.jpg" alt="merica">
+                            <input type="image" src="../images/party_merica.jpg" name="saveForm" class="btTxt_submit"
+                                id="saveForm" />
                         </article>
                         <div class="event_description">
-                            <aside><u>Nom et description de l'évènement</u></aside>
-                            <aside>Meilleurs photos de l'évènement</aside>
+                            <aside>Nom et description de l'évènement</aside>
                         </div>
                     </section>
 
 
                     <section>
-                        <article>Photo + Bouton
+                        <article>
+                            <img src="../images/party.jpg" alt="party">
                         </article>
                         <div class="event_description">
-                            <aside><u>Nom et description de l'évènement</u></aside>
-                            <aside>Meilleurs photos de l'évènement</aside>
+                            <aside>Nom et description de l'évènement</aside>
                         </div>
                     </section>
                     <section>
                         <article>Photo + Bouton
                         </article>
                         <div class="event_description">
-                            <aside><u>Nom et description de l'évènement</u></aside>
-                            <aside>Meilleurs photos de l'évènement</aside>
-                        </div>
-                    </section>
-
-                    <section>
-                        <article>Photo + Bouton
-                        </article>
-                        <div class="event_description">
-                            <aside><u>Nom et description de l'évènement</u></aside>
-                            <aside>Meilleurs photos de l'évènement</aside>
+                            <aside>Nom et description de l'évènement</aside>
                         </div>
                     </section>
 
@@ -68,8 +58,7 @@
                         <article>Photo + Bouton
                         </article>
                         <div class="event_description">
-                            <aside><u>Nom et description de l'évènement</u></aside>
-                            <aside>Meilleurs photos de l'évènement</aside>
+                            <aside>Nom et description de l'évènement</aside>
                         </div>
                     </section>
 
@@ -77,8 +66,7 @@
                         <article>Photo + Bouton
                         </article>
                         <div class="event_description">
-                            <aside><u>Nom et description de l'évènement</u></aside>
-                            <aside>Meilleurs photos de l'évènement</aside>
+                            <aside>Nom et description de l'évènement</aside>
                         </div>
                     </section>
 
@@ -86,17 +74,19 @@
                         <article>Photo + Bouton
                         </article>
                         <div class="event_description">
-                            <aside><u>Nom et description de l'évènement</u></aside>
-                            <aside>Meilleurs photos de l'évènement</aside>
+                            <aside>Nom et description de l'évènement</aside>
                         </div>
                     </section>
 
+                    <section>
+                        <article>Photo + Bouton
+                        </article>
+                        <div class="event_description">
+                            <aside>Nom et description de l'évènement</aside>
+                        </div>
+                        @include("partials/footer")
                 </div>
-
             </div>
-            @include("partials/footer")
-        </div>
-        </div>
 
     </main>
 </body>

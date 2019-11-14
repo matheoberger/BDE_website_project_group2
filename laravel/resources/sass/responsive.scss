@@ -9,6 +9,9 @@ $small: 468px !default;
 $medium: 880px !default;
 $large: 1000px !default;
 
+$very_small-up: "only screen and (min-device-width: #{$very_small}), (min-width: #{$very_small})";
+$very_small-down: "only screen and (max-device-width: #{$very_small}), (max-width: #{$very_small})";
+
 $small-up: "only screen and (min-device-width: #{$small}), (min-width: #{$small})";
 $small-down: "only screen and (max-device-width: #{$small}), (max-width: #{$small})";
 

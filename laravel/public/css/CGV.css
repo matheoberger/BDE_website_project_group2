@@ -5,6 +5,7 @@
 
 .CGV__body {
   background-color: #757575;
+  min-height: calc(100vh - 110px);
 }
 
 .CGV--robotoFont {
@@ -73,8 +74,10 @@
 }
 
 .CGV__navigation {
+  min-height: 100%;
   height: 80%;
   margin: 5%;
+  margin-bottom: 0px;
 }
 
 .breadcrumb {

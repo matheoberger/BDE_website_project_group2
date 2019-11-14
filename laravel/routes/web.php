@@ -14,24 +14,23 @@
 Route::get('/', function () {
     return view('index');
 });
-/*Route::get('/header', function () {
-    return view('header');
-});
-*/
+Route::get('/contactForm', 'contactController@getContact');
+Route::post('/contactForm', 'contactController@postContact');
+
+Route::get('/register', 'registerController@gethtml');
+Route::get('/login', 'loginController@gethtml');
+
 Route::get('/navbar', function () {
     return view('navbar');
-});/*
-Route::get('/footer', function () {
-    return view('footer');
-});*/
+});
 Route::get('/example', function () {
     return view('example');
 });
+
 Route::get('/event', function () {
     return view('event');
-
-    return view('index');
 });
+
 Route::get('/CGV', function () {
     return view('CGV');
 });
@@ -49,4 +48,10 @@ Route::get('/CGRDP', function () {
 });
 Route::get('/panier', function () {
     return view('panier');
+});
+Route::get('/boutique', function () {
+    return view('boutique');
+});
+Route::get('/event/type', function () {
+    return view('eventType');
 });
