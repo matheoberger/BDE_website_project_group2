@@ -110,13 +110,14 @@ function () {
     key: "getProduct",
     value: function getProduct() {
       console.log("coucou");
-      var product = $.get("http://10.133.129.113:3000/produits/2/3", function (data, status) {
+      var product = $.get("localhost:3000/produits/2/3", function (data, status) {
         console.log("coucou");
-        console.log("Data: " + data);
-        console.log("dfsdfsdf");
-      });
-      console.log(product);
+        console.log(data[1].description);
+      }); // console.log(product);
     }
+  }, {
+    key: "createProduct",
+    value: function createProduct(data) {}
   }]);
 
   return insertProduct;
@@ -125,6 +126,7 @@ function () {
 $(document).ready(function () {
   var coucou = new insertProduct();
   coucou.getProduct();
+  coucou.createProduct();
 }); // class insertProduct {
 //     $productNumber;
 //     newProduct(){
@@ -267,7 +269,7 @@ $(document).ready(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\home\Documents\Code\Projet WEB\BDE_website_project_group2\laravel\resources\js\insertProduct.js */"./resources/js/insertProduct.js");
+module.exports = __webpack_require__(/*! D:\Multimedia\Desktop\EXIA\A2\Projet\WEB\BDE_website_project_group2\laravel\resources\js\insertProduct.js */"./resources/js/insertProduct.js");
 
 
 /***/ })

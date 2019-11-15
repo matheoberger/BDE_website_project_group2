@@ -1,20 +1,21 @@
 class insertProduct {
     getProduct() {
         console.log("coucou");
-        let product = $.get("http://10.133.129.113:3000/produits/2/3", function(
+        let product = $.get("localhost:3000/produits/2/3", function(
             data,
             status
         ) {
             console.log("coucou");
-            console.log("Data: " + data);
-            console.log("dfsdfsdf");
+            console.log(data[1].description);
         });
-        console.log(product);
+        // console.log(product);
     }
+    createProduct(data) {}
 }
 $(document).ready(function() {
     const coucou = new insertProduct();
     coucou.getProduct();
+    coucou.createProduct();
 });
 
 // class insertProduct {
