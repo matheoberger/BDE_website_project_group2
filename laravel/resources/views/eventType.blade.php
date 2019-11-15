@@ -12,6 +12,10 @@ $requete2->execute();
 $images = $requete2->fetchAll();
 $requete->closeCursor();
 
+if(isset(session('role'))){
+    session('role')
+}
+
 //echo print_r($event[0]);
 //echo print_r($event);
 
@@ -53,28 +57,7 @@ $src1 = $event[0]['url'];
                 <h3><?php echo $event[0]["title_events"] ?></h3>
                 <p><?php echo $event[0]["description"] ?></p>
             </article>
-            <div class="picture_gallery" id="js-picture-gallery"><br>
-                <?php foreach ($images as $element){
-
-                    // echo '<div class="public_img">
-                    //     <img src="/' . $element["url"] . '" alt="party">
-                    //     <i onclick="likeDislike(this)" class="fa fa-thumbs-up"></i>
-                    //     <p>Like : ' . $element["nbrlike"] . '</p>
-                    //     <button class="btn warning">Signaler</button>
-                    //     <button class="btn delete">Supprimer</button>
-                    //     <div class="comments">Commentaires :<br>
-                    //     </div>
-                    //     </div>
-                    // ';
-                    }; 
-                ?>
-                
-                    
-                    
-                    
-                    
-                    
-                        
+            <div class="picture_gallery" id="js-picture-gallery"><br>    
                     
             </div>
             <aside>Pannel event :
