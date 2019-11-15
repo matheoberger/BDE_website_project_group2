@@ -109,15 +109,19 @@ function () {
   _createClass(insertProduct, [{
     key: "getProduct",
     value: function getProduct() {
+      console.log($(window).height());
+      console.log($(window).width());
       console.log("coucou");
-      var product = $.get("localhost:3000/produits/2/3", function (data, status) {
-        console.log("coucou");
-        console.log(data[1].description);
-      }); // console.log(product);
+      return new Promise(function (resolve) {
+        var product = $.get("http://localhost:3000/produits/2/3", function (data, status) {
+          resolve(data);
+        });
+      });
     }
   }, {
     key: "createProduct",
-    value: function createProduct(data) {}
+    value: function createProduct(data) {// data[].sqpdo
+    }
   }]);
 
   return insertProduct;
@@ -125,7 +129,9 @@ function () {
 
 $(document).ready(function () {
   var coucou = new insertProduct();
-  coucou.getProduct();
+  coucou.getProduct().then(function (data) {
+    console.log(data);
+  });
   coucou.createProduct();
 }); // class insertProduct {
 //     $productNumber;
