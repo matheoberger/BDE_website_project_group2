@@ -42,8 +42,8 @@ Route::get('/comment/}', function(){
 Route::get('/event', function () {
     return view('event');
 });
-Route::get('/event/{idEvent}', function ($id) {
-    return view('eventType', ["id"=>$id]);
+Route::get('/event/{id}', function ($id) {
+    return view('eventType', ["id" => $id]);
 });
 Route::get('/CGV', function () {
     return view('CGV');

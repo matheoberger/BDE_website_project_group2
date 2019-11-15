@@ -15,6 +15,9 @@ class insertProduct {
      *
      */
     newProduct(articleIndex, articleNumber) {
+        if ("") {
+            $("js-spinner").addClass("spinner__display");
+        }
         this.getProduct(articleIndex, articleNumber).then(productList => {
             $("js-spinner").removeClass("spinner__display");
             $("js-spinner").addClass("spinner__display--none");
