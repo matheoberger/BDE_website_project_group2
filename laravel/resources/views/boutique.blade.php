@@ -38,8 +38,8 @@
                 <p class=title>Produits</p>
                 <div id="js-productContainer">
 
-                    <div class="product"><img src="../images/defaultProduct.jpg" />product1</div>
-                    <div class="product">product2</div>
+  
+                    
                 </div>
             </div>
             @include("partials/footer")
