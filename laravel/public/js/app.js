@@ -19291,6 +19291,17 @@ window.axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
 
 /***/ }),
 
+/***/ "./resources/sass/article.scss":
+/*!*************************************!*\
+  !*** ./resources/sass/article.scss ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "./resources/sass/boutique.scss":
 /*!**************************************!*\
   !*** ./resources/sass/boutique.scss ***!
@@ -19419,7 +19430,7 @@ window.axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed (from ./node_modules/css-loader/index.js):\nModuleBuildError: Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\nError: ENOENT: no such file or directory, open 'D:\\Multimedia\\Desktop\\EXIA\\A2\\Projet\\WEB\\BDE_website_project_group2\\laravel\\resources\\sass\\panier.scss'\n    at D:\\Multimedia\\Desktop\\EXIA\\A2\\Projet\\WEB\\BDE_website_project_group2\\laravel\\node_modules\\webpack\\lib\\NormalModule.js:316:20\n    at D:\\Multimedia\\Desktop\\EXIA\\A2\\Projet\\WEB\\BDE_website_project_group2\\laravel\\node_modules\\loader-runner\\lib\\LoaderRunner.js:367:11\n    at D:\\Multimedia\\Desktop\\EXIA\\A2\\Projet\\WEB\\BDE_website_project_group2\\laravel\\node_modules\\loader-runner\\lib\\LoaderRunner.js:203:19\n    at D:\\Multimedia\\Desktop\\EXIA\\A2\\Projet\\WEB\\BDE_website_project_group2\\laravel\\node_modules\\enhanced-resolve\\lib\\CachedInputFileSystem.js:85:15\n    at processTicksAndRejections (internal/process/task_queues.js:75:11)");
+// removed by extract-text-webpack-plugin
 
 /***/ }),
 
@@ -19435,9 +19446,9 @@ throw new Error("Module build failed (from ./node_modules/css-loader/index.js):\
 /***/ }),
 
 /***/ 0:
-/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/header.scss ./resources/sass/index.scss ./resources/sass/contactForm.scss ./resources/sass/login.scss ./resources/sass/navbar.scss ./resources/sass/event.scss ./resources/sass/footer.scss ./resources/sass/responsive.scss ./resources/sass/mentionsLegales.scss ./resources/sass/breadcrumb.scss ./resources/sass/CGV.scss ./resources/sass/eventType.scss ./resources/sass/panier.scss ./resources/sass/boutique.scss ***!
-  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/header.scss ./resources/sass/index.scss ./resources/sass/contactForm.scss ./resources/sass/login.scss ./resources/sass/navbar.scss ./resources/sass/event.scss ./resources/sass/article.scss ./resources/sass/footer.scss ./resources/sass/responsive.scss ./resources/sass/mentionsLegales.scss ./resources/sass/breadcrumb.scss ./resources/sass/CGV.scss ./resources/sass/eventType.scss ./resources/sass/panier.scss ./resources/sass/boutique.scss ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -19449,6 +19460,7 @@ __webpack_require__(/*! C:\Users\Cthulhu\Documents\Programmation\Laravel\laravel
 __webpack_require__(/*! C:\Users\Cthulhu\Documents\Programmation\Laravel\laravel\resources\sass\login.scss */"./resources/sass/login.scss");
 __webpack_require__(/*! C:\Users\Cthulhu\Documents\Programmation\Laravel\laravel\resources\sass\navbar.scss */"./resources/sass/navbar.scss");
 __webpack_require__(/*! C:\Users\Cthulhu\Documents\Programmation\Laravel\laravel\resources\sass\event.scss */"./resources/sass/event.scss");
+__webpack_require__(/*! C:\Users\Cthulhu\Documents\Programmation\Laravel\laravel\resources\sass\article.scss */"./resources/sass/article.scss");
 __webpack_require__(/*! C:\Users\Cthulhu\Documents\Programmation\Laravel\laravel\resources\sass\footer.scss */"./resources/sass/footer.scss");
 __webpack_require__(/*! C:\Users\Cthulhu\Documents\Programmation\Laravel\laravel\resources\sass\responsive.scss */"./resources/sass/responsive.scss");
 __webpack_require__(/*! C:\Users\Cthulhu\Documents\Programmation\Laravel\laravel\resources\sass\mentionsLegales.scss */"./resources/sass/mentionsLegales.scss");
