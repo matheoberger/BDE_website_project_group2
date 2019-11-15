@@ -34,15 +34,14 @@ Route::get('/login', 'loginController@gethtml');
 Route::post('/ConnexionVerif', 'loginController@verification');
 Route::post('/InscriptionVerif', 'registerController@verification');
 
-Route::post('/comment/', 'commentPicture');
-Route::get('/comment/', function(){
-    abort(404);
-});
+Route::post('/comment', 'commentPicture');
+
+Route::post('/likePicture', 'likePicture');
+Route::post('/dislikePicture', 'dislikePicture');
+
 Route::post('/event/participate', 'participateEvent');
 Route::post('/event/leave', 'leaveEvent');
-/*Route::get('/event/participate/', function(){
-    abort(404);
-});*/
+
 
 Route::get('/event', function () {
     return view('event');

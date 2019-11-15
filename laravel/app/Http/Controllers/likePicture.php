@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use PDO;
 
-class commentPicture extends Controller
+class likePicture extends Controller
 {
     /**
      * Handle the incoming request.
@@ -17,25 +17,20 @@ class commentPicture extends Controller
     {
         
         $bdd = new PDO("mysql:host=localhost;dbname=bde_cesi;charset=UTF8", "root", "");
-        
         $checkParticipation = $bdd->prepare("CALL `isRegistered`(:user, :event);");
-        
         $checkParticipation->bindValue(':user', session('id_user'), PDO::PARAM_INT);
-        
         $checkParticipation->bindValue(':event', $request->event, PDO::PARAM_INT);
-        
         $checkParticipation->execute();
-        
         $paticipation=$checkParticipation->fetchAll();
         if(empty($paticipation)){
             return abort(403);
         }
         $checkParticipation->closeCursor();
+
+        $requete = $bdd->prepare("CALL `setLiked`(:picture, :user);");
         
-        $requete = $bdd->prepare("CALL `newComment`(:user, :picture, :description);");
-        $requete->bindValue(':user', session('id_user'), PDO::PARAM_INT);
         $requete->bindValue(':picture', $request->picture, PDO::PARAM_INT);
-        $requete->bindValue(':description', $request->description, PDO::PARAM_STR);
+        $requete->bindValue(':user', session('id_user'), PDO::PARAM_INT);
         $requete->execute();
         $data = $requete->fetchAll();
         $requete->closeCursor();

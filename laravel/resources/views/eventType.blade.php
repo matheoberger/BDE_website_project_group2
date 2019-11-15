@@ -32,13 +32,15 @@ if(session('role')){
   <head>
     <title>Event Type</title>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="/css/eventType.css" />
-    <link rel="stylesheet" href="/css/header.css" />
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/eventType.css" />
+    <link rel="stylesheet" href="/css/header.css" />
 
 
-<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
 
   </head>
   <body>
@@ -104,9 +106,6 @@ if(session('role')){
   </body>
 
   <script>
-    function likeDislike(x) {
-        x.classList.toggle("fa-thumbs-down");
-        }
      var id = <?php echo $id ?>;
      <?php 
      

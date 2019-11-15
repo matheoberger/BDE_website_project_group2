@@ -15,6 +15,7 @@ class participateEvent extends Controller
      */
     public function __invoke(Request $request)
     {
+        
         $bdd = new PDO("mysql:host=localhost;dbname=bde_cesi;charset=UTF8", "root", "");
         $requete = $bdd->prepare("CALL `setUserRegistered`(:event, :user);");
         $requete->bindValue(':event', $request->event, PDO::PARAM_INT);
