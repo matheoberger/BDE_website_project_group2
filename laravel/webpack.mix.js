@@ -13,6 +13,8 @@ const mix = require("laravel-mix");
 
 mix.js("resources/js/app.js", "public/js")
     .js("resources/js/index.js", "public/js")
+    .js("resources/js/insertProduct.js", "public/js")
+
     .sass("resources/sass/app.scss", "public/css")
     .sass("resources/sass/header.scss", "public/css")
 
@@ -23,6 +25,9 @@ mix.js("resources/js/app.js", "public/js")
     .sass("resources/sass/navbar.scss", "public/css")
     .sass("resources/sass/event.scss", "public/css")
     .sass("resources/sass/footer.scss", "public/css")
+    .sass("resources/sass/responsive.scss", "public/css")
+    .sass("resources/sass/mentionsLegales.scss", "public/css")
+    .sass("resources/sass/breadcrumb.scss", "public/css")
     .sass("resources/sass/CGV.scss", "public/css")
     .sass("resources/sass/eventType.scss", "public/css")
     .sass("resources/sass/boutique.scss", "public/css");

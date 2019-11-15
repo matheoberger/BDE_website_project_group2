@@ -3,8 +3,9 @@
     font-family: "Lemon/Milk";
     src: url("/fonts/LemonMilk/LemonMilk.otf") format("truetype");
 }
-$very_small: 400px !default;
-$small: 768px !default;
+
+$very_small: 434px !default;
+$small: 468px !default;
 $medium: 880px !default;
 $large: 1000px !default;
 
@@ -30,6 +31,9 @@ $green: #d1e000;
 $red: #da5d5d;
 $blue_1: #5d89da;
 $blue_2: #00a390;
+// $roboto: "Roboto", bolder;
+$px_2: 2px 2px 2px 2px;
+$px_20: 20px 20px 20px 20px;
 $roboto: "Roboto", sans-serif;
 $px_2: 2px 2px 2px 2px;
 $px_20: 20px 20px 20px 20px;

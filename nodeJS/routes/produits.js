@@ -33,7 +33,7 @@ module.exports = {
         function(error, results, fields) {
           if (error) throw error;
           mapped(results[0]).then(() => {
-            res.send(results[0]);
+            res.json(results[0]);
           });
         }
       );
