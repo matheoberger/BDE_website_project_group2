@@ -52,7 +52,8 @@ if(session('role')){
             </div>
             <aside>Pannel event :
                 <br>
-                <button class="btn add_comment">Ajouter un commentaire</button>
+                
+                
                 <button class="btn add_picture">Ajouter photo         </button>
                 <?php 
                     if(session('role') == 'Administrator'){
@@ -78,7 +79,21 @@ if(session('role')){
     function likeDislike(x) {
         x.classList.toggle("fa-thumbs-down");
         }
-     id = <?php echo $id ?>
+     var id = <?php echo $id ?>;
+     <?php 
+     
+     if(session('role') == 'Moderator'){
+        echo 'var button = "<button class=' . "'btn warning'" . '>Signaler</button>"';
+     }
+
+     if(session('role') == 'Administrator'){
+        echo 'var button = "<button class=' . "'btn delete'" . '>Supprimer</button>"';
+    }
+    if(csrf_token()){
+        echo 'var token = "' . csrf_token() . '"';
+    };
+
+     ?>
 </script>
 <script src="/js/insertDataToEvent.js">
     </script>

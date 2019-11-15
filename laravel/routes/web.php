@@ -34,10 +34,15 @@ Route::get('/login', 'loginController@gethtml');
 Route::post('/ConnexionVerif', 'loginController@verification');
 Route::post('/InscriptionVerif', 'registerController@verification');
 
+Route::post('/comment/', 'commentPicture');
+Route::get('/comment/}', function(){
+    abort(404);
+});
+
 Route::get('/event', function () {
     return view('event');
 });
-Route::get('/event/{id}', function ($id) {
+Route::get('/event/{idEvent}', function ($id) {
     return view('eventType', ["id"=>$id]);
 });
 Route::get('/CGV', function () {

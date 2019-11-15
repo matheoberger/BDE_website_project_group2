@@ -99,6 +99,8 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
+var gallery = document.getElementById("js-picture-gallery");
+
 var Image =
 /*#__PURE__*/
 function () {
@@ -107,12 +109,19 @@ function () {
 
     var url = _ref.url,
         comments = _ref.comments,
-        nbrlike = _ref.nbrlike;
+        nbrlike = _ref.nbrlike,
+        id_pictures = _ref.id_pictures;
 
     _classCallCheck(this, Image);
 
+    this.id_pictures = id_pictures;
+
+    if (!button) {
+      var button = "";
+    }
+
     this.closed = false;
-    this.divs = "<div class=\"public_img\">\n        <img src=\"/".concat(url, "\" alt=\"party\">\n        <i onclick=\"likeDislike(this)\" class=\"fa fa-thumbs-up\"></i>\n        <p>Like : ").concat(nbrlike, "</p>\n        <button class=\"btn warning\">Signaler</button>\n        <button class=\"btn delete\">Supprimer</button>\n        <div class=\"comments\">Commentaires :<br>\n        ");
+    this.divs = "<div class=\"public_img\">\n        \n        <img src=\"/".concat(url, "\" alt=\"party\">\n        <i onclick=\"likeDislike(this)\" class=\"fa fa-thumbs-up\"></i>\n        <p>Likes : ").concat(nbrlike, "</p>\n        ").concat(button, "\n                <form id=\"").concat(this.id, "\">\n                <input type=\"text\" name=\"description\" />\n                <button type=\"submit\" class=\"btn add_comment\">Ajouter un commentaire</button>\n                </form>\n        <div class=\"comments\">Commentaires :<br>\n        ");
     comments.forEach(function (e) {
       _this.addComment(e);
     });
@@ -126,6 +135,42 @@ function () {
       this.divs += "<div class=\"comment\">".concat(id_users, " : ").concat(description, "</div>");
     }
   }, {
+    key: "postComment",
+    value: function postComment(object) {
+      $.post("http://localhost:8000/comment/", object, function (data, status) {
+        console.log(data);
+
+        if (status == "success") {
+          console.log(data);
+        }
+      });
+    }
+  }, {
+    key: "submitElement",
+    value: function submitElement() {
+      var _this2 = this;
+
+      gallery.innerHTML += this.element;
+
+      document.getElementById(this.id).onsubmit = function (e) {
+        e.preventDefault();
+        var object = {
+          description: e.target.description.value,
+          _token: token,
+          event: id,
+          picture: _this2.id_pictures
+        };
+
+        _this2.postComment(object); //console.log(object);
+
+      };
+    }
+  }, {
+    key: "id",
+    get: function get() {
+      return "js-form-".concat(this.id_pictures);
+    }
+  }, {
     key: "element",
     get: function get() {
       return this.divs + "</div></div>";
@@ -135,11 +180,11 @@ function () {
   return Image;
 }();
 
-var gallery = document.getElementById("js-picture-gallery");
 $.get("http://localhost:3000/event/".concat(id), function (data, status) {
   data.forEach(function (element) {
     var currentImg = new Image(element);
-    gallery.innerHTML += currentImg.element;
+    currentImg.submitElement();
+    console.log(element);
   });
 });
 
