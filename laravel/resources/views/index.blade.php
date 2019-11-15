@@ -13,6 +13,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
+
     <link rel="stylesheet" href="css/index.css" />
     <link rel="stylesheet" href="css/app.css" />
     <link rel="stylesheet" type="text/css" href="css/header.css">
@@ -93,6 +94,7 @@
                     </section>
                 </section>
                 @include("partials/footer")
+
             </div>
 
         </div>

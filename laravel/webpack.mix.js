@@ -16,6 +16,7 @@ mix.js("resources/js/app.js", "public/js")
     .js("resources/js/insertProduct.js", "public/js")
     .js("resources/js/insertDataToEvent.js", "public/js")
 
+    .js("resources/js/cookie.js", "public/js")
     .sass("resources/sass/app.scss", "public/css")
     .sass("resources/sass/header.scss", "public/css")
 

@@ -14,11 +14,28 @@
 Route::get('/', function () {
     return view('index');
 });
+Route::get('/disconnect', function () {
+    $session = session('email');
+    Session::flush();
+    session(['email' => $session]);
+    return view('index');
+});
+Route::get('/validateCookies', function () {
+    Cookie::make('accept_cookie', 'true', 60 * 24 * 365);
+    return view('index');
+});
+
 Route::get('/contactForm', 'contactController@getContact');
 Route::post('/contactForm', 'contactController@postContact');
 
 Route::get('/register', 'registerController@gethtml');
 Route::get('/login', 'loginController@gethtml');
+
+Route::post('/ConnexionVerif', 'loginController@verification');
+Route::post('/InscriptionVerif', 'registerController@verification');
+/*Route::get('/header', function () {
+    return view('header');
+});
 
 Route::get('/navbar', function () {
     return view('navbar');

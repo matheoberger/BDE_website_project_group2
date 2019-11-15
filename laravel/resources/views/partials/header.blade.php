@@ -11,7 +11,21 @@
 
             <input type="text" class="customNavbar customNavbar_search">
             <img src="/images/panier.png" class="customNavbar customNavbar__panier" />
-            <a class="customNavbar customNavbar__user" href="#"> login </a>
+            <?php if (session()->has('firstname') && session()->has('lastname')) {
+                echo "<a class='customNavbar customNavbar__user' href='/disconnect'> Se déconnecter </a>";
+            } else {
+                echo "  <a class='customNavbar customNavbar__user' href='/login'> Se connecter </a>";
+            }
+            ?>
+            <script type="text/javascript">
+                // document.cookie = "accept_cookie = cookie ; expires=" + new Date("1970-01-01").toUTCString() + "; path=/";
+            </script>
+            <?php
+            if (!isset($_COOKIE['accept_cookie'])) {
+                echo " <script type='text/javascript' src='js/cookie.js'></script> ";
+            }
+
+            ?>
         </div>
 
     </nav>

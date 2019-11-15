@@ -3,6 +3,10 @@ html {
     height: 100%;
 }
 
+.conteneur {
+    width: calc(100% - 250px);
+}
+
 .contenu {
     background-color: $grey_2;
 }
@@ -93,7 +97,7 @@ form label {
 
     section {
         margin: 0px;
-        height: calc(100vh - 110px);
+        // height: calc(100vh - 110px);
     }
 
     .footer--desktop {
