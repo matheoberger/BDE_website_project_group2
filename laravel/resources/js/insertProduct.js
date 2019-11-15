@@ -30,6 +30,7 @@ class insertProduct {
      */
 
     getProduct(articleIndex, articleNumber) {
+        $("js-spinner").append();
         return new Promise(resolve => {
             $.get(
                 `http://localhost:3000/produits/${articleIndex}/${articleNumber}`,
@@ -87,10 +88,14 @@ $(document).ready(function() {
     articleIndex += articleInc;
 
     $(window).scroll(function() {
+        console.log($(window).scrollTop());
+        console.log($(window).height());
+        console.log($(document).height());
         if (
-            Math.round($(window).scrollTop() + $(window).height()) ==
-            $(document).height()
+            Math.round($(window).scrollTop() + $(window).height()) >=
+            $(document).height() - 10
         ) {
+            console.log("sscroll");
             coucou.newProduct(articleIndex, articleNumber);
             articleIndex += articleInc;
         }

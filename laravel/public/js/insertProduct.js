@@ -143,6 +143,7 @@ function () {
   }, {
     key: "getProduct",
     value: function getProduct(articleIndex, articleNumber) {
+      $("js-spinner").append();
       return new Promise(function (resolve) {
         $.get("http://localhost:3000/produits/".concat(articleIndex, "/").concat(articleNumber), function (data, status) {
           resolve(data);
@@ -197,7 +198,12 @@ $(document).ready(function () {
   coucou.newProduct(articleIndex, articleNumber);
   articleIndex += articleInc;
   $(window).scroll(function () {
-    if (Math.round($(window).scrollTop() + $(window).height()) == $(document).height()) {
+    console.log($(window).scrollTop());
+    console.log($(window).height());
+    console.log($(document).height());
+
+    if (Math.round($(window).scrollTop() + $(window).height()) >= $(document).height() - 10) {
+      console.log("sscroll");
       coucou.newProduct(articleIndex, articleNumber);
       articleIndex += articleInc;
     }
