@@ -38,13 +38,13 @@ Route::get('/event', function () {
     return view('event');
 });
 Route::get('/event/{id}', function ($id) {
-    return view('eventType', ["id"=>$id]);
+    return view('eventType', ["id" => $id]);
 });
 Route::get('/CGV', function () {
     return view('CGV');
 });
 Route::get('/article/{id}', function ($id) {
-    return view('article', ["id"=>$id]);
+    return view('article', ["id" => $id]);
 });
 Route::get('/mentionsLegales', function () {
     return view('mentionsLegales');
