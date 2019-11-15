@@ -1,20 +1,22 @@
 class insertProduct {
     getProduct() {
         console.log("coucou");
-        let product = $.get("localhost:3000/produits/2/3", function(
-            data,
-            status
-        ) {
-            console.log("coucou");
-            console.log(data[1].description);
+        return new Promise(resolve => {
+            let product = $.get("http://localhost:3000/produits/2/3", function(
+                data,
+                status
+            ) {
+                resolve(data);
+            });
         });
-        // console.log(product);
     }
     createProduct(data) {}
 }
 $(document).ready(function() {
     const coucou = new insertProduct();
-    coucou.getProduct();
+    coucou.getProduct().then(data => {
+        console.log(data);
+    });
     coucou.createProduct();
 });
 
