@@ -90,29 +90,75 @@
 /*!***************************************!*\
   !*** ./resources/js/insertProduct.js ***!
   \***************************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-!(function webpackMissingModule() { var e = new Error("Cannot find module 'react'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
-!(function webpackMissingModule() { var e = new Error("Cannot find module './App.css'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
-!(function webpackMissingModule() { var e = new Error("Cannot find module './CustomArticle'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
-!(function webpackMissingModule() { var e = new Error("Cannot find module 'jquery'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
- // import CustomCard from "./CustomCard";
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
- // import NavBar from "./NavBar";
+var insertProduct =
+/*#__PURE__*/
+function () {
+  function insertProduct() {
+    _classCallCheck(this, insertProduct);
+  }
 
-!(function webpackMissingModule() { var e = new Error("Cannot find module 'jquery'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()).get("http://10.133.129.113:3000/produits/5/10", function (data, status) {
-  console.log("Data: " + data + "\nStatus: " + status);
-}); // class App extends PureComponent {
+  _createClass(insertProduct, [{
+    key: "getProduct",
+    value: function getProduct() {
+      console.log("coucou");
+      var product = $.get("http://localhost:3000/produits/2/10", function (data) {
+        console.log("coucou");
+        console.log("Data: " + data);
+        console.log("dfsdfsdf");
+      }); // console.log($product);
+    }
+  }]);
+
+  return insertProduct;
+}();
+
+var coucou = new insertProduct();
+coucou.getProduct(); // class insertProduct {
+//     $productNumber;
+//     newProduct(){
+//         const products = $.get("http://10.133.129.113:3000/produits/2/10");
+//         const coucou = products.map(item => {
+//             return this.insertProduct(item);
+//         )};
+//     }
+//     insertProduct(product) {
+//         const { image, title, description } = product;
+//         console.log("insertProduct");
+//         return (
+//           <CustomArticle
+//             className="content__article"
+//             image={image}
+//             title={title}
+//             description={description}
+//           />
+//         );
+//       }
+// }
+// $(window).scroll(function() {
+//     if (
+//       Math.round($(window).scrollTop() + $(window).height()) ===
+//       $(document).height()
+//     ) {
+//       console.log("scroll");
+//       loader.loadNextPage();
+//     }
+//   });
+// class App extends PureComponent {
 //   page = 0;
 //   loadNextPage() {
 //     this.page++;
+//     this.productNumber+=4;
 //     const products = [1, 2, 3, 4].map(index => ({
-//       image:,
+//       image: ,
 //       title: faker.name.title(),
 //       description: faker.lorem.lines()
 //     }));

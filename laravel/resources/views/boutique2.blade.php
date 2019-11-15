@@ -2,6 +2,8 @@
 <html>
 
 <head>
+
+
     <title>Event</title>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="css/app.css" />
@@ -10,18 +12,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="js/insertProduct.js"></script>
     <link rel="stylesheet" type="text/css" href="css/boutique.css">
     <link rel="stylesheet" type="text/css" href="css/app.css">
     <link rel="stylesheet" type="text/css" href="css/header.css">
     <link rel="stylesheet" type="text/css" href="css/navbar.css">
     <link rel="stylesheet" type="text/css" href="css/footer.css">
-    <script scr="js/insertProduct.js"></script>
-
 
 </head>
 
-<body>
 
+<body>
     @include('partials/header')
     <main>
         @include("partials/navbar")
@@ -33,9 +34,6 @@
             </div>
             @include("partials/footer")
         </div>
-
-
-
     </main>
     <script src="js/products.js"></script>
 </body>

@@ -19374,12 +19374,20 @@ window.axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
   \***********************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
-/***/ "./resources/sass/login.scss":
+
+// removed by extract-text-webpack-plugin
+
 /***/ }),
 
+/***/ "./resources/sass/login.scss":
+/*!***********************************!*\
+  !*** ./resources/sass/login.scss ***!
+  \***********************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
-/***/ "./resources/sass/navbar.scss":
+
+// removed by extract-text-webpack-plugin
+
 /***/ }),
 
 /***/ "./resources/sass/mentionsLegales.scss":
