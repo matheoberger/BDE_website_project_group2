@@ -1,0 +1,55 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto&display=swap);@font-face {
+  font-family: "Lemon/Milk";
+  src: url("/fonts/LemonMilk/LemonMilk.otf") format("truetype");
+}
+
+html,
+body {
+  min-height: 100vh;
+}
+
+body {
+  font-family: "Roboto";
+  padding: 0;
+  margin: 0;
+}
+
+main {
+  display: -webkit-box;
+  display: flex;
+  min-height: calc(100vh - 60px);
+}
+
+a {
+  text-decoration: none;
+}
+
+.contenu__main {
+  background: #757575;
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  -webkit-box-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+          align-items: center;
+  padding-bottom: 50px;
+}
+
+.contenu {
+  background: #9d9f9d;
+  width: 100%;
+  min-height: 100%;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+}
+

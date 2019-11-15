@@ -1,0 +1,86 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto&display=swap%22);@font-face {
+  font-family: "Lemon/Milk";
+  src: url("/fonts/LemonMilk/LemonMilk.otf") format("truetype");
+}
+
+nav.sidebar {
+  background: black;
+  font-family: "Roboto";
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  -webkit-box-pack: start;
+          justify-content: flex-start;
+  font-size: 20px;
+}
+
+nav.sidebar--desktop {
+  width: 250px;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+}
+
+nav.sidebar--mobile {
+  display: none;
+}
+
+nav.sidebar .link {
+  border-bottom: 1px solid white;
+  padding: 15px;
+  position: relative;
+  color: white;
+}
+
+nav.sidebar .link:hover {
+  border-bottom: 1px solid white;
+  padding: 15px;
+  position: relative;
+  color: #ffc252;
+}
+
+nav.sidebar .link::before {
+  content: "";
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  background-color: white;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transform-origin: bottom left;
+          transform-origin: bottom left;
+}
+
+nav.sidebar .link:hover::before {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+  background-color: #ffc252;
+}
+
+.sidebar img {
+  cursor: pointer;
+  width: 100%;
+  height: 100px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@media only screen and (max-device-width: 880px), (max-width: 880px) {
+  nav.sidebar--desktop {
+    position: fixed;
+    -webkit-transform: translateX(-250px);
+            transform: translateX(-250px);
+  }
+
+  /*nav.sidebar--mobile {
+      display: flex;
+  }*/
+}
+

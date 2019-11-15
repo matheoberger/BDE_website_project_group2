@@ -1,0 +1,20 @@
+{
+    "/js/app.js": "/js/app.js",
+    "/css/app.css": "/css/app.css",
+    "/css/header.css": "/css/header.css",
+    "/css/index.css": "/css/index.css",
+    "/css/contactForm.css": "/css/contactForm.css",
+    "/css/login.css": "/css/login.css",
+    "/css/navbar.css": "/css/navbar.css",
+    "/css/event.css": "/css/event.css",
+    "/css/footer.css": "/css/footer.css",
+    "/css/responsive.css": "/css/responsive.css",
+    "/css/mentionsLegales.css": "/css/mentionsLegales.css",
+    "/css/breadcrumb.css": "/css/breadcrumb.css",
+    "/css/CGV.css": "/css/CGV.css",
+    "/css/eventType.css": "/css/eventType.css",
+    "/css/panier.css": "/css/panier.css",
+    "/css/boutique.css": "/css/boutique.css",
+    "/js/index.js": "/js/index.js",
+    "/js/insertProduct.js": "/js/insertProduct.js"
+}

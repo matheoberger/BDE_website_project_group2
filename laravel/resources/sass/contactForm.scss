@@ -1,0 +1,106 @@
+@import "./responsive.scss";
+html {
+    height: 100%;
+}
+
+.conteneur {
+    width: calc(100% - 250px);
+}
+
+.contenu {
+    background-color: $grey_2;
+}
+
+section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    border: ridge 2px $orange_1;
+    background-color: black;
+    padding: 20px;
+    margin: 100px;
+    height: 100%;
+}
+.formTitle {
+    font-family: $roboto;
+    font-size: xx-large;
+    color: $orange_1;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+form input,
+textarea {
+    width: 60%;
+    margin-top: 5px;
+    margin-bottom: 30px;
+}
+
+textarea {
+    height: 300px;
+}
+form label {
+    color: white;
+    font-family: $roboto;
+    width: 60%;
+}
+
+.submit_button {
+    font-family: $roboto;
+    border: none;
+    background: linear-gradient(to right, $orange_2 50%, $orange_1 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition: all 0.5s ease-out;
+}
+
+.submit_button:hover {
+    background-position: left bottom;
+    transition: all 0.5s ease-out;
+}
+
+.errorMessage {
+    text-align: center;
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-family: $roboto;
+}
+
+.footer--desktop {
+    width: 100%;
+}
+
+@media (max-width: 800px) {
+    main {
+        height: 100%;
+    }
+    .formTitle {
+        font-size: large;
+    }
+    form input,
+    textarea {
+        width: 100%;
+    }
+
+    form label {
+        width: 100%;
+    }
+
+    section {
+        margin: 0px;
+        // height: calc(100vh - 110px);
+    }
+
+    .footer--desktop {
+        margin-top: 0px;
+    }
+}
