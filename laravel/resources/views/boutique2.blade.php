@@ -29,7 +29,8 @@
 
         <div class="contenu">
             <div class="contenu__main">
-
+                <div id="js-productContainer">
+                </div>
 
             </div>
             @include("partials/footer")
