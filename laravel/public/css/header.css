@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto&display=swap%22);@font-face {
+
   font-family: "Lemon/Milk";
   src: url("/fonts/LemonMilk/LemonMilk.otf") format("truetype");
 }
@@ -6,6 +7,10 @@
 .header {
   background: black;
   padding: 5px;
+  color: white;
+}
+
+.header a {
   color: white;
 }
 

@@ -30,10 +30,7 @@ Route::post('/InscriptionVerif', 'registerController@verification');
 */
 Route::get('/navbar', function () {
     return view('navbar');
-});/*
-Route::get('/footer', function () {
-    return view('footer');
-});*/
+});
 Route::get('/example', function () {
     return view('example');
 });
@@ -41,6 +38,13 @@ Route::get('/example', function () {
 Route::get('/event', function () {
     return view('event');
 });
+
 Route::get('/CGV', function () {
     return view('CGV');
+});
+Route::get('/boutique', function () {
+    return view('boutique');
+});
+Route::get('/event/type', function () {
+    return view('eventType');
 });

@@ -1,0 +1,46 @@
+.welcome--boutique {
+  margin: 0 auto;
+  margin-top: 50px;
+  text-align: center;
+  max-height: 250px;
+}
+
+.welcome--boutique__image {
+  height: 100%;
+  width: 80%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin: 0 auto;
+}
+
+.topSelling {
+  margin: 10px;
+  width: 50%;
+  font-family: "Roboto";
+  text-align: center;
+}
+
+.carousel img {
+  width: 100%;
+}
+
+p {
+  color: white;
+  font-size: 130%;
+}
+
+#js-productContainer {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+          align-items: center;
+  flex-wrap: wrap;
+}
+
+.product {
+  width: 200px;
+  background: white;
+}
+

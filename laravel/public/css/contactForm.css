@@ -29,7 +29,7 @@ section {
 }
 
 .formTitle {
-  font-family: "Roboto", bolder;
+  font-family: "Roboto", sans-serif;
   font-size: xx-large;
   color: #ffc252;
   margin-bottom: 20px;
@@ -57,12 +57,12 @@ textarea {
 
 form label {
   color: white;
-  font-family: "Roboto", bolder;
+  font-family: "Roboto", sans-serif;
   width: 60%;
 }
 
 .submit_button {
-  font-family: "Roboto", bolder;
+  font-family: "Roboto", sans-serif;
   border: none;
   background: -webkit-gradient(linear, left top, right top, color-stop(50%, #eb7500), color-stop(50%, #ffc252));
   background: linear-gradient(to right, #eb7500 50%, #ffc252 50%);
@@ -83,7 +83,7 @@ form label {
   width: 100%;
   margin-top: 5px;
   margin-bottom: 5px;
-  font-family: "Roboto", bolder;
+  font-family: "Roboto", sans-serif;
 }
 
 .footer--desktop {

@@ -18,10 +18,19 @@ main {
 a {
     text-decoration: none;
 }
-.conteneur {
+.contenu__main {
+    background: hsla(60, 0%, 46%, 1);
+    height: 100%;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-bottom: 50px;
 }
 .contenu {
+    background: hsla(120, 1%, 62%, 1);
+    width: 100%;
     min-height: 100%;
     display: flex;
     flex-direction: column;

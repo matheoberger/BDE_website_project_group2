@@ -147,7 +147,7 @@ window.verifText = function (champ) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\axelb\Documents\GitHub\BDE_website_project_group2\laravel\resources\js\index.js */"./resources/js/index.js");
+module.exports = __webpack_require__(/*! D:\home\Documents\Code\Projet WEB\BDE_website_project_group2\laravel\resources\js\index.js */"./resources/js/index.js");
 
 
 /***/ })

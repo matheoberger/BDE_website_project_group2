@@ -1,0 +1,179 @@
+@import "./responsive.scss";
+
+
+body {
+    background: linear-gradient(70deg, $red, darken($blue_1, 20));
+}
+
+.comment {
+
+    border: 0.3vw solid #6a6666;
+    margin: 0 10% 5% 10%;
+}
+
+main {
+    text-align: center;
+}
+
+h2 {
+    font-family: $roboto;
+    text-align: center;
+    font-size: 5vw;
+}
+
+h3 {
+    font-family: $roboto;
+    font-size: 3vw;
+}
+
+p {
+    font-size: 2vw;
+
+}
+
+.conteneur {
+
+    background: linear-gradient(70deg, $grey_1, darken($grey_1, 30));
+    display: flex;
+    flex-wrap: wrap;
+    font-family: $roboto;
+}
+
+section {
+    margin: $px_20;
+    display: flex;
+    flex-wrap: wrap;
+    font-family: $roboto;
+    justify-content: center;
+    border: 1px dashed #000000;
+
+}
+
+article {
+    font-family: $roboto;
+    border: 1px dashed #000000;
+}
+
+.picture_gallery {
+    border: 1px dashed #000000;
+
+}
+
+.btn {
+    border: none;
+    /* Remove borders */
+    color: white;
+    /* Add a text color */
+    padding: 14px 28px;
+    /* Add some padding */
+    cursor: pointer;
+    /* Add a pointer cursor on mouse-over */
+}
+
+.fa {
+    font-size: 15vw;
+    cursor: pointer;
+    user-select: none;
+}
+
+.warning {
+    background-color: #ff9800;
+}
+
+/* Orange */
+.warning:hover {
+    background: #e68a00;
+}
+
+.edit_event {
+    background-color: $orange_3;
+}
+
+.edit_event:hover {
+    background: darken($orange_3, 10);
+}
+
+.add_picture {
+    background-color: $orange_3;
+}
+
+.participate {
+    background-color: #4CAF50;
+}
+
+/* Green */
+.participate:hover {
+    background-color: #46a049;
+}
+
+/* Orange */
+.add_picture:hover {
+    background: darken($orange_3, 10);
+}
+
+.delete {
+    background-color: #f44336;
+}
+
+/* Red */
+.delete:hover {
+    background: #da190b;
+}
+
+.add_comment {
+    background-color: #2196F3;
+}
+
+/* Blue */
+.add_comment:hover {
+    background: #0b7dda;
+}
+
+.fa:hover {
+    color: darkblue;
+}
+
+.picture_gallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.public_img {
+    border: 1px dashed #000000;
+
+}
+
+aside {
+    margin: $px_2;
+    font-family: 'Roboto', italic;
+    height: $cube_dimension;
+    width: $cube_dimension;
+    overflow: auto;
+    padding: bottom;
+    background-color: $blue_1;
+    transition: 0.2s;
+
+    &:hover {
+        background-color: darken($red, 10);
+    }
+
+    font-size: 2vw;
+}
+
+.comments {
+    margin: $px_2;
+    font-family: 'Roboto', italic;
+    height: $cube_dimension;
+    width: $cube_dimension;
+    overflow: auto;
+    padding: bottom;
+    background-color: $blue_1;
+    transition: 0.2s;
+
+    &:hover {
+        background-color: darken($red, 10);
+    }
+
+    font-size: 2vw;
+}

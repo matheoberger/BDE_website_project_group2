@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto&display=swap%22);@font-face {
+
   font-family: "Lemon/Milk";
   src: url("/fonts/LemonMilk/LemonMilk.otf") format("truetype");
 }
@@ -32,6 +33,7 @@ nav.sidebar .link {
   border-bottom: 1px solid white;
   padding: 15px;
   position: relative;
+  color: white;
 }
 
 nav.sidebar .link:hover {
@@ -71,7 +73,7 @@ nav.sidebar .link:hover::before {
      object-fit: cover;
 }
 
-@media only screen and (max-device-width: 768px), (max-width: 768px) {
+@media only screen and (max-device-width: 468px), (max-width: 468px) {
   nav.sidebar--desktop {
     position: fixed;
     -webkit-transform: translateX(-250px);
