@@ -1,17 +1,19 @@
+console.log("You fool!")
+
 /**
- * La classe insertProduct regroupe les méthodes
+ * La classe insertevents regroupe les méthodes
  * permettant le chargement depuis l'API de nouveaux
- * articles en les inserant directement en Jquery
+ * event en les inserant directement en Jquery
  * dans le fichier HTML boutique
  */
 class insertEvents {
     /**
      *
      * @param {number} eventIndex : représente le nombre d'article déjà chargé, utile pour l'API qui l'enverra à la procédure
-     * @param {number} eventNumber  : représente le nnombre d'articles que l'on veut charger à partir de l'index
+     * @param {number} eventNumber  : représente le nnombre d'event que l'on veut charger à partir de l'index
      *
-     * New product régit toutes les méthodes de la classe insertProduct, un tableau de produit est d'abord chargé,
-     * puis détaché en objets (les articles) puis mis en forme pour être insérés dans le fichier HTML
+     * New events régit toutes les méthodes de la classe insertevents, un tableau de produit est d'abord chargé,
+     * puis détaché en objets (les event) puis mis en forme pour être insérés dans le fichier HTML
      *
      */
     newEvents(eventIndex, eventNumber) {
@@ -28,9 +30,9 @@ class insertEvents {
     /**
      *
      * @param {number} eventIndex : représente le nombre d'article déjà chargé, utile pour l'API qui l'enverra à la procédure
-     * @param {number} eventNumber  : représente le nnombre d'articles que l'on veut charger à partir de l'index
+     * @param {number} eventNumber  : représente le nnombre d'event que l'on veut charger à partir de l'index
      *
-     * getProduct execute la requête HTTP get destinée à l'API, les données sont récupérées en asynchrone
+     * getevents execute la requête HTTP get destinée à l'API, les données sont récupérées en asynchrone
      *
      */
 
@@ -49,7 +51,7 @@ class insertEvents {
      *
      * @param {*} events
      *
-     *createProduct permet de mettre en forme chaque article pour qu'ils puissent être insérés dans le fichier HTML
+     *createevents permet de mettre en forme chaque article pour qu'ils puissent être insérés dans le fichier HTML
      *
      */
 
@@ -66,7 +68,7 @@ class insertEvents {
      *
      * @param {*} eventsElement
      *
-     * loadProduct insert productElement dans le div dépendant de la classe js-productContainer
+     * loadevents insert eventsElement dans le div dépendant de la classe js-eventsContainer
      *
      */
     loadEvents(eventsElement) {
@@ -76,7 +78,7 @@ class insertEvents {
 
 /**
  * Une fois que le document est "prêt",
- * une nouvelle classe inserProduct est crée puis on charge les articles
+ * une nouvelle classe inserevents est crée puis on charge les event
  * à chaque fois que la position du curseur dans la fenêtre atteint la fin du document
  *
  */
