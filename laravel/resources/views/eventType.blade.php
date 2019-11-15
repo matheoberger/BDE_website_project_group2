@@ -15,16 +15,6 @@ $requete->closeCursor();
 if(session('role')){
     //echo session('role');
 }
-
-//echo print_r($event[0]);
-//echo print_r($event);
-
-/*
-$title1 = $event[0]['title'] . "-" . $event[0]['product_name'];
-
-$src1 = $event[0]['url'];
-*/
-
 ?>
 
 <!DOCTYPE html>
@@ -65,12 +55,9 @@ $src1 = $event[0]['url'];
                 <button class="btn add_comment">Ajouter un commentaire</button>
                 <button class="btn add_picture">Ajouter photo         </button>
                 <?php 
-                if(session('role')){
                     if(session('role') == 'Administrator'){
                         echo "<button class='btn edit_event'>Modifier l'event</button>";
-                    };
-                }
-                
+                    };                
                  ?>
                 
                 <button class="btn participate">Participer à l'event  </button>

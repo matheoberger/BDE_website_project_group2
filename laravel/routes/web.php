@@ -43,7 +43,7 @@ Route::get('/event/{id}', function ($id) {
 Route::get('/CGV', function () {
     return view('CGV');
 });
-Route::get('/article/{id}', function ($id) {
+Route::get('/boutique/{id}', function ($id) {
     return view('article', ["id"=>$id]);
 });
 Route::get('/mentionsLegales', function () {
