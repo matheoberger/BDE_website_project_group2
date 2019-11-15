@@ -6,16 +6,25 @@ class Image {
             var button = "";
         }
         this.closed = false;
-        this.divs = `<div class="public_img">
+        this.divs =
+            `<div class="public_img">
         
         <img src="/${url}" alt="party">
-        <i onclick="likeDislike(this)" class="fa fa-thumbs-up"></i>
         <p>Likes : ${nbrlike}</p>
-        ${button}
-                <form id="${this.id}">
+        
+        
+        ${button}` +
+            (() => {
+                if (registered) {
+                    return `<i onclick="likeDislike(this)" class="fa fa-thumbs-up"></i><form id="${this.id}">
                 <input type="text" name="description" />
                 <button type="submit" class="btn add_comment">Ajouter un commentaire</button>
-                </form>
+                </form>`;
+                } else {
+                    return "";
+                }
+            })() +
+            `
         <div class="comments">Commentaires :<br>
         `;
         comments.forEach(e => {
@@ -43,6 +52,7 @@ class Image {
             `http://localhost:8000/comment/`,
             object,
             function(data, status) {
+                return;
                 if (status == "success") {
                     img.addComment({
                         description: object.description,
@@ -56,18 +66,20 @@ class Image {
     submitElement() {
         this.submitted = true;
         gallery.innerHTML += this.element;
-        document.getElementById(this.id).onsubmit = e => {
-            e.preventDefault();
-            var object = {
-                description: e.target.description.value,
-                _token: token,
-                event: id,
-                picture: this.id_pictures
-            };
-            this.postComment(object);
+        if (registered) {
+            document.getElementById(this.id).onsubmit = e => {
+                e.preventDefault();
+                var object = {
+                    description: e.target.description.value,
+                    _token: token,
+                    event: id,
+                    picture: this.id_pictures
+                };
+                this.postComment(object);
 
-            //console.log(object);
-        };
+                //console.log(object);
+            };
+        }
     }
     get id() {
         return `js-form-${this.id_pictures}`;
@@ -81,6 +93,5 @@ $.get(`http://localhost:3000/event/${id}`, function(data, status) {
     data.forEach(element => {
         var currentImg = new Image(element);
         currentImg.submitElement();
-        console.log(element);
     });
 });

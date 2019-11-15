@@ -22,8 +22,7 @@ class leaveEvent extends Controller
         $requete->execute();
         $data = $requete->fetchAll();
         $requete->closeCursor();
-        return response($data, 200)
-                  ->header('Content-Type', 'text/plain');
+        return redirect("/event/$request->event");
         //return view('eventType', ["id"=>$id]);;
     }
 }

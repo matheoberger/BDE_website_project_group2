@@ -15,7 +15,23 @@ class commentPicture extends Controller
      */
     public function __invoke(Request $request)
     {
+        
         $bdd = new PDO("mysql:host=localhost;dbname=bde_cesi;charset=UTF8", "root", "");
+        
+        $checkParticipation = $bdd->prepare("CALL `isRegistered`(:user, :event);");
+        
+        $checkParticipation->bindValue(':user', session('id_user'), PDO::PARAM_INT);
+        
+        $checkParticipation->bindValue(':event', $request->event, PDO::PARAM_INT);
+        
+        $checkParticipation->execute();
+        
+        $paticipation=$checkParticipation->fetchAll();
+        if(empty($paticipation)){
+            return abort(403);
+        }
+        
+        
         $requete = $bdd->prepare("CALL `newComment`(:user, :picture, :description);");
         $requete->bindValue(':user', session('id_user'), PDO::PARAM_INT);
         $requete->bindValue(':picture', $request->picture, PDO::PARAM_INT);
@@ -23,8 +39,7 @@ class commentPicture extends Controller
         $requete->execute();
         $data = $requete->fetchAll();
         $requete->closeCursor();
-        return response($request, 200)
-                  ->header('Content-Type', 'text/plain');
+        return response(200);
         //return view('eventType', ["id"=>$id]);;
     }
 }

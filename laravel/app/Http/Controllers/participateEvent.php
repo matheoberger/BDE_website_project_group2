@@ -22,8 +22,9 @@ class participateEvent extends Controller
         $requete->execute();
         $data = $requete->fetchAll();
         $requete->closeCursor();
-        return response($request, 200)
-                  ->header('Content-Type', 'text/plain');
+        return redirect("/event/$request->event");
+        // return response($request, 200)
+                //   ->header('Content-Type', 'text/plain');
         //return view('eventType', ["id"=>$id]);;
     }
 }

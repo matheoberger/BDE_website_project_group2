@@ -22,7 +22,6 @@ $requete3->bindValue(':event', $id, PDO::PARAM_INT);
 $requete3->execute();
 $isRegistered = $requete3->fetchAll();
 $requete->closeCursor();
-
 if(session('role')){
     //echo session('role');
 }
@@ -122,7 +121,13 @@ if(session('role')){
         echo 'var token = "' . csrf_token() . '";';
     };
     if(session('id_user')){
-        echo 'var id_user = ' . session('id_user');
+        echo 'var id_user = ' . session('id_user') . ';';
+    }
+    if(!empty($isRegistered)){
+        echo 'var registered = true;';
+    }
+    if(empty($isRegistered)){
+        echo 'var registered = false;';
     }
 
      ?>
