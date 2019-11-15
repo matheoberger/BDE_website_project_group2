@@ -20,7 +20,7 @@ class RouteHandler {
       router.put(route.route, route.put);
       router.delete(route.route, route.delete);
     });
-    console.log(this.routes);
+    //console.log(this.routes);
     return router;
   }
 }
