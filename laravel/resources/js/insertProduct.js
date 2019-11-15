@@ -35,6 +35,7 @@ class insertProduct {
      */
 
     getProduct(articleIndex, articleNumber) {
+        $("js-spinner").addClass("spinner__display");
         return new Promise(resolve => {
             $.get(
                 `http://localhost:3000/produits/${articleIndex}/${articleNumber}`,

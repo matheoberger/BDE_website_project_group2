@@ -1,3 +1,16 @@
+<?php
+
+
+
+?>
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html>
 
@@ -22,6 +35,8 @@
     <link rel="stylesheet" type="text/css" href="css/navbar.css">
     <link rel="stylesheet" type="text/css" href="css/footer.css">
     <link rel="stylesheet" type="text/css" href="css/breadcrumb.css">
+    <link rel="stylesheet" type="text/css" href="css/panier.css">
+
 </head>
 
 <body>
@@ -32,12 +47,17 @@
             <div class="contenu">
                 <div class="panier__body">
 
-                    <div class="jumbotron jumbotron-fluid">
-                        <div class="container">
-                            <h1 class="display-3">Panier</h1>
-                            <p class="lead">coucou je suis ton panier</p>
-                        </div>
-                    </div>
+                    <h1 class="panier__title">Panier</h1>
+
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a class="breadcrumb--white" href='/'>Accueil</a></li>
+                            <li class="breadcrumb-item"><a class="breadcrumb--white" href='boutique'>Boutique</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Panier
+                            </li>
+                        </ol>
+                    </nav>
+
                 </div>
 
                 <ul class="list-unstyled">
