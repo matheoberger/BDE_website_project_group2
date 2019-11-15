@@ -76,6 +76,7 @@
                 <button class="btn add_picture">Ajouter photo         </button>
                 <button class="btn edit_event">Modifier l'event       </button>
                 <button class="btn participate">Participer à l'event  </button>
+                <button class="btn download">Télécharger</button>
 
             </aside>
 
