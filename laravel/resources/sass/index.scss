@@ -270,7 +270,7 @@ textarea {
 }
 
 //Definir mise en page pour mobile
-@media (max-width: 800px) {
+@media (max-width: $medium) {
     //changer taille police
     .main__pannel__box__title {
         font-size: 20px;

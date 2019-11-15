@@ -1,21 +1,30 @@
 /* Made with love by Mutiullah Samim*/
 
-@import url("https://fonts.googleapis.com/css?family=Numans");
 @import "./responsive.scss";
 
-html,
+html {
+    height: 100%;
+}
 body {
+    background-color: black;
     background-image: url("../images/event.jpg");
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center center;
     height: 100%;
-    font-family: "Numans", sans-serif;
 }
 
 .container {
+    padding: 15px;
     width: 100%;
     height: 100%;
-    align-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.d-flex {
+    width: 100%;
 }
 
 .card {
@@ -44,8 +53,10 @@ body {
 }
 
 .card-header h3 {
+    margin-top: 25px;
     color: white;
     font-family: $roboto;
+    text-align: center;
 }
 
 .card-footer a {
@@ -109,4 +120,16 @@ input:focus {
     color: red;
     text-align: center;
     font-family: $roboto;
+}
+
+@media (max-width: $medium) {
+    .card {
+        width: 100% !important;
+    }
+
+    .form-control,
+    .remember,
+    .links {
+        font-size: small;
+    }
 }

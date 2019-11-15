@@ -1,4 +1,4 @@
-@extends('layout.loginLayout')
+@extends('layouts.loginLayout')
 
 @section('Title')
 Inscription
