@@ -5,12 +5,10 @@
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="css/event.css" />
     <link rel="stylesheet" href="css/header.css" />
-
-<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
   </head>
-  <body>
 
+<body>
 @include('partials/header')
 <main>
 
@@ -24,60 +22,35 @@
             <input type="image" src="../images/party_merica.jpg" name="saveForm" class="btTxt_submit" id="saveForm" />
             </article>
             <div class="event_description">
-                <aside>Nom et description de l'évènement</aside>
+                <aside>
+                    [titre_event]
+                    [description_event]
+                </aside>
             </div>
         </section>
 
+<?php
 
-        <section>
-            <article>
-                <img src="../images/party.jpg" alt="party">
-            </article>
-            <div class="event_description">
-                <aside>Nom et description de l'évènement</aside>
-            </div>
-        </section>
-        <section>
-            <article>Photo + Bouton
-            </article>
-            <div class="event_description">
-                <aside>Nom et description de l'évènement</aside>
-            </div>
-        </section>
+    if(isset($_POST['title_events'])){
 
-        <section>
-            <article>Photo + Bouton
-            </article>
-            <div class="event_description">
-                <aside>Nom et description de l'évènement</aside>
-            </div>
-        </section>
+    $message = array();
 
-        <section>
-            <article>Photo + Bouton
-            </article>
-            <div class="event_description">
-                <aside>Nom et description de l'évènement</aside>
-            </div>
-        </section>
+    $message['title_events'] = $_POST['title_events'];
+    $message['place'] = $_POST['place'];
+    $message['description'] = $_POST['description'];
+    $message['starting_date'] = date("d/m/Y");
+    $message['ending_date'] = date("d/m/Y");
+    $message['image'] = $_POST_['image'];
+    $message['price'] = $_POST['price'];
+    $message['id'] = ['id'];
 
-        <section>
-            <article>Photo + Bouton
-            </article>
-            <div class="event_description">
-                <aside>Nom et description de l'évènement</aside>
-            </div>
-        </section>
+    $js = file_get_contents('message.json');
+    $js = js_decode($js, true);
+    $js[] = $message;
 
-        <section>
-            <article>Photo + Bouton
-            </article>
-            <div class="event_description">
-                <aside>Nom et description de l'évènement</aside>
-            </div>
-        </section>
+    }
 
-</div>
+php?>
 
 </main>
   </body>
