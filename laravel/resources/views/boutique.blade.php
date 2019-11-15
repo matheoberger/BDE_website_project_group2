@@ -37,10 +37,9 @@
                     @include("partials/shopCarousel")
                 </div>
                 <p class=title>Produits</p>
-                <div id="js-productContainer">
-
-
-
+                <div id="js-productContainer"></div>
+                <div class="spinner-border" role="status" id="js-spinner">
+                    <span class="sr-only">Loading...</span>
                 </div>
             </div>
             @include("partials/footer")

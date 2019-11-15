@@ -141,16 +141,8 @@ function () {
      */
 
   }, {
-    key: "getProduct",
+  ;key
 
-    value: function getProduct(articleIndex, articleNumber) {
-
-      return new Promise(function (resolve) {
-        $.get("http://localhost:3000/produits/".concat(articleIndex, "/").concat(articleNumber), function (data, status) {
-          resolve(data);
-        });
-      });
-    }
     /**
      *
      * @param {*} product
@@ -178,7 +170,6 @@ function () {
     value: function loadProduct(productElement) {
       $("#js-productContainer").append(productElement);
     }
-
   }]);
 
   return insertProduct;
@@ -205,7 +196,6 @@ $(document).ready(function () {
       articleIndex += articleInc;
     }
   });
-
 });
 
 /***/ }),
