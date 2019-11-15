@@ -38,7 +38,7 @@ module.exports = {
         }
       );
     } else {
-      res.sendStatus(405);
+      res.sendStatus(403);
     }
   },
   post: (req, res) => {},
