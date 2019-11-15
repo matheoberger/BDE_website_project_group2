@@ -1,14 +1,15 @@
 <?php
+// if (session("email")) {
+//     $bdd2 = new PDO("mysql:host=localhost;dbname=bde_cesi;charset=UTF8", "root", "");
+//     $requete = $bdd2->prepare("CALL `getBasketFromEmail`(:userID)");
+//     $requete->bindValue(":userID", session("email"), PDO::PARAM__STR);
+//     $requete->execute();
+//     $basket = $requete->fetchAll();
+//     $requete->closeCursor();
 
-
-
+//     print_r($basket);
+// }
 ?>
-
-
-
-
-
-
 
 
 <!DOCTYPE html>
@@ -46,7 +47,20 @@
         <div class="conteneur">
             <div class="contenu">
                 <div class="panier__body">
+                    <?php
+                    print_r(session("email"));
+                    if (session("email")) {
 
+                        $bdd2 = new PDO("mysql:host=localhost;dbname=bde_cesi;charset=UTF8", "root", "");
+                        $requete = $bdd2->prepare("CALL `getBasketFromEmail`(:userEmail)");
+                        $requete->bindValue(":userEmail", session("email"), PDO::PARAM__STR);
+                        $requete->execute();
+                        $basket = $requete->fetchAll();
+                        $requete->closeCursor();
+
+                        print_r($basket);
+                    }
+                    ?>
                     <h1 class="panier__title">Panier</h1>
 
                     <nav aria-label="breadcrumb">
