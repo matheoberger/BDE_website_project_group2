@@ -6,7 +6,7 @@ class insertProduct {
             status
         ) {
             console.log("coucou");
-            console.log(data[1].description);
+            console.log(data[1].id_events);
         });
         // console.log(product);
     }
