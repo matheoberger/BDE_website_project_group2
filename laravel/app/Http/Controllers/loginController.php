@@ -49,9 +49,7 @@ class loginController extends Controller
             $error = "Adresse Email ou mot de passe incorrect";
         }
         //Si la case "se souvenir de moi" est cochée, on enregistre l'adresse email en cookie
-        if ($request->check) {
-            Cookie::make('email', $request->email, 60 * 24 * 365);
-        }
+        if ($request->check) { }
         //en cas d'erreur on retourne la vue connection avec l'erreur
         return view('login', ['error' => $error]);
     }

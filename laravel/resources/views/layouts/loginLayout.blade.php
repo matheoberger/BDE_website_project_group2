@@ -51,10 +51,12 @@
                                         </div>
                                         <!-- Input pour l'email, prend la valeur entrée précédement ou celle en session-->
                                         <input type="text" name="email" class="form-control" placeholder="Email" required="required" <?php if (isset($_POST['email'])) {
-                                                                                                                                            echo "value = '" . $_POST['email'] . "'";
-                                                                                                                                        } elseif (session()->exists('email')) {
-                                                                                                                                            echo "value = '" . session('email') . "'";
-                                                                                                                                        } ?>>
+                                                                                                                                            //echo "value = '" . $_POST['email'] . "'";
+                                                                                                                                        } elseif (isset($_COOKIE['email'])) {
+                                                                                                                                            echo "value = '" . $_COOKIE['email'] . "'";
+                                                                                                                                        }
+
+                                                                                                                                        ?>>
                                     </div>
                                     <!-- Division pour le mot de passe  -->
                                     <div class="input-group form-group">

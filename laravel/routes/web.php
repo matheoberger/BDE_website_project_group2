@@ -15,7 +15,13 @@ Route::get('/', function () {
     return view('index');
 });
 Route::get('/disconnect', function () {
+    $session = session('email');
     Session::flush();
+    session(['email' => $session]);
+    return view('index');
+});
+Route::get('/validateCookies', function () {
+    Cookie::make('accept_cookie', 'true', 60 * 24 * 365);
     return view('index');
 });
 
