@@ -19,17 +19,30 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
+
+            <?php
+            foreach ($data as $user) {
+                echo "<tr><td>
+                    {$user['firstname']}
+                   </td>
+                   <td>
+                    {$user['lastname']}
+                  </td>
+                  <td>
+                    {$user['email']}
+                  </td>
+                 <td>
+                    {$user['center']}
+                 </td>
                 <td>
-                    {{$data->show_name}}
+                    {$user['gender']}
                 </td>
                 <td>
-                    {{$data->series}}
-                </td>
-                <td>
-                    {{$data->lead_actor}}
-                </td>
-            </tr>
+                    {$user['birthdate']}
+                </td></tr>";
+            } ?>
+
+
         </tbody>
     </table>
 </body>

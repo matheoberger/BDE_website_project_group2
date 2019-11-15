@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use PDF;
 use PDO;
 use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Http\Request;
 
 class EventController extends Controller
 {
-    public function downloadCSV($id)
+    static function loadData($id)
     {
         $bdd = new PDO("mysql:host=localhost;dbname=bde_cesi;charset=UTF8", "root", "");
         $requete = $bdd->prepare("CALL `getRegisteredFromEvent`(:id);");
@@ -16,6 +17,12 @@ class EventController extends Controller
         $requete->execute();
         $users = $requete->fetchAll();
         $requete->closeCursor();
+        return $users;
+    }
+
+    public function downloadCSV($id)
+    {
+        $users = loadData($id);
         $i = 0;
         foreach ($users as $user) {
             $csvData[$i]["firstname"] = $users[$i]["firstname"];
@@ -41,5 +48,9 @@ class EventController extends Controller
 
     //composer require barryvdh/laravel-dompdf
     public function downloadPDF($id)
-    { }
+    {
+        $data = EventController::loadData($id);
+        $pdf = PDF::loadView('emails/pdf', ['data' => $data]);
+        return $pdf->download("event$id.pdf");
+    }
 }
