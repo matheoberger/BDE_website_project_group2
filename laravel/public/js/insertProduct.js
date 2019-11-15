@@ -128,6 +128,8 @@ function () {
       var _this = this;
 
       this.getProduct(articleIndex, articleNumber).then(function (productList) {
+        $("js-spinner").removeClass("spinner__display");
+        $("js-spinner").addClass("spinner__display--none");
         productList.forEach(_this.createProduct.bind(_this));
       });
     }
@@ -143,7 +145,7 @@ function () {
   }, {
     key: "getProduct",
     value: function getProduct(articleIndex, articleNumber) {
-      $("js-spinner").append();
+      $("js-spinner").addClass("spinner__display");
       return new Promise(function (resolve) {
         $.get("http://localhost:3000/produits/".concat(articleIndex, "/").concat(articleNumber), function (data, status) {
           resolve(data);
@@ -198,12 +200,7 @@ $(document).ready(function () {
   coucou.newProduct(articleIndex, articleNumber);
   articleIndex += articleInc;
   $(window).scroll(function () {
-    console.log($(window).scrollTop());
-    console.log($(window).height());
-    console.log($(document).height());
-
     if (Math.round($(window).scrollTop() + $(window).height()) >= $(document).height() - 10) {
-      console.log("sscroll");
       coucou.newProduct(articleIndex, articleNumber);
       articleIndex += articleInc;
     }

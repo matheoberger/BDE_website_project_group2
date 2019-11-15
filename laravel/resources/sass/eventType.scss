@@ -86,6 +86,13 @@ article {
     font-size: 1vw;
 }
 
+.download {
+    background-color: #4caf50;
+}
+.download:hover {
+    background-color: darken(#4caf50, 10);
+}
+
 /* Orange */
 .warning:hover {
     background: #e68a00;
