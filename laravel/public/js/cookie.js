@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 2);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -101,14 +101,14 @@ if (confirm("Veuillez accepter les cookies")) {
 
 /***/ }),
 
-/***/ 2:
+/***/ 4:
 /*!**************************************!*\
   !*** multi ./resources/js/cookie.js ***!
   \**************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\axelb\Documents\GitHub\BDE_website_project_group2\laravel\resources\js\cookie.js */"./resources/js/cookie.js");
+module.exports = __webpack_require__(/*! D:\Multimedia\Desktop\EXIA\A2\Projet\WEB\BDE_website_project_group2\laravel\resources\js\cookie.js */"./resources/js/cookie.js");
 
 
 /***/ })
