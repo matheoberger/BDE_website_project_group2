@@ -1,7 +1,6 @@
 <header class="header">
     <nav class="customNavbar customNavbar--desktop">
-        <img src="https://www.cesi.fr/wp-content/uploads/2018/09/cesi-logo.png"
-            class="customNavbar customNavbar__logo" />
+        <img src="https://www.cesi.fr/wp-content/uploads/2018/09/cesi-logo.png" class="customNavbar customNavbar__logo" />
         <h1>BDE CESI BORDEAUX</h1>
         <div class="customNavbar customNavbar--right">
 
@@ -9,7 +8,7 @@
 
             <input type="text" class="customNavbar customNavbar_search">
             <img src="/images/panier.png" class="customNavbar customNavbar__panier" />
-            <a class="customNavbar customNavbar__user" href="#"> login </a>
+            <a class="customNavbar customNavbar__user" href="/login"> Se connecter </a>
         </div>
 
     </nav>

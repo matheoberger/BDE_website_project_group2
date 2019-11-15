@@ -17,7 +17,7 @@ class contactController extends Controller
     public function postContact(Request $request)
     {
         //verification des données passées en post
-        $validator = Validator::make($request->all(), ['email' => 'required|email', 'subject' => 'min:5|max:50', 'message' => 'min:50']);
+        $validator = Validator::make($request->all(), ['email' => 'required|email:rfc,dns', 'subject' => 'min:5|max:50', 'message' => 'min:50']);
         if ($validator->messages()->first()) {
             //si il y a des erreurs on renvoi la première
             $error = $validator->messages()->first();
