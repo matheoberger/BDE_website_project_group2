@@ -73,9 +73,9 @@
                 <i onclick="likeDislike(this)" class="fa fa-thumbs-up"></i>
                 <p>Like : [nb_like]</p>
                 <button class="btn add_comment">Ajouter un commentaire</button>
-                <button class="btn add_picture">Ajouter photo</button>
-                <button class="btn edit_event">Modifier l'event</button>
-                <button class="btn participate">Participer à l'event</button>
+                <button class="btn add_picture">Ajouter photo         </button>
+                <button class="btn edit_event">Modifier l'event       </button>
+                <button class="btn participate">Participer à l'event  </button>
 
             </aside>
 
