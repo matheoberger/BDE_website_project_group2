@@ -33,4 +33,5 @@ mix.js("resources/js/app.js", "public/js")
     .sass("resources/sass/breadcrumb.scss", "public/css")
     .sass("resources/sass/CGV.scss", "public/css")
     .sass("resources/sass/eventType.scss", "public/css")
+    .sass("resources/sass/panier.scss", "public/css")
     .sass("resources/sass/boutique.scss", "public/css");

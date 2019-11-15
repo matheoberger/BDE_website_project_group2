@@ -1,0 +1,15 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto&display=swap%22);@font-face {
+  font-family: "Lemon/Milk";
+  src: url("/fonts/LemonMilk/LemonMilk.otf") format("truetype");
+}
+
+.panier__title {
+  font-family: "Roboto", sans-serif;
+  font-size: 300%;
+  text-align: center;
+  padding-top: 1.5%;
+  -webkit-padding-after: 1.5%;
+          padding-block-end: 1.5%;
+  color: white;
+}
+

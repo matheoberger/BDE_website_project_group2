@@ -1,3 +1,17 @@
+<?php
+// if (session("email")) {
+//     $bdd2 = new PDO("mysql:host=localhost;dbname=bde_cesi;charset=UTF8", "root", "");
+//     $requete = $bdd2->prepare("CALL `getBasketFromEmail`(:userID)");
+//     $requete->bindValue(":userID", session("email"), PDO::PARAM__STR);
+//     $requete->execute();
+//     $basket = $requete->fetchAll();
+//     $requete->closeCursor();
+
+//     print_r($basket);
+// }
+?>
+
+
 <!DOCTYPE html>
 <html>
 
@@ -22,6 +36,8 @@
     <link rel="stylesheet" type="text/css" href="css/navbar.css">
     <link rel="stylesheet" type="text/css" href="css/footer.css">
     <link rel="stylesheet" type="text/css" href="css/breadcrumb.css">
+    <link rel="stylesheet" type="text/css" href="css/panier.css">
+
 </head>
 
 <body>
@@ -31,13 +47,31 @@
         <div class="conteneur">
             <div class="contenu">
                 <div class="panier__body">
+                    <?php
+                    print_r(session("email"));
+                    if (session("email")) {
 
-                    <div class="jumbotron jumbotron-fluid">
-                        <div class="container">
-                            <h1 class="display-3">Panier</h1>
-                            <p class="lead">coucou je suis ton panier</p>
-                        </div>
-                    </div>
+                        $bdd2 = new PDO("mysql:host=localhost;dbname=bde_cesi;charset=UTF8", "root", "");
+                        $requete = $bdd2->prepare("CALL `getBasketFromEmail`(:userEmail)");
+                        $requete->bindValue(":userEmail", session("email"), PDO::PARAM__STR);
+                        $requete->execute();
+                        $basket = $requete->fetchAll();
+                        $requete->closeCursor();
+
+                        print_r($basket);
+                    }
+                    ?>
+                    <h1 class="panier__title">Panier</h1>
+
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a class="breadcrumb--white" href='/'>Accueil</a></li>
+                            <li class="breadcrumb-item"><a class="breadcrumb--white" href='boutique'>Boutique</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Panier
+                            </li>
+                        </ol>
+                    </nav>
+
                 </div>
 
                 <ul class="list-unstyled">
