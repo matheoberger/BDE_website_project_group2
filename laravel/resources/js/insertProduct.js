@@ -15,9 +15,6 @@ class insertProduct {
      *
      */
     newProduct(articleIndex, articleNumber) {
-        if(){
-        $("js-spinner").addClass("spinner__display");
-        }
         this.getProduct(articleIndex, articleNumber).then(productList => {
             $("js-spinner").removeClass("spinner__display");
             $("js-spinner").addClass("spinner__display--none");
@@ -56,7 +53,7 @@ class insertProduct {
 
     createProduct(product) {
         var productElement = `<div class="product">
-        <a href="/article/${product.id_products}"><img src="${product.image}" class="product__image"/></a>
+        <a href="/boutique/${product.id_products}"><img src="${product.image}" class="product__image"/></a>
         <div class="product__title">${product.title}</div>
         <div class="product__price"><b>${product.price}€</b></div>
     </div>`;
