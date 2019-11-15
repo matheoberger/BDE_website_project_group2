@@ -5,7 +5,9 @@ Connexion
 @endsection
 
 @section('check')
-<input type="checkbox" name="check"> Se souvenir de moi
+<div class="row align-items-center remember">
+    <input type="checkbox" name="check"> Se souvenir de moi
+</div>
 @endsection
 
 @section('endlink1')

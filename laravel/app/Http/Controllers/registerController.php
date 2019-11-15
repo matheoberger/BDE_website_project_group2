@@ -31,7 +31,7 @@ class registerController extends Controller
             //si il y a des erreurs on renvoi la première
             $error = $validator->messages()->first();
             //on verifie que les conditions générales sont acceptées.
-        } elseif (!$request->check) {
+        } elseif (!$request->check1 || !$request->check2) {
             $error = "Vous devez accepter les conditions générales";
         } else {
             //on fait une requête à la BDD pour savoir s'il existe déja un utilisateur avec cette adresse mail

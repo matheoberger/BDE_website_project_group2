@@ -78,7 +78,12 @@ Inscription
 @endsection
 
 @section('check')
-<input type="checkbox" name="check" required="required"> J'ai lu et accepte les conditions générales
+<div class="row align-items-center remember">
+    <input class="check" type="checkbox" name="check1" required="required"> J'ai lu et accepte les conditions générales
+</div>
+<div class="row align-items-center remember">
+    <input class="check" type="checkbox" name="check2" required="required"> J'ai lu et accepte les mentions légales
+</div>
 @endsection
 
 @section('endlink1')

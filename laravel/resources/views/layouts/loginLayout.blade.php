@@ -51,7 +51,7 @@
                                         </div>
                                         <!-- Input pour l'email, prend la valeur entrée précédement ou celle en session-->
                                         <input type="text" name="email" class="form-control" placeholder="Email" required="required" <?php if (isset($_POST['email'])) {
-                                                                                                                                            //echo "value = '" . $_POST['email'] . "'";
+                                                                                                                                            echo "value = '" . $_POST['email'] . "'";
                                                                                                                                         } elseif (isset($_COOKIE['email'])) {
                                                                                                                                             echo "value = '" . $_COOKIE['email'] . "'";
                                                                                                                                         }
@@ -73,10 +73,10 @@
                                     <?php if (isset($error)) {
                                         echo "<p class='errorMessage'> $error </p>";
                                     } ?>
-                                    <div class="row align-items-center remember">
-                                        <!--Division pour rajouter des checkbox au formulaire-->
-                                        @yield('check')
-                                    </div>
+
+                                    <!--Division pour rajouter des checkbox au formulaire-->
+                                    @yield('check')
+
                                     <!--Bouton pour envoyer le formulaire-->
                                     <div class="form-group">
                                         <input type="submit" name="checkbox" value="@yield('Title')" class="btn float-right login_btn">
