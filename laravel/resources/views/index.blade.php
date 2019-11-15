@@ -32,13 +32,13 @@
                 <section class="main__pannel">
                     <!-- Division comportant le lien vers la boutique-->
                     <div class="main__pannel__box --bordered-left --bordered-top">
-                        <a class="main__pannel__box_image--shop" href="">
+                        <a class="main__pannel__box_image--shop" href="boutique">
                             <h2 class="main__pannel__box__title"> Boutique </h2>
                         </a>
                     </div>
                     <!-- Division comportant le lien vers les événements-->
                     <div class="main__pannel__box --bordered-right --bordered-top">
-                        <a class="main__pannel__box_image--event" href="">
+                        <a class="main__pannel__box_image--event" href="event">
                             <h2 class="main__pannel__box__title"> Evénements</h2>
                         </a>
                     </div>
@@ -59,12 +59,18 @@
                                 <h2>Rejoignez nous sur les réseaux sociaux !</h2>
                                 <!-- Division comportant les liens des réseaux sociaux-->
                                 <div class="networkbox__logocontainer">
-                                    <a class="networkbox__logo" href=""><img src="../images/twitterLogo.png" alt="logo_twitter"></img></a>
-                                    <a class="networkbox__logo" href=""><img src="../images/fblogo.png" alt="logo_fb"></img></a>
-                                    <a class="networkbox__logo" href=""><img src="../images/instalogo.png" alt="logo_insta"></img></a>
-                                    <a class="networkbox__logo" href=""><img src="../images/linkedinlogo.png" alt="logo_linkedin"></img></a>
-                                    <a class="networkbox__logo" href=""><img src="../images/ytblogo.png" alt="logo_youtube"></img></a>
-                                    <a class="networkbox__logo" href=""><img src="../images/pinterestlogo.jpg" alt="logo_pinterest"></img></a>
+                                    <a class="networkbox__logo" href=""><img src="../images/twitterLogo.png"
+                                            alt="logo_twitter"></img></a>
+                                    <a class="networkbox__logo" href=""><img src="../images/fblogo.png"
+                                            alt="logo_fb"></img></a>
+                                    <a class="networkbox__logo" href=""><img src="../images/instalogo.png"
+                                            alt="logo_insta"></img></a>
+                                    <a class="networkbox__logo" href=""><img src="../images/linkedinlogo.png"
+                                            alt="logo_linkedin"></img></a>
+                                    <a class="networkbox__logo" href=""><img src="../images/ytblogo.png"
+                                            alt="logo_youtube"></img></a>
+                                    <a class="networkbox__logo" href=""><img src="../images/pinterestlogo.jpg"
+                                            alt="logo_pinterest"></img></a>
                                 </div>
                             </div>
                         </div>
@@ -76,13 +82,16 @@
                                 @csrf
                                 <!-- Champ Email -->
                                 <label for="email">Email :</label>
-                                <input type="text" id="email" name="email" placeholder=" Entrez votre adresse E-mail" required="required">
+                                <input type="text" id="email" name="email" placeholder=" Entrez votre adresse E-mail"
+                                    required="required">
                                 <!-- Champ Objet -->
                                 <label for="subject">Objet (min 10 caractères) :</label>
-                                <input type="text" id="subject" name="subject" placeholder=" Entrez l'objet de votre message" required="required" ">
+                                <input type="text" id="subject" name="subject"
+                                    placeholder=" Entrez l'objet de votre message" required="required" ">
                                 <!-- Champ Texte -->
                                 <label for=" message">Message (min 50 caractères) :</label>
-                                <textarea id="message" name="message" placeholder=" Ecrivez votre message..." required="required"></textarea>
+                                <textarea id="message" name="message" placeholder=" Ecrivez votre message..."
+                                    required="required"></textarea>
                                 <?php if (isset($_POST['error'])) {
                                     echo "<p class='errorMessage'>" . "mdp incorect" . "</p>";
                                 };
