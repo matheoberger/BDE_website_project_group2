@@ -11,12 +11,13 @@
     <link rel="stylesheet" type="text/css" href="css/navbar.css">
     <link rel="stylesheet" href="css/event.css" />
     <link rel="stylesheet" href="css/header.css" />
-
-    <link rel="stylesheet" type="text/css" href="css/footer.css">
-
-</head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+  </head>
 
 <body>
+@include('partials/header')
+<main>
+
 
     @include('partials/header')
     <main>
@@ -28,68 +29,42 @@
                 </div>
                 <div class="conteneur">
 
-                    <section>
-                        <article>
-                            <input type="image" src="../images/party_merica.jpg" name="saveForm" class="btTxt_submit"
-                                id="saveForm" />
-                        </article>
-                        <div class="event_description">
-                            <aside>Nom et description de l'évènement</aside>
-                        </div>
-                    </section>
 
-
-                    <section>
-                        <article>
-                            <img src="../images/party.jpg" alt="party">
-                        </article>
-                        <div class="event_description">
-                            <aside>Nom et description de l'évènement</aside>
-                        </div>
-                    </section>
-                    <section>
-                        <article>Photo + Bouton
-                        </article>
-                        <div class="event_description">
-                            <aside>Nom et description de l'évènement</aside>
-                        </div>
-                    </section>
-
-                    <section>
-                        <article>Photo + Bouton
-                        </article>
-                        <div class="event_description">
-                            <aside>Nom et description de l'évènement</aside>
-                        </div>
-                    </section>
-
-                    <section>
-                        <article>Photo + Bouton
-                        </article>
-                        <div class="event_description">
-                            <aside>Nom et description de l'évènement</aside>
-                        </div>
-                    </section>
-
-                    <section>
-                        <article>Photo + Bouton
-                        </article>
-                        <div class="event_description">
-                            <aside>Nom et description de l'évènement</aside>
-                        </div>
-                    </section>
-
-                    <section>
-                        <article>Photo + Bouton
-                        </article>
-                        <div class="event_description">
-                            <aside>Nom et description de l'évènement</aside>
-                        </div>
-                        @include("partials/footer")
-                </div>
+        <section>
+            <article>
+            <input type="image" src="../images/party_merica.jpg" name="saveForm" class="btTxt_submit" id="saveForm" />
+            </article>
+            <div class="event_description">
+                <aside>
+                    [titre_event]
+                    [description_event]
+                </aside>
             </div>
+        </section>
 
-    </main>
-</body>
+
+<?php
+
+    if(isset($_POST['title_events'])){
+
+    $message = array();
+
+    $message['title_events'] = $_POST['title_events'];
+    $message['place'] = $_POST['place'];
+    $message['description'] = $_POST['description'];
+    $message['starting_date'] = date("d/m/Y");
+    $message['ending_date'] = date("d/m/Y");
+    $message['image'] = $_POST_['image'];
+    $message['price'] = $_POST['price'];
+    $message['id'] = ['id'];
+
+    $js = file_get_contents('message.json');
+    $js = js_decode($js, true);
+    $js[] = $message;
+
+    }
+
+php?>
+
 
 </html>

@@ -5,18 +5,34 @@
  * dans le fichier HTML boutique
  */
 class insertProduct {
-    newProduct(baseArticleNumber, articleNumber) {
-        this.getProduct(baseArticleNumber, articleNumber).then(productList => {
+    /**
+     *
+     * @param {number} articleIndex : représente le nombre d'article déjà chargé, utile pour l'API qui l'enverra à la procédure
+     * @param {number} articleNumber  : représente le nnombre d'articles que l'on veut charger à partir de l'index
+     *
+     * New product régit toutes les méthodes de la classe insertProduct, un tableau de produit est d'abord chargé,
+     * puis détaché en objets (les articles) puis mis en forme pour être insérés dans le fichier HTML
+     *
+     */
+    newProduct(articleIndex, articleNumber) {
+        this.getProduct(articleIndex, articleNumber).then(productList => {
             productList.forEach(this.createProduct.bind(this));
         });
-        articleNumber += 3;
     }
 
-    getProduct(baseArticleNumber, articleNumber) {
-        console.log("getProduct");
+    /**
+     *
+     * @param {number} articleIndex : représente le nombre d'article déjà chargé, utile pour l'API qui l'enverra à la procédure
+     * @param {number} articleNumber  : représente le nnombre d'articles que l'on veut charger à partir de l'index
+     *
+     * getProduct execute la requête HTTP get destinée à l'API, les données sont récupérées en asynchrone
+     *
+     */
+
+    getProduct(articleIndex, articleNumber) {
         return new Promise(resolve => {
             $.get(
-                `http://localhost:3000/produits/${baseArticleNumber}/${articleNumber}`,
+                `http://localhost:3000/produits/${articleIndex}/${articleNumber}`,
                 function(data, status) {
                     resolve(data);
                 }
@@ -24,8 +40,15 @@ class insertProduct {
         });
     }
 
+    /**
+     *
+     * @param {*} product
+     *
+     *createProduct permet de mettre en forme chaque article pour qu'ils puissent être insérés dans le fichier HTML
+     *
+     */
+
     createProduct(product) {
-        console.log(product);
         var productElement = `<div class="product">
         <a href="/article/${product.id_products}"><img src="${product.image}" class="product__image"/></a>
         <div class="product__title">${product.title}</div>
@@ -34,29 +57,42 @@ class insertProduct {
         this.loadProduct(productElement);
     }
 
+    /**
+     *
+     * @param {*} productElement
+     *
+     * loadProduct insert productElement dans le div dépendant de la classe js-productContainer
+     *
+     */
     loadProduct(productElement) {
         $("#js-productContainer").append(productElement);
     }
 }
+
+/**
+ * Une fois que le document est "prêt",
+ * une nouvelle classe inserProduct est crée puis on charge les articles
+ * à chaque fois que la position du curseur dans la fenêtre atteint la fin du document
+ *
+ */
+
 $(document).ready(function() {
-    var baseArticleNumber = 0;
+    var articleIndex = 0;
     var numberArticleLoad = 3;
     var articleNumber = numberArticleLoad;
     var articleInc = numberArticleLoad;
     const coucou = new insertProduct();
 
-    coucou.newProduct(baseArticleNumber, articleNumber);
-    baseArticleNumber += articleInc;
+    coucou.newProduct(articleIndex, articleNumber);
+    articleIndex += articleInc;
 
     $(window).scroll(function() {
-        console.log("scorl");
         if (
             Math.round($(window).scrollTop() + $(window).height()) ==
             $(document).height()
         ) {
-            console.log(articleNumber);
-            coucou.newProduct(baseArticleNumber, articleNumber);
-            baseArticleNumber += articleInc;
+            coucou.newProduct(articleIndex, articleNumber);
+            articleIndex += articleInc;
         }
     });
 });
