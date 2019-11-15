@@ -19302,6 +19302,17 @@ window.axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
 
 /***/ }),
 
+/***/ "./resources/sass/breadcrumb.scss":
+/*!****************************************!*\
+  !*** ./resources/sass/breadcrumb.scss ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "./resources/sass/contactForm.scss":
 /*!*****************************************!*\
   !*** ./resources/sass/contactForm.scss ***!
@@ -19379,6 +19390,17 @@ window.axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
 
 /***/ }),
 
+/***/ "./resources/sass/mentionsLegales.scss":
+/*!*********************************************!*\
+  !*** ./resources/sass/mentionsLegales.scss ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "./resources/sass/navbar.scss":
 /*!************************************!*\
   !*** ./resources/sass/navbar.scss ***!
@@ -19390,25 +19412,39 @@ window.axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
 
 /***/ }),
 
+/***/ "./resources/sass/responsive.scss":
+/*!****************************************!*\
+  !*** ./resources/sass/responsive.scss ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ 0:
-/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/header.scss ./resources/sass/index.scss ./resources/sass/contactForm.scss ./resources/sass/login.scss ./resources/sass/navbar.scss ./resources/sass/event.scss ./resources/sass/footer.scss ./resources/sass/CGV.scss ./resources/sass/eventType.scss ./resources/sass/boutique.scss ***!
-  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/header.scss ./resources/sass/index.scss ./resources/sass/contactForm.scss ./resources/sass/login.scss ./resources/sass/navbar.scss ./resources/sass/event.scss ./resources/sass/footer.scss ./resources/sass/responsive.scss ./resources/sass/mentionsLegales.scss ./resources/sass/breadcrumb.scss ./resources/sass/CGV.scss ./resources/sass/eventType.scss ./resources/sass/boutique.scss ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\home\Documents\Code\Projet WEB\BDE_website_project_group2\laravel\resources\js\app.js */"./resources/js/app.js");
-__webpack_require__(/*! D:\home\Documents\Code\Projet WEB\BDE_website_project_group2\laravel\resources\sass\app.scss */"./resources/sass/app.scss");
-__webpack_require__(/*! D:\home\Documents\Code\Projet WEB\BDE_website_project_group2\laravel\resources\sass\header.scss */"./resources/sass/header.scss");
-__webpack_require__(/*! D:\home\Documents\Code\Projet WEB\BDE_website_project_group2\laravel\resources\sass\index.scss */"./resources/sass/index.scss");
-__webpack_require__(/*! D:\home\Documents\Code\Projet WEB\BDE_website_project_group2\laravel\resources\sass\contactForm.scss */"./resources/sass/contactForm.scss");
-__webpack_require__(/*! D:\home\Documents\Code\Projet WEB\BDE_website_project_group2\laravel\resources\sass\login.scss */"./resources/sass/login.scss");
-__webpack_require__(/*! D:\home\Documents\Code\Projet WEB\BDE_website_project_group2\laravel\resources\sass\navbar.scss */"./resources/sass/navbar.scss");
-__webpack_require__(/*! D:\home\Documents\Code\Projet WEB\BDE_website_project_group2\laravel\resources\sass\event.scss */"./resources/sass/event.scss");
-__webpack_require__(/*! D:\home\Documents\Code\Projet WEB\BDE_website_project_group2\laravel\resources\sass\footer.scss */"./resources/sass/footer.scss");
-__webpack_require__(/*! D:\home\Documents\Code\Projet WEB\BDE_website_project_group2\laravel\resources\sass\CGV.scss */"./resources/sass/CGV.scss");
-__webpack_require__(/*! D:\home\Documents\Code\Projet WEB\BDE_website_project_group2\laravel\resources\sass\eventType.scss */"./resources/sass/eventType.scss");
-module.exports = __webpack_require__(/*! D:\home\Documents\Code\Projet WEB\BDE_website_project_group2\laravel\resources\sass\boutique.scss */"./resources/sass/boutique.scss");
+__webpack_require__(/*! D:\Multimedia\Desktop\EXIA\A2\Projet\WEB\BDE_website_project_group2\laravel\resources\js\app.js */"./resources/js/app.js");
+__webpack_require__(/*! D:\Multimedia\Desktop\EXIA\A2\Projet\WEB\BDE_website_project_group2\laravel\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! D:\Multimedia\Desktop\EXIA\A2\Projet\WEB\BDE_website_project_group2\laravel\resources\sass\header.scss */"./resources/sass/header.scss");
+__webpack_require__(/*! D:\Multimedia\Desktop\EXIA\A2\Projet\WEB\BDE_website_project_group2\laravel\resources\sass\index.scss */"./resources/sass/index.scss");
+__webpack_require__(/*! D:\Multimedia\Desktop\EXIA\A2\Projet\WEB\BDE_website_project_group2\laravel\resources\sass\contactForm.scss */"./resources/sass/contactForm.scss");
+__webpack_require__(/*! D:\Multimedia\Desktop\EXIA\A2\Projet\WEB\BDE_website_project_group2\laravel\resources\sass\login.scss */"./resources/sass/login.scss");
+__webpack_require__(/*! D:\Multimedia\Desktop\EXIA\A2\Projet\WEB\BDE_website_project_group2\laravel\resources\sass\navbar.scss */"./resources/sass/navbar.scss");
+__webpack_require__(/*! D:\Multimedia\Desktop\EXIA\A2\Projet\WEB\BDE_website_project_group2\laravel\resources\sass\event.scss */"./resources/sass/event.scss");
+__webpack_require__(/*! D:\Multimedia\Desktop\EXIA\A2\Projet\WEB\BDE_website_project_group2\laravel\resources\sass\footer.scss */"./resources/sass/footer.scss");
+__webpack_require__(/*! D:\Multimedia\Desktop\EXIA\A2\Projet\WEB\BDE_website_project_group2\laravel\resources\sass\responsive.scss */"./resources/sass/responsive.scss");
+__webpack_require__(/*! D:\Multimedia\Desktop\EXIA\A2\Projet\WEB\BDE_website_project_group2\laravel\resources\sass\mentionsLegales.scss */"./resources/sass/mentionsLegales.scss");
+__webpack_require__(/*! D:\Multimedia\Desktop\EXIA\A2\Projet\WEB\BDE_website_project_group2\laravel\resources\sass\breadcrumb.scss */"./resources/sass/breadcrumb.scss");
+__webpack_require__(/*! D:\Multimedia\Desktop\EXIA\A2\Projet\WEB\BDE_website_project_group2\laravel\resources\sass\CGV.scss */"./resources/sass/CGV.scss");
+__webpack_require__(/*! D:\Multimedia\Desktop\EXIA\A2\Projet\WEB\BDE_website_project_group2\laravel\resources\sass\eventType.scss */"./resources/sass/eventType.scss");
+module.exports = __webpack_require__(/*! D:\Multimedia\Desktop\EXIA\A2\Projet\WEB\BDE_website_project_group2\laravel\resources\sass\boutique.scss */"./resources/sass/boutique.scss");
 
 
 /***/ })

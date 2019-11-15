@@ -2,6 +2,8 @@
 <html>
 
 <head>
+
+
     <title>Event</title>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="css/app.css" />
@@ -10,6 +12,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="js/insertProduct.js"></script>
     <link rel="stylesheet" type="text/css" href="css/boutique.css">
     <link rel="stylesheet" type="text/css" href="css/app.css">
     <link rel="stylesheet" type="text/css" href="css/header.css">
@@ -18,35 +21,19 @@
 
 </head>
 
-<body>
 
+<body>
     @include('partials/header')
     <main>
         @include("partials/navbar")
 
         <div class="contenu">
             <div class="contenu__main">
-                <div class=welcome--boutique><img class=welcome--boutique__image
-                        src='https://mir-s3-cdn-cf.behance.net/project_modules/fs/a3ea7277681027.5c8f34c397dcf.jpg'>
-                </div>
-                <div class=topSelling>
-                    <p>Les trois les plus vendus</p>
 
 
-                    @include("partials/shopCarousel")
-                </div>
-                <p class=title>Produits</p>
-                <div id="js-productContainer">
-
-                    <div class="product"><img src="../images/defaultProduct.jpg" />product1</div>
-                    <div class="product">product2</div>
-                </div>
             </div>
             @include("partials/footer")
         </div>
-
-
-
     </main>
     <script src="js/products.js"></script>
 </body>

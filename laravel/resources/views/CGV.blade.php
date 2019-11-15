@@ -1,11 +1,8 @@
-
-
-
 <!DOCTYPE html>
 <html>
 
 <head>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="../js/bootstrap.bundle.min.js">
     </script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -17,15 +14,19 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
-    <link rel="stylesheet" type="text/css" href="css/CGV.css">
     <title> Conditions générales de vente</title>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="css/app.css" />
 
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/app.css" />
     <link rel="stylesheet" type="text/css" href="css/header.css">
     <link rel="stylesheet" type="text/css" href="css/navbar.css">
     <link rel="stylesheet" type="text/css" href="css/footer.css">
+    <link rel="stylesheet" type="text/css" href="css/CGV.css">
+    <link rel="stylesheet" type="text/css" href="css/breadcrumb.css">
+
+
+
 
 </head>
 
@@ -36,14 +37,14 @@
         @include("partials/navbar")
         <div class="conteneur">
             <div class="contenu">
-                <div class = "CGV__body">
+                <div class="CGV__body">
                     <h1 class=" CGV__title CGV--robotoFont "> Conditions générales de vente</h1>
 
                     <div class="CGV__navigation">
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
-                                <li class=" breadcrumb-item"><a href="header">Accueil</a></li>
-                                <li class="breadcrumb-item"><a href="#">Mentions légales</a></li>
+                                <li class="breadcrumb-item"><a href='/'>Accueil</a></li>
+                                <li class="breadcrumb-item"><a href="mentionsLegales">Mentions légales</a></li>
                                 <li class="breadcrumb-item active" aria-current="page">conditions générales de vente
                                 </li>
                             </ol>
@@ -56,8 +57,8 @@
                                     <div class="card-header" id="headingOne">
                                         <h2 class="mb-0">
                                             <button class="btn btn-link" type="button" data-toggle="collapse"
-                                                data-target="#collapseOne" aria-expanded="true"
-                                                aria-controls="collapseOne">
+                                                data-target="#collapseOne" aria-controls="collapseOne"
+                                                aria-expanded="false">
                                                 Définitions
                                             </button>
                                         </h2>
