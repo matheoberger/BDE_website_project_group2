@@ -87,3 +87,11 @@ p {
   height: 100%;
 }
 
+.spinner__display {
+  display: block;
+}
+
+.spinner__display--none {
+  display: none;
+}
+

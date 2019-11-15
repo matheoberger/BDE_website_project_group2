@@ -128,6 +128,8 @@ function () {
       var _this = this;
 
       this.getProduct(articleIndex, articleNumber).then(function (productList) {
+        $("js-spinner").removeClass("spinner__display");
+        $("js-spinner").addClass("spinner__display--none");
         productList.forEach(_this.createProduct.bind(_this));
       });
     }
@@ -141,7 +143,16 @@ function () {
      */
 
   }, {
-  ;key
+
+    key: "getProduct",
+    value: function getProduct(articleIndex, articleNumber) {
+      $("js-spinner").addClass("spinner__display");
+      return new Promise(function (resolve) {
+        $.get("http://localhost:3000/produits/".concat(articleIndex, "/").concat(articleNumber), function (data, status) {
+          resolve(data);
+        });
+      });
+    }
 
     /**
      *
@@ -191,7 +202,7 @@ $(document).ready(function () {
   coucou.newProduct(articleIndex, articleNumber);
   articleIndex += articleInc;
   $(window).scroll(function () {
-    if (Math.round($(window).scrollTop() + $(window).height()) == $(document).height()) {
+    if (Math.round($(window).scrollTop() + $(window).height()) >= $(document).height() - 10) {
       coucou.newProduct(articleIndex, articleNumber);
       articleIndex += articleInc;
     }
@@ -207,7 +218,7 @@ $(document).ready(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Cthulhu\Documents\Programmation\Laravel\laravel\resources\js\insertProduct.js */"./resources/js/insertProduct.js");
+module.exports = __webpack_require__(/*! D:\Multimedia\Desktop\EXIA\A2\Projet\WEB\BDE_website_project_group2\laravel\resources\js\insertProduct.js */"./resources/js/insertProduct.js");
 
 
 /***/ })
