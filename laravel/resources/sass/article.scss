@@ -10,7 +10,7 @@ body {
     height: 100%;
 }
 .contenu__text {
-    margin: 10px;
+    margin: 25px;
 }
 .contenu__text a {
     color: white;
@@ -34,12 +34,13 @@ body {
 .contenu img {
     object-fit: contain;
     align-self: flex-start;
+    max-width: 400px;
 }
 .contenu img + img {
     width: 20%;
     margin: 10px;
 }
-@media #{$small-down} {
+@media #{$medium-down} {
     .flexbox {
         flex-direction: column;
     }
