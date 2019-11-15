@@ -37,6 +37,7 @@ Route::post('/InscriptionVerif', 'registerController@verification');
 Route::get('/event', function () {
     return view('event');
 });
+
 Route::get('/event/{id}', function ($id) {
     return view('eventType', ["id"=>$id]);
 });

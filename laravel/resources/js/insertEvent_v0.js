@@ -1,5 +1,7 @@
+console.log("Signal from : insertEvent_v0.js");
+
 class Image {
-    constructor({ url, comments, nbrlike }) {
+    constructor({ url }) {
         this.closed = false;
         this.divs = `<div class="public_img">
         <img src="/${url}" alt="party">
