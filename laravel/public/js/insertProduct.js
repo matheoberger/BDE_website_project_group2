@@ -143,6 +143,7 @@ function () {
      */
 
   }, {
+
     key: "getProduct",
     value: function getProduct(articleIndex, articleNumber) {
       $("js-spinner").addClass("spinner__display");
@@ -152,6 +153,7 @@ function () {
         });
       });
     }
+
     /**
      *
      * @param {*} product

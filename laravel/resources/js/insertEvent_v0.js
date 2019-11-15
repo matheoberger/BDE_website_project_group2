@@ -1,8 +1,11 @@
+console.log("Contact! from : insertEvent_v0");
+
 class insertEvent {
     getEvent() {
         console.log("getEvent()");
+        console.log("Contact! from : insertEvent : insertEvent_v0");
         return new Promise(resolve => {
-            let event = $.get("http://localhost:3000/events/2/3", function(
+            let event = event.get("http://localhost:3000/events/2/2", function(
                 data,
                 status
             ) {

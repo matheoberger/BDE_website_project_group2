@@ -90,9 +90,12 @@
   </body>
 
   <script>
-                            function likeDislike(x) {
-                            x.classList.toggle("fa-thumbs-down");
-                            }
-                            </script>
+    function likeDislike(x) {
+        x.classList.toggle("fa-thumbs-down");
+     }
+</script>
+
+
+
 
 </html>

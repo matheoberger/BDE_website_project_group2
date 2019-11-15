@@ -4,41 +4,40 @@
  * articles en les inserant directement en Jquery
  * dans le fichier HTML boutique
  */
-class insertProduct {
+class insertEvents {
     /**
      *
-     * @param {number} articleIndex : représente le nombre d'article déjà chargé, utile pour l'API qui l'enverra à la procédure
-     * @param {number} articleNumber  : représente le nnombre d'articles que l'on veut charger à partir de l'index
+     * @param {number} eventIndex : représente le nombre d'article déjà chargé, utile pour l'API qui l'enverra à la procédure
+     * @param {number} eventNumber  : représente le nnombre d'articles que l'on veut charger à partir de l'index
      *
      * New product régit toutes les méthodes de la classe insertProduct, un tableau de produit est d'abord chargé,
      * puis détaché en objets (les articles) puis mis en forme pour être insérés dans le fichier HTML
      *
      */
-    newProduct(articleIndex, articleNumber) {
+    newEvents(eventIndex, eventNumber) {
         if(){
         $("js-spinner").addClass("spinner__display");
         }
-        this.getProduct(articleIndex, articleNumber).then(productList => {
+        this.getEvents(eventIndex, eventNumber).then(EventsList => {
             $("js-spinner").removeClass("spinner__display");
             $("js-spinner").addClass("spinner__display--none");
-            productList.forEach(this.createProduct.bind(this));
+            eventsList.forEach(this.createEvents.bind(this));
         });
     }
 
     /**
      *
-     * @param {number} articleIndex : représente le nombre d'article déjà chargé, utile pour l'API qui l'enverra à la procédure
-     * @param {number} articleNumber  : représente le nnombre d'articles que l'on veut charger à partir de l'index
+     * @param {number} eventIndex : représente le nombre d'article déjà chargé, utile pour l'API qui l'enverra à la procédure
+     * @param {number} eventNumber  : représente le nnombre d'articles que l'on veut charger à partir de l'index
      *
      * getProduct execute la requête HTTP get destinée à l'API, les données sont récupérées en asynchrone
      *
      */
 
-    getProduct(articleIndex, articleNumber) {
-        $("js-spinner").addClass("spinner__display");
+    getEvents(eventIndex, eventNumber) {
         return new Promise(resolve => {
             $.get(
-                `http://localhost:3000/produits/${articleIndex}/${articleNumber}`,
+                `http://localhost:3000/event/${eventIndex}/${eventNumber}`,
                 function(data, status) {
                     resolve(data);
                 }
@@ -48,30 +47,30 @@ class insertProduct {
 
     /**
      *
-     * @param {*} product
+     * @param {*} events
      *
      *createProduct permet de mettre en forme chaque article pour qu'ils puissent être insérés dans le fichier HTML
      *
      */
 
-    createProduct(product) {
-        var productElement = `<div class="product">
-        <a href="/article/${product.id_products}"><img src="${product.image}" class="product__image"/></a>
-        <div class="product__title">${product.title}</div>
-        <div class="product__price"><b>${product.price}€</b></div>
+    createEvents(event) {
+        var eventsElement = `<div class="events">
+        <a href="/event/${events.id_events}"><img src="${events.image}" class="events__image"/></a>
+        <div class="events__title">${events.title}</div>
+        <div class="events__price"><b>${events.price}€</b></div>
     </div>`;
-        this.loadProduct(productElement);
+        this.loadEvents(eventsElement);
     }
 
     /**
      *
-     * @param {*} productElement
+     * @param {*} eventsElement
      *
      * loadProduct insert productElement dans le div dépendant de la classe js-productContainer
      *
      */
-    loadProduct(productElement) {
-        $("#js-productContainer").append(productElement);
+    loadEvents(eventsElement) {
+        $("#js-eventsContainer").append(eventsElement);
     }
 }
 
@@ -83,14 +82,14 @@ class insertProduct {
  */
 
 $(document).ready(function() {
-    var articleIndex = 0;
-    var numberArticleLoad = 3;
-    var articleNumber = numberArticleLoad;
-    var articleInc = numberArticleLoad;
-    const coucou = new insertProduct();
+    var eventIndex = 0;
+    var numbereventLoad = 3;
+    var eventNumber = numbereventLoad;
+    var eventInc = numbereventLoad;
+    const coucou = new insertEvents();
 
-    coucou.newProduct(articleIndex, articleNumber);
-    articleIndex += articleInc;
+    coucou.newEvents(eventIndex, eventNumber);
+    eventIndex += eventInc;
 
     $(window).scroll(function() {
         console.log($(window).scrollTop());
@@ -101,8 +100,8 @@ $(document).ready(function() {
             $(document).height() - 10
         ) {
             console.log("sscroll");
-            coucou.newProduct(articleIndex, articleNumber);
-            articleIndex += articleInc;
+            coucou.newEvents(eventIndex, eventNumber);
+            eventIndex += eventInc;
         }
     });
 });
