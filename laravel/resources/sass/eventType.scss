@@ -89,6 +89,9 @@ article {
 .download {
     background-color: #4caf50;
 }
+.download:hover {
+    background-color: darken(#4caf50, 10);
+}
 
 /* Orange */
 .warning:hover {
