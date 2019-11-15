@@ -34,6 +34,9 @@ Route::get('/event', function () {
 Route::get('/CGV', function () {
     return view('CGV');
 });
+Route::get('/article', function () {
+    return view('article');
+});
 Route::get('/mentionsLegales', function () {
     return view('mentionsLegales');
 });
