@@ -14,17 +14,12 @@
 Route::get('/', function () {
     return view('index');
 });
-
 Route::get('/contactForm', 'contactController@getContact');
 Route::post('/contactForm', 'contactController@postContact');
 
 Route::get('/register', 'registerController@gethtml');
 Route::get('/login', 'loginController@gethtml');
-/*Route::get('/header', function () {
-    return view('header');
-});
 
-*/
 Route::get('/navbar', function () {
     return view('navbar');
 });
@@ -39,9 +34,27 @@ Route::get('/event', function () {
 Route::get('/CGV', function () {
     return view('CGV');
 });
+Route::get('/mentionsLegales', function () {
+    return view('mentionsLegales');
+});
+Route::get('/CGU', function () {
+    return view('CGU');
+});
+Route::get('/CGcookies', function () {
+    return view('CGcookies');
+});
+Route::get('/CGRDP', function () {
+    return view('CGRDP');
+});
+Route::get('/panier', function () {
+    return view('panier');
+});
 Route::get('/boutique', function () {
     return view('boutique');
 });
 Route::get('/event/type', function () {
     return view('eventType');
+});
+Route::get('/boutique2', function () {
+    return view('boutique2');
 });

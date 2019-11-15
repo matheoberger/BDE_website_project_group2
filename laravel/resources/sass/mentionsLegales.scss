@@ -1,0 +1,33 @@
+@import "./responsive.scss";
+
+.mentionsLegales--roboto {
+    font-family: $roboto;
+}
+
+.mentionsLegales__conteneur {
+    background-color: $grey_2;
+}
+
+.mentionsLegales__title {
+    text-align: center;
+    padding-top: 3%;
+    padding-block-end: 3%;
+
+    color: white;
+}
+
+.mentionsLegales__article {
+    font-family: $roboto;
+    color: white;
+}
+.mentionsLegales__group {
+    margin-top: 3%;
+    margin-left: 12%;
+    margin-right: 12%;
+}
+
+.mentionsLegales__contenu {
+    background-color: $grey_2;
+    padding-left: 12%;
+    padding-right: 12%;
+}
