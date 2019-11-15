@@ -9,7 +9,8 @@ Inscription
     <div class="input-group-prepend">
         <span class="input-group-text"><i class="fas fa-key"></i></span>
     </div>
-    <input type="password" name="password_confirmation" class="form-control" placeholder="Confirmation mot de passe" required="required">
+    <input type="password" name="password_confirmation" class="form-control" placeholder="Confirmation mot de passe"
+        required="required">
 </div>
 <div class="input-group form-group">
     <div class="input-group-prepend">
@@ -31,7 +32,9 @@ Inscription
     <div class="input-group-prepend">
         <span class="input-group-text"><i class="fas fa-table"></i></span>
     </div>
-    <input type="text" name="birthdate" class="form-control" placeholder="Date de naissancce (AAAA-MM-JJ)" required="required" <?php if (isset($_POST['birthdate'])) {
+    <input type="text" name="birthdate" class="form-control" placeholder="Date de naissancce (AAAA-MM-JJ)"
+        required="required"
+        <?php if (isset($_POST['birthdate'])) {
                                                                                                                                     echo "value = '" . $_POST['birthdate'] . "'";
                                                                                                                                 } ?>>
 </div>
@@ -87,7 +90,7 @@ Inscription
 @endsection
 
 @section('endlink1')
-<a href="/mentionslegales">Conditions générales</a>
+<a href="/mentionsLegales">Conditions générales</a>
 @endsection
 
 @section('endlink2')
