@@ -1,0 +1,46 @@
+@import "./responsive.scss";
+
+body {
+    color: white;
+}
+.flexbox {
+    display: flex;
+    align-content: center;
+    flex-direction: row;
+    height: 100%;
+}
+.contenu__text {
+    margin: 10px;
+}
+.contenu__text a {
+    color: white;
+    text-decoration: underline;
+}
+.contenu__text + .contenu__text {
+    border-top: solid white 1px;
+}
+.image {
+    width: 100%;
+    object-fit: cover;
+}
+.pictures {
+    width: calc(100% - 50px);
+    margin: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+}
+.contenu img {
+    object-fit: contain;
+    align-self: flex-start;
+}
+.contenu img + img {
+    width: 20%;
+    margin: 10px;
+}
+@media #{$small-down} {
+    .flexbox {
+        flex-direction: column;
+    }
+}

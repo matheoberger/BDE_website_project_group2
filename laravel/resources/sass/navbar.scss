@@ -52,7 +52,7 @@ nav.sidebar .link:hover::before {
     object-fit: cover;
 }
 
-@media #{$small-down} {
+@media #{$medium-down} {
     nav.sidebar--desktop {
         position: fixed;
         transform: translateX(-250px);

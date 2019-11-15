@@ -19291,6 +19291,17 @@ window.axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
 
 /***/ }),
 
+/***/ "./resources/sass/article.scss":
+/*!*************************************!*\
+  !*** ./resources/sass/article.scss ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "./resources/sass/boutique.scss":
 /*!**************************************!*\
   !*** ./resources/sass/boutique.scss ***!
@@ -19424,9 +19435,9 @@ window.axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
 /***/ }),
 
 /***/ 0:
-/*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/header.scss ./resources/sass/index.scss ./resources/sass/contactForm.scss ./resources/sass/login.scss ./resources/sass/navbar.scss ./resources/sass/event.scss ./resources/sass/footer.scss ./resources/sass/responsive.scss ./resources/sass/mentionsLegales.scss ./resources/sass/breadcrumb.scss ./resources/sass/CGV.scss ./resources/sass/eventType.scss ./resources/sass/boutique.scss ***!
-  \***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/header.scss ./resources/sass/index.scss ./resources/sass/contactForm.scss ./resources/sass/login.scss ./resources/sass/navbar.scss ./resources/sass/event.scss ./resources/sass/article.scss ./resources/sass/footer.scss ./resources/sass/responsive.scss ./resources/sass/mentionsLegales.scss ./resources/sass/breadcrumb.scss ./resources/sass/CGV.scss ./resources/sass/eventType.scss ./resources/sass/boutique.scss ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -19438,6 +19449,7 @@ __webpack_require__(/*! D:\home\Documents\Code\Projet WEB\BDE_website_project_gr
 __webpack_require__(/*! D:\home\Documents\Code\Projet WEB\BDE_website_project_group2\laravel\resources\sass\login.scss */"./resources/sass/login.scss");
 __webpack_require__(/*! D:\home\Documents\Code\Projet WEB\BDE_website_project_group2\laravel\resources\sass\navbar.scss */"./resources/sass/navbar.scss");
 __webpack_require__(/*! D:\home\Documents\Code\Projet WEB\BDE_website_project_group2\laravel\resources\sass\event.scss */"./resources/sass/event.scss");
+__webpack_require__(/*! D:\home\Documents\Code\Projet WEB\BDE_website_project_group2\laravel\resources\sass\article.scss */"./resources/sass/article.scss");
 __webpack_require__(/*! D:\home\Documents\Code\Projet WEB\BDE_website_project_group2\laravel\resources\sass\footer.scss */"./resources/sass/footer.scss");
 __webpack_require__(/*! D:\home\Documents\Code\Projet WEB\BDE_website_project_group2\laravel\resources\sass\responsive.scss */"./resources/sass/responsive.scss");
 __webpack_require__(/*! D:\home\Documents\Code\Projet WEB\BDE_website_project_group2\laravel\resources\sass\mentionsLegales.scss */"./resources/sass/mentionsLegales.scss");

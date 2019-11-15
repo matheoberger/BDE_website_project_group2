@@ -15,11 +15,11 @@ $very_small-down: "only screen and (max-device-width: #{$very_small}), (max-widt
 $small-up: "only screen and (min-device-width: #{$small}), (min-width: #{$small})";
 $small-down: "only screen and (max-device-width: #{$small}), (max-width: #{$small})";
 
-$medium-up: "only screen and (min-width: #{$medium})";
-$medium-down: "only screen and (max-width: #{$medium})";
+$medium-up: "only screen and (min-device-width: #{$medium}), (min-width: #{$medium})";
+$medium-down: "only screen and (max-device-width: #{$medium}), (max-width: #{$medium})";
 
-$large-up: "only screen and (min-width: #{$medium})";
-$large-down: "only screen and (max-width: #{$medium})";
+$large-up: "only screen and (min-device-width: #{$large}), (min-width: #{$large})";
+$large-down: "only screen and (max-device-width: #{$large}), (max-width: #{$large})";
 
 $grey_1: #9d9f9d;
 $grey_2: #757575;

@@ -59,7 +59,7 @@
   display: none;
 }
 
-@media only screen and (max-device-width: 768px), (max-width: 768px) {
+@media only screen and (max-device-width: 880px), (max-width: 880px) {
   .customNavbar--desktop {
     display: none;
   }
