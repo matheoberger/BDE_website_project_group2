@@ -1,12 +1,10 @@
 @import "./responsive.scss";
 
-
 body {
     background: linear-gradient(70deg, $red, darken($blue_1, 20));
 }
 
 .comment {
-
     border: 0.3vw solid #6a6666;
     margin: 0 10% 5% 10%;
 }
@@ -28,11 +26,9 @@ h3 {
 
 p {
     font-size: 2vw;
-
 }
 
 .conteneur {
-
     background: linear-gradient(70deg, $grey_1, darken($grey_1, 30));
     display: flex;
     flex-wrap: wrap;
@@ -45,18 +41,24 @@ section {
     flex-wrap: wrap;
     font-family: $roboto;
     justify-content: center;
-    border: 1px dashed #000000;
-
+    //   border: 1px dashed #000000;
 }
 
 article {
     font-family: $roboto;
-    border: 1px dashed #000000;
+    transition: 0.2s;
+    &:hover {
+        background-color: darken($red, 10);
+    }
 }
 
 .picture_gallery {
-    border: 1px dashed #000000;
-
+    transition: 0.2s;
+    &:hover {
+        background-color: darken($red, 10);
+    }
+    justify-content: center;
+    text-align: center;
 }
 
 .btn {
@@ -64,10 +66,12 @@ article {
     /* Remove borders */
     color: white;
     /* Add a text color */
-    padding: 14px 28px;
+    padding: 1.5vw 3.5vw;
     /* Add some padding */
     cursor: pointer;
     /* Add a pointer cursor on mouse-over */
+    font-size: 1.5vw;
+    margin: $px_2;
 }
 
 .fa {
@@ -78,6 +82,15 @@ article {
 
 .warning {
     background-color: #ff9800;
+    padding: 1vw 2vw;
+    font-size: 1vw;
+}
+
+.download {
+    background-color: #4caf50;
+}
+.download:hover {
+    background-color: darken(#4caf50, 10);
 }
 
 /* Orange */
@@ -98,7 +111,7 @@ article {
 }
 
 .participate {
-    background-color: #4CAF50;
+    background-color: #4caf50;
 }
 
 /* Green */
@@ -113,6 +126,8 @@ article {
 
 .delete {
     background-color: #f44336;
+    padding: 1vw 2vw;
+    font-size: 1vw;
 }
 
 /* Red */
@@ -121,7 +136,7 @@ article {
 }
 
 .add_comment {
-    background-color: #2196F3;
+    background-color: #2196f3;
 }
 
 /* Blue */
@@ -140,40 +155,30 @@ article {
 }
 
 .public_img {
-    border: 1px dashed #000000;
-
+    transition: 0.2s;
+    &:hover {
+        background-color: darken($red, 10);
+    }
+    justify-content: center;
 }
 
 aside {
     margin: $px_2;
-    font-family: 'Roboto', italic;
-    height: $cube_dimension;
+    font-family: "Roboto", italic;
+    height: $cube_dimension + 10vw;
     width: $cube_dimension;
-    overflow: auto;
     padding: bottom;
-    background-color: $blue_1;
     transition: 0.2s;
-
-    &:hover {
-        background-color: darken($red, 10);
-    }
-
     font-size: 2vw;
 }
 
 .comments {
     margin: $px_2;
-    font-family: 'Roboto', italic;
+    font-family: "Roboto", italic;
     height: $cube_dimension;
     width: $cube_dimension;
     overflow: auto;
     padding: bottom;
-    background-color: $blue_1;
     transition: 0.2s;
-
-    &:hover {
-        background-color: darken($red, 10);
-    }
-
     font-size: 2vw;
 }

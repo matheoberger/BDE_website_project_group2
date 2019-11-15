@@ -9,3 +9,5 @@ app.use(cors());
 app.use("/", RouteHandler.serve());
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+
+app.use("/", RouteHandler.serve());

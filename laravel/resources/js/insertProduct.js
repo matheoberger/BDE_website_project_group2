@@ -1,167 +1,98 @@
+/**
+ * La classe insertProduct regroupe les méthodes
+ * permettant le chargement depuis l'API de nouveaux
+ * articles en les inserant directement en Jquery
+ * dans le fichier HTML boutique
+ */
 class insertProduct {
-    getProduct() {
-        console.log("coucou");
-        let product = $.get("http://10.133.129.113:3000/produits/2/3", function(
-            data,
-            status
-        ) {
-            console.log("coucou");
-            console.log("Data: " + data);
-            console.log("dfsdfsdf");
+    /**
+     *
+     * @param {number} articleIndex : représente le nombre d'article déjà chargé, utile pour l'API qui l'enverra à la procédure
+     * @param {number} articleNumber  : représente le nnombre d'articles que l'on veut charger à partir de l'index
+     *
+     * New product régit toutes les méthodes de la classe insertProduct, un tableau de produit est d'abord chargé,
+     * puis détaché en objets (les articles) puis mis en forme pour être insérés dans le fichier HTML
+     *
+     */
+    newProduct(articleIndex, articleNumber) {
+        this.getProduct(articleIndex, articleNumber).then(productList => {
+            productList.forEach(this.createProduct.bind(this));
         });
-        console.log(product);
+    }
+
+    /**
+     *
+     * @param {number} articleIndex : représente le nombre d'article déjà chargé, utile pour l'API qui l'enverra à la procédure
+     * @param {number} articleNumber  : représente le nnombre d'articles que l'on veut charger à partir de l'index
+     *
+     * getProduct execute la requête HTTP get destinée à l'API, les données sont récupérées en asynchrone
+     *
+     */
+
+    getProduct(articleIndex, articleNumber) {
+        return new Promise(resolve => {
+            $.get(
+                `http://localhost:3000/produits/${articleIndex}/${articleNumber}`,
+                function(data, status) {
+                    resolve(data);
+                }
+            );
+        });
+    }
+
+    /**
+     *
+     * @param {*} product
+     *
+     *createProduct permet de mettre en forme chaque article pour qu'ils puissent être insérés dans le fichier HTML
+     *
+     */
+
+    createProduct(product) {
+        var productElement = `<div class="product">
+        <a href="/article/${product.id_products}"><img src="${product.image}" class="product__image"/></a>
+        <div class="product__title">${product.title}</div>
+        <div class="product__price"><b>${product.price}€</b></div>
+    </div>`;
+        this.loadProduct(productElement);
+    }
+
+    /**
+     *
+     * @param {*} productElement
+     *
+     * loadProduct insert productElement dans le div dépendant de la classe js-productContainer
+     *
+     */
+    loadProduct(productElement) {
+        $("#js-productContainer").append(productElement);
     }
 }
+
+/**
+ * Une fois que le document est "prêt",
+ * une nouvelle classe inserProduct est crée puis on charge les articles
+ * à chaque fois que la position du curseur dans la fenêtre atteint la fin du document
+ *
+ */
+
 $(document).ready(function() {
+    var articleIndex = 0;
+    var numberArticleLoad = 3;
+    var articleNumber = numberArticleLoad;
+    var articleInc = numberArticleLoad;
     const coucou = new insertProduct();
-    coucou.getProduct();
+
+    coucou.newProduct(articleIndex, articleNumber);
+    articleIndex += articleInc;
+
+    $(window).scroll(function() {
+        if (
+            Math.round($(window).scrollTop() + $(window).height()) ==
+            $(document).height()
+        ) {
+            coucou.newProduct(articleIndex, articleNumber);
+            articleIndex += articleInc;
+        }
+    });
 });
-
-// class insertProduct {
-//     $productNumber;
-//     newProduct(){
-//         const products = $.get("http://10.133.129.113:3000/produits/2/10");
-//         const coucou = products.map(item => {
-//             return this.insertProduct(item);
-//         )};
-//     }
-
-//     insertProduct(product) {
-//         const { image, title, description } = product;
-//         console.log("insertProduct");
-//         return (
-//           <CustomArticle
-//             className="content__article"
-//             image={image}
-//             title={title}
-//             description={description}
-//           />
-//         );
-//       }
-
-// }
-
-// $(window).scroll(function() {
-//     if (
-//       Math.round($(window).scrollTop() + $(window).height()) ===
-//       $(document).height()
-//     ) {
-//       console.log("scroll");
-//       loader.loadNextPage();
-//     }
-//   });
-
-// class App extends PureComponent {
-
-//   page = 0;
-
-//   loadNextPage() {
-//     this.page++;
-//     this.productNumber+=4;
-//     const products = [1, 2, 3, 4].map(index => ({
-//       image: ,
-//       title: faker.name.title(),
-//       description: faker.lorem.lines()
-//     }));
-
-//     const coucou = products.map(item => {
-//       return this.insertProduct(item);
-//     });
-//     // console.log("1", coucou);
-//     return coucou;
-//     // setTimeout(() => {
-//     //   const products = [1, 2, 3, 4].map(index => ({
-//     //     image: faker.image.nature(),
-//     //     title: faker.name.title(),
-//     //     description: faker.lorem.lines()
-//     //   }));
-//     //   const coucou = products.map(item => {
-//     //     return this.insertProduct(item);
-//     //   });
-//     //   console.log("1", coucou);
-//     //   return coucou;
-//     // }, 100);
-//   }
-
-//   // state = {
-//   //   todo: [
-//   //     {
-//   //       image: faker.image.nature(),
-//   //       title: faker.name.title(),
-//   //       description: faker.lorem.lines()
-//   //     },
-//   //     {
-//   //       image: "./img/vieil_homme_sourire.jpg",
-//   //       title: "Title",
-//   //       description: "Description"
-//   //     },
-//   //     {
-//   //       image: "./img/vieil_homme_sourire.jpg",
-//   //       title: "Title",
-//   //       description: "Description"
-//   //     }
-//   //   ]
-//   // };
-//   // renderState() {
-//   //   for (const i = 0; i < 1500; i++) {
-//   //     this.todo.push({ title: "title" + i, description: "Description" });
-//   //     console.log("title" + i);
-//   //   }
-//   // }
-
-//   insertProduct(product) {
-//     const { image, title, description } = product;
-//     console.log("insertProduct");
-//     return (
-//       <CustomArticle
-//         className="content__article"
-//         image={image}
-//         title={title}
-//         description={description}
-//       />
-//     );
-//   }
-
-//   render() {
-//     return <div className="content">{this.insertProduct()}</div>;
-//   }
-
-//   // _renderCards = () => {
-//   //   return this.state.todo.map((todo, index) => (
-//   //     <CustomArticle
-//   //       key={index}
-//   //       index={index}
-//   //       image={this.image}
-//   //       title={todo.title}
-//   //       description={todo.description}
-//   //       onClick={this.handleClick}
-//   //     />
-//   //   ));
-//   // };
-
-//   // handleClick = indexClicked => {
-
-//   //   const todo = this.state.todo.filter(
-//   //     (todo, index) => index !== indexClicked
-//   //   );
-//   //   this.setState({ todo });
-//   // };
-// }
-
-// const loader = new App();
-// loader.loadNextPage();
-// loader.loadNextPage();
-// loader.loadNextPage();
-// window.scrollTo(0, 0);
-
-// $(window).scroll(function() {
-//   if (
-//     Math.round($(window).scrollTop() + $(window).height()) ===
-//     $(document).height()
-//   ) {
-//     console.log("scroll");
-//     loader.loadNextPage();
-//   }
-// });
-
-// export default App;
