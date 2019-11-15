@@ -5,11 +5,22 @@ $requete->bindValue(':id', $id, PDO::PARAM_INT);
 $requete->execute();
 $event = $requete->fetchAll();
 $requete->closeCursor();
+if(empty($event)){
+    http_response_code(404);
+    die();
+}
 
 $requete2 = $bdd2->prepare("CALL `getPhotoFromEvent`(:id);");
 $requete2->bindValue(':id', $id, PDO::PARAM_INT);
 $requete2->execute();
 $images = $requete2->fetchAll();
+$requete->closeCursor();
+
+$requete3 = $bdd2->prepare("CALL `isRegistered`(:id, :event);");
+$requete3->bindValue(':id', session('id_user'), PDO::PARAM_INT);
+$requete3->bindValue(':event', $id, PDO::PARAM_INT);
+$requete3->execute();
+$isRegistered = $requete3->fetchAll();
 $requete->closeCursor();
 
 if(session('role')){
@@ -60,8 +71,26 @@ if(session('role')){
                         echo "<button class='btn edit_event'>Modifier l'event</button>";
                     };                
                  ?>
+                <?php 
                 
-                <button class="btn participate">Participer à l'event  </button>
+                if(empty($isRegistered)){
+                    echo '
+                    <form action="/event/participate" method="post">
+                        <input type="hidden" name="event" value="'. $id . '"/>
+                        <input type="hidden" name="_token" value="'. csrf_token() . '"/>
+                        <button type="submit" class="btn participate">' . "Participer à l'event"  . '</button>
+                    </form>'
+                    ;
+                }else{
+                    echo '
+                    <form action="/event/leave" method="post">
+                        <input type="hidden" name="event" value="'. $id . '"/>
+                        <input type="hidden" name="_token" value="'. csrf_token() . '"/>
+                        <button type="submit" class="btn participate">' . "Quitter l'event"  . '</button>
+                    </form>';
+                };
+                
+                ?>
                 <button class="btn download">Télécharger</button>
 
             </aside>
