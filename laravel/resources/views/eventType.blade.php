@@ -31,7 +31,7 @@ $src1 = $event[0]['url'];
     <link rel="stylesheet" href="/css/eventType.css" />
     <link rel="stylesheet" href="/css/header.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 
 <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
@@ -53,19 +53,19 @@ $src1 = $event[0]['url'];
                 <h3><?php echo $event[0]["title_events"] ?></h3>
                 <p><?php echo $event[0]["description"] ?></p>
             </article>
-            <div class="picture_gallery"><br>
+            <div class="picture_gallery" id="js-picture-gallery"><br>
                 <?php foreach ($images as $element){
 
-                    echo '<div class="public_img">
-                        <img src="/' . $element["url"] . '" alt="party">
-                        <i onclick="likeDislike(this)" class="fa fa-thumbs-up"></i>
-                        <p>Like : ' . $element["nbrlike"] . '</p>
-                        <button class="btn warning">Signaler</button>
-                        <button class="btn delete">Supprimer</button>
-                        <div class="comments">Commentaires :<br>
-                        </div>
-                        </div>
-                    ';
+                    // echo '<div class="public_img">
+                    //     <img src="/' . $element["url"] . '" alt="party">
+                    //     <i onclick="likeDislike(this)" class="fa fa-thumbs-up"></i>
+                    //     <p>Like : ' . $element["nbrlike"] . '</p>
+                    //     <button class="btn warning">Signaler</button>
+                    //     <button class="btn delete">Supprimer</button>
+                    //     <div class="comments">Commentaires :<br>
+                    //     </div>
+                    //     </div>
+                    // ';
                     }; 
                 ?>
                 
@@ -99,8 +99,11 @@ $src1 = $event[0]['url'];
   <script>
     function likeDislike(x) {
         x.classList.toggle("fa-thumbs-down");
-     }
+        }
+     id = <?php echo $id ?>
 </script>
+<script src="/js/insertDataToEvent.js">
+    </script>
 
 
 

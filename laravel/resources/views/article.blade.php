@@ -11,15 +11,6 @@ $requete2->bindValue(':id', $id, PDO::PARAM_INT);
 $requete2->execute();
 $images = $requete2->fetchAll();
 $requete->closeCursor();
-//echo print_r($product[0]);
-//echo print_r($images);
-
-/*
-$title1 = $product[0]['title'] . "-" . $product[0]['product_name'];
-
-$src1 = $product[0]['url'];
-*/
-
 ?>
 
 <!DOCTYPE html>

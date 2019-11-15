@@ -81,73 +81,78 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./resources/js/index.js":
-/*!*******************************!*\
-  !*** ./resources/js/index.js ***!
-  \*******************************/
+/***/ "./resources/js/insertDataToEvent.js":
+/*!*******************************************!*\
+  !*** ./resources/js/insertDataToEvent.js ***!
+  \*******************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-window.verifForm = function (form) {
-  //lancer les différents tests poru vérifier les champs du formulaire
-  if (verifMail(form.email) && verifObject(form.object) && verifText(form.subject)) return true;else {
-    alert("Veuillez remplir correctement tous les champs");
-    return false;
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var Image =
+/*#__PURE__*/
+function () {
+  function Image(_ref) {
+    var _this = this;
+
+    var url = _ref.url,
+        comments = _ref.comments,
+        nbrlike = _ref.nbrlike;
+
+    _classCallCheck(this, Image);
+
+    this.closed = false;
+    this.divs = "<div class=\"public_img\">\n        <img src=\"/".concat(url, "\" alt=\"party\">\n        <i onclick=\"likeDislike(this)\" class=\"fa fa-thumbs-up\"></i>\n        <p>Like : ").concat(nbrlike, "</p>\n        <button class=\"btn warning\">Signaler</button>\n        <button class=\"btn delete\">Supprimer</button>\n        <div class=\"comments\">Commentaires :<br>\n        ");
+    comments.forEach(function (e) {
+      _this.addComment(e);
+    });
   }
-};
 
-window.verifMail = function (champ) {
-  isAnEmail = false;
-
-  for (var j = 1; j < champ.value.length; j++) {
-    //chercher le caractère @
-    if (champ.value.charAt(j) == "@") {
-      //verifier qu'il y a au moins 4 caractère dérrière @
-      if (j < champ.value.length - 4) {
-        for (var k = j; k < champ.value.length - 2; k++) {
-          //verifier qu'il y a un point derière @
-          if (champ.value.charAt(k) == ".") {
-            isAnEmail = true;
-          }
-        }
-      }
+  _createClass(Image, [{
+    key: "addComment",
+    value: function addComment(_ref2) {
+      var description = _ref2.description,
+          id_users = _ref2.id_users;
+      this.divs += "<div class=\"comment\">".concat(id_users, " : ").concat(description, "</div>");
     }
-  }
+  }, {
+    key: "element",
+    get: function get() {
+      return this.divs + "</div></div>";
+    }
+  }]);
 
-  return isAnEmail;
-};
+  return Image;
+}();
 
-window.verifObject = function (champ) {
-  if (champ.value.length <= 10) {
-    return false;
-  } else {
-    return true;
-  }
-};
-
-window.verifText = function (champ) {
-  if (champ.value.length <= 50) {
-    return false;
-  } else {
-    return true;
-  }
-};
+var gallery = document.getElementById("js-picture-gallery");
+$.get("http://localhost:3000/event/".concat(id), function (data, status) {
+  data.forEach(function (element) {
+    var currentImg = new Image(element);
+    gallery.innerHTML += currentImg.element;
+  });
+});
 
 /***/ }),
 
-/***/ 1:
-/*!*************************************!*\
-  !*** multi ./resources/js/index.js ***!
-  \*************************************/
+/***/ 3:
+/*!*************************************************!*\
+  !*** multi ./resources/js/insertDataToEvent.js ***!
+  \*************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\home\Documents\Code\Projet WEB\BDE_website_project_group2\laravel\resources\js\index.js */"./resources/js/index.js");
+module.exports = __webpack_require__(/*! D:\home\Documents\Code\Projet WEB\BDE_website_project_group2\laravel\resources\js\insertDataToEvent.js */"./resources/js/insertDataToEvent.js");
 
 
 /***/ })
