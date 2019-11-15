@@ -114,31 +114,63 @@ function () {
 
   _createClass(insertProduct, [{
     key: "newProduct",
-    value: function newProduct(baseArticleNumber, articleNumber) {
+
+    /**
+     *
+     * @param {number} articleIndex : représente le nombre d'article déjà chargé, utile pour l'API qui l'enverra à la procédure
+     * @param {number} articleNumber  : représente le nnombre d'articles que l'on veut charger à partir de l'index
+     *
+     * New product régit toutes les méthodes de la classe insertProduct, un tableau de produit est d'abord chargé,
+     * puis détaché en objets (les articles) puis mis en forme pour être insérés dans le fichier HTML
+     *
+     */
+    value: function newProduct(articleIndex, articleNumber) {
       var _this = this;
 
-      this.getProduct(baseArticleNumber, articleNumber).then(function (productList) {
+      this.getProduct(articleIndex, articleNumber).then(function (productList) {
         productList.forEach(_this.createProduct.bind(_this));
       });
-      articleNumber += 3;
     }
+    /**
+     *
+     * @param {number} articleIndex : représente le nombre d'article déjà chargé, utile pour l'API qui l'enverra à la procédure
+     * @param {number} articleNumber  : représente le nnombre d'articles que l'on veut charger à partir de l'index
+     *
+     * getProduct execute la requête HTTP get destinée à l'API, les données sont récupérées en asynchrone
+     *
+     */
+
   }, {
     key: "getProduct",
-    value: function getProduct(baseArticleNumber, articleNumber) {
-      console.log("getProduct");
+    value: function getProduct(articleIndex, articleNumber) {
       return new Promise(function (resolve) {
-        $.get("http://localhost:3000/produits/".concat(baseArticleNumber, "/").concat(articleNumber), function (data, status) {
+        $.get("http://localhost:3000/produits/".concat(articleIndex, "/").concat(articleNumber), function (data, status) {
           resolve(data);
         });
       });
     }
+    /**
+     *
+     * @param {*} product
+     *
+     *createProduct permet de mettre en forme chaque article pour qu'ils puissent être insérés dans le fichier HTML
+     *
+     */
+
   }, {
     key: "createProduct",
     value: function createProduct(product) {
-      console.log(product);
       var productElement = "<div class=\"product\">\n        <a href=\"/article/".concat(product.id_products, "\"><img src=\"").concat(product.image, "\" class=\"product__image\"/></a>\n        <div class=\"product__title\">").concat(product.title, "</div>\n        <div class=\"product__price\"><b>").concat(product.price, "\u20AC</b></div>\n    </div>");
       this.loadProduct(productElement);
     }
+    /**
+     *
+     * @param {*} productElement
+     *
+     * loadProduct insert productElement dans le div dépendant de la classe js-productContainer
+     *
+     */
+
   }, {
     key: "loadProduct",
     value: function loadProduct(productElement) {
@@ -148,22 +180,26 @@ function () {
 
   return insertProduct;
 }();
+/**
+ * Une fois que le document est "prêt",
+ * une nouvelle classe inserProduct est crée puis on charge les articles
+ * à chaque fois que la position du curseur dans la fenêtre atteint la fin du document
+ *
+ */
+
 
 $(document).ready(function () {
-  var baseArticleNumber = 0;
+  var articleIndex = 0;
   var numberArticleLoad = 3;
   var articleNumber = numberArticleLoad;
   var articleInc = numberArticleLoad;
   var coucou = new insertProduct();
-  coucou.newProduct(baseArticleNumber, articleNumber);
-  baseArticleNumber += articleInc;
+  coucou.newProduct(articleIndex, articleNumber);
+  articleIndex += articleInc;
   $(window).scroll(function () {
-    console.log("scorl");
-
     if (Math.round($(window).scrollTop() + $(window).height()) == $(document).height()) {
-      console.log(articleNumber);
-      coucou.newProduct(baseArticleNumber, articleNumber);
-      baseArticleNumber += articleInc;
+      coucou.newProduct(articleIndex, articleNumber);
+      articleIndex += articleInc;
     }
   });
 });
