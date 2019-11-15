@@ -145,6 +145,7 @@ class Image {
 
 $.get(`http://localhost:3000/event/${id}`, function(data, status) {
     data.forEach(element => {
+        console.log(element);
         var currentImg = new Image(element);
         currentImg.submitElement();
     });

@@ -9,6 +9,12 @@ if(empty($event)){
     http_response_code(404);
     die();
 }
+if(session('role')){
+    if(sesson('role') != "Administrator"){
+        http_response_code(403);
+    die();
+    }
+}
 
 $requete2 = $bdd2->prepare("CALL `getPhotoFromEvent`(:id);");
 $requete2->bindValue(':id', $id, PDO::PARAM_INT);
@@ -22,9 +28,7 @@ $requete3->bindValue(':event', $id, PDO::PARAM_INT);
 $requete3->execute();
 $isRegistered = $requete3->fetchAll();
 $requete->closeCursor();
-if(session('role')){
-    //echo session('role');
-}
+
 ?>
 
 <!DOCTYPE html>
