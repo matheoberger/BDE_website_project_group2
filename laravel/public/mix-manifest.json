@@ -19,5 +19,6 @@
     "/js/cookie.js": "/js/cookie.js",
     "/js/index.js": "/js/index.js",
     "/js/insertDataToEvent.js": "/js/insertDataToEvent.js",
-    "/js/insertProduct.js": "/js/insertProduct.js"
+    "/js/insertProduct.js": "/js/insertProduct.js",
+    "/js/navbar.js": "/js/navbar.js"
 }
