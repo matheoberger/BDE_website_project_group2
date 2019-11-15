@@ -22,21 +22,39 @@ class Image {
             this.addComment(e);
         });
     }
+    //ajoute un commentaire à l'élément DOM
     addComment({ description, id_users }) {
-        this.divs += `<div class="comment">${id_users} : ${description}</div>`;
+        if (!this.submitted) {
+            this.divs += `<div class="comment">${id_users} : ${description}</div>`;
+            return;
+        }
+        var div = document.createElement("div");
+        div.className = "comment";
+        div.innerText = `${id_users} : ${description}`;
+        document
+            .getElementById(this.id)
+            .parentElement.getElementsByClassName("comments")[0]
+            .appendChild(div);
     }
+    //Fait une requête AJAX pour poster un commentaire
     postComment(object) {
-        $.post(`http://localhost:8000/comment/`, object, function(
-            data,
-            status
-        ) {
-            console.log(data);
-            if (status == "success") {
-                console.log(data);
-            }
-        });
+        var img = this;
+        $.post(
+            `http://localhost:8000/comment/`,
+            object,
+            function(data, status) {
+                if (status == "success") {
+                    img.addComment({
+                        description: object.description,
+                        id_users: id_user
+                    });
+                }
+            }.bind(this)
+        );
     }
+    //Ajoute l'élément image au DOM
     submitElement() {
+        this.submitted = true;
         gallery.innerHTML += this.element;
         document.getElementById(this.id).onsubmit = e => {
             e.preventDefault();

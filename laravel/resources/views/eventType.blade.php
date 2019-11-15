@@ -83,15 +83,18 @@ if(session('role')){
      <?php 
      
      if(session('role') == 'Moderator'){
-        echo 'var button = "<button class=' . "'btn warning'" . '>Signaler</button>"';
+        echo 'var button = "<button class=' . "'btn warning'" . '>Signaler</button>";';
      }
 
      if(session('role') == 'Administrator'){
-        echo 'var button = "<button class=' . "'btn delete'" . '>Supprimer</button>"';
+        echo 'var button = "<button class=' . "'btn delete'" . '>Supprimer</button>";';
     }
     if(csrf_token()){
-        echo 'var token = "' . csrf_token() . '"';
+        echo 'var token = "' . csrf_token() . '";';
     };
+    if(session('id_user')){
+        echo 'var id_user = ' . session('id_user');
+    }
 
      ?>
 </script>
