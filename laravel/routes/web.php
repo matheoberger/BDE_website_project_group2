@@ -34,6 +34,8 @@ Route::get('/login', 'loginController@gethtml');
 Route::post('/ConnexionVerif', 'loginController@verification');
 Route::post('/InscriptionVerif', 'registerController@verification');
 
+Route::get("/downloadParticipant/{id}", 'EventController@download');
+
 Route::get('/event', function () {
     return view('event');
 });
