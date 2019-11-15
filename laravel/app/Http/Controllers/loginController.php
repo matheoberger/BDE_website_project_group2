@@ -40,6 +40,7 @@ class loginController extends Controller
                 session(['birthdate' => $user[0]["birthdate"]]);
                 session(['email' => $user[0]["email"]]);
                 session(['role' => $user[0]["role"]]);
+                session(['id_user' => $user[0]["id_users"]]);
                 //On redirige vers la page d'accueil
                 return redirect('/');
             } else {
