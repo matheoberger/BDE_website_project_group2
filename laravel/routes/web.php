@@ -49,6 +49,9 @@ Route::get('/event', function () {
 Route::get('/event/{id}', function ($id) {
     return view('eventType', ["id" => $id]);
 });
+Route::get('/event/{id}/edit', function ($id) {
+    return view('eventEdit', ["id" => $id]);
+});
 Route::get('/CGV', function () {
     return view('CGV');
 });

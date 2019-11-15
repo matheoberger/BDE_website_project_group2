@@ -45,7 +45,7 @@ if(session('role')){
   </head>
   <body>
 
-  @include('partials/header')
+  @include('/partials/header')
 
 <main>
 
@@ -69,7 +69,7 @@ if(session('role')){
                 <button class="btn add_picture">Ajouter photo         </button>
                 <?php 
                     if(session('role') == 'Administrator'){
-                        echo "<button class='btn edit_event'>Modifier l'event</button>";
+                        echo "<form action='/event/$id/edit/' method='get'><button class='btn edit_event'>Modifier l'event</button></form>";
                     };                
                  ?>
                 <?php 
