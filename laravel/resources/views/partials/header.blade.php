@@ -8,7 +8,11 @@
 
             <input type="text" class="customNavbar customNavbar_search">
             <img src="/images/panier.png" class="customNavbar customNavbar__panier" />
-            <a class="customNavbar customNavbar__user" href="/login"> Se connecter </a>
+            <?php if (session()->has('email')) {
+                echo "<a class='customNavbar customNavbar__user' href='/disconnect'> Se déconnecter </a>";
+            } else {
+                echo "  <a class='customNavbar customNavbar__user' href='/login'> Se connecter </a>";
+            } ?>
         </div>
 
     </nav>

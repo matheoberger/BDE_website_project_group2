@@ -14,6 +14,10 @@
 Route::get('/', function () {
     return view('index');
 });
+Route::get('/disconnect', function () {
+    Session::flush();
+    return view('index');
+});
 
 Route::get('/contactForm', 'contactController@getContact');
 Route::post('/contactForm', 'contactController@postContact');
