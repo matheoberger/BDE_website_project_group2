@@ -3,6 +3,10 @@
   src: url("/fonts/LemonMilk/LemonMilk.otf") format("truetype");
 }
 
+.conteneur {
+  width: 100%;
+}
+
 .CGV__body {
   background-color: #757575;
   min-height: calc(100vh - 110px);

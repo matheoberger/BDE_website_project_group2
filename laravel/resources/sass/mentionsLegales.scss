@@ -1,5 +1,9 @@
 @import "./responsive.scss";
 
+.conteneur {
+    width: 100%;
+}
+
 .mentionsLegales--roboto {
     font-family: $roboto;
 }
