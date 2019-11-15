@@ -110,19 +110,22 @@ function () {
     key: "getProduct",
     value: function getProduct() {
       console.log("coucou");
-      var product = $.get("http://localhost:3000/produits/2/10", function (data) {
+      var product = $.get("http://10.133.129.113:3000/produits/2/3", function (data, status) {
         console.log("coucou");
         console.log("Data: " + data);
         console.log("dfsdfsdf");
-      }); // console.log($product);
+      });
+      console.log(product);
     }
   }]);
 
   return insertProduct;
 }();
 
-var coucou = new insertProduct();
-coucou.getProduct(); // class insertProduct {
+$(document).ready(function () {
+  var coucou = new insertProduct();
+  coucou.getProduct();
+}); // class insertProduct {
 //     $productNumber;
 //     newProduct(){
 //         const products = $.get("http://10.133.129.113:3000/produits/2/10");
