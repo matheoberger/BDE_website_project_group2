@@ -14,7 +14,6 @@ async function mapped(results) {
         connection.query(
           `CALL ${"`getPhotoFromEvent`"}(${element.id_events})`,
           (error, results2, fields) => {
-            console.log(results2);
             element.image = results2[0][0].url;
             resolve(element);
           }
@@ -33,8 +32,10 @@ module.exports = {
         `CALL ${"`getEvents`"}(${req.params.start}, ${req.params.number})`,
         function(error, results, fields) {
           if (error) throw error;
-
           mapped(results[0]).then(() => {
+            results[0].sort((a, b) => {
+              return Date.parse(a.starting_date) - Date.parse(b.starting_date);
+            });
             res.send(results[0]);
           });
         }
