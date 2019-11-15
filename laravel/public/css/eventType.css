@@ -76,11 +76,11 @@ article:hover {
   /* Remove borders */
   color: white;
   /* Add a text color */
-  padding: 2vw 4vw;
+  padding: 1.5vw 3.5vw;
   /* Add some padding */
   cursor: pointer;
   /* Add a pointer cursor on mouse-over */
-  font-size: 2vw;
+  font-size: 1.5vw;
   margin: 2px 2px 2px 2px;
 }
 
@@ -169,6 +169,8 @@ article:hover {
 .public_img {
   -webkit-transition: 0.2s;
   transition: 0.2s;
+  -webkit-box-pack: center;
+          justify-content: center;
 }
 
 .public_img:hover {
