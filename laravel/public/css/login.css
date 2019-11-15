@@ -9,17 +9,20 @@ html {
   height: 100%;
 }
 
-body {
+.conteneur {
+  width: calc(100% - 250px);
+}
+
+.contenu {
+  height: 100%;
+}
+
+.login_container {
   background-color: black;
   background-image: url(/images/event.jpg?7e820d9286dab7ba9c9ac03faadc0a7e);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  height: 100%;
-}
-
-.container {
-  padding: 15px;
   width: 100%;
   height: 100%;
   display: -webkit-box;
@@ -28,6 +31,7 @@ body {
           align-items: center;
   -webkit-box-pack: center;
           justify-content: center;
+  margin: 0px;
 }
 
 .d-flex {
@@ -62,7 +66,7 @@ body {
 .card-header h3 {
   margin-top: 25px;
   color: white;
-  font-family: "Roboto", bolder;
+  font-family: "Roboto", sans-serif;
   text-align: center;
 }
 
@@ -102,7 +106,7 @@ input:focus {
   margin-top: 15px;
   color: black;
   background-color: #ffc252;
-  font-family: "Roboto", bolder;
+  font-family: "Roboto", sans-serif;
 }
 
 .login_btn:hover {
@@ -116,7 +120,7 @@ input:focus {
   flex-wrap: wrap;
   text-align: center;
   color: white;
-  font-family: "Roboto", bolder;
+  font-family: "Roboto", sans-serif;
 }
 
 .links a {
@@ -127,18 +131,23 @@ input:focus {
 .errorMessage {
   color: red;
   text-align: center;
-  font-family: "Roboto", bolder;
+  font-family: "Roboto", sans-serif;
 }
 
 @media (max-width: 880px) {
   .card {
     width: 100% !important;
+    margin: 20px;
   }
 
   .form-control,
   .remember,
   .links {
     font-size: small;
+  }
+
+  .conteneur {
+    width: 100%;
   }
 }
 

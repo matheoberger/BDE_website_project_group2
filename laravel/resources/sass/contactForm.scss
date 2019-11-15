@@ -3,6 +3,10 @@ html {
     height: 100%;
 }
 
+.conteneur {
+    width: calc(100% - 250px);
+}
+
 .contenu {
     background-color: $grey_2;
 }

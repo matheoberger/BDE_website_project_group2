@@ -5,22 +5,27 @@
 html {
     height: 100%;
 }
-body {
+
+.conteneur {
+    width: calc(100% - 250px);
+}
+
+.contenu {
+    height: 100%;
+}
+
+.login_container {
     background-color: black;
     background-image: url("../images/event.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    height: 100%;
-}
-
-.container {
-    padding: 15px;
     width: 100%;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 0px;
 }
 
 .d-flex {
@@ -125,11 +130,16 @@ input:focus {
 @media (max-width: $medium) {
     .card {
         width: 100% !important;
+        margin: 20px;
     }
 
     .form-control,
     .remember,
     .links {
         font-size: small;
+    }
+
+    .conteneur {
+        width: 100%;
     }
 }
