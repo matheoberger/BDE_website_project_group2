@@ -30,7 +30,9 @@ Route::get('/example', function () {
 Route::get('/event', function () {
     return view('event');
 });
-
+Route::get('/event/{id}', function ($id) {
+    return view('eventType', ["id"=>$id]);
+});
 Route::get('/CGV', function () {
     return view('CGV');
 });
@@ -54,9 +56,6 @@ Route::get('/panier', function () {
 });
 Route::get('/boutique', function () {
     return view('boutique');
-});
-Route::get('/event/type', function () {
-    return view('eventType');
 });
 Route::get('/boutique2', function () {
     return view('boutique2');

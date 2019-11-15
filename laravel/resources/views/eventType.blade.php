@@ -1,3 +1,28 @@
+<?php
+$bdd2 = new PDO("mysql:host=localhost;dbname=bde_cesi;charset=UTF8", "root", "");
+$requete = $bdd2->prepare("CALL `getEvent`(:id);");
+$requete->bindValue(':id', $id, PDO::PARAM_INT);
+$requete->execute();
+$event = $requete->fetchAll();
+$requete->closeCursor();
+
+$requete2 = $bdd2->prepare("CALL `getPhotoFromEvent`(:id);");
+$requete2->bindValue(':id', $id, PDO::PARAM_INT);
+$requete2->execute();
+$images = $requete2->fetchAll();
+$requete->closeCursor();
+
+//echo print_r($event[0]);
+//echo print_r($event);
+
+/*
+$title1 = $event[0]['title'] . "-" . $event[0]['product_name'];
+
+$src1 = $event[0]['url'];
+*/
+
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -19,59 +44,41 @@
 <main>
 
     <div>
-        <h2>[Nom de l'event]</h2>
+        <h2><?php echo $event[0]["title_events"] ?></h2>
     </div>
     <div class="conteneur">
 
         <section>
             <article>
-                <h3>[Titre event]</h3>
-                <p>[Description de l'event]</p>
+                <h3><?php echo $event[0]["title_events"] ?></h3>
+                <p><?php echo $event[0]["description"] ?></p>
             </article>
-            <div class="picture_gallery">Galerie de photos de l'event<br>
+            <div class="picture_gallery"><br>
+                <?php foreach ($images as $element){
 
-                <div class="public_img">
-                    <img src=${image} alt="party">
-                    <i onclick="likeDislike(this)" class="fa fa-thumbs-up"></i>
-                    <p>Like : [nb_like]</p>
-                    <button class="btn warning">Signaler</button>
-                    <button class="btn delete">Supprimer</button>
-                    <div class="comments">Commentaires :<br>
-                        <div class="comment">
-                            [comments]
+                    echo '<div class="public_img">
+                        <img src="/' . $element["url"] . '" alt="party">
+                        <i onclick="likeDislike(this)" class="fa fa-thumbs-up"></i>
+                        <p>Like : ' . $element["nbrlike"] . '</p>
+                        <button class="btn warning">Signaler</button>
+                        <button class="btn delete">Supprimer</button>
+                        <div class="comments">Commentaires :<br>
                         </div>
-                        <div class="comment">
-                            [comments]
                         </div>
-                        <div class="comment">
-                            [comments]
-                        </div>
-                    </div>
-                </div>
-                <div class="public_img">
-                    <img src=${image} alt="image de l'event">
-                    <i onclick="likeDislike(this)" class="fa fa-thumbs-up"></i>
-                    <p>Like : [nb_like]</p>
-                    <button class="btn warning">Signaler</button>
-                    <button class="btn delete">Supprimer</button>
-                    <div class="comments">Commentaires :<br>
-                        <div class="comment">
-                            [comments]
-                        </div>
-                        <div class="comment">
-                            [comments]
-                        </div>
-                        <div class="comment">
-                            [comments]
-                        </div>
-                    </div>
-                </div>
-
+                    ';
+                    }; 
+                ?>
+                
+                    
+                    
+                    
+                    
+                    
+                        
+                    
             </div>
             <aside>Pannel event :
-                <br></br>
-                <i onclick="likeDislike(this)" class="fa fa-thumbs-up"></i>
-                <p>Like : [nb_like]</p>
+                <br>
                 <button class="btn add_comment">Ajouter un commentaire</button>
                 <button class="btn add_picture">Ajouter photo         </button>
                 <button class="btn edit_event">Modifier l'event       </button>
