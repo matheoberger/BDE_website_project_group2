@@ -33,16 +33,6 @@ Route::get('/login', 'loginController@gethtml');
 
 Route::post('/ConnexionVerif', 'loginController@verification');
 Route::post('/InscriptionVerif', 'registerController@verification');
-/*Route::get('/header', function () {
-    return view('header');
-});
-
-Route::get('/navbar', function () {
-    return view('navbar');
-});
-Route::get('/example', function () {
-    return view('example');
-});
 
 Route::get('/event', function () {
     return view('event');

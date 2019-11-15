@@ -12,8 +12,8 @@ $requete2->execute();
 $images = $requete2->fetchAll();
 $requete->closeCursor();
 
-if(isset(session('role'))){
-    session('role')
+if(session('role')){
+    //echo session('role');
 }
 
 //echo print_r($event[0]);
@@ -64,6 +64,7 @@ $src1 = $event[0]['url'];
                 <br>
                 <button class="btn add_comment">Ajouter un commentaire</button>
                 <button class="btn add_picture">Ajouter photo         </button>
+                <p><?php echo $event[0]["description"] ?></p>
                 <button class="btn edit_event">Modifier l'event       </button>
                 <button class="btn participate">Participer à l'event  </button>
                 <button class="btn download">Télécharger</button>
