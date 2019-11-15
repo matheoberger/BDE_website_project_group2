@@ -64,8 +64,15 @@ $src1 = $event[0]['url'];
                 <br>
                 <button class="btn add_comment">Ajouter un commentaire</button>
                 <button class="btn add_picture">Ajouter photo         </button>
-                <p><?php echo $event[0]["description"] ?></p>
-                <button class="btn edit_event">Modifier l'event       </button>
+                <?php 
+                if(session('role')){
+                    if(session('role') == 'Administrator'){
+                        echo "<button class='btn edit_event'>Modifier l'event</button>";
+                    };
+                }
+                
+                 ?>
+                
                 <button class="btn participate">Participer à l'event  </button>
                 <button class="btn download">Télécharger</button>
 
