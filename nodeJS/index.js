@@ -3,8 +3,6 @@ const app = express();
 const port = 3000;
 const RouteHandler = require("./RouteHandler.js");
 
-app.use("/", RouteHandler.serve());
-
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
 app.use(function(req, res, next) {
@@ -29,4 +27,5 @@ app.use(function(req, res, next) {
 
   // Pass to next layer of middleware
   next();
+  app.use("/", RouteHandler.serve());
 });
