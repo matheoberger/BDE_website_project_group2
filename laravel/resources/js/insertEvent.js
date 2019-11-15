@@ -1,19 +1,22 @@
 class insertEvent {
-
-    getEvent(){
+    getEvent() {
         console.log("getEvent()");
-        let event = $.get("localhost:3000/event/2/3"), function(
-            data,
-            status
-        ){
-            console.log(data[1].description);
+        return new Promise(resolve => {
+            let event = $.get("http://localhost:3000/events/2/3", function(
+                data,
+                status
+            ) {
+                resolve(data);
+            });
         });
-        console.log(event);
     }
-    createEvent(data){}
+    createEvent(data) {}
 }
+
 $(document).ready(function() {
     const hey = new insertEvent();
-    hey.getEvent();
-    hey.createEvent;
+    hey.getEvent().then(data => {
+        console.log(data);
+    });
+    hey.createProduct();
 });

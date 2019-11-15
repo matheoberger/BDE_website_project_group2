@@ -99,6 +99,14 @@ article:hover {
   font-size: 1vw;
 }
 
+.download {
+  background-color: #4caf50;
+}
+
+.download:hover {
+  background-color: #3d8b40;
+}
+
 /* Orange */
 
 .warning:hover {

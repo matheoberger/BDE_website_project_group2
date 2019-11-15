@@ -142,7 +142,9 @@ function () {
 
   }, {
     key: "getProduct",
+
     value: function getProduct(articleIndex, articleNumber) {
+
       return new Promise(function (resolve) {
         $.get("http://localhost:3000/produits/".concat(articleIndex, "/").concat(articleNumber), function (data, status) {
           resolve(data);
@@ -176,6 +178,7 @@ function () {
     value: function loadProduct(productElement) {
       $("#js-productContainer").append(productElement);
     }
+
   }]);
 
   return insertProduct;
@@ -202,6 +205,7 @@ $(document).ready(function () {
       articleIndex += articleInc;
     }
   });
+
 });
 
 /***/ }),
@@ -213,7 +217,7 @@ $(document).ready(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\Multimedia\Desktop\EXIA\A2\Projet\WEB\BDE_website_project_group2\laravel\resources\js\insertProduct.js */"./resources/js/insertProduct.js");
+module.exports = __webpack_require__(/*! C:\Users\Cthulhu\Documents\Programmation\Laravel\laravel\resources\js\insertProduct.js */"./resources/js/insertProduct.js");
 
 
 /***/ })
