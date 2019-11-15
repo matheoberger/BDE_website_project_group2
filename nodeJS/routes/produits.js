@@ -13,13 +13,11 @@ async function mapped(results) {
       await new Promise(resolve => {
         connection.query(
           `CALL ${"`getPhotoFromProduct`"}(${element.id_products})`,
-          function test(error, results2, fields) {
+          (error, results2, fields) => {
             element.image = results2[0][0].url;
             resolve(element);
           }
         );
-      }).then(() => {
-        console.log("returned");
       });
       return element;
     })
