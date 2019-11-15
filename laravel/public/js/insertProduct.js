@@ -99,6 +99,12 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
+/**
+ * La classe insertProduct regroupe les méthodes
+ * permettant le chargement depuis l'API de nouveaux
+ * articles en les inserant directement en Jquery
+ * dans le fichier HTML boutique
+ */
 var insertProduct =
 /*#__PURE__*/
 function () {
@@ -107,20 +113,36 @@ function () {
   }
 
   _createClass(insertProduct, [{
+    key: "newProduct",
+    value: function newProduct(baseArticleNumber, articleNumber) {
+      var _this = this;
+
+      this.getProduct(baseArticleNumber, articleNumber).then(function (productList) {
+        productList.forEach(_this.createProduct.bind(_this));
+      });
+      articleNumber += 3;
+    }
+  }, {
     key: "getProduct",
-    value: function getProduct() {
-      console.log($(window).height());
-      console.log($(window).width());
-      console.log("coucou");
+    value: function getProduct(baseArticleNumber, articleNumber) {
+      console.log("getProduct");
       return new Promise(function (resolve) {
-        var product = $.get("http://localhost:3000/produits/2/3", function (data, status) {
+        $.get("http://localhost:3000/produits/".concat(baseArticleNumber, "/").concat(articleNumber), function (data, status) {
           resolve(data);
         });
       });
     }
   }, {
     key: "createProduct",
-    value: function createProduct(data) {// data[].sqpdo
+    value: function createProduct(product) {
+      console.log(product);
+      var productElement = "<div class=\"product\">\n        <a href=\"/article/".concat(product.id_products, "\"><img src=\"").concat(product.image, "\" class=\"product__image\"/></a>\n        <div class=\"product__title\">").concat(product.title, "</div>\n        <div class=\"product__price\"><b>").concat(product.price, "\u20AC</b></div>\n    </div>");
+      this.loadProduct(productElement);
+    }
+  }, {
+    key: "loadProduct",
+    value: function loadProduct(productElement) {
+      $("#js-productContainer").append(productElement);
     }
   }]);
 
@@ -128,143 +150,23 @@ function () {
 }();
 
 $(document).ready(function () {
+  var baseArticleNumber = 0;
+  var numberArticleLoad = 3;
+  var articleNumber = numberArticleLoad;
+  var articleInc = numberArticleLoad;
   var coucou = new insertProduct();
-  coucou.getProduct().then(function (data) {
-    console.log(data);
+  coucou.newProduct(baseArticleNumber, articleNumber);
+  baseArticleNumber += articleInc;
+  $(window).scroll(function () {
+    console.log("scorl");
+
+    if (Math.round($(window).scrollTop() + $(window).height()) == $(document).height()) {
+      console.log(articleNumber);
+      coucou.newProduct(baseArticleNumber, articleNumber);
+      baseArticleNumber += articleInc;
+    }
   });
-  coucou.createProduct();
-}); // class insertProduct {
-//     $productNumber;
-//     newProduct(){
-//         const products = $.get("http://10.133.129.113:3000/produits/2/10");
-//         const coucou = products.map(item => {
-//             return this.insertProduct(item);
-//         )};
-//     }
-//     insertProduct(product) {
-//         const { image, title, description } = product;
-//         console.log("insertProduct");
-//         return (
-//           <CustomArticle
-//             className="content__article"
-//             image={image}
-//             title={title}
-//             description={description}
-//           />
-//         );
-//       }
-// }
-// $(window).scroll(function() {
-//     if (
-//       Math.round($(window).scrollTop() + $(window).height()) ===
-//       $(document).height()
-//     ) {
-//       console.log("scroll");
-//       loader.loadNextPage();
-//     }
-//   });
-// class App extends PureComponent {
-//   page = 0;
-//   loadNextPage() {
-//     this.page++;
-//     this.productNumber+=4;
-//     const products = [1, 2, 3, 4].map(index => ({
-//       image: ,
-//       title: faker.name.title(),
-//       description: faker.lorem.lines()
-//     }));
-//     const coucou = products.map(item => {
-//       return this.insertProduct(item);
-//     });
-//     // console.log("1", coucou);
-//     return coucou;
-//     // setTimeout(() => {
-//     //   const products = [1, 2, 3, 4].map(index => ({
-//     //     image: faker.image.nature(),
-//     //     title: faker.name.title(),
-//     //     description: faker.lorem.lines()
-//     //   }));
-//     //   const coucou = products.map(item => {
-//     //     return this.insertProduct(item);
-//     //   });
-//     //   console.log("1", coucou);
-//     //   return coucou;
-//     // }, 100);
-//   }
-//   // state = {
-//   //   todo: [
-//   //     {
-//   //       image: faker.image.nature(),
-//   //       title: faker.name.title(),
-//   //       description: faker.lorem.lines()
-//   //     },
-//   //     {
-//   //       image: "./img/vieil_homme_sourire.jpg",
-//   //       title: "Title",
-//   //       description: "Description"
-//   //     },
-//   //     {
-//   //       image: "./img/vieil_homme_sourire.jpg",
-//   //       title: "Title",
-//   //       description: "Description"
-//   //     }
-//   //   ]
-//   // };
-//   // renderState() {
-//   //   for (const i = 0; i < 1500; i++) {
-//   //     this.todo.push({ title: "title" + i, description: "Description" });
-//   //     console.log("title" + i);
-//   //   }
-//   // }
-//   insertProduct(product) {
-//     const { image, title, description } = product;
-//     console.log("insertProduct");
-//     return (
-//       <CustomArticle
-//         className="content__article"
-//         image={image}
-//         title={title}
-//         description={description}
-//       />
-//     );
-//   }
-//   render() {
-//     return <div className="content">{this.insertProduct()}</div>;
-//   }
-//   // _renderCards = () => {
-//   //   return this.state.todo.map((todo, index) => (
-//   //     <CustomArticle
-//   //       key={index}
-//   //       index={index}
-//   //       image={this.image}
-//   //       title={todo.title}
-//   //       description={todo.description}
-//   //       onClick={this.handleClick}
-//   //     />
-//   //   ));
-//   // };
-//   // handleClick = indexClicked => {
-//   //   const todo = this.state.todo.filter(
-//   //     (todo, index) => index !== indexClicked
-//   //   );
-//   //   this.setState({ todo });
-//   // };
-// }
-// const loader = new App();
-// loader.loadNextPage();
-// loader.loadNextPage();
-// loader.loadNextPage();
-// window.scrollTo(0, 0);
-// $(window).scroll(function() {
-//   if (
-//     Math.round($(window).scrollTop() + $(window).height()) ===
-//     $(document).height()
-//   ) {
-//     console.log("scroll");
-//     loader.loadNextPage();
-//   }
-// });
-// export default App;
+});
 
 /***/ }),
 
