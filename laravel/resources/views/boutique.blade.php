@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Event</title>
+    <title>Boutique</title>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="css/app.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">

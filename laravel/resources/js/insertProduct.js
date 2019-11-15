@@ -16,6 +16,8 @@ class insertProduct {
      */
     newProduct(articleIndex, articleNumber) {
         this.getProduct(articleIndex, articleNumber).then(productList => {
+            $("js-spinner").removeClass("spinner__display");
+            $("js-spinner").addClass("spinner__display--none");
             productList.forEach(this.createProduct.bind(this));
         });
     }
@@ -30,7 +32,7 @@ class insertProduct {
      */
 
     getProduct(articleIndex, articleNumber) {
-        $("js-spinner").append();
+        $("js-spinner").addClass("spinner__display");
         return new Promise(resolve => {
             $.get(
                 `http://localhost:3000/produits/${articleIndex}/${articleNumber}`,
@@ -88,14 +90,10 @@ $(document).ready(function() {
     articleIndex += articleInc;
 
     $(window).scroll(function() {
-        console.log($(window).scrollTop());
-        console.log($(window).height());
-        console.log($(document).height());
         if (
             Math.round($(window).scrollTop() + $(window).height()) >=
             $(document).height() - 10
         ) {
-            console.log("sscroll");
             coucou.newProduct(articleIndex, articleNumber);
             articleIndex += articleInc;
         }
