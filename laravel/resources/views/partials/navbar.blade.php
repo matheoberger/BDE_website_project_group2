@@ -3,5 +3,9 @@
     <a href="/" class="link">Acceuil</a>
     <a href="/boutique" class="link">Boutique</a>
     <a href="/event" class="link">Evénements</a>
+    <?php
+    if (session('role') == 'Moderator' || session('role') == 'Administrator') {
+        echo " <a href='/downloadAll' class='link'>Download pictures</a>";
+    } ?>
 </nav>
 <script src="/js/navbar.js"></script>
