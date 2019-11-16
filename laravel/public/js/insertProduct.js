@@ -170,7 +170,7 @@ function () {
   }, {
     key: "createProduct",
     value: function createProduct(product) {
-      var productElement = "<div class=\"product\">\n        <a href=\"/article/".concat(product.id_products, "\"><img src=\"").concat(product.image, "\" class=\"product__image\"/></a>\n        <div class=\"product__title\">").concat(product.title, "</div>\n        <div class=\"product__price\"><b>").concat(product.price, "\u20AC</b></div>\n    </div>");
+      var productElement = "<div class=\"product\">\n        <a href=\"/boutique/".concat(product.id_products, "\"><img src=\"").concat(product.image, "\" class=\"product__image\"/></a>\n        <div class=\"product__title\">").concat(product.title, "</div>\n        <div class=\"product__price\"><b>").concat(product.price, "\u20AC</b></div>\n    </div>");
       this.loadProduct(productElement);
     }
     /**

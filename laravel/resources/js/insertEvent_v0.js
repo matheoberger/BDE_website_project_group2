@@ -1,25 +1,32 @@
-console.log("Contact! from : insertEvent_v0");
+console.log("Signal from : insertEvent_v0.js");
 
-class insertEvent {
-    getEvent() {
-        console.log("getEvent()");
-        console.log("Contact! from : insertEvent : insertEvent_v0");
-        return new Promise(resolve => {
-            let event = event.get("http://localhost:3000/events/2/2", function(
-                data,
-                status
-            ) {
-                resolve(data);
-            });
+class Image {
+    constructor({ url }) {
+        this.closed = false;
+        this.divs = `<div class="public_img">
+        <img src="/${url}" alt="party">
+        <i onclick="likeDislike(this)" class="fa fa-thumbs-up"></i>
+        <p>Like : ${nbrlike}</p>
+        <button class="btn warning">Signaler</button>
+        <button class="btn delete">Supprimer</button>
+        <div class="comments">Commentaires :<br>
+        `;
+        comments.forEach(e => {
+            this.addComment(e);
         });
     }
-    createEvent(data) {}
+    addComment({ description, id_users }) {
+        this.divs += `<div class="comment">${id_users} : ${description}</div>`;
+    }
+    get element() {
+        return this.divs + "</div></div>";
+    }
 }
 
-$(document).ready(function() {
-    const hey = new insertEvent();
-    hey.getEvent().then(data => {
-        console.log(data);
+const gallery = document.getElementById("js-picture-gallery");
+$.get(`http://localhost:3000/event/${id}`, function(data, status) {
+    data.forEach(element => {
+        var currentImg = new Image(element);
+        gallery.innerHTML += currentImg.element;
     });
-    hey.createProduct();
 });

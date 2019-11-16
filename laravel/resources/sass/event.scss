@@ -2,13 +2,17 @@
 
 body {
     // !!!!!!!!!!!!! erreur W3C !!!!!!!!!!!!!!
-    background: linear-gradient(70deg, $red, darken($red, 30));
+    background: linear-gradient(70deg, $grey_1, darken($grey_1, 40));
     text-align: center;
-    background-image: url("../images/party-wallpapers-1.jpg");
+
     //   -webkit-filter: blur(50px);
     /* Safari 6.0 -
      9.0 */
     //    filter: grayscale(100%);
+}
+
+main {
+    justify-content: center;
 }
 
 body img {
@@ -27,8 +31,37 @@ h2 {
     font-size: 5vw;
 }
 
+.btn {
+    border: none;
+    /* Remove borders */
+    color: white;
+    /* Add a text color */
+    padding: 1.5vw 3.5vw;
+    /* Add some padding */
+    cursor: pointer;
+    /* Add a pointer cursor on mouse-over */
+    font-size: 1.5vw;
+    margin: $px_2;
+}
+
+.add_event {
+    background-color: $blue_2;
+    transition: 0.5s;
+
+    &:hover {
+        background-color: darken($blue_2, 20);
+    }
+}
+
 .conteneur {
-    background: linear-gradient(70deg, $grey_1, darken($grey_1, 30));
+    <<<<<<<HEAD
+    background: linear-gradient(
+        70deg,
+        $grey_1,
+        darken($grey_1, 30)
+    );
+    =======background: linear-gradient(180deg, $red, darken($red, 30));
+    >>>>>>>origin/remi_beta_0.1
     margin: $px_2;
     display: inline-block;
     flex-wrap: wrap;
