@@ -54,21 +54,26 @@ $requete->closeCursor();
 <main>
 
     <div>
-        <input id="title" value="<?php echo $event[0]["title_events"] ?>"></input>
+        <input id="title" name="description" value="<?php echo $event[0]["title_events"] ?>"></input>
     </div> 
     <div class="conteneur">
 
         <section>
             <article>
-            <input id="place" value="<?php echo $event[0]["place"] ?>"></input>
-            <textarea id="description"><?php echo $event[0]["description"] ?></textarea>
+            <form action="/editEvent" method="post" id="editEvent-Form">
+                <input name="event" type="hidden" value="<?php echo $id;?>"></input>
+                <input name="_token" type="hidden" value="<?php echo csrf_token();?>"></input>
+                <input id="place" name="place" value="<?php echo $event[0]["place"] ?>"></input>
+                <textarea id="description" name="description" ><?php echo $event[0]["description"] ?></textarea>
+                <input name="title" id="titleReplacer" type="hidden"></input>
+            </form>
             </article>
             <div class="picture_gallery" id="js-picture-gallery"><br>    
                     
             </div>
             <aside>Pannel event :
-                <br>
-                        <button class='btn edit_event'>Sauvegarder</button>
+                <br>    
+                        <button class='btn edit_event' id="save">Sauvegarder</button>
             </aside>
 
 
@@ -107,6 +112,7 @@ $requete->closeCursor();
      ?>
 </script>
 <!-- <script src="/js/insertDataToEvent.js"> -->
+<script src="/js/editEvent.js">
     </script>
 
 

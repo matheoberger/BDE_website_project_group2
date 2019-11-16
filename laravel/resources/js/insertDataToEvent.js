@@ -83,7 +83,6 @@ class Image {
             `http://localhost:8000/comment/`,
             object,
             function(data, status) {
-                return;
                 if (status == "success") {
                     img.addComment({
                         description: object.description,

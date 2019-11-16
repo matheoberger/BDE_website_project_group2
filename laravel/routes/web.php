@@ -41,6 +41,7 @@ Route::post('/dislikePicture', 'dislikePicture');
 
 Route::post('/event/participate', 'participateEvent');
 Route::post('/event/leave', 'leaveEvent');
+Route::post('/editEvent', 'editEvent');
 
 
 Route::get('/event', function () {
