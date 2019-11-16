@@ -59,15 +59,15 @@ if(session('role')){
                 <h3><?php echo $event[0]["place"] ?></h3>
                 <p><?php echo $event[0]["description"] ?></p>
             </article>
-            <div class="picture_gallery" id="js-picture-gallery"><br>    
-                    
+            <div class="picture_gallery" id="js-picture-gallery"><br>
+
             </div>
             <aside>Pannel event :
                 <br>
                 
                 
                 <button class="btn add_picture">Ajouter photo         </button>
-                <?php 
+                <?php
                     if(session('role') == 'Administrator'){
                         echo "<form action='/event/$id/edit/' method='get'><button class='btn edit_event'>Modifier l'event</button></form>";
                     };                

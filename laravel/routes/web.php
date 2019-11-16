@@ -47,6 +47,7 @@ Route::post('/editEvent', 'editEvent');
 Route::get('/event', function () {
     return view('event');
 });
+
 Route::get('/event/{id}', function ($id) {
     return view('eventType', ["id" => $id]);
 });
