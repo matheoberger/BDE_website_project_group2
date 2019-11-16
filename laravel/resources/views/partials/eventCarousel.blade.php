@@ -8,6 +8,7 @@ $i = 0;
 foreach ($nextEvents as $event) {
     ${'title' . $i} = $event['title'] . "-" . $event['event_name'];
     ${'src' . $i} = $event['url'];
+    ${'link' . $i} = $event['id_events'];
     $i++;
 }
 ?>
@@ -31,10 +32,10 @@ foreach ($nextEvents as $event) {
         $i = 0;
         foreach ($nextEvents as $event) {
             if ($i == 0) {
-                echo "<a class='carousel-item active' href='#carousel1'>
+                echo "<a class='carousel-item active' href='event/${'link' .$i}'>
                 <img class='caroussel__image' src='../${'src' .$i}' alt='${'title' .$i}' ></a>";
             } else {
-                echo "<a class='carousel-item' href='#carousel1'>
+                echo "<a class='carousel-item' href='event/${'link' .$i}'>
                 <img class='caroussel__image' src='../${'src' .$i}' alt='${'title' .$i}' ></a>";
             }
             $i++;

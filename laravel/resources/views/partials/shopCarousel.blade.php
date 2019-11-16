@@ -9,6 +9,7 @@ $i = 0;
 foreach ($bestProducts as $product) {
     ${'title' . $i} = $product['title'] . "-" . $product['product_name'];
     ${'src' . $i} = $product['url'];
+    ${'link' . $i} = $product['id_products'];
     $i++;
 }
 ?>
@@ -33,10 +34,10 @@ foreach ($bestProducts as $product) {
         $i = 0;
         foreach ($bestProducts as $product) {
             if ($i == 0) {
-                echo "<a class='carousel-item active' href='#carousel2'>
+                echo "<a class='carousel-item active' href='article/${'link' .$i}'>
                 <img class='caroussel__image' src='../${'src' .$i}' alt='${'title' .$i}' ></a>";
             } else {
-                echo "<a class='carousel-item' href='#carousel2'>
+                echo "<a class='carousel-item' href='article/${'link' .$i}'>
                 <img class='caroussel__image' src='../${'src' .$i}' alt='${'title' .$i}' ></a>";
             }
             $i++;
