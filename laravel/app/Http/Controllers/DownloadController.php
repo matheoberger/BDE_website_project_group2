@@ -28,7 +28,9 @@ class DownloadController extends Controller
         $filename = public_path() . "/images/";
         $zipName = "BDEpictures.zip";
         $filetopath = public_path() . '/' . $zipName;
-        File::delete($filetopath);
+        if (file_exists($filetopath)) {
+            File::delete($filetopath);
+        }
         $zip = new ZipArchive();
         if ($zip->open($filetopath, ZipArchive::CREATE) === TRUE) {
             $files = scandir($filename);
