@@ -12,7 +12,7 @@ class insertEvent {
         $("js-spinner").addClass("spinner__display");
         return new Promise(resolve => {
             $.get(
-                `http://localhost:3000/produits/${eventIndex}/${eventNumber}`,
+                `http://localhost:3000/events/${eventIndex}/${eventNumber}`,
                 function(data, status) {
                     resolve(data);
                 }
@@ -24,7 +24,9 @@ class insertEvent {
     createEvent(event) {
         var eventElement = `<section>
         <article>
+        <a href="event/${event.id_events}">
         <input type="image" src="${event.image}" name="saveForm" class="btTxt_submit" id="saveForm" />
+        </a>
         </article>
         <div class="event_description">
             <aside>
