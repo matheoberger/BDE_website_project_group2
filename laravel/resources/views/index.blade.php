@@ -32,13 +32,13 @@
                 <section class="main__pannel">
                     <!-- Division comportant le lien vers la boutique-->
                     <div class="main__pannel__box --bordered-left --bordered-top">
-                        <a class="main__pannel__box_image--shop" href="boutique">
+                        <a class="main__pannel__box_image--shop" href="/boutique">
                             <h2 class="main__pannel__box__title"> Boutique </h2>
                         </a>
                     </div>
                     <!-- Division comportant le lien vers les événements-->
                     <div class="main__pannel__box --bordered-right --bordered-top">
-                        <a class="main__pannel__box_image--event" href="event">
+                        <a class="main__pannel__box_image--event" href="/event">
                             <h2 class="main__pannel__box__title"> Evénements</h2>
                         </a>
                     </div>

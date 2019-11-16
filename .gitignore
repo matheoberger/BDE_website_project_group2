@@ -8,6 +8,7 @@ app/storage/
 
 # Laravel 5 & Lumen specific
 **/public/
+**/public/*
 public/storage
 public/hot
 public/js/app.js
