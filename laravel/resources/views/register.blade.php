@@ -47,7 +47,7 @@
     <div class="input-group-prepend">
         <span class="input-group-text"><i class="fas fa-map-marked-alt"></i></span>
     </div>
-    <select name="center" class="form-control" required="required" size="25">
+    <select name="center" class="form-control">
         <option value="Aix-en-Provence">Aix-en-Provence</option>
         <option value="Angouleme">Angoulême</option>
         <option value="Arras">Arras</option>
