@@ -57,7 +57,7 @@ class DownloadController extends Controller
 
     public function downloadCSV($id)
     {
-        $users = loadData($id);
+        $users = DownloadController::loadData($id);
         $i = 0;
         foreach ($users as $user) {
             $csvData[$i]["firstname"] = $users[$i]["firstname"];
