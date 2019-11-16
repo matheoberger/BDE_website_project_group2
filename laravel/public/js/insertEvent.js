@@ -26,13 +26,13 @@ class insertEvent {
         console.log(event);
         var eventElement = `<section>
         <article>
-        <a href="event/${event.id_events}">
+        <a href="/event/${event.id_events}">
         <input type="image" src="/${event.image}" name="saveForm" class="btTxt_submit" id="saveForm" />
         </a>
         </article>
         <div class="event_description">
             <aside>
-            <h2>${event.title}</h2>
+            <h2>${event.title_events}</h2>
             <p>${event.description}</p>
             </aside>
         </div>
