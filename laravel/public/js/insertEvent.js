@@ -24,8 +24,8 @@ class insertEvent {
     createEvent(event) {
         var eventElement = `<section>
         <article>
-        <a href="event/${event.id_events}">
-        <input type="image" src="${event.image}" name="saveForm" class="btTxt_submit" id="saveForm" />
+        <a href="events/${event.id_events}">
+        <input type="image" src=/"${event.image}" name="saveForm" class="btTxt_submit" id="saveForm" />
         </a>
         </article>
         <div class="event_description">
