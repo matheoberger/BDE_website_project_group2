@@ -75,6 +75,7 @@
                 </div>
 
                 <ul class="list-unstyled">
+
                     <li class="media">
                         <img src="..." class="mr-3" alt="...">
                         <div class="media-body">

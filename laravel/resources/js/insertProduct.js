@@ -18,6 +18,7 @@ class insertProduct {
         this.getProduct(articleIndex, articleNumber).then(productList => {
             $("js-spinner").removeClass("spinner__display");
             $("js-spinner").addClass("spinner__display--none");
+
             productList.forEach(this.createProduct.bind(this));
         });
     }
@@ -84,6 +85,7 @@ $(document).ready(function() {
     var numberArticleLoad = 3;
     var articleNumber = numberArticleLoad;
     var articleInc = numberArticleLoad;
+
     const coucou = new insertProduct();
 
     coucou.newProduct(articleIndex, articleNumber);
