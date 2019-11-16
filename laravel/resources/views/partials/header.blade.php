@@ -17,6 +17,7 @@
             }
             ?>
             <script>
+                //Ligne pour supprimer cookie
                 // document.cookie = "accept_cookie = cookie ; expires=" + new Date("1970-01-01").toUTCString() + "; path=/";
             </script>
             <?php
@@ -29,13 +30,7 @@
 
     </nav>
     <nav class="customNavbar customNavbar--mobile">
-        <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-        <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-        <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-        <img src="/images/hamburger.png" alt="???" />
-        <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-        <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-        <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+        <img src="/images/hamburger.png" alt="mobile_menu_button" />
         <h1>BDE BORDEAUX</h1>
     </nav>
 </header>
