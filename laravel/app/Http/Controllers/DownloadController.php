@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use PDF;
 use PDO;
+use File;
+use ZipArchive;
 use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Http\Request;
 
@@ -23,29 +25,32 @@ class DownloadController extends Controller
     public function downloadAll()
     {
         $zip = new ZipArchive();
-        $filename = "./BDEpictures.zip";
-        if ($zip->open($filename, ZipArchive::CREATE) !== TRUE) {
-            exit("cannot open <$filename>\n");
+        $filename = public_path() . "/images/";
+        $zipName = "BDEpictures.zip";
+        $filetopath = public_path() . '/' . $zipName;
+        File::delete($filetopath);
+        $zip = new ZipArchive();
+        if ($zip->open($filetopath, ZipArchive::CREATE) === TRUE) {
+            $files = scandir($filename);
+            foreach ($files as $file) {
+                if ($file != '.' && $file != '..') {
+                    $zip->addFile($filename . $file, "images/$file");
+                }
+            }
+            //return view('login', ['error' => $zip]);
+            $zip->close();
         }
-        $dir = public_path() . '/images';
-        // Create zip
-        createZip($zip, $dir);
-        $zip->close();
+        $headers = array(
+            'Content-Type' => 'application/octet-stream',
+        );
+
+        // Create Download Response
+        if (file_exists($filetopath)) {
+            return response()->download($filetopath, $zipName, $headers);
+        }
     }
 
-    function createZip($zip, $dir)
-    {
-        if (is_dir($dir)) {
-            if ($repository = opendir($dir)) {
-                while (($file = readdir($repository)) !== false) {
-                    if (is_file($dir . $file)) {
-                        $zip->addFile($dir . $file);
-                    }
-                }
-                closedir($repository);
-            }
-        }
-    }
+
 
 
     public function downloadCSV($id)
