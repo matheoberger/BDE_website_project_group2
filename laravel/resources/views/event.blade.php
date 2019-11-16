@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 
 <head>
     <title>Event</title>
@@ -19,7 +19,7 @@
 @include('partials/header')
 <main>
 
-    <main>
+
     <div class="conteneur">
 
            <div>
@@ -34,5 +34,6 @@
 </div>
 
         <script src="/js/insertEvent.js"></script>
-
+        </main>
+</body>
 </html>
