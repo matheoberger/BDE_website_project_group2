@@ -26,6 +26,7 @@ class insertEvent {
         console.log(event);
         var eventElement = `<section>
         <article>
+
         <a href="/event/${event.id_events}">
         <input type="image" src="/${event.image}" name="saveForm" class="btTxt_submit" id="saveForm" />
         </a>

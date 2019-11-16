@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 
 <head>
     <title>Event</title>
@@ -19,12 +19,14 @@
 @include('partials/header')
 <main>
 
-    <main>
+
     <div class="conteneur">
 
            <div>
                 <h2> <u>Les évènements</u></h2>
             </div>
+            <button class="btn add_event">Ajouter un event</button>
+
             <div id="js-contenair_event"></div>
 
 
@@ -32,5 +34,6 @@
 </div>
 
         <script src="/js/insertEvent.js"></script>
-
+        </main>
+</body>
 </html>

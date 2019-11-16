@@ -14,7 +14,7 @@ $requete->closeCursor();
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 
 <head>
     <title>Article</title>
@@ -33,27 +33,27 @@ $requete->closeCursor();
     @include('partials/header')
     <main>
         @include("partials/navbar")
-            <div class="contenu">
-                <div class="flexbox">
-                    <div class="pictures">
-                        <?php
-                            foreach ($images as $element){
-                               echo "<img src='/" . $element["url"] . "' class='image'>";
-                            };
-                        ?>
-                        
+        <div class="contenu">
+            <div class="flexbox">
+                <div class="pictures">
+                    <?php
+                    foreach ($images as $element) {
+                        echo "<img src='/" . $element["url"] . "' class='image' alt='{$element["imageTitle"]}'>";
+                    };
+                    ?>
+
+                </div>
+                <div class="text">
+                    <div class="contenu__text">
+                        <p class="title">
+                            <?php echo $product[0]["title"] ?>
+                        </p>
+                        <p class="price">
+                            <?php echo $product[0]["price"] ?>€
+                        </p>
                     </div>
-                    <div class="text">
-                        <div class="contenu__text"> 
-                            <p class="title">
-                                <?php echo $product[0]["title"] ?>
-                            </p>
-                            <p class="price">
-                                <?php echo $product[0]["price"] ?>€
-                            </p>
-                        </div>
-                        <div class="contenu__text"> 
-                            <p class="size">
+                    <div class="contenu__text">
+                        <p class="size">
                             <select>
                                 <option value="XS">XS</option>
                                 <option value="S">S</option>
@@ -61,30 +61,28 @@ $requete->closeCursor();
                                 <option value="L">L</option>
                                 <option value="XL">XL</option>
                             </select>
-                            </p>
-                                <p class="buy">
-                                    <button> Acheter </button>
-                                </p>
-                        </div>
-                        <div class="contenu__text"> 
-                            <p class="contact">
+                        </p>
+                        <p class="buy">
+                            <button> Acheter </button>
+                        </p>
+                    </div>
+                    <div class="contenu__text">
+                        <p class="contact">
 
-                            </p>
-                            <p class="description">
-                                <?php echo $product[0]["description"] ?>
-                            </p>
-                            <p class="buy">
+                        </p>
+                        <p class="description">
+                            <?php echo $product[0]["description"] ?>
+                        </p>
+                        <p class="buy">
 
-                            </p>
-                            <p class="return">
-                                <a href="/boutique">Retour à la boutique</a>
-                            </p>
-                        </div>
+                        </p>
+                        <p class="return">
+                            <a href="/boutique">Retour à la boutique</a>
+                        </p>
                     </div>
                 </div>
-                @include("partials/footer")
             </div>
-
+            @include("partials/footer")
         </div>
 
     </main>

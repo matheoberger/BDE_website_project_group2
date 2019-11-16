@@ -1,8 +1,6 @@
 @extends('layouts.loginLayout')
 
-@section('Title')
-Inscription
-@endsection
+@section('Title', 'Inscription')
 
 @section('form')
 <div class="input-group form-group">
@@ -49,7 +47,7 @@ Inscription
     <div class="input-group-prepend">
         <span class="input-group-text"><i class="fas fa-map-marked-alt"></i></span>
     </div>
-    <select name="center" class="form-control" required="required">
+    <select name="center" class="form-control">
         <option value="Aix-en-Provence">Aix-en-Provence</option>
         <option value="Angouleme">Angoulême</option>
         <option value="Arras">Arras</option>
@@ -87,7 +85,7 @@ Inscription
 @endsection
 
 @section('endlink1')
-<a href="/mentionslegales">Conditions générales</a>
+<a href="/mentionsLegales">Mentions légales</a>
 @endsection
 
 @section('endlink2')

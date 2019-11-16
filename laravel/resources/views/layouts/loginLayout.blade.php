@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 
 <head>
     <title>@yield('Title') Page</title>
@@ -99,7 +99,6 @@
                 </section>
                 @include("partials/footer")
             </div>
-        </div>
         </div>
     </main>
 </body>

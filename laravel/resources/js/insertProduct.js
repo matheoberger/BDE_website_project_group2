@@ -54,6 +54,11 @@ class insertProduct {
      *
      */
 
+    //  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  //
+    //  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  //
+    //  mettre un attribut alt aux images
+    //  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  //
+    //  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  //
     createProduct(product) {
         var productElement = `<div class="product">
         <a href="/boutique/${product.id_products}"><img src="${product.image}" class="product__image"/></a>
