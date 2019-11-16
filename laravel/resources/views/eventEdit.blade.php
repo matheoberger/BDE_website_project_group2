@@ -9,6 +9,12 @@ if(empty($event)){
     http_response_code(404);
     die();
 }
+if(session('role')){
+    if(session('role') != "Administrator"){
+        http_response_code(403);
+    die();
+    }
+}
 
 $requete2 = $bdd2->prepare("CALL `getPhotoFromEvent`(:id);");
 $requete2->bindValue(':id', $id, PDO::PARAM_INT);
@@ -22,9 +28,7 @@ $requete3->bindValue(':event', $id, PDO::PARAM_INT);
 $requete3->execute();
 $isRegistered = $requete3->fetchAll();
 $requete->closeCursor();
-if(session('role')){
-    //echo session('role');
-}
+
 ?>
 
 <!DOCTYPE html>
@@ -45,55 +49,31 @@ if(session('role')){
   </head>
   <body>
 
-  @include('/partials/header')
+  @include('partials.header')
 
 <main>
 
     <div>
-        <h2><?php echo $event[0]["title_events"] ?></h2>
-    </div>
+        <input id="title" name="description" value="<?php echo $event[0]["title_events"] ?>"></input>
+    </div> 
     <div class="conteneur">
 
         <section>
             <article>
-                <h3><?php echo $event[0]["place"] ?></h3>
-                <p><?php echo $event[0]["description"] ?></p>
+            <form action="/editEvent" method="post" id="editEvent-Form">
+                <input name="event" type="hidden" value="<?php echo $id;?>"></input>
+                <input name="_token" type="hidden" value="<?php echo csrf_token();?>"></input>
+                <input id="place" name="place" value="<?php echo $event[0]["place"] ?>"></input>
+                <textarea id="description" name="description" ><?php echo $event[0]["description"] ?></textarea>
+                <input name="title" id="titleReplacer" type="hidden"></input>
+            </form>
             </article>
-            <div class="picture_gallery" id="js-picture-gallery"><br>
-
+            <div class="picture_gallery" id="js-picture-gallery"><br>    
+                    
             </div>
             <aside>Pannel event :
-                <br>
-                
-                
-                <button class="btn add_picture">Ajouter photo         </button>
-                <?php
-                    if(session('role') == 'Administrator'){
-                        echo "<form action='/event/$id/edit/' method='get'><button class='btn edit_event'>Modifier l'event</button></form>";
-                    };                
-                 ?>
-                <?php 
-                
-                if(empty($isRegistered)){
-                    echo '
-                    <form action="/event/participate" method="post">
-                        <input type="hidden" name="event" value="'. $id . '"/>
-                        <input type="hidden" name="_token" value="'. csrf_token() . '"/>
-                        <button type="submit" class="btn participate">' . "Participer à l'event"  . '</button>
-                    </form>'
-                    ;
-                }else{
-                    echo '
-                    <form action="/event/leave" method="post">
-                        <input type="hidden" name="event" value="'. $id . '"/>
-                        <input type="hidden" name="_token" value="'. csrf_token() . '"/>
-                        <button type="submit" class="btn participate">' . "Quitter l'event"  . '</button>
-                    </form>';
-                };
-                
-                ?>
-                <button class="btn download">Télécharger</button>
-
+                <br>    
+                        <button class='btn edit_event' id="save">Sauvegarder</button>
             </aside>
 
 
@@ -131,7 +111,8 @@ if(session('role')){
 
      ?>
 </script>
-<script src="/js/insertDataToEvent.js">
+<!-- <script src="/js/insertDataToEvent.js"> -->
+<script src="/js/editEvent.js">
     </script>
 
 

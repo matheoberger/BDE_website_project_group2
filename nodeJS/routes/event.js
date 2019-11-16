@@ -14,7 +14,6 @@ async function mapped(results) {
         connection.query(
           `CALL ${"`getCommentFromPhoto`"}(${element.id_pictures})`,
           (error, results2, fields) => {
-            console.log(results2[0]);
             element.comments = results2[0];
             resolve(element);
           }

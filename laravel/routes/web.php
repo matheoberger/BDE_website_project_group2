@@ -34,12 +34,25 @@ Route::get('/login', 'loginController@gethtml');
 Route::post('/ConnexionVerif', 'loginController@verification');
 Route::post('/InscriptionVerif', 'registerController@verification');
 
+Route::post('/comment', 'commentPicture');
+
+Route::post('/likePicture', 'likePicture');
+Route::post('/dislikePicture', 'dislikePicture');
+
+Route::post('/event/participate', 'participateEvent');
+Route::post('/event/leave', 'leaveEvent');
+Route::post('/editEvent', 'editEvent');
+
+
 Route::get('/event', function () {
     return view('event');
 });
 
 Route::get('/event/{id}', function ($id) {
-    return view('eventType', ["id"=>$id]);
+    return view('eventType', ["id" => $id]);
+});
+Route::get('/event/{id}/edit', function ($id) {
+    return view('eventEdit', ["id" => $id]);
 });
 Route::get('/CGV', function () {
     return view('CGV');

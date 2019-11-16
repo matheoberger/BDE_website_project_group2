@@ -4,7 +4,7 @@ class insertEvent {
             $("js-spinner").removeClass("spinner__display");
             $("js-spinner").addClass("spinner__display--none");
             eventList.forEach(this.createEvent.bind(this));
-            console.log("newEvent()");
+            //console.log("newEvent()");
         });
     }
 
@@ -14,31 +14,34 @@ class insertEvent {
             $.get(
                 `http://localhost:3000/events/${eventIndex}/${eventNumber}`,
                 function(data, status) {
+                    console.log(data);
                     resolve(data);
                 }
             );
-            console.log("getEvent()");
+            //console.log("getEvent()");
         });
     }
 
     createEvent(event) {
+        console.log(event);
         var eventElement = `<section>
         <article>
-        <a href="events/${event.id_events}">
-        <input type="image" src=/"${event.image}" name="saveForm" class="btTxt_submit" id="saveForm" />
+
+        <a href="/event/${event.id_events}">
+        <input type="image" src="/${event.image}" name="saveForm" class="btTxt_submit" id="saveForm" />
         </a>
         </article>
         <div class="event_description">
             <aside>
-            <h2>${event.title}</h2>
+            <h2>${event.title_events}</h2>
             <p>${event.description}</p>
             </aside>
         </div>
 
     </section>`;
         this.loadEvent(eventElement);
-        console.log("createEvent()");
-        console.log("eventElement: " + eventElement);
+        /* console.log("createEvent()");
+        console.log("eventElement: " + eventElement);*/
     }
 
     loadEvent(eventElement) {
@@ -66,7 +69,7 @@ $(document).ready(function() {
             Math.round($(window).scrollTop() + $(window).height()) >=
             $(document).height() - 10
         ) {
-            console.log("sscroll");
+            // console.log("sscroll");
             hey.newEvent(eventIndex, eventNumber);
             eventIndex += eventInc;
         }

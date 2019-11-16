@@ -30,7 +30,7 @@
 
     </nav>
     <nav class="customNavbar customNavbar--mobile">
-        <img src="/images/hamburger.png" class= />
+        <img src="/images/hamburger.png" id="js-hamburger" />
         <h1>BDE BORDEAUX</h1>
     </nav>
 </header>
