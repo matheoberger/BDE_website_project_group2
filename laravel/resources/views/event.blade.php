@@ -25,6 +25,8 @@
            <div>
                 <h2> <u>Les évènements</u></h2>
             </div>
+            <button class="btn add_event">Ajouter un event</button>
+
             <div id="js-contenair_event"></div>
 
 

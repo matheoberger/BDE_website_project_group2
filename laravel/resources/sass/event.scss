@@ -35,6 +35,29 @@ h2 {
 
 }
 
+.btn {
+    border: none;
+    /* Remove borders */
+    color: white;
+    /* Add a text color */
+    padding: 1.5vw 3.5vw;
+    /* Add some padding */
+    cursor: pointer;
+    /* Add a pointer cursor on mouse-over */
+    font-size: 1.5vw;
+    margin: $px_2;
+}
+
+.add_event {
+    background-color: $blue_2;
+    transition: 0.5s;
+
+    &:hover {
+        background-color: darken($blue_2, 20)
+    }
+}
+
+
 .conteneur {
 
     background: linear-gradient(180deg, $red, darken($red, 30));

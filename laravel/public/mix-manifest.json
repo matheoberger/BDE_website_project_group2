@@ -17,9 +17,7 @@
     "/css/panier.css": "/css/panier.css",
     "/css/boutique.css": "/css/boutique.css",
     "/js/cookie.js": "/js/cookie.js",
-    "/js/editEvent.js": "/js/editEvent.js",
     "/js/index.js": "/js/index.js",
     "/js/insertDataToEvent.js": "/js/insertDataToEvent.js",
-    "/js/insertProduct.js": "/js/insertProduct.js",
-    "/js/navbar.js": "/js/navbar.js"
+    "/js/insertProduct.js": "/js/insertProduct.js"
 }
