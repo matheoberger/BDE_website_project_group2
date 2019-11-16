@@ -7,7 +7,7 @@ use PDO;
 use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Http\Request;
 
-class EventController extends Controller
+class DownloadController extends Controller
 {
     static function loadData($id)
     {
@@ -19,6 +19,34 @@ class EventController extends Controller
         $requete->closeCursor();
         return $users;
     }
+
+    public function downloadAll()
+    {
+        $zip = new ZipArchive();
+        $filename = "./BDEpictures.zip";
+        if ($zip->open($filename, ZipArchive::CREATE) !== TRUE) {
+            exit("cannot open <$filename>\n");
+        }
+        $dir = public_path() . '/images';
+        // Create zip
+        createZip($zip, $dir);
+        $zip->close();
+    }
+
+    function createZip($zip, $dir)
+    {
+        if (is_dir($dir)) {
+            if ($repository = opendir($dir)) {
+                while (($file = readdir($repository)) !== false) {
+                    if (is_file($dir . $file)) {
+                        $zip->addFile($dir . $file);
+                    }
+                }
+                closedir($repository);
+            }
+        }
+    }
+
 
     public function downloadCSV($id)
     {
@@ -49,7 +77,7 @@ class EventController extends Controller
     //composer require barryvdh/laravel-dompdf
     public function downloadPDF($id)
     {
-        $data = EventController::loadData($id);
+        $data = DownloadController::loadData($id);
         $pdf = PDF::loadView('emails/pdf', ['data' => $data]);
         return $pdf->download("event$id.pdf");
     }

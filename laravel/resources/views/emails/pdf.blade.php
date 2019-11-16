@@ -41,8 +41,6 @@
                     {$user['birthdate']}
                 </td></tr>";
             } ?>
-
-
         </tbody>
     </table>
 </body>

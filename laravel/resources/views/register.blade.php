@@ -87,7 +87,7 @@ Inscription
 @endsection
 
 @section('endlink1')
-<a href="/mentionslegales">Conditions générales</a>
+<a href="/mentionsLegales">Mentions légales</a>
 @endsection
 
 @section('endlink2')
