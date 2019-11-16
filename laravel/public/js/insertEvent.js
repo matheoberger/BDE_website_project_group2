@@ -55,9 +55,11 @@ $(document).ready(function() {
     eventIndex += eventInc;
 
     $(window).scroll(function() {
+        /*
         console.log($(window).scrollTop());
         console.log($(window).height());
         console.log($(document).height());
+        */
         if (
             Math.round($(window).scrollTop() + $(window).height()) >=
             $(document).height() - 10

@@ -4,11 +4,15 @@
 }
 
 body {
-  background: linear-gradient(70deg, #da5d5d, #811d1d);
+  background: linear-gradient(70deg, #9d9f9d, #373937);
   text-align: center;
-  background-image: url(/images/party-wallpapers-1.jpg?fa92d7ecb27e5c98aba7f5ebaccbc3b0);
   /* Safari 6.0 -
    9.0 */
+}
+
+main {
+  -webkit-box-pack: center;
+          justify-content: center;
 }
 
 body img {
@@ -30,7 +34,8 @@ h2 {
 }
 
 .conteneur {
-  background: linear-gradient(70deg, #9d9f9d, #515251);
+  background: -webkit-gradient(linear, left top, left bottom, from(#da5d5d), to(#811d1d));
+  background: linear-gradient(180deg, #da5d5d, #811d1d);
   margin: 2px 2px 2px 2px;
   display: inline-block;
   flex-wrap: wrap;
