@@ -6,6 +6,4 @@
     <a href="/html/">CGU</a>
     <a href="/html/">Utilisations des cookies</a>
     <a href="/html/">Données personnelles</a>-->
-    </nav>
-
-    </nav>
+</footer>

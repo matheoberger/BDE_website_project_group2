@@ -12,8 +12,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>
-
+    <script src="js/index.js"></script>
     <link rel="stylesheet" href="css/index.css" />
     <link rel="stylesheet" href="css/app.css" />
     <link rel="stylesheet" type="text/css" href="css/header.css">
@@ -59,12 +58,12 @@
                                 <h2>Rejoignez nous sur les réseaux sociaux !</h2>
                                 <!-- Division comportant les liens des réseaux sociaux-->
                                 <div class="networkbox__logocontainer">
-                                    <a class="networkbox__logo" href=""><img src="../images/twitterLogo.png" alt="logo_twitter"></img></a>
-                                    <a class="networkbox__logo" href=""><img src="../images/fblogo.png" alt="logo_fb"></img></a>
-                                    <a class="networkbox__logo" href=""><img src="../images/instalogo.png" alt="logo_insta"></img></a>
-                                    <a class="networkbox__logo" href=""><img src="../images/linkedinlogo.png" alt="logo_linkedin"></img></a>
-                                    <a class="networkbox__logo" href=""><img src="../images/ytblogo.png" alt="logo_youtube"></img></a>
-                                    <a class="networkbox__logo" href=""><img src="../images/pinterestlogo.jpg" alt="logo_pinterest"></img></a>
+                                    <a class="networkbox__logo" href=""><img src="../images/twitterLogo.png" alt="logo_twitter" /></a>
+                                    <a class="networkbox__logo" href=""><img src="../images/fblogo.png" alt="logo_fb" /></a>
+                                    <a class="networkbox__logo" href=""><img src="../images/instalogo.png" alt="logo_insta" /></a>
+                                    <a class="networkbox__logo" href=""><img src="../images/linkedinlogo.png" alt="logo_linkedin" /></a>
+                                    <a class="networkbox__logo" href=""><img src="../images/ytblogo.png" alt="logo_youtube" /></a>
+                                    <a class="networkbox__logo" href=""><img src="../images/pinterestlogo.jpg" alt="logo_pinterest" /></a>
                                 </div>
                             </div>
                         </div>
@@ -79,9 +78,9 @@
                                 <input type="text" id="email" name="email" placeholder=" Entrez votre adresse E-mail" required="required">
                                 <!-- Champ Objet -->
                                 <label for="subject">Objet (min 10 caractères) :</label>
-                                <input type="text" id="subject" name="subject" placeholder=" Entrez l'objet de votre message" required="required" ">
+                                <input type="text" id="subject" name="subject" placeholder=" Entrez l'objet de votre message" required="required">
                                 <!-- Champ Texte -->
-                                <label for=" message">Message (min 50 caractères) :</label>
+                                <label for="message">Message (min 50 caractères) :</label>
                                 <textarea id="message" name="message" placeholder=" Ecrivez votre message..." required="required"></textarea>
                                 <?php if (isset($_POST['error'])) {
                                     echo "<p class='errorMessage'>" . "mdp incorect" . "</p>";
@@ -98,8 +97,6 @@
             </div>
 
         </div>
-        </div>
-
     </main>
 </body>
 
