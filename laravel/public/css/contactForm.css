@@ -119,5 +119,9 @@ form label {
   .footer--desktop {
     margin-top: 0px;
   }
+
+  .conteneur {
+    width: 100%;
+  }
 }
 
