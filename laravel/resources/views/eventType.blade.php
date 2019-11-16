@@ -5,7 +5,7 @@ $requete->bindValue(':id', $id, PDO::PARAM_INT);
 $requete->execute();
 $event = $requete->fetchAll();
 $requete->closeCursor();
-if(empty($event)){
+if (empty($event)) {
     http_response_code(404);
     die();
 }
@@ -22,17 +22,18 @@ $requete3->bindValue(':event', $id, PDO::PARAM_INT);
 $requete3->execute();
 $isRegistered = $requete3->fetchAll();
 $requete->closeCursor();
-if(session('role')){
+if (session('role')) {
     //echo session('role');
 }
 ?>
 
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="fr">
+
+<head>
     <title>Event Type</title>
     <meta charset="UTF-8" />
-    
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
@@ -42,97 +43,98 @@ if(session('role')){
 
 
 
-  </head>
-  <body>
+</head>
 
-  @include('/partials/header')
+<body>
 
-<main>
+    @include('/partials/header')
 
-    <div>
-        <h2><?php echo $event[0]["title_events"] ?></h2>
-    </div>
-    <div class="conteneur">
+    <main>
 
-        <section>
-            <article>
-                <h3><?php echo $event[0]["place"] ?></h3>
-                <p><?php echo $event[0]["description"] ?></p>
-            </article>
-            <div class="picture_gallery" id="js-picture-gallery"><br>
+        <div>
+            <h2><?php echo $event[0]["title_events"] ?></h2>
+        </div>
+        <div class="conteneur">
 
-            </div>
-            <aside>Pannel event :
-                <br>
-                
-                
-                <button class="btn add_picture">Ajouter photo         </button>
-                <?php
-                    if(session('role') == 'Administrator'){
+            <section>
+                <article>
+                    <h3><?php echo $event[0]["place"] ?></h3>
+                    <p><?php echo $event[0]["description"] ?></p>
+                </article>
+                <div class="picture_gallery" id="js-picture-gallery"><br>
+
+                </div>
+                <aside>Pannel event :
+                    <br>
+
+
+                    <button class="btn add_picture">Ajouter photo </button>
+                    <?php
+                    if (session('role') == 'Administrator') {
                         echo "<form action='/event/$id/edit/' method='get'><button class='btn edit_event'>Modifier l'event</button></form>";
-                    };                
-                 ?>
-                <?php 
-                
-                if(empty($isRegistered)){
-                    echo '
+                    };
+                    ?>
+                    <?php
+
+                    if (empty($isRegistered)) {
+                        echo '
                     <form action="/event/participate" method="post">
-                        <input type="hidden" name="event" value="'. $id . '"/>
-                        <input type="hidden" name="_token" value="'. csrf_token() . '"/>
+                        <input type="hidden" name="event" value="' . $id . '"/>
+                        <input type="hidden" name="_token" value="' . csrf_token() . '"/>
                         <button type="submit" class="btn participate">' . "Participer à l'event"  . '</button>
-                    </form>'
-                    ;
-                }else{
-                    echo '
+                    </form>';
+                    } else {
+                        echo '
                     <form action="/event/leave" method="post">
-                        <input type="hidden" name="event" value="'. $id . '"/>
-                        <input type="hidden" name="_token" value="'. csrf_token() . '"/>
+                        <input type="hidden" name="event" value="' . $id . '"/>
+                        <input type="hidden" name="_token" value="' . csrf_token() . '"/>
                         <button type="submit" class="btn participate">' . "Quitter l'event"  . '</button>
                     </form>';
-                };
-                
-                ?>
-                <button class="btn download">Télécharger</button>
+                    };
 
-            </aside>
+                    ?>
+                    <button class="btn download">Télécharger</button>
+
+                </aside>
 
 
 
-        </section>
+            </section>
 
-    </div>
+        </div>
 
-</main>
-  </body>
+    </main>
+    <script>
+        var id = <?php echo $id ?>;
+        <?php
 
-  <script>
-     var id = <?php echo $id ?>;
-     <?php 
-     
-     if(session('role') == 'Moderator'){
-        echo 'var button = "<button class=' . "'btn warning'" . '>Signaler</button>";';
-     }
+        if (session('role') == 'Moderator') {
+            echo 'var button = "<button class=' . "'btn warning'" . '>Signaler</button>";';
+        }
 
-     if(session('role') == 'Administrator'){
-        echo 'var button = "<button class=' . "'btn delete'" . '>Supprimer</button>";';
-    }
-    if(csrf_token()){
-        echo 'var token = "' . csrf_token() . '";';
-    };
-    if(session('id_user')){
-        echo 'var id_user = ' . session('id_user') . ';';
-    }
-    if(!empty($isRegistered)){
-        echo 'var registered = true;';
-    }
-    if(empty($isRegistered)){
-        echo 'var registered = false;';
-    }
+        if (session('role') == 'Administrator') {
+            echo 'var button = "<button class=' . "'btn delete'" . '>Supprimer</button>";';
+        }
+        if (csrf_token()) {
+            echo 'var token = "' . csrf_token() . '";';
+        };
+        if (session('id_user')) {
+            echo 'var id_user = ' . session('id_user') . ';';
+        }
+        if (!empty($isRegistered)) {
+            echo 'var registered = true;';
+        }
+        if (empty($isRegistered)) {
+            echo 'var registered = false;';
+        }
 
-     ?>
-</script>
-<script src="/js/insertDataToEvent.js">
+        ?>
     </script>
+    <script src="/js/insertDataToEvent.js">
+    </script>
+</body>
+
+
 
 
 
