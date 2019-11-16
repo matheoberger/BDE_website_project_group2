@@ -6,7 +6,6 @@
     "/css/contactForm.css": "/css/contactForm.css",
     "/css/login.css": "/css/login.css",
     "/css/navbar.css": "/css/navbar.css",
-    "/css/event.css": "/css/event.css",
     "/css/article.css": "/css/article.css",
     "/css/footer.css": "/css/footer.css",
     "/css/responsive.css": "/css/responsive.css",
@@ -17,7 +16,10 @@
     "/css/panier.css": "/css/panier.css",
     "/css/boutique.css": "/css/boutique.css",
     "/js/cookie.js": "/js/cookie.js",
+    "/js/editEvent.js": "/js/editEvent.js",
     "/js/index.js": "/js/index.js",
     "/js/insertDataToEvent.js": "/js/insertDataToEvent.js",
-    "/js/insertProduct.js": "/js/insertProduct.js"
+    "/js/insertProduct.js": "/js/insertProduct.js",
+    "/js/navbar.js": "/js/navbar.js",
+    "/css/event.css": "/css/event.css"
 }

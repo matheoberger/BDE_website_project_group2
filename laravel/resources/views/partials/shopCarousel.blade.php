@@ -4,31 +4,44 @@ $requete = $bdd2->prepare("CALL `bestSellinBordeaux`();");
 $requete->execute();
 $bestProducts = $requete->fetchAll();
 $requete->closeCursor();
-$title1 = $bestProducts[0]['title'] . "-" . $bestProducts[0]['product_name'];
-$title2 = $bestProducts[1]['title'] . "-" . $bestProducts[1]['product_name'];
-$title3 = $bestProducts[2]['title'] . "-" . $bestProducts[2]['product_name'];
-$src1 = $bestProducts[0]['url'];
-$src2 = $bestProducts[1]['url'];
-$src3 = $bestProducts[2]['url'];
+$i = 0;
+
+foreach ($bestProducts as $product) {
+    ${'title' . $i} = $product['title'] . "-" . $product['product_name'];
+    ${'src' . $i} = $product['url'];
+    $i++;
+}
 ?>
 
 <div id="carousel2" class="carousel slide" data-ride="carousel">
     <ul class="carousel-indicators">
-        <li data-target="#carousel2" data-slide-to="0" class="active"></li>
-        <li data-target="#carousel2" data-slide-to="1"></li>
-        <li data-target="#carousel2" data-slide-to="2"></li>
+        <?php
+        $i = 0;
+        foreach ($bestProducts as $product) {
+            if ($i == 0) {
+                echo "<li data-target='#carousel2' data-slide-to='$i' class='active'></li>";
+            } else {
+                echo "<li data-target='#carousel2' data-slide-to='$i'></li>";
+            }
+            $i++;
+        }
+        ?>
     </ul>
 
     <div class="carousel-inner">
-        <a class="carousel-item active" href="#carousel2">
-            <img class="caroussel__image" <?php echo "src=\"../$src1\" alt=\"$title1\"" ?>>
-        </a>
-        <a class="carousel-item" href="#carousel2">
-            <img class="caroussel__image" <?php echo "src=\"$src2\" alt=\"$title2\"" ?>>
-        </a>
-        <a class="carousel-item" href="#carousel2">
-            <img class="caroussel__image" <?php echo "src=\"$src3\" alt=\"$title3\"" ?>>
-        </a>
+        <?php
+        $i = 0;
+        foreach ($bestProducts as $product) {
+            if ($i == 0) {
+                echo "<a class='carousel-item active' href='#carousel2'>
+                <img class='caroussel__image' src='../${'src' .$i}' alt='${'title' .$i}' ></a>";
+            } else {
+                echo "<a class='carousel-item' href='#carousel2'>
+                <img class='caroussel__image' src='../${'src' .$i}' alt='${'title' .$i}' ></a>";
+            }
+            $i++;
+        }
+        ?>
     </div>
     <a class="carousel-control-prev" href="#carousel2" data-slide="prev">
         <span class="carousel-control-prev-icon"></span>

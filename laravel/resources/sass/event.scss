@@ -54,14 +54,7 @@ h2 {
 }
 
 .conteneur {
-    <<<<<<<HEAD
-    background: linear-gradient(
-        70deg,
-        $grey_1,
-        darken($grey_1, 30)
-    );
-    =======background: linear-gradient(180deg, $red, darken($red, 30));
-    >>>>>>>origin/remi_beta_0.1
+    background: linear-gradient(180deg, $red, darken($red, 30));
     margin: $px_2;
     display: inline-block;
     flex-wrap: wrap;
