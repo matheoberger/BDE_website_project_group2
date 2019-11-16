@@ -1,10 +1,7 @@
 const gallery = document.getElementById("js-picture-gallery");
 class Image {
-    constructor({ url, comments, nbrlike, id_pictures }) {
+    constructor({ url, comments, nbrlike, id_pictures }, button) {
         this.id_pictures = id_pictures;
-        if (!button) {
-            var button = "";
-        }
         this.closed = false;
         this.divs =
             `<div class="public_img">
@@ -144,8 +141,11 @@ class Image {
 
 $.get(`http://localhost:3000/event/${id}`, function(data, status) {
     data.forEach(element => {
-        console.log(element);
-        var currentImg = new Image(element);
+        console.log(button);
+        if (!button) {
+            var button = "";
+        }
+        var currentImg = new Image(element, button);
         currentImg.submitElement();
     });
 });
