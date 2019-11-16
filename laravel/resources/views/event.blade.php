@@ -27,18 +27,7 @@
             </div>
             <div id="js-contenair_event"></div>
 
-            <section>
-                <article>
-                <input type="image" src="../images/party_merica.jpg" name="saveForm" class="btTxt_submit" id="saveForm" />
-                </article>
-                <div class="event_description">
-                    <aside>
-                    [titre_event]
-                    [description_event]
-                    </aside>
-                </div>
 
-            </section>
 
 </div>
 

@@ -63,7 +63,7 @@ $(document).ready(function() {
             $(document).height() - 10
         ) {
             console.log("sscroll");
-            coucou.newProduct(eventIndex, eventNumber);
+            hey.newEvent(eventIndex, eventNumber);
             eventIndex += eventInc;
         }
     });
