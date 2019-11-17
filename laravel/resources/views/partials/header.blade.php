@@ -9,7 +9,8 @@
             <img src="/images/bell.png" class="customNavbar customNavbar__notification" alt="notification_bell" />
 
             <input type="text" class="customNavbar customNavbar_search">
-            <img src="/images/panier.png" class="customNavbar customNavbar__panier" alt="basket_image" />
+            <a href="/panier">
+                <img src="/images/panier.png" class="customNavbar customNavbar__panier" alt="basket_image" /></a>
             <?php if (session()->has('firstname') && session()->has('lastname')) {
                 echo "<a class='customNavbar customNavbar__user' href='/disconnect'> Se déconnecter </a>";
             } else {
