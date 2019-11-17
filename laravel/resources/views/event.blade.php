@@ -21,7 +21,6 @@
 
 
 <main>
-
     <div class="conteneur">
            <div>
                 <h2> <u>Les évènements</u></h2>
