@@ -4,8 +4,9 @@ body {
     background: linear-gradient(70deg, $red, darken($blue_1, 20));
 }
 
+/* la section commentaire */
 .comment {
-    border: 0.3vw solid #6a6666;
+    border: 0.1vw solid #6a6666;
     margin: 0 10% 5% 10%;
 }
 
@@ -47,6 +48,7 @@ section {
 article {
     font-family: $roboto;
     transition: 0.2s;
+
     &:hover {
         background-color: darken($red, 10);
     }
@@ -54,9 +56,11 @@ article {
 
 .picture_gallery {
     transition: 0.2s;
+
     &:hover {
         background-color: darken($red, 10);
     }
+
     justify-content: center;
     text-align: center;
 }
@@ -81,6 +85,7 @@ article {
     user-select: none;
     transition: cubic-bezier(0, 1.41, 0.68, 1.95) 0.12s;
 }
+
 .img--activated {
     color: darkblue;
 }
@@ -94,6 +99,7 @@ article {
 .download {
     background-color: #4caf50;
 }
+
 .download:hover {
     background-color: darken(#4caf50, 10);
 }
@@ -157,9 +163,11 @@ article {
 
 .public_img {
     transition: 0.2s;
+
     &:hover {
         background-color: darken($red, 10);
     }
+
     justify-content: center;
 }
 
