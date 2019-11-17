@@ -1,5 +1,9 @@
 @import "./responsive.scss";
 
+.conteneur {
+    width: 100%;
+}
+
 .mentionsLegales--roboto {
     font-family: $roboto;
 }
@@ -11,6 +15,7 @@
 .mentionsLegales__title {
     text-align: center;
     padding-top: 3%;
+    // !!!!!!!!!! Erreur W3C !!!!!!!!!!!!
     padding-block-end: 3%;
 
     color: white;

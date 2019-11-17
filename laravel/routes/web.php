@@ -34,17 +34,40 @@ Route::get('/login', 'loginController@gethtml');
 Route::post('/ConnexionVerif', 'loginController@verification');
 Route::post('/InscriptionVerif', 'registerController@verification');
 
+Route::get("/downloadParticipantCSV/{id}", 'DownloadController@downloadCSV');
+Route::get("/downloadParticipantPDF/{id}", 'DownloadController@downloadPDF');
+Route::get("/downloadAll", 'DownloadController@downloadAll');
+
+Route::post('/comment', 'commentPicture');
+
+Route::post('/likePicture', 'likePicture');
+Route::post('/dislikePicture', 'dislikePicture');
+
+Route::post('/event/participate', 'participateEvent');
+Route::post('/event/leave', 'leaveEvent');
+Route::post('/editEvent', 'editEvent');
+
+
 Route::get('/event', function () {
     return view('event');
 });
+
 Route::get('/event/{id}', function ($id) {
-    return view('eventType', ["id"=>$id]);
+    return view('eventType', ["id" => $id]);
+});
+
+Route::get('/article/{id}', function ($id) {
+    return view('article', ["id" => $id]);
+});
+
+Route::get('/event/{id}/edit', function ($id) {
+    return view('eventEdit', ["id" => $id]);
 });
 Route::get('/CGV', function () {
     return view('CGV');
 });
-Route::get('/article/{id}', function ($id) {
-    return view('article', ["id"=>$id]);
+Route::get('/boutique/{id}', function ($id) {
+    return view('article', ["id" => $id]);
 });
 Route::get('/mentionsLegales', function () {
     return view('mentionsLegales');

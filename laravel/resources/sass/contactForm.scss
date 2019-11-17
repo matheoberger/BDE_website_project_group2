@@ -23,6 +23,7 @@ section {
     margin: 100px;
     height: 100%;
 }
+
 .formTitle {
     font-family: $roboto;
     font-size: xx-large;
@@ -97,10 +98,13 @@ form label {
 
     section {
         margin: 0px;
-        // height: calc(100vh - 110px);
     }
 
     .footer--desktop {
         margin-top: 0px;
+    }
+
+    .conteneur {
+        width: 100%;
     }
 }

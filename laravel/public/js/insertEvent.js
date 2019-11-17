@@ -1,108 +1,76 @@
-console.log("You fool!")
-
-/**
- * La classe insertevents regroupe les méthodes
- * permettant le chargement depuis l'API de nouveaux
- * event en les inserant directement en Jquery
- * dans le fichier HTML boutique
- */
-class insertEvents {
-    /**
-     *
-     * @param {number} eventIndex : représente le nombre d'article déjà chargé, utile pour l'API qui l'enverra à la procédure
-     * @param {number} eventNumber  : représente le nnombre d'event que l'on veut charger à partir de l'index
-     *
-     * New events régit toutes les méthodes de la classe insertevents, un tableau de produit est d'abord chargé,
-     * puis détaché en objets (les event) puis mis en forme pour être insérés dans le fichier HTML
-     *
-     */
-    newEvents(eventIndex, eventNumber) {
-        if(){
-        $("js-spinner").addClass("spinner__display");
-        }
-        this.getEvents(eventIndex, eventNumber).then(EventsList => {
+class insertEvent {
+    newEvent(eventIndex, eventNumber) {
+        this.getEvent(eventIndex, eventNumber).then(eventList => {
             $("js-spinner").removeClass("spinner__display");
             $("js-spinner").addClass("spinner__display--none");
-            eventsList.forEach(this.createEvents.bind(this));
+            eventList.forEach(this.createEvent.bind(this));
+            //console.log("newEvent()");
         });
     }
 
-    /**
-     *
-     * @param {number} eventIndex : représente le nombre d'article déjà chargé, utile pour l'API qui l'enverra à la procédure
-     * @param {number} eventNumber  : représente le nnombre d'event que l'on veut charger à partir de l'index
-     *
-     * getevents execute la requête HTTP get destinée à l'API, les données sont récupérées en asynchrone
-     *
-     */
-
-    getEvents(eventIndex, eventNumber) {
+    getEvent(eventIndex, eventNumber) {
+        $("js-spinner").addClass("spinner__display");
         return new Promise(resolve => {
             $.get(
-                `http://localhost:3000/event/${eventIndex}/${eventNumber}`,
+                `http://localhost:3000/events/${eventIndex}/${eventNumber}`,
                 function(data, status) {
+                    console.log(data);
                     resolve(data);
                 }
             );
+            //console.log("getEvent()");
         });
     }
 
-    /**
-     *
-     * @param {*} events
-     *
-     *createevents permet de mettre en forme chaque article pour qu'ils puissent être insérés dans le fichier HTML
-     *
-     */
+    createEvent(event) {
+        console.log(event);
+        var eventElement = `<section>
+        <article>
 
-    createEvents(event) {
-        var eventsElement = `<div class="events">
-        <a href="/event/${events.id_events}"><img src="${events.image}" class="events__image"/></a>
-        <div class="events__title">${events.title}</div>
-        <div class="events__price"><b>${events.price}€</b></div>
-    </div>`;
-        this.loadEvents(eventsElement);
+        <a href="/event/${event.id_events}">
+        <input type="image" src="/${event.image}" name="saveForm" class="btTxt_submit" id="saveForm" />
+        </a>
+        </article>
+        <div class="event_description">
+            <aside>
+            <h2>${event.title_events}</h2>
+            <p>${event.description}</p>
+            </aside>
+        </div>
+
+    </section>`;
+        this.loadEvent(eventElement);
+        /* console.log("createEvent()");
+        console.log("eventElement: " + eventElement);*/
     }
 
-    /**
-     *
-     * @param {*} eventsElement
-     *
-     * loadevents insert eventsElement dans le div dépendant de la classe js-eventsContainer
-     *
-     */
-    loadEvents(eventsElement) {
-        $("#js-eventsContainer").append(eventsElement);
+    loadEvent(eventElement) {
+        $("#js-contenair_event").append(eventElement);
     }
 }
 
-/**
- * Une fois que le document est "prêt",
- * une nouvelle classe inserevents est crée puis on charge les event
- * à chaque fois que la position du curseur dans la fenêtre atteint la fin du document
- *
- */
-
 $(document).ready(function() {
     var eventIndex = 0;
-    var numbereventLoad = 3;
-    var eventNumber = numbereventLoad;
-    var eventInc = numbereventLoad;
-    const coucou = new insertEvents();
+    var numberEventLoad = 3;
+    var eventNumber = numberEventLoad;
+    var eventInc = numberEventLoad;
+    const hey = new insertEvent();
 
-    coucou.newEvents(eventIndex, eventNumber);
+    hey.newEvent(eventIndex, eventNumber);
     eventIndex += eventInc;
 
     $(window).scroll(function() {
+        /*
         console.log($(window).scrollTop());
         console.log($(window).height());
         console.log($(document).height());
+        */
         if (
             Math.round($(window).scrollTop() + $(window).height()) >=
             $(document).height() - 10
         ) {
-            console.log("sscroll");
-            coucou.newEvents(eventIndex, eventNumber);
+            // console.log("sscroll");
+            hey.newEvent(eventIndex, eventNumber);
             eventIndex += eventInc;
         }
     });

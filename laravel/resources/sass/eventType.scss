@@ -75,9 +75,14 @@ article {
 }
 
 .fa {
-    font-size: 15vw;
+    font-size: 3vw;
+    margin-bottom: 10px;
     cursor: pointer;
     user-select: none;
+    transition: cubic-bezier(0, 1.41, 0.68, 1.95) 0.12s;
+}
+.img--activated {
+    color: darkblue;
 }
 
 .warning {
@@ -142,10 +147,6 @@ article {
 /* Blue */
 .add_comment:hover {
     background: #0b7dda;
-}
-
-.fa:hover {
-    color: darkblue;
 }
 
 .picture_gallery img {

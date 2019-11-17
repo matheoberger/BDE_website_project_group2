@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 
 <head>
 
@@ -12,8 +12,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>
-
+    <script src="js/index.js"></script>
     <link rel="stylesheet" href="css/index.css" />
     <link rel="stylesheet" href="css/app.css" />
     <link rel="stylesheet" type="text/css" href="css/header.css">
@@ -32,7 +31,7 @@
                 <section class="main__pannel">
                     <!-- Division comportant le lien vers la boutique-->
                     <div class="main__pannel__box --bordered-left --bordered-top">
-                        <a class="main__pannel__box_image--shop" href="boutique">
+                        <a class="main__pannel__box_image--shop" href="/boutique">
                             <h2 class="main__pannel__box__title"> Boutique </h2>
                         </a>
                     </div>
@@ -107,8 +106,6 @@
             </div>
 
         </div>
-        </div>
-
     </main>
 </body>
 

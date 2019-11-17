@@ -1,18 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 
 <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="../js/bootstrap.bundle.min.js">
     </script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
     </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
     <title> Conditions générales de vente</title>
     <meta charset="UTF-8" />
@@ -24,10 +21,6 @@
     <link rel="stylesheet" type="text/css" href="css/footer.css">
     <link rel="stylesheet" type="text/css" href="css/CGV.css">
     <link rel="stylesheet" type="text/css" href="css/breadcrumb.css">
-
-
-
-
 </head>
 
 <body>
@@ -38,7 +31,7 @@
         <div class="conteneur">
             <div class="contenu">
                 <div class="CGV__body">
-                    <h1 class=" CGV__title CGV--robotoFont "> Conditions générales de vente</h1>
+                    <h2 class=" CGV__title CGV--robotoFont "> Conditions générales de vente</h2>
 
                     <div class="CGV__navigation">
                         <nav aria-label="breadcrumb">
@@ -55,16 +48,13 @@
                             <div class="accordion CGV__accordion" id="accordionExample">
                                 <div class="card">
                                     <div class="card-header" id="headingOne">
-                                        <h2 class="mb-0">
-                                            <button class="btn btn-link" type="button" data-toggle="collapse"
-                                                data-target="#collapseOne" aria-controls="collapseOne"
-                                                aria-expanded="false">
+                                        <h3 class="mb-0">
+                                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-controls="collapseOne" aria-expanded="false">
                                                 Définitions
                                             </button>
-                                        </h2>
+                                        </h3>
                                     </div>
-                                    <div id="collapseOne" class="collapse show " aria-labelledby="headingOne"
-                                        data-parent="#accordionExample ">
+                                    <div id="collapseOne" class="collapse show " aria-labelledby="headingOne" data-parent="#accordionExample ">
                                         <div class="card-body">
                                             <div class="CGV__article">
                                                 Chacun des termes mentionnés ci-dessous aura dans les présentes
@@ -176,16 +166,13 @@
 
                                 <div class="card">
                                     <div class="card-header " id="headingTwo">
-                                        <h2 class="mb-0">
-                                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                                                data-target="#collapseTwo" aria-expanded="false"
-                                                aria-controls="collapseTwo">
+                                        <h3 class="mb-0">
+                                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                                 Objet
                                             </button>
-                                        </h2>
+                                        </h3>
                                     </div>
-                                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
-                                        data-parent="#accordionExample">
+                                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                                         <div class="card-body ">
                                             <div class="CGV__article">
                                                 Les présentes Conditions Générales de Vente (CGV) établissent les
@@ -201,17 +188,14 @@
                                     </div>
                                 </div>
                                 <div class="card">
-                                    <div class="card-header" id="headingFive">
-                                        <h2 class="mb-0">
-                                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                                                data-target="#collapseThree" aria-expanded="false"
-                                                aria-controls="collapseThree">
+                                    <div class="card-header" id="headingThree">
+                                        <h3 class="mb-0">
+                                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                                                 Acceptation
                                             </button>
-                                        </h2>
+                                        </h3>
                                     </div>
-                                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
-                                        data-parent="#accordionExample">
+                                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
                                         <div class="card-body">
                                             <div class="CGV__article">
                                                 Toute souscription d'option(s) payante(s) et/ou achat de crédits par un
@@ -224,16 +208,13 @@
                                 </div>
                                 <div class="card">
                                     <div class="card-header" id="headingFor">
-                                        <h2 class="mb-0">
-                                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                                                data-target="#collapseFor" aria-expanded="false"
-                                                aria-controls="collapseFor">
+                                        <h3 class="mb-0">
+                                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFor" aria-expanded="false" aria-controls="collapseFor">
                                                 Prix
                                             </button>
-                                        </h2>
+                                        </h3>
                                     </div>
-                                    <div id="collapseFor" class="collapse" aria-labelledby="headingFor"
-                                        data-parent="#accordionExample">
+                                    <div id="collapseFor" class="collapse" aria-labelledby="headingFor" data-parent="#accordionExample">
                                         <div class="card-body">
                                             <div class="CGV__article">
                                                 Les tarifs appliqués sont ceux en vigueur au jour de l'achat d'une ou
@@ -250,16 +231,13 @@
                                 </div>
                                 <div class="card">
                                     <div class="card-header" id="headingFive">
-                                        <h2 class="mb-0">
-                                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                                                data-target="#collapseFive" aria-expanded="false"
-                                                aria-controls="collapseFive">
+                                        <h3 class="mb-0">
+                                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
                                                 Paiement et facturation
                                             </button>
-                                        </h2>
+                                        </h3>
                                     </div>
-                                    <div id="collapseFive" class="collapse" aria-labelledby="headingFive"
-                                        data-parent="#accordionExample">
+                                    <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
                                         <div class="card-body">
                                             <div class="CGV__article">
                                                 7.1 Options payantes
@@ -413,16 +391,13 @@
                                 </div>
                                 <div class="card">
                                     <div class="card-header" id="headingSix">
-                                        <h2 class="mb-0">
-                                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                                                data-target="#collapseSix" aria-expanded="false"
-                                                aria-controls="collapseSix">
+                                        <h3 class="mb-0">
+                                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
                                                 Responsabilité, force majeure
                                             </button>
-                                        </h2>
+                                        </h3>
                                     </div>
-                                    <div id="collapseSix" class="collapse" aria-labelledby="headingSix"
-                                        data-parent="#accordionExample">
+                                    <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionExample">
                                         <div class="card-body">
                                             <div class="CGV__article">
                                                 La responsabilité de LBC FRANCE ne peut être engagée en cas
@@ -436,16 +411,13 @@
                                 </div>
                                 <div class="card">
                                     <div class="card-header" id="headingSeven">
-                                        <h2 class="mb-0">
-                                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                                                data-target="#collapseSeven" aria-expanded="false"
-                                                aria-controls="collapseSeven">
+                                        <h3 class="mb-0">
+                                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
                                                 Modification des CGV
                                             </button>
-                                        </h2>
+                                        </h3>
                                     </div>
-                                    <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven"
-                                        data-parent="#accordionExample">
+                                    <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordionExample">
                                         <div class="card-body">
                                             <div class="CGV__article">
                                                 Les présentes CGV sont applicables à partir du 08 février 2017.
@@ -465,16 +437,13 @@
                                 </div>
                                 <div class="card">
                                     <div class="card-header" id="headingEight">
-                                        <h2 class="mb-0">
-                                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                                                data-target="#collapseEight" aria-expanded="false"
-                                                aria-controls="collapseEight">
+                                        <h3 class="mb-0">
+                                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
                                                 Divers
                                             </button>
-                                        </h2>
+                                        </h3>
                                     </div>
-                                    <div id="collapseEight" class="collapse" aria-labelledby="headingEight"
-                                        data-parent="#accordionExample">
+                                    <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#accordionExample">
                                         <div class="card-body">
                                             <div class="CGV__article">
                                                 Tout traitement de données personnelles dans le cadre des présentes est
@@ -521,7 +490,7 @@
                 </div>
                 @include("partials/footer")
             </div>
-
+        </div>
     </main>
 </body>
 

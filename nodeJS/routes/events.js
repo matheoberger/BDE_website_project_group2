@@ -19,6 +19,7 @@ async function mapped(results) {
           }
         );
       });
+      console.log(element);
       return element;
     })
   );
