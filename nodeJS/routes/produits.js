@@ -6,7 +6,7 @@ var connection = mysql.createConnection({
   database: "bde_cesi"
 });
 connection.connect();
-
+//lie les produits à leurs images
 async function mapped(results) {
   return Promise.all(
     results.map(async function(element) {
@@ -24,7 +24,11 @@ async function mapped(results) {
     })
   );
 }
-
+/**
+ * @function getBasicProductArray renvoie une liste des produits
+ * @param {Number} start index à partir duquel l'array est lu
+ * @param {Number} number nombre de valeurs à renvoyer
+ */
 async function getBasicProductArray({ start, number }) {
   return new Promise(resolve => {
     connection.query(`CALL ${"`getProducts`"}(${start}, ${number})`, function(
@@ -39,7 +43,11 @@ async function getBasicProductArray({ start, number }) {
     });
   });
 }
-
+/**
+ * @function getFilteredProductArray renvoie une liste des produits filtrés
+ * @param {*} start index à partir duquel l'array est lu
+ * @param {*} number nombre de valeurs à renvoyer
+ */
 async function getFilteredProductArray(
   { start, number },
   {

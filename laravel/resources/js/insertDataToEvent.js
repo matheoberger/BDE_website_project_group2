@@ -43,6 +43,7 @@ class Image {
             .parentElement.getElementsByClassName("comments")[0]
             .appendChild(div);
     }
+    //Fait une requête AJAX pour disliker
     like(object) {
         var id = this.id_pictures;
         $.post(`http://localhost:8000/likePicture/`, object, function(
@@ -58,6 +59,7 @@ class Image {
             }
         });
     }
+    //Fait une requête AJAX pour liker
     dislike(object) {
         var id = this.id_pictures;
         $.post(`http://localhost:8000/dislikePicture/`, object, function(

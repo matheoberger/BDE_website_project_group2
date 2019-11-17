@@ -95,7 +95,8 @@
 
 var navbar = document.getElementById("js-navbar");
 var button = document.getElementById("js-hamburger");
-var sw = 0;
+var sw = 0; //Pour les mobiles, gère la nabvar qui part et qui revient en appuyant sur le bouton hamburger
+
 button.addEventListener("click", function (e) {
   if (sw == 0) {
     sw++;

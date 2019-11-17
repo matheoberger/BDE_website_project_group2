@@ -146,7 +146,8 @@ function () {
       div.className = "comment";
       div.innerText = "".concat(id_users, " : ").concat(description);
       document.getElementById(this.id).parentElement.getElementsByClassName("comments")[0].appendChild(div);
-    }
+    } //Fait une requête AJAX pour disliker
+
   }, {
     key: "like",
     value: function like(object) {
@@ -156,7 +157,8 @@ function () {
           document.getElementById("js-number-likes-".concat(id)).innerText = Number(document.getElementById("js-number-likes-".concat(id)).innerText) + 1;
         }
       });
-    }
+    } //Fait une requête AJAX pour liker
+
   }, {
     key: "dislike",
     value: function dislike(object) {

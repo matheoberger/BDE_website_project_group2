@@ -7,6 +7,7 @@ var connection = mysql.createConnection({
 });
 connection.connect();
 
+//Gère l'autocomplétion des produits en récupérant les titres des produits dans la BDD
 async function getFilteredProductArray(
   { start, number },
   {
