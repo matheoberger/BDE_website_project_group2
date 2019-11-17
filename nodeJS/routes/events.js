@@ -14,6 +14,7 @@ async function mapped(results) {
         connection.query(
           `CALL ${"`getPhotoFromEvent`"}(${element.id_events})`,
           (error, results2, fields) => {
+            if (error) throw error;
             element.image = results2[0][0].url;
             resolve(element);
           }

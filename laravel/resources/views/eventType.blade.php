@@ -31,7 +31,7 @@ if (session('role')) {
 <html lang="fr">
 
 <head>
-    <title>Event Type</title>
+    <title>Events</title>
     <meta charset="UTF-8" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -66,12 +66,15 @@ if (session('role')) {
                 </div>
                 <aside>Pannel event :
                     <br>
+                    <?php echo "<form action='/addpicture/$id'>
+                        <button type='submit' class='btn add_picture'>Ajouter photo </button>
+                    </form>" ?>
 
-
-                    <button class="btn add_picture">Ajouter photo </button>
                     <?php
                     if (session('role') == 'Administrator') {
-                        echo "<form action='/event/$id/edit/' method='get'><button class='btn edit_event'>Modifier l'event</button></form>";
+                        echo "<form action='/event/$id/edit/' method='get'><button class='btn edit_event'>Modifier event</button></form>";
+                        echo "<form action='/deleteEvent/$id' method='get'>
+                                <button class='btn edit_event'>Supprimer event</button></form>";
                     };
                     ?>
                     <?php

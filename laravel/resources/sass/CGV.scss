@@ -1,11 +1,16 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+
 @font-face {
     font-family: "Lemon/Milk";
     src: url("/fonts/LemonMilk/LemonMilk.otf") format("truetype");
 }
+
+/* Mise en page COnditions Générale de Vente */
+
 .conteneur {
     width: 100%;
 }
+
 .CGV__body {
     background-color: hsla(60, 0%, 46%, 1);
     min-height: calc(100vh - 110px);
@@ -19,12 +24,14 @@
     font-family: "Lemon/Milk";
 }
 
+/* Titre */
 .CGV__title {
     text-align: center;
     padding-top: 3%;
     color: white;
 }
 
+/* Pour les articles */
 .CGV__article {
     font-family: "Roboto", sans-serif;
     margin: 2%;
@@ -35,9 +42,11 @@
     padding-left: 10%;
 }
 
-.accordion > .card .card-header {
+.accordion>.card .card-header {
     background-color: hsla(120, 1%, 62%, 1);
 }
+
+/* Mise en page des boutons */
 .btn {
     font-family: "Roboto-Bold", sans-serif;
     color: rgb(255, 255, 255);
@@ -70,6 +79,7 @@
     color: hsla(39, 100%, 66%, 1);
     text-decoration: none;
 }
+
 .btn-link.focus {
     text-decoration: none;
 }

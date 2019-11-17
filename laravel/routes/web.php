@@ -43,6 +43,7 @@ Route::get("/newEvent", 'creationController@newEvent');
 Route::get("/newProduct", 'creationController@newProduct');
 Route::post("/newEvent", 'creationController@newEventVerif');
 Route::post("/newProduct", 'creationController@newProductVerif');
+Route::get("/deleteEvent/{id}", 'creationController@deleteEvent');
 
 Route::post('/comment', 'commentPicture');
 
@@ -50,6 +51,10 @@ Route::post('/likePicture', 'likePicture');
 Route::post('/dislikePicture', 'dislikePicture');
 
 Route::post('/event/participate', 'participateEvent');
+Route::post('/event/deleteEvent', 'deleteEvent');
+/*
+Route::post('/addEvent', 'addEvent');
+*/
 Route::post('/event/leave', 'leaveEvent');
 Route::post('/editEvent', 'editEvent');
 
@@ -74,6 +79,10 @@ Route::get('/order', 'BasketController@order');
 Route::get('/event/{id}/edit', function ($id) {
     return view('eventEdit', ["id" => $id]);
 });
+Route::get('/addpicture/{id}', 'eventController@addpicture');
+Route::post('/addpicture/{id}', 'eventController@addpictureVerif');
+
+
 Route::get('/CGV', function () {
     return view('CGV');
 });

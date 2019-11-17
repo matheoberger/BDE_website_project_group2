@@ -1,4 +1,7 @@
 @import "./responsive.scss";
+
+/* Mise en page formulaire de contact */
+
 html {
     height: 100%;
 }
@@ -45,9 +48,16 @@ textarea {
     margin-bottom: 30px;
 }
 
+.form-control {
+    width: 60%;
+    margin-top: 5px;
+    margin-bottom: 30px;
+}
+
 textarea {
     height: 300px;
 }
+
 form label {
     color: white;
     font-family: $roboto;
@@ -84,9 +94,11 @@ form label {
     main {
         height: 100%;
     }
+
     .formTitle {
         font-size: large;
     }
+
     form input,
     textarea {
         width: 100%;
