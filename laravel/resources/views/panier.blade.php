@@ -45,7 +45,6 @@ if (session("email")) {
         <div class="conteneur">
             <div class="contenu">
                 <div class="panier__body">
-                    <h1 class="panier__title">Panier</h1>
 
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
@@ -55,6 +54,7 @@ if (session("email")) {
                             </li>
                         </ol>
                     </nav>
+                    <h5 class="panier__title">Détail de votre panier</h5>
 
                     <div>
 
@@ -67,7 +67,7 @@ if (session("email")) {
                                             $requete->execute();
                                             $pictures = $requete->fetchAll();
                                             $requete->closeCursor();
-                                            $total += $product['price'];
+                                            $total += $product['price'] * $product['amount'];
                                         }
                                         echo "$total €"; ?> </h3>
                             <a href="/order ">
@@ -113,7 +113,6 @@ if (session("email")) {
                 @include("partials/footer")
             </div>
         </div>
-
     </main>
 </body>
 
