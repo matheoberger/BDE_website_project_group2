@@ -3,6 +3,8 @@
   src: url("/fonts/LemonMilk/LemonMilk.otf") format("truetype");
 }
 
+/* Mise en page formulaire de contact */
+
 html {
   height: 100%;
 }

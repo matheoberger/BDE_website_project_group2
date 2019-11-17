@@ -5,11 +5,11 @@ class Image {
         this.closed = false;
         this.divs =
             `<div class="public_img">
-        
+
         <img src="/${url}" alt="party">
         <p>Likes : <p id="js-number-likes-${this.id_pictures}">${nbrlike}</p></p>
-        
-        
+
+
         ${button}` +
             (() => {
                 if (registered) {
