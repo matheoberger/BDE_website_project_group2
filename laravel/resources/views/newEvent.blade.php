@@ -39,7 +39,7 @@ $requete->closeCursor();
                 <section>
                     <h1 class="formTitle">Ajouter un nouveau événement</h1>
                     <div>
-                        <form method="post" action="newProduct">
+                        <form method="post" action="newEvent">
                             @csrf
                             <label for="title">Titre (min 4 caractères) :</label>
                             <input type="text" id="title" name="title" placeholder="Titre de l'article" required="required" <?php if (isset($_POST['title'])) {
@@ -67,7 +67,7 @@ $requete->closeCursor();
                             <input type="text" id="ending_date" name="ending_date" placeholder="Entrez la date de fin  (YYYY-MM-DD)" required="required" <?php if (isset($_POST['ending_date'])) {
                                                                                                                                                                 echo "value='" . $_POST['ending_date'] . "'";
                                                                                                                                                             }; ?>>
-                            <select name="previous event" class="form-control">
+                            <select name="previous_event" class="form-control">
                                 <option value="null">Aucun événement précédent</option>
                                 <?php
                                 foreach ($events as $event) {
