@@ -68,7 +68,7 @@ class BasketController extends Controller
             $requete = $bdd2->prepare("CALL `changeAmountInBasket`(:userID, :productID, :amount)");
             $requete->bindValue(":userID", session("id_user"), PDO::PARAM_INT);
             $requete->bindValue(":productID", $id, PDO::PARAM_INT);
-            $requete->bindValue(":amount", $request->input('amount'), PDO::PARAM_STR);
+            $requete->bindValue(":amount", $request->input('amount'), PDO::PARAM_INT);
             $requete->execute();
             $requete->closeCursor();
         }
@@ -98,6 +98,13 @@ class BasketController extends Controller
             $requete->bindValue(":userID", session("id_user"), PDO::PARAM_STR);
             $requete->execute();
             $requete->closeCursor();
+            foreach ($products as $product) {
+                $requete = $bdd2->prepare("CALL `changeAmountInSell`(:productID, :amount)");
+                $requete->bindValue(":productID", $product["id_products"], PDO::PARAM_INT);
+                $requete->bindValue(":amount", $product["amount"], PDO::PARAM_INT);
+                $requete->execute();
+                $requete->closeCursor();
+            }
         }
         return redirect("/");
     }
