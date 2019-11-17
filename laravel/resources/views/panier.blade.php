@@ -68,6 +68,9 @@ if (session("email")) {
                             <h5 class='mt-0 mb-1'>{$product['title']}</h5>
                             {$product['description']} --- {$product['price']} --- quantité : {$product['amount']}
                             <a href='/remove/{$product['id_products']}'>Retirer</a>
+                            <form name = 'amount_form' action='/amount/{$product['id_products']}'>
+                            <input type='text' id='amount' name='amount' required'>
+                            </form>
                         </div>
                         
                     </li>";

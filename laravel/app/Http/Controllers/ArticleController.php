@@ -53,4 +53,16 @@ class ArticleController extends Controller
         $requete->closeCursor();
         return redirect("/boutique/$id");
     }
+
+    public function changeAmountInBasket($id, Request $request)
+    {
+        $bdd2 = new PDO("mysql:host=localhost;dbname=bde_cesi;charset=UTF8", "root", "");
+        $requete = $bdd2->prepare("CALL `changeAmountInBasket`(:userID, :productID, :amount)");
+        $requete->bindValue(":userID", session("id_user"), PDO::PARAM_STR);
+        $requete->bindValue(":productID", $id, PDO::PARAM_STR);
+        $requete->bindValue(":amount", $request->input('amount'), PDO::PARAM_STR);
+        $requete->execute();
+        $requete->closeCursor();
+        return redirect("/panier");
+    }
 }
