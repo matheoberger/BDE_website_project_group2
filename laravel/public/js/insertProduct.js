@@ -129,14 +129,16 @@ function () {
 
       var categorie = "";
       $("select").change(function () {
+        categorie = "";
         $("select option:selected").each(function () {
           categorie += $(this).text() + " ";
         });
         console.log(categorie);
       }).change();
+      price = document.getElementById("sliderValue").innerHTML;
 
       if (categorie = "Toutes") {
-        this.getProduct(articleIndex, articleNumber, maxPrice, minPrice).then(function (productList) {
+        this.getProduct(articleIndex, articleNumber).then(function (productList) {
           $("js-spinner").removeClass("spinner__display");
           $("js-spinner").addClass("spinner__display--none");
           productList.forEach(_this.createProduct.bind(_this));
