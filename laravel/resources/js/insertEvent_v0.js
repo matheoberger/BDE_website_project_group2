@@ -1,3 +1,7 @@
+/**La classe insert Event
+ * Elle regroupe l'ensemble des méthodes pour créer et insérer des events
+ * Les events sont générer avec leur id et les informations leur étant propres
+ */
 class insertEvent {
     newEvent(eventIndex, eventNumber) {
         this.getEvent(eventIndex, eventNumber).then(eventList => {
