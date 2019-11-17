@@ -81,12 +81,6 @@ if (session("email")) {
                                 <?php
                                 $total = 0;
                                 foreach ($basket as $product) {
-                                    // $requete = $bdd2->prepare("CALL `getPhotoFromProduct`(:id_product)");
-                                    // $requete->bindValue(":id_product", $product['id_products'], PDO::PARAM_STR);
-                                    // $requete->execute();
-                                    // $pictures = $requete->fetchAll();
-                                    // $requete->closeCursor();
-                                    // $total += $product['price'];
                                     echo "
                         <li class='media'>  
                         <div class='panier__article'>
