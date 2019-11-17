@@ -25,19 +25,55 @@ async function mapped(results) {
   );
 }
 
+async function getBasicProductArray({ start, number }) {
+  return new Promise(resolve => {
+    connection.query(`CALL ${"`getProducts`"}(${start}, ${number})`, function(
+      error,
+      results,
+      fields
+    ) {
+      if (error) throw error;
+      mapped(results[0]).then(() => {
+        resolve(results[0]);
+      });
+    });
+  });
+}
+
+async function getFilteredProductArray({ start, number }) {
+  return new Promise(resolve => {
+    connection.query(`CALL ${"`getAllProducts`"}()`, function(
+      error,
+      results,
+      fields
+    ) {
+      if (error) throw error;
+      mapped(results[0]).then(() => {
+        resolve(results[0]);
+      });
+    });
+  });
+}
+
 module.exports = {
   route: "/produits/:start/:number",
   get: (req, res) => {
     if (!isNaN(Number(req.params.start)) && !isNaN(Number(req.params.number))) {
-      connection.query(
-        `CALL ${"`getProducts`"}(${req.params.start}, ${req.params.number})`,
-        function(error, results, fields) {
-          if (error) throw error;
-          mapped(results[0]).then(() => {
-            res.json(results[0]);
-          });
-        }
-      );
+      //check if query is empty
+      if (
+        Object.entries(req.query).length === 0 &&
+        req.query.constructor === Object
+      ) {
+        getBasicProductArray(req.params).then(products => {
+          res.send(products);
+        });
+      } else {
+        console.log(req.query);
+        getFilteredProductArray(req.params).then(products => {
+          console.log(products);
+          res.send(products);
+        });
+      }
     } else {
       res.sendStatus(403);
     }

@@ -20,7 +20,7 @@ async function mapped(results) {
           }
         );
       });
-      console.log(element);
+      //console.log(element);
       return element;
     })
   );
