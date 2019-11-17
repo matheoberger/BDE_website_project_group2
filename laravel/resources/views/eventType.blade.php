@@ -66,9 +66,10 @@ if (session('role')) {
                 </div>
                 <aside>Pannel event :
                     <br>
+                    <?php echo "<form action='/addpicture/$id'>
+                        <button type='submit' class='btn add_picture'>Ajouter photo </button>
+                    </form>" ?>
 
-
-                    <button class="btn add_picture">Ajouter photo </button>
                     <?php
                     if (session('role') == 'Administrator') {
                         echo "<form action='/event/$id/edit/' method='get'><button class='btn edit_event'>Modifier event</button></form>";
@@ -94,9 +95,16 @@ if (session('role')) {
                         <button type="submit" class="btn participate">' . "Quitter l'event"  . '</button>
                     </form>';
                     };
+                    echo '<form action="/download/' . $id . '">
+                    <select name="format" required>
+                        <option value="">-- Choisissez le format --</option>
+                        <option value="csv">CSV</option>
+                        <option value="pdf">PDF</option>
+                    </select>
+                    <button type="submit" class="btn download">Télécharger</button>
+                </form>'
 
                     ?>
-                    <button class="btn download">Télécharger</button>
 
                 </aside>
 

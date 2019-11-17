@@ -19,10 +19,10 @@
 @include('partials/header')
 @include("partials/navbar")
 
+
 <main>
 
     <div class="conteneur">
-
            <div>
                 <h2> <u>Les évènements</u></h2>
             </div>
@@ -33,14 +33,11 @@
                     </form> ";
                 };
             ?>
+      <div id="js-contenair_event"></div>
+    </div>
 
-            <div id="js-contenair_event"></div>
-
-
-
-</div>
-
-        <script src="/js/insertEvent.js"></script>
-        </main>
+    <script src="/js/insertEvent.js"></script>
+  </main>
 </body>
+
 </html>

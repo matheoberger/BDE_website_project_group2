@@ -16,7 +16,7 @@ class newEvent extends Controller
     public function __invoke(Request $request)
     {
 
-        if(session('role') != "Administrator"){
+        if (session('role') != "Administrator") {
             return abort(403);
         }
         $bdd = new PDO("mysql:host=localhost;dbname=bde_cesi;charset=UTF8", "root", "");
@@ -31,6 +31,5 @@ class newEvent extends Controller
         $data = $requete->fetchAll();
         $requete->closeCursor();
         return response(200);
-
     }
 }
