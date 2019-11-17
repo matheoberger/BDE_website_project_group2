@@ -12,32 +12,28 @@ async function mapped(results) {
     results.map(async function(element) {
       await new Promise(resolve => {
         connection.query(
-          `CALL ${"`getPhotoFromEvent`"}(${element.id_events})`,
+          `CALL ${"`getCommentFromPhoto`"}(${element.id_pictures})`,
           (error, results2, fields) => {
             if (error) throw error;
-            element.image = results2[0][0].url;
+            element.comments = results2[0];
             resolve(element);
           }
         );
       });
-      //console.log(element);
       return element;
     })
   );
 }
 
 module.exports = {
-  route: "/events/:start/:number",
+  route: "/event/:id/",
   get: (req, res) => {
-    if (!isNaN(Number(req.params.start)) && !isNaN(Number(req.params.number))) {
+    if (!isNaN(Number(req.params.id))) {
       connection.query(
-        `CALL ${"`getEvents`"}(${req.params.start}, ${req.params.number})`,
+        `CALL ${"`getPhotoFromEvent`"}(${req.params.id})`,
         function(error, results, fields) {
           if (error) throw error;
           mapped(results[0]).then(() => {
-            results[0].sort((a, b) => {
-              return Date.parse(a.starting_date) - Date.parse(b.starting_date);
-            });
             res.send(results[0]);
           });
         }

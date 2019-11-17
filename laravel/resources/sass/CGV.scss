@@ -3,6 +3,9 @@
     font-family: "Lemon/Milk";
     src: url("/fonts/LemonMilk/LemonMilk.otf") format("truetype");
 }
+.conteneur {
+    width: 100%;
+}
 .CGV__body {
     background-color: hsla(60, 0%, 46%, 1);
     min-height: calc(100vh - 110px);

@@ -14,6 +14,7 @@ async function mapped(results) {
         connection.query(
           `CALL ${"`getPhotoFromProduct`"}(${element.id_products})`,
           (error, results2, fields) => {
+            if (error) throw error;
             element.image = results2[0][0].url;
             resolve(element);
           }
@@ -24,21 +25,75 @@ async function mapped(results) {
   );
 }
 
+async function getBasicProductArray({ start, number }) {
+  return new Promise(resolve => {
+    connection.query(`CALL ${"`getProducts`"}(${start}, ${number})`, function(
+      error,
+      results,
+      fields
+    ) {
+      if (error) throw error;
+      mapped(results[0]).then(() => {
+        resolve(results[0]);
+      });
+    });
+  });
+}
+
+async function getFilteredProductArray(
+  { start, number },
+  {
+    categorie = ["Goodies", "Pictures", "Clothes"],
+    prixMin = -Infinity,
+    prixMax = Infinity,
+    expr
+  }
+) {
+  return new Promise(resolve => {
+    connection.query(`CALL ${"`getAllProducts`"}()`, function(
+      error,
+      results,
+      fields
+    ) {
+      if (error) throw error;
+      mapped(results[0]).then(() => {
+        results[0] = results[0].filter(e => {
+          if (!expr) {
+            expr = e.title;
+          }
+          console.log(categorie.indexOf(e.categorie) != -1);
+          return (
+            e.price < prixMax &&
+            e.price > prixMin &&
+            categorie.indexOf(e.categorie) != -1 &&
+            (expr.indexOf(e.title) != -1 || expr.indexOf(e.description))
+          );
+        });
+        resolve(results[0].slice(start, start + number));
+      });
+    });
+  });
+}
+
 module.exports = {
   route: "/produits/:start/:number",
   get: (req, res) => {
     if (!isNaN(Number(req.params.start)) && !isNaN(Number(req.params.number))) {
-      connection.query(
-        `CALL ${"`getProducts`"}(${req.params.start}, ${req.params.number})`,
-        function(error, results, fields) {
-          if (error) throw error;
-          mapped(results[0]).then(() => {
-            res.json(results[0]);
-          });
-        }
-      );
+      //check if query is empty
+      if (
+        Object.entries(req.query).length === 0 &&
+        req.query.constructor === Object
+      ) {
+        getBasicProductArray(req.params).then(products => {
+          res.send(products);
+        });
+      } else {
+        getFilteredProductArray(req.params, req.query).then(products => {
+          res.send(products);
+        });
+      }
     } else {
-      res.sendStatus(405);
+      res.sendStatus(403);
     }
   },
   post: (req, res) => {},

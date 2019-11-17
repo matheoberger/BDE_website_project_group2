@@ -14,28 +14,65 @@
 Route::get('/', function () {
     return view('index');
 });
+Route::get('/disconnect', function () {
+    $session = session('email');
+    Session::flush();
+    session(['email' => $session]);
+    return view('index');
+});
+Route::get('/validateCookies', function () {
+    Cookie::make('accept_cookie', 'true', 60 * 24 * 365);
+    return view('index');
+});
+
 Route::get('/contactForm', 'contactController@getContact');
 Route::post('/contactForm', 'contactController@postContact');
 
 Route::get('/register', 'registerController@gethtml');
 Route::get('/login', 'loginController@gethtml');
 
-Route::get('/navbar', function () {
-    return view('navbar');
-});
-Route::get('/example', function () {
-    return view('example');
-});
+Route::post('/ConnexionVerif', 'loginController@verification');
+Route::post('/InscriptionVerif', 'registerController@verification');
+
+Route::get("/downloadParticipantCSV/{id}", 'DownloadController@downloadCSV');
+Route::get("/downloadParticipantPDF/{id}", 'DownloadController@downloadPDF');
+Route::get("/downloadAll", 'DownloadController@downloadAll');
+
+Route::post('/comment', 'commentPicture');
+
+Route::post('/likePicture', 'likePicture');
+Route::post('/dislikePicture', 'dislikePicture');
+
+Route::post('/event/participate', 'participateEvent');
+Route::post('/event/leave', 'leaveEvent');
+Route::post('/editEvent', 'editEvent');
+
 
 Route::get('/event', function () {
     return view('event');
 });
 
+Route::get('/event/{id}', function ($id) {
+    return view('eventType', ["id" => $id]);
+});
+
+Route::get('/article/{id}', function ($id) {
+    return view('article', ["id" => $id]);
+});
+
+Route::get('/remove/{id}', 'BasketController@removeFromBasket');
+Route::get('/add/{id}', 'BasketController@addInBasket');
+Route::get('/amount/{id}', 'BasketController@changeAmountInBasket');
+Route::get('/order', 'BasketController@order');
+
+Route::get('/event/{id}/edit', function ($id) {
+    return view('eventEdit', ["id" => $id]);
+});
 Route::get('/CGV', function () {
     return view('CGV');
 });
-Route::get('/article/{id}', function ($id) {
-    return view('article', ["id"=>$id]);
+Route::get('/boutique/{id}', function ($id) {
+    return view('article', ["id" => $id]);
 });
 Route::get('/mentionsLegales', function () {
     return view('mentionsLegales');
@@ -54,9 +91,6 @@ Route::get('/panier', function () {
 });
 Route::get('/boutique', function () {
     return view('boutique');
-});
-Route::get('/event/type', function () {
-    return view('eventType');
 });
 Route::get('/boutique2', function () {
     return view('boutique2');

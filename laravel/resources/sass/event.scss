@@ -1,40 +1,60 @@
 @import "./responsive.scss";
 
-
 body {
-    background: linear-gradient(70deg, $red, darken($red, 30));
+    // !!!!!!!!!!!!! erreur W3C !!!!!!!!!!!!!!
+    background: linear-gradient(70deg, $grey_1, darken($grey_1, 40));
     text-align: center;
-    background-image: url("../images/party-wallpapers-1.jpg");
-    ;
+
     //   -webkit-filter: blur(50px);
     /* Safari 6.0 -
      9.0 */
     //    filter: grayscale(100%);
 }
 
+main {
+    justify-content: center;
+}
+
 body img {
     filter: blur(0px);
 
     transition: 0.5s;
-
+    // !!!!!!!!!!!!! erreur W3C !!!!!!!!!!!!!!
     &:hover {
-
         filter: blur(4px);
     }
 }
-
-
 
 h2 {
     font-family: $roboto;
     text-align: center;
     font-size: 5vw;
+}
 
+.btn {
+    border: none;
+    /* Remove borders */
+    color: white;
+    /* Add a text color */
+    padding: 1.5vw 3.5vw;
+    /* Add some padding */
+    cursor: pointer;
+    /* Add a pointer cursor on mouse-over */
+    font-size: 1.5vw;
+    margin: $px_2;
+}
+
+.add_event {
+    background-color: $blue_2;
+    transition: 0.5s;
+
+    &:hover {
+        background-color: darken($blue_2, 20);
+    }
 }
 
 .conteneur {
-
-    background: linear-gradient(70deg, $grey_1, darken($grey_1, 30));
+    background: linear-gradient(180deg, $red, darken($red, 30));
     margin: $px_2;
     display: inline-block;
     flex-wrap: wrap;
@@ -43,16 +63,12 @@ h2 {
     justify-content: center;
 }
 
-
-
 section {
     margin: $px_20;
     display: flex;
     flex-wrap: nowrap;
     font-family: $roboto;
-
 }
-
 
 article {
     font-family: $roboto;
@@ -69,12 +85,10 @@ article {
 
     filter: blur(0px);
     transition: 0.5s;
-
+    // !!!!!!!!!!!!! erreur W3C !!!!!!!!!!!!!!
     &:hover {
-
         filter: blur(4px);
     }
-
 }
 
 article img {
@@ -83,27 +97,25 @@ article img {
     width: $cube_dimension;
     height: $cube_dimension;
     display: block;
-
 }
 
 aside {
     margin: $px_2;
-    font-family: 'Roboto', italic;
+    font-family: "Roboto", italic;
     height: $cube_dimension;
     width: $cube_dimension;
     overflow: auto;
-
+    // !!!!!!!!!!!!! erreur W3C !!!!!!!!!!!!!!
     padding: bottom;
 
     background-color: $blue_1;
     transition: 0.5s;
-
+    // !!!!!!!!!!!!! erreur W3C !!!!!!!!!!!!!!
     &:hover {
-        background-color: darken($red, 10)
+        background-color: darken($red, 10);
     }
 
     font-size: 2vw;
-
 }
 
 .event_description {
@@ -112,6 +124,4 @@ aside {
     justify-content: flex-end;
 
     margin: -2px 0 0 -2px;
-
-
 }

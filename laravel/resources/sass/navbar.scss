@@ -6,7 +6,7 @@ nav.sidebar {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-
+    z-index: 999;
     font-size: 20px;
 }
 nav.sidebar--desktop {
