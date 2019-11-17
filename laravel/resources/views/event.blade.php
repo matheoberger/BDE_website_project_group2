@@ -28,7 +28,7 @@
             </div>
             <?php
                 if (session('role') == 'Administrator') {
-                    echo "<form action='/event/newEvent' method='get'>
+                    echo "<form action='/event/addEvent' method='get'>
                             <button class='btn add_event'>Ajouter un event</button>
                     </form> ";
                 };
