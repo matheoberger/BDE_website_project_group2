@@ -26,7 +26,13 @@
            <div>
                 <h2> <u>Les évènements</u></h2>
             </div>
-            <button class="btn add_event">Ajouter un event</button>
+            <?php
+                if (session('role') == 'Administrator') {
+                    echo "<form action='/event/newEvent' method='get'>
+                            <button class='btn add_event'>Ajouter un event</button>
+                    </form> ";
+                };
+            ?>
 
             <div id="js-contenair_event"></div>
 
