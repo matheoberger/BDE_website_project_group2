@@ -14,7 +14,12 @@
     "/css/breadcrumb.css": "/css/breadcrumb.css",
     "/css/CGV.css": "/css/CGV.css",
     "/css/eventType.css": "/css/eventType.css",
+    "/css/panier.css": "/css/panier.css",
     "/css/boutique.css": "/css/boutique.css",
+    "/js/cookie.js": "/js/cookie.js",
+    "/js/editEvent.js": "/js/editEvent.js",
     "/js/index.js": "/js/index.js",
-    "/js/insertProduct.js": "/js/insertProduct.js"
+    "/js/insertDataToEvent.js": "/js/insertDataToEvent.js",
+    "/js/insertProduct.js": "/js/insertProduct.js",
+    "/js/navbar.js": "/js/navbar.js"
 }

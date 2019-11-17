@@ -99,6 +99,12 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
+/**
+ * La classe insertProduct regroupe les méthodes
+ * permettant le chargement depuis l'API de nouveaux
+ * articles en les inserant directement en Jquery
+ * dans le fichier HTML boutique
+ */
 var insertProduct =
 /*#__PURE__*/
 function () {
@@ -107,156 +113,104 @@ function () {
   }
 
   _createClass(insertProduct, [{
-    key: "getProduct",
-    value: function getProduct() {
-      console.log("coucou");
-      var product = $.get("http://10.133.129.113:3000/produits/2/3", function (data, status) {
-        console.log("coucou");
-        console.log("Data: " + data);
-        console.log("dfsdfsdf");
+    key: "newProduct",
+
+    /**
+     *
+     * @param {number} articleIndex : représente le nombre d'article déjà chargé, utile pour l'API qui l'enverra à la procédure
+     * @param {number} articleNumber  : représente le nnombre d'articles que l'on veut charger à partir de l'index
+     *
+     * New product régit toutes les méthodes de la classe insertProduct, un tableau de produit est d'abord chargé,
+     * puis détaché en objets (les articles) puis mis en forme pour être insérés dans le fichier HTML
+     *
+     */
+    value: function newProduct(articleIndex, articleNumber) {
+      var _this = this;
+
+      this.getProduct(articleIndex, articleNumber).then(function (productList) {
+        $("js-spinner").removeClass("spinner__display");
+        $("js-spinner").addClass("spinner__display--none");
+        productList.forEach(_this.createProduct.bind(_this));
       });
-      console.log(product);
+    }
+    /**
+     *
+     * @param {number} articleIndex : représente le nombre d'article déjà chargé, utile pour l'API qui l'enverra à la procédure
+     * @param {number} articleNumber  : représente le nnombre d'articles que l'on veut charger à partir de l'index
+     *
+     * getProduct execute la requête HTTP get destinée à l'API, les données sont récupérées en asynchrone
+     *
+     */
+
+  }, {
+    key: "getProduct",
+    value: function getProduct(articleIndex, articleNumber) {
+      $("js-spinner").addClass("spinner__display");
+      return new Promise(function (resolve) {
+        $.get("http://localhost:3000/produits/".concat(articleIndex, "/").concat(articleNumber), function (data, status) {
+          resolve(data);
+        });
+      });
+    }
+    /**
+     *
+     * @param {*} product
+     *
+     *createProduct permet de mettre en forme chaque article pour qu'ils puissent être insérés dans le fichier HTML
+     *
+     */
+
+  }, {
+    key: "createProduct",
+    value: function createProduct(product) {
+      var productElement = "<div class=\"product\">\n        <a href=\"/boutique/".concat(product.id_products, "\"><img src=\"").concat(product.image, "\" class=\"product__image\"/></a>\n        <div class=\"product__title\">").concat(product.title, "</div>\n        <div class=\"product__price\"><b>").concat(product.price, "\u20AC</b></div>\n    </div>");
+      this.loadProduct(productElement);
+    }
+    /**
+     *
+     * @param {*} productElement
+     *
+     * loadProduct insert productElement dans le div dépendant de la classe js-productContainer
+     *
+     */
+
+  }, {
+    key: "loadProduct",
+    value: function loadProduct(productElement) {
+      $("#js-productContainer").append(productElement);
     }
   }]);
 
   return insertProduct;
 }();
+/**
+ * Une fois que le document est "prêt",
+ * une nouvelle classe inserProduct est crée puis on charge les articles
+ * à chaque fois que la position du curseur dans la fenêtre atteint la fin du document
+ *
+ */
+
 
 $(document).ready(function () {
+  var articleIndex = 0;
+  var numberArticleLoad = 3;
+  var articleNumber = numberArticleLoad;
+  var articleInc = numberArticleLoad;
   var coucou = new insertProduct();
-  coucou.getProduct();
-}); // class insertProduct {
-//     $productNumber;
-//     newProduct(){
-//         const products = $.get("http://10.133.129.113:3000/produits/2/10");
-//         const coucou = products.map(item => {
-//             return this.insertProduct(item);
-//         )};
-//     }
-//     insertProduct(product) {
-//         const { image, title, description } = product;
-//         console.log("insertProduct");
-//         return (
-//           <CustomArticle
-//             className="content__article"
-//             image={image}
-//             title={title}
-//             description={description}
-//           />
-//         );
-//       }
-// }
-// $(window).scroll(function() {
-//     if (
-//       Math.round($(window).scrollTop() + $(window).height()) ===
-//       $(document).height()
-//     ) {
-//       console.log("scroll");
-//       loader.loadNextPage();
-//     }
-//   });
-// class App extends PureComponent {
-//   page = 0;
-//   loadNextPage() {
-//     this.page++;
-//     this.productNumber+=4;
-//     const products = [1, 2, 3, 4].map(index => ({
-//       image: ,
-//       title: faker.name.title(),
-//       description: faker.lorem.lines()
-//     }));
-//     const coucou = products.map(item => {
-//       return this.insertProduct(item);
-//     });
-//     // console.log("1", coucou);
-//     return coucou;
-//     // setTimeout(() => {
-//     //   const products = [1, 2, 3, 4].map(index => ({
-//     //     image: faker.image.nature(),
-//     //     title: faker.name.title(),
-//     //     description: faker.lorem.lines()
-//     //   }));
-//     //   const coucou = products.map(item => {
-//     //     return this.insertProduct(item);
-//     //   });
-//     //   console.log("1", coucou);
-//     //   return coucou;
-//     // }, 100);
-//   }
-//   // state = {
-//   //   todo: [
-//   //     {
-//   //       image: faker.image.nature(),
-//   //       title: faker.name.title(),
-//   //       description: faker.lorem.lines()
-//   //     },
-//   //     {
-//   //       image: "./img/vieil_homme_sourire.jpg",
-//   //       title: "Title",
-//   //       description: "Description"
-//   //     },
-//   //     {
-//   //       image: "./img/vieil_homme_sourire.jpg",
-//   //       title: "Title",
-//   //       description: "Description"
-//   //     }
-//   //   ]
-//   // };
-//   // renderState() {
-//   //   for (const i = 0; i < 1500; i++) {
-//   //     this.todo.push({ title: "title" + i, description: "Description" });
-//   //     console.log("title" + i);
-//   //   }
-//   // }
-//   insertProduct(product) {
-//     const { image, title, description } = product;
-//     console.log("insertProduct");
-//     return (
-//       <CustomArticle
-//         className="content__article"
-//         image={image}
-//         title={title}
-//         description={description}
-//       />
-//     );
-//   }
-//   render() {
-//     return <div className="content">{this.insertProduct()}</div>;
-//   }
-//   // _renderCards = () => {
-//   //   return this.state.todo.map((todo, index) => (
-//   //     <CustomArticle
-//   //       key={index}
-//   //       index={index}
-//   //       image={this.image}
-//   //       title={todo.title}
-//   //       description={todo.description}
-//   //       onClick={this.handleClick}
-//   //     />
-//   //   ));
-//   // };
-//   // handleClick = indexClicked => {
-//   //   const todo = this.state.todo.filter(
-//   //     (todo, index) => index !== indexClicked
-//   //   );
-//   //   this.setState({ todo });
-//   // };
-// }
-// const loader = new App();
-// loader.loadNextPage();
-// loader.loadNextPage();
-// loader.loadNextPage();
-// window.scrollTo(0, 0);
-// $(window).scroll(function() {
-//   if (
-//     Math.round($(window).scrollTop() + $(window).height()) ===
-//     $(document).height()
-//   ) {
-//     console.log("scroll");
-//     loader.loadNextPage();
-//   }
-// });
-// export default App;
+  coucou.newProduct(articleIndex, articleNumber);
+  articleIndex += articleInc;
+  $(window).scroll(function () {
+    console.log($(window).scrollTop());
+    console.log($(window).height());
+    console.log($(document).height());
+
+    if (Math.round($(window).scrollTop() + $(window).height()) >= $(document).height() - 10) {
+      console.log("sscroll");
+      coucou.newProduct(articleIndex, articleNumber);
+      articleIndex += articleInc;
+    }
+  });
+});
 
 /***/ }),
 
@@ -267,7 +221,7 @@ $(document).ready(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\home\jambon\Documents\Code\CESI\BDE_website_project_group2\laravel\resources\js\insertProduct.js */"./resources/js/insertProduct.js");
+module.exports = __webpack_require__(/*! C:\Users\Cthulhu\Documents\Programmation\Laravel\laravel\resources\js\insertProduct.js */"./resources/js/insertProduct.js");
 
 
 /***/ })
