@@ -27,14 +27,52 @@
 
         <div class="contenu">
             <div class="contenu__main">
-                <div class=welcome--boutique><img class=welcome--boutique__image src='https://mir-s3-cdn-cf.behance.net/project_modules/fs/a3ea7277681027.5c8f34c397dcf.jpg' alt="welcom_image_shop">
+                <div class=welcome--boutique><img class=welcome--boutique__image
+                        src='https://mir-s3-cdn-cf.behance.net/project_modules/fs/a3ea7277681027.5c8f34c397dcf.jpg'
+                        alt="welcom_image_shop">
                 </div>
+
                 <div class=topSelling>
                     <p>Les trois les plus vendus</p>
-
-
                     @include("partials/shopCarousel")
                 </div>
+
+                <div class="boutique__filter">
+                    <nav class="navbar navbar-light bg-light filter__element">
+                        <form class="form-inline">
+                            <div class="input-group">
+
+                                <input type="text" class="form-control" placeholder="rechercher un goodie"
+                                    aria-label="Username" aria-describedby="basic-addon1">
+                            </div>
+                        </form>
+                    </nav>
+                    <div class="dropdown filter__element">
+                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Catégorie
+                        </a>
+
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item" href="#">Gourde</a>
+                            <a class="dropdown-item" href="#">T shirt</a>
+                            <a class="dropdown-item" href="#">Sweat</a>
+                        </div>
+
+                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Prix
+                        </a>
+
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item" href="#">Gourde</a>
+                            <a class="dropdown-item" href="#">T shirt</a>
+                            <a class="dropdown-item" href="#">Sweat</a>
+                        </div>
+                    </div>
+
+                </div>
+
                 <p class=title>Produits</p>
                 <div id="js-productContainer"></div>
                 <div class="spinner-border" role="status" id="js-spinner">
