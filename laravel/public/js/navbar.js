@@ -93,7 +93,18 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nError: ENOENT: no such file or directory, open 'D:\\home\\jambon\\Documents\\Code\\CESI\\BDE_website_project_group2\\laravel\\resources\\js\\navbar.js'");
+var navbar = document.getElementById("js-navbar");
+var button = document.getElementById("js-hamburger");
+var sw = 0;
+button.addEventListener("click", function (e) {
+  if (sw == 0) {
+    sw++;
+    navbar.style = "transform: translateX(0px);";
+  } else {
+    sw = 0;
+    navbar.style = "";
+  }
+});
 
 /***/ }),
 

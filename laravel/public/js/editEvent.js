@@ -93,7 +93,17 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nError: ENOENT: no such file or directory, open 'D:\\home\\jambon\\Documents\\Code\\CESI\\BDE_website_project_group2\\laravel\\resources\\js\\editEvent.js'");
+var button = document.getElementById("save");
+var place = document.getElementById("place");
+var replacer = document.getElementById("titleReplacer");
+var title = document.getElementById("title");
+var form = document.getElementById("editEvent-Form");
+
+button.onclick = function (e) {
+  e.preventDefault();
+  replacer.value = title.value;
+  form.submit();
+};
 
 /***/ }),
 
