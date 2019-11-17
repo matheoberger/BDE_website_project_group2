@@ -40,7 +40,15 @@ async function getBasicProductArray({ start, number }) {
   });
 }
 
-async function getFilteredProductArray({ start, number }) {
+async function getFilteredProductArray(
+  { start, number },
+  {
+    categorie = ["Goodies", "Pictures", "Clothes"],
+    prixMin = -Infinity,
+    prixMax = Infinity,
+    expr
+  }
+) {
   return new Promise(resolve => {
     connection.query(`CALL ${"`getAllProducts`"}()`, function(
       error,
@@ -49,7 +57,19 @@ async function getFilteredProductArray({ start, number }) {
     ) {
       if (error) throw error;
       mapped(results[0]).then(() => {
-        resolve(results[0]);
+        results[0] = results[0].filter(e => {
+          if (!expr) {
+            expr = e.title;
+          }
+          console.log(categorie.indexOf(e.categorie) != -1);
+          return (
+            e.price < prixMax &&
+            e.price > prixMin &&
+            categorie.indexOf(e.categorie) != -1 &&
+            (expr.indexOf(e.title) != -1 || expr.indexOf(e.description))
+          );
+        });
+        resolve(results[0].slice(start, start + number));
       });
     });
   });
@@ -68,9 +88,7 @@ module.exports = {
           res.send(products);
         });
       } else {
-        console.log(req.query);
-        getFilteredProductArray(req.params).then(products => {
-          console.log(products);
+        getFilteredProductArray(req.params, req.query).then(products => {
           res.send(products);
         });
       }
