@@ -6,8 +6,8 @@ body {
 
 /* la section commentaire */
 .comment {
-    border: 0.1vw solid #6a6666;
     margin: 0 10% 5% 10%;
+    border: 0.3vw solid $blue_1;
 }
 
 main {
@@ -42,25 +42,14 @@ section {
     flex-wrap: wrap;
     font-family: $roboto;
     justify-content: center;
-    //   border: 1px dashed #000000;
 }
 
 article {
     font-family: $roboto;
-    transition: 0.2s;
-
-    &:hover {
-        background-color: darken($red, 10);
-    }
 }
 
 .picture_gallery {
     transition: 0.2s;
-
-    &:hover {
-        background-color: darken($red, 10);
-    }
-
     justify-content: center;
     text-align: center;
 }
@@ -159,15 +148,13 @@ article {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border: 1vw solid darken($red, 10);
+
 }
 
 .public_img {
     transition: 0.2s;
-
-    &:hover {
-        background-color: darken($red, 10);
-    }
-
+    margin: 0 10% 5% 10%;
     justify-content: center;
 }
 
@@ -181,6 +168,7 @@ aside {
     font-size: 2vw;
 }
 
+/* Section commentaire */
 .comments {
     margin: $px_2;
     font-family: "Roboto", italic;
