@@ -46,7 +46,7 @@ async function getFilteredProductArray(
     categorie = ["Goodies", "Pictures", "Clothes"],
     prixMin = -Infinity,
     prixMax = Infinity,
-    expr
+    description
   }
 ) {
   return new Promise(resolve => {
@@ -55,18 +55,21 @@ async function getFilteredProductArray(
       results,
       fields
     ) {
+      if (!description) {
+        var noDesc = true;
+      }
       if (error) throw error;
       mapped(results[0]).then(() => {
         results[0] = results[0].filter(e => {
-          if (!expr) {
-            expr = e.title;
+          if (noDesc) {
+            description = e.title;
           }
-          console.log(categorie.indexOf(e.categorie) != -1);
           return (
             e.price < prixMax &&
             e.price > prixMin &&
             categorie.indexOf(e.categorie) != -1 &&
-            (expr.indexOf(e.title) != -1 || expr.indexOf(e.description))
+            (e.title.indexOf(description) != -1 ||
+              e.description.indexOf(description) != -1)
           );
         });
         resolve(results[0].slice(start, start + number));

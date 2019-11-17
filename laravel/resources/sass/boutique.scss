@@ -1,5 +1,11 @@
 @import "./responsive.scss";
 
+#search {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
 .welcome--boutique {
     margin: 0 auto;
     margin-top: 50px;
@@ -83,4 +89,15 @@ p {
 
 .filter__element {
     text-align: center;
+}
+#js-autoCompletionContainer {
+    color: black;
+    display: flex;
+    flex-wrap: wrap;
+}
+.searchProduct {
+    border: 1px solid black;
+    padding: 2px;
+    margin: 2px;
+    border-radius: 5px;
 }

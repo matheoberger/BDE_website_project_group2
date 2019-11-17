@@ -38,14 +38,15 @@
                 </div>
 
                 <div class="boutique__filter">
-                    <nav class="navbar navbar-light bg-light filter__element">
+                    <nav class="navbar navbar-light bg-light filter__element" id="search">
                         <form class="form-inline">
                             <div class="input-group">
 
-                                <input type="text" class="form-control" placeholder="rechercher un goodie"
+                                <input id="productSearch" type="text" class="form-control" placeholder="rechercher un goodie"
                                     aria-label="Username" aria-describedby="basic-addon1">
                             </div>
                         </form>
+                        <div id="js-autoCompletionContainer"></div>
                     </nav>
                     <div class="dropdown filter__element">
                         <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"

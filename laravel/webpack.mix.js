@@ -14,6 +14,7 @@ const mix = require("laravel-mix");
 mix.js("resources/js/app.js", "public/js")
     .js("resources/js/index.js", "public/js")
     .js("resources/js/insertProduct.js", "public/js")
+    .js("resources/js/products.js", "public/js")
     .js("resources/js/insertDataToEvent.js", "public/js")
     .js("resources/js/navbar.js", "public/js")
     .js("resources/js/editEvent.js", "public/js")
