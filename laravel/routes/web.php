@@ -36,7 +36,13 @@ Route::post('/InscriptionVerif', 'registerController@verification');
 
 Route::get("/downloadParticipantCSV/{id}", 'DownloadController@downloadCSV');
 Route::get("/downloadParticipantPDF/{id}", 'DownloadController@downloadPDF');
+Route::get("/download/{id}", 'DownloadController@download');
 Route::get("/downloadAll", 'DownloadController@downloadAll');
+
+Route::get("/newEvent", 'creationController@newEvent');
+Route::get("/newProduct", 'creationController@newProduct');
+Route::post("/newEvent", 'creationController@newEventVerif');
+Route::post("/newProduct", 'creationController@newProductVerif');
 
 Route::post('/comment', 'commentPicture');
 

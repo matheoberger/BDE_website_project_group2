@@ -6,8 +6,8 @@
     <?php
     if (session('role') == 'Moderator' || session('role') == 'Administrator') {
         echo " <a href='/downloadAll' class='link'>Download pictures</a>";
-        echo " <a href='/downloadAll' class='link'>Ajouter produit</a>";
-        echo " <a href='/downloadAll' class='link'>Ajouter événements</a>";
+        echo " <a href='/newProduct' class='link'>Ajouter produit</a>";
+        echo " <a href='/newEvent' class='link'>Ajouter événements</a>";
     } ?>
 </nav>
 <script src="/js/navbar.js"></script>
