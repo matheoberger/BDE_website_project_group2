@@ -89,4 +89,13 @@ class creationController extends Controller
             return view('newEvent', ['error' => $error, 'color' => $color]);
         }
     }
+    public function deleteEvent($id)
+    {
+        $bdd = new PDO("mysql:host=localhost;dbname=bde_cesi;charset=UTF8", "root", "");
+        $requete = $bdd->prepare("CALL `deleteEvent`(:id_event);");
+        $requete->bindValue(':id_event', $id, PDO::PARAM_STR);
+        $requete->execute();
+        $requete->closeCursor();
+        return redirect('/event');
+    }
 }

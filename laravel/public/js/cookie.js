@@ -108,7 +108,7 @@ if (confirm("Veuillez accepter les cookies")) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Cthulhu\Documents\Programmation\Laravel\laravel\resources\js\cookie.js */"./resources/js/cookie.js");
+module.exports = __webpack_require__(/*! C:\Users\axelb\Documents\GitHub\BDE_website_project_group2\laravel\resources\js\cookie.js */"./resources/js/cookie.js");
 
 
 /***/ })
