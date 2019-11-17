@@ -1,15 +1,14 @@
 @extends('layouts.loginLayout')
 
-@section('Title')
-Inscription
-@endsection
+@section('Title', 'Inscription')
 
 @section('form')
 <div class="input-group form-group">
     <div class="input-group-prepend">
         <span class="input-group-text"><i class="fas fa-key"></i></span>
     </div>
-    <input type="password" name="password_confirmation" class="form-control" placeholder="Confirmation mot de passe" required="required">
+    <input type="password" name="password_confirmation" class="form-control" placeholder="Confirmation mot de passe"
+        required="required">
 </div>
 <div class="input-group form-group">
     <div class="input-group-prepend">
@@ -31,7 +30,9 @@ Inscription
     <div class="input-group-prepend">
         <span class="input-group-text"><i class="fas fa-table"></i></span>
     </div>
-    <input type="text" name="birthdate" class="form-control" placeholder="Date de naissancce (AAAA-MM-JJ)" required="required" <?php if (isset($_POST['birthdate'])) {
+    <input type="text" name="birthdate" class="form-control" placeholder="Date de naissancce (AAAA-MM-JJ)"
+        required="required"
+        <?php if (isset($_POST['birthdate'])) {
                                                                                                                                     echo "value = '" . $_POST['birthdate'] . "'";
                                                                                                                                 } ?>>
 </div>
@@ -49,7 +50,7 @@ Inscription
     <div class="input-group-prepend">
         <span class="input-group-text"><i class="fas fa-map-marked-alt"></i></span>
     </div>
-    <select name="center" class="form-control" required="required">
+    <select name="center" class="form-control">
         <option value="Aix-en-Provence">Aix-en-Provence</option>
         <option value="Angouleme">Angoulême</option>
         <option value="Arras">Arras</option>
@@ -87,7 +88,7 @@ Inscription
 @endsection
 
 @section('endlink1')
-<a href="/mentionslegales">Conditions générales</a>
+<a href="/mentionsLegales">Mentions légales</a>
 @endsection
 
 @section('endlink2')

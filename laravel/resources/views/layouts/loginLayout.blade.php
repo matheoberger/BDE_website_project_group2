@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 
 <head>
     <title>@yield('Title') Page</title>
@@ -71,7 +71,8 @@
                                     @yield('form')
                                     <!--On affiche le message d'erreur s'il y en a-->
                                     <?php if (isset($error)) {
-                                        echo "<p class='errorMessage'> $error </p>";
+                                        //echo "<p class='errorMessage'> $error </p>";
+                                        var_dump($error);
                                     } ?>
 
                                     <!--Division pour rajouter des checkbox au formulaire-->
@@ -99,7 +100,6 @@
                 </section>
                 @include("partials/footer")
             </div>
-        </div>
         </div>
     </main>
 </body>

@@ -1,8 +1,6 @@
 @extends('layouts.loginLayout')
 
-@section('Title')
-Connexion
-@endsection
+@section('Title', 'Connexion')
 
 @section('check')
 <div class="row align-items-center remember">

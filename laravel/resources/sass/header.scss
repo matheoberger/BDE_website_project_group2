@@ -49,6 +49,8 @@
 .customNavbar--mobile {
     display: none;
 }
+
+// !!!!!!!!!!!!! erreur W3C !!!!!!!!!!!!!!
 @media #{$medium-down} {
     .customNavbar--desktop {
         display: none;

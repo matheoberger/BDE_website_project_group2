@@ -15,12 +15,10 @@ class insertProduct {
      *
      */
     newProduct(articleIndex, articleNumber) {
-        if ("") {
-            $("js-spinner").addClass("spinner__display");
-        }
         this.getProduct(articleIndex, articleNumber).then(productList => {
             $("js-spinner").removeClass("spinner__display");
             $("js-spinner").addClass("spinner__display--none");
+
             productList.forEach(this.createProduct.bind(this));
         });
     }
@@ -54,6 +52,11 @@ class insertProduct {
      *
      */
 
+    //  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  //
+    //  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  //
+    //  mettre un attribut alt aux images
+    //  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  //
+    //  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  //
     createProduct(product) {
         var productElement = `<div class="product">
         <a href="/boutique/${product.id_products}"><img src="${product.image}" class="product__image"/></a>
@@ -87,6 +90,7 @@ $(document).ready(function() {
     var numberArticleLoad = 3;
     var articleNumber = numberArticleLoad;
     var articleInc = numberArticleLoad;
+
     const coucou = new insertProduct();
 
     coucou.newProduct(articleIndex, articleNumber);

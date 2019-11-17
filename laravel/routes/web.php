@@ -34,6 +34,10 @@ Route::get('/login', 'loginController@gethtml');
 Route::post('/ConnexionVerif', 'loginController@verification');
 Route::post('/InscriptionVerif', 'registerController@verification');
 
+Route::get("/downloadParticipantCSV/{id}", 'DownloadController@downloadCSV');
+Route::get("/downloadParticipantPDF/{id}", 'DownloadController@downloadPDF');
+Route::get("/downloadAll", 'DownloadController@downloadAll');
+
 Route::post('/comment', 'commentPicture');
 
 Route::post('/likePicture', 'likePicture');
@@ -51,6 +55,16 @@ Route::get('/event', function () {
 Route::get('/event/{id}', function ($id) {
     return view('eventType', ["id" => $id]);
 });
+
+Route::get('/article/{id}', function ($id) {
+    return view('article', ["id" => $id]);
+});
+
+Route::get('/remove/{id}', 'BasketController@removeFromBasket');
+Route::get('/add/{id}', 'BasketController@addInBasket');
+Route::get('/amount/{id}', 'BasketController@changeAmountInBasket');
+Route::get('/order', 'BasketController@order');
+
 Route::get('/event/{id}/edit', function ($id) {
     return view('eventEdit', ["id" => $id]);
 });
@@ -58,7 +72,7 @@ Route::get('/CGV', function () {
     return view('CGV');
 });
 Route::get('/boutique/{id}', function ($id) {
-    return view('article', ["id"=>$id]);
+    return view('article', ["id" => $id]);
 });
 Route::get('/mentionsLegales', function () {
     return view('mentionsLegales');

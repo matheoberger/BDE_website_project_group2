@@ -40,6 +40,8 @@ body {
     width: 20%;
     margin: 10px;
 }
+
+//!!!!!!!!!!!!! erreur W3C !!!!!!!!!!!!!!!!!
 @media #{$medium-down} {
     .flexbox {
         flex-direction: column;
