@@ -60,6 +60,8 @@ Route::get('/article/{id}', function ($id) {
     return view('article', ["id" => $id]);
 });
 
+Route::get('/remove/{id}', 'ArticleController@removeFromBasket');
+
 Route::get('/event/{id}/edit', function ($id) {
     return view('eventEdit', ["id" => $id]);
 });
