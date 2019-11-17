@@ -91,9 +91,16 @@ if (session('role')) {
                         <button type="submit" class="btn participate">' . "Quitter l'event"  . '</button>
                     </form>';
                     };
+                    echo '<form action="/download/' . $id . '">
+                    <select name="format" required>
+                        <option value="">-- Choisissez le format --</option>
+                        <option value="csv">CSV</option>
+                        <option value="pdf">PDF</option>
+                    </select>
+                    <button type="submit" class="btn download">Télécharger</button>
+                </form>'
 
                     ?>
-                    <button class="btn download">Télécharger</button>
 
                 </aside>
 
