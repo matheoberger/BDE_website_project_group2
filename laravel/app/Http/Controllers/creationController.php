@@ -21,7 +21,7 @@ class creationController extends Controller
     public function newProductVerif(Request $request)
     {
         //on test les entrées
-        $validator = Validator::make($request->all(), ['title' => 'required|min:4', 'description' => 'required|min:10|max:255', 'price' => 'required|numeric|min:0.1|max:1000']);
+        $validator = Validator::make($request->all(), ['title' => 'required|min:4', 'place' => 'required', 'description' => 'required|min:10|max:255', 'price' => 'required|numeric|min:0.1|max:1000']);
         if ($validator->messages()->first()) {
             //si il y a des erreurs on renvoi la première
             $error = $validator->messages()->first();
@@ -42,7 +42,10 @@ class creationController extends Controller
 
     public function newEventVerif(Request $request)
     { //on test les entrées
-        $validator = Validator::make($request->all(), ['email' => 'required|email:rfc,dns', 'password' => 'required']);
+        $validator = Validator::make($request->all(), [
+            'title' => 'required|min:4', 'description' => 'required|min:10|max:255', 'price' => 'numeric|min:0.1|max:1000',
+            'starting_date' => 'required|date_format:Y-m-d', 'ending_date' => 'required|date_format:Y-m-d'
+        ]);
         if ($validator->messages()->first()) {
             //si il y a des erreurs on renvoi la première
             $error = $validator->messages()->first();
