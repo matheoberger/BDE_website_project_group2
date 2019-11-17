@@ -14,40 +14,25 @@ class insertProduct {
      * puis détaché en objets (les articles) puis mis en forme pour être insérés dans le fichier HTML
      *
      */
-    newProduct(articleIndex, articleNumber) {
-        var categorie = "";
 
-        $("select")
-            .change(function() {
-                categorie = "";
-                $("select option:selected").each(function() {
-                    categorie += $(this).text() + " ";
-                });
-                console.log(categorie);
-            })
-            .change();
-
-        price = document.getElementById("sliderValue").innerHTML;
-
-        if ((categorie = "Toutes")) {
-            this.getProduct(articleIndex, articleNumber).then(productList => {
-                $("js-spinner").removeClass("spinner__display");
-                $("js-spinner").addClass("spinner__display--none");
-                productList.forEach(this.createProduct.bind(this));
-            });
+    newProduct(articleIndex, articleNumber, price, categorie) {
+        if (categorie == "Toutes") {
+            this.getProduct(articleIndex, articleNumber, price, categorie).then(
+                productList => {
+                    $("js-spinner").removeClass("spinner__display");
+                    $("js-spinner").addClass("spinner__display--none");
+                    productList.forEach(this.createProduct.bind(this));
+                }
+            );
         } else {
-            this.getProduct(
-                articleIndex,
-                articleNumber,
-                maxPrice,
-                minPrice,
-                categorie
-            ).then(productList => {
-                $("js-spinner").removeClass("spinner__display");
-                $("js-spinner").addClass("spinner__display--none");
+            this.getProduct(articleIndex, articleNumber, price, categorie).then(
+                productList => {
+                    $("js-spinner").removeClass("spinner__display");
+                    $("js-spinner").addClass("spinner__display--none");
 
-                productList.forEach(this.createProduct.bind(this));
-            });
+                    productList.forEach(this.createProduct.bind(this));
+                }
+            );
         }
     }
 
@@ -60,11 +45,14 @@ class insertProduct {
      *
      */
 
-    getProduct(articleIndex, articleNumber, maxPrice, minPrice, categorie) {
+    getProduct(articleIndex, articleNumber, price, categorie) {
         $("js-spinner").addClass("spinner__display");
+        console.log(
+            `http://localhost:3000/produits/${articleIndex}/${articleNumber}?prixMin=0&prixMax=${price}&categorie="${categorie}"`
+        );
         return new Promise(resolve => {
             $.get(
-                `http://localhost:3000/produits/${articleIndex}/${articleNumber}?prixMax=${maxPrice}&prixMin=${minPrice}&categorie="${categorie}"`,
+                `http://localhost:3000/produits/${articleIndex}/${articleNumber}?prixMin=0&prixMax=${price}&categorie=${categorie}`,
                 function(data, status) {
                     resolve(data);
                 }
@@ -118,18 +106,46 @@ $(document).ready(function() {
     var numberArticleLoad = 3;
     var articleNumber = numberArticleLoad;
     var articleInc = numberArticleLoad;
+    var categorie = "Toutes";
+    var price = 1000;
+    const productLoader = new insertProduct();
 
-    const coucou = new insertProduct();
+    var categorie = "";
 
-    coucou.newProduct(articleIndex, articleNumber);
+    $("select")
+        .change(function() {
+            categorie = "";
+            $("select option:selected").each(function() {
+                categorie += $(this).text();
+                console.log(categorie);
+                $("#js-productContainer").empty();
+
+                productLoader.newProduct(
+                    articleIndex,
+                    articleNumber,
+                    price,
+                    categorie
+                );
+            });
+        })
+        .change();
+
+    price = document.getElementById("sliderValue").innerHTML;
+
+    productLoader.newProduct(articleIndex, articleNumber, price, categorie);
     articleIndex += articleInc;
 
     $(window).scroll(function() {
         if (
-            Math.round($(window).scrollTop() + $(window).height()) >=
-            $(document).height() - 10
+            Math.round($(window).scrollTop() + $(window).height()) ==
+            $(document).height()
         ) {
-            coucou.newProduct(articleIndex, articleNumber);
+            productLoader.newProduct(
+                articleIndex,
+                articleNumber,
+                price,
+                categorie
+            );
             articleIndex += articleInc;
         }
     });
