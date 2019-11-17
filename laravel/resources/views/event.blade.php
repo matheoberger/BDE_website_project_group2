@@ -17,8 +17,9 @@
 
 <body>
 @include('partials/header')
-<main>
+@include("partials/navbar")
 
+<main>
 
     <div class="conteneur">
 

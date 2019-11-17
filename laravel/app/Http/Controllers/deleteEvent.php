@@ -21,7 +21,7 @@ class deleteEvent extends Controller
         }
         $bdd = new PDO("mysql:host=localhost;dbname=bde_cesi;charset=UTF8", "root", "");
         $requete = $bdd->prepare("CALL `deleteEvent`(:p_id_event);");
-        $requete->bindValue(':p_id_event', $request->id_event, PDO::PARAM_INT);
+        $requete->bindValue(':p_id_event', $request->id_events, PDO::PARAM_INT);
         $requete->execute();
         $data = $requete->fetchAll();
         $requete->closeCursor();

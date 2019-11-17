@@ -72,6 +72,7 @@ if (session('role')) {
                     <?php
                     if (session('role') == 'Administrator') {
                         echo "<form action='/event/$id/edit/' method='get'><button class='btn edit_event'>Modifier l'event</button></form>";
+                        echo "<form action='/event/$id/delete/' method='get'><button class='btn delete_event'>Supprimer l'event</button></form>";
                     };
                     ?>
                     <?php
