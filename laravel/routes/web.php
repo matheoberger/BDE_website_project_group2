@@ -74,6 +74,10 @@ Route::get('/order', 'BasketController@order');
 Route::get('/event/{id}/edit', function ($id) {
     return view('eventEdit', ["id" => $id]);
 });
+Route::get('/addpicture/{id}', 'eventController@addpicture');
+Route::post('/addpicture/{id}', 'eventController@addpictureVerif');
+
+
 Route::get('/CGV', function () {
     return view('CGV');
 });
