@@ -1,7 +1,9 @@
 @import "./responsive.scss";
 
+/* Mise en page de la page d'events */
+
 body {
-    background: linear-gradient(70deg, $grey_1, darken($grey_1, 40));
+    background: linear-gradient(70deg, $red, darken($blue_1, 20));
 }
 
 main {
