@@ -1,3 +1,14 @@
+<?php
+
+$bdd2 = new PDO("mysql:host=localhost;dbname=bde_cesi;charset=UTF8", "root", "");
+$requete = $bdd2->prepare("CALL `getCategories`");
+$requete->execute();
+$categories = $requete->fetchAll();
+$requete->closeCursor();
+var_dump($categories);
+?>
+
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -55,21 +66,18 @@
                         </a>
 
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <a class="dropdown-item" href="#">Gourde</a>
-                            <a class="dropdown-item" href="#">T shirt</a>
-                            <a class="dropdown-item" href="#">Sweat</a>
+                            <?php foreach ($categories as $categorie) {
+                                echo "<a class='dropdown-item' href='#'>{$categorie["title"]}</a>";
+                            } ?>
                         </div>
 
-                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Prix
-                        </a>
-
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <a class="dropdown-item" href="#">Gourde</a>
-                            <a class="dropdown-item" href="#">T shirt</a>
-                            <a class="dropdown-item" href="#">Sweat</a>
+                        <p>prix</p>
+                        <div class="slidecontainer">
+                            <input type="range" min="1" max="1000" value="50" class="slider" id="myRange"
+                                oninput="slider(this.value)">
                         </div>
+                        <p id="sliderValue"></p>
+
                     </div>
 
                 </div>
@@ -88,5 +96,12 @@
     </main>
     <script src="js/products.js"></script>
 </body>
+
+
+<script>
+function slider(val) {
+    document.getElementById("sliderValue").innerHTML = val + "€";
+}
+</script>
 
 </html>
