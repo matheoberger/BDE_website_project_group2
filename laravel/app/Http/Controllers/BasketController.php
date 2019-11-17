@@ -94,6 +94,10 @@ class BasketController extends Controller
                 $mail->to('bde.cesi.bordeaux.projetgroupe2@gmail.com');
                 $mail->subject($data['subject']);
             });
+            $requete = $bdd2->prepare("CALL `setOrdered`(:userID)");
+            $requete->bindValue(":userID", session("id_user"), PDO::PARAM_STR);
+            $requete->execute();
+            $requete->closeCursor();
         }
         return redirect("/");
     }
