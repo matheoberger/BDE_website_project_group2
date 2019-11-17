@@ -60,9 +60,10 @@ Route::get('/article/{id}', function ($id) {
     return view('article', ["id" => $id]);
 });
 
-Route::get('/remove/{id}', 'ArticleController@removeFromBasket');
-Route::get('/add/{id}', 'ArticleController@addInBasket');
-Route::get('/amount/{id}', 'ArticleController@changeAmountInBasket');
+Route::get('/remove/{id}', 'BasketController@removeFromBasket');
+Route::get('/add/{id}', 'BasketController@addInBasket');
+Route::get('/amount/{id}', 'BasketController@changeAmountInBasket');
+Route::get('/order', 'BasketController@order');
 
 Route::get('/event/{id}/edit', function ($id) {
     return view('eventEdit', ["id" => $id]);

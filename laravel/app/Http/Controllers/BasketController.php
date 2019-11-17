@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use PDO;
+use Illuminate\Support\Facades\Mail;
 
-class ArticleController extends Controller
+class BasketController extends Controller
 {
     public function removeFromBasket($id)
     {
@@ -72,5 +73,28 @@ class ArticleController extends Controller
             $requete->closeCursor();
         }
         return redirect("/panier");
+    }
+
+    public function order()
+    {
+        $bdd2 = new PDO("mysql:host=localhost;dbname=bde_cesi;charset=UTF8", "root", "");
+        $requete = $bdd2->prepare("CALL `getBasketFromEmail`(:userID)");
+        $requete->bindValue(":userID", session("email"), PDO::PARAM_STR);
+        $requete->execute();
+        $products = $requete->fetchAll();
+        $requete->closeCursor();
+        if (!empty($products)) {
+            $data = array(
+                'email' => session("email"),
+                'subject' => "Nouvelle vente",
+                'data' => $products
+            );
+            Mail::send('emails.sell', $data, function ($mail) use ($data) {
+                $mail->from($data['email']);
+                $mail->to('bde.cesi.bordeaux.projetgroupe2@gmail.com');
+                $mail->subject($data['subject']);
+            });
+        }
+        return redirect("/");
     }
 }

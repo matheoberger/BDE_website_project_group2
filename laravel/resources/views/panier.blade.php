@@ -76,6 +76,7 @@ if (session("email")) {
                     </li>";
                     } ?>
                 </ul>
+                <a href="/order">Commander </a>
                 @include("partials/footer")
             </div>
         </div>
