@@ -8,16 +8,16 @@ use PDO;
 
 class creationController extends Controller
 {
-    public function newProduct(Request $request)
+    public function newProduct()
     {
         if (session('role') ==  "Administrator") {
             return view('newProduct');
         }
     }
 
-    public function newEvent(Request $request)
+    public function newEvent()
     {
-        if (session('role' == "Administrator")) {
+        if (session('role') == "Administrator") {
             return view('newEvent');
         }
     }
