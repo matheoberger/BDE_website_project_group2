@@ -36,6 +36,7 @@ Route::post('/InscriptionVerif', 'registerController@verification');
 
 Route::get("/downloadParticipantCSV/{id}", 'DownloadController@downloadCSV');
 Route::get("/downloadParticipantPDF/{id}", 'DownloadController@downloadPDF');
+Route::get("/download/{id}", 'DownloadController@download');
 Route::get("/downloadAll", 'DownloadController@downloadAll');
 
 Route::post('/comment', 'commentPicture');
