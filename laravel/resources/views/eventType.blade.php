@@ -71,7 +71,10 @@ if (session('role')) {
                     <button class="btn add_picture">Ajouter photo </button>
                     <?php
                     if (session('role') == 'Administrator') {
-                        echo "<form action='/event/$id/edit/' method='get'><button class='btn edit_event'>Modifier l'event</button></form>";
+                        echo "<form action='/event/$id/edit/' method='get'><button class='btn edit_event'>Modifier event</button></form>";
+                        echo "<form action='/event/delete' method='post'>
+                                <input type='hidden' name='event' value='$id'>
+                                <button class='btn edit_event'>Supprimer event</button></form>";
                     };
                     ?>
                     <?php

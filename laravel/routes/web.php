@@ -50,6 +50,10 @@ Route::post('/likePicture', 'likePicture');
 Route::post('/dislikePicture', 'dislikePicture');
 
 Route::post('/event/participate', 'participateEvent');
+Route::post('/event/deleteEvent', 'deleteEvent');
+/*
+Route::post('/addEvent', 'addEvent');
+*/
 Route::post('/event/leave', 'leaveEvent');
 Route::post('/editEvent', 'editEvent');
 
