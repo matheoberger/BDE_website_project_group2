@@ -17,10 +17,11 @@
 
 <body>
 @include('partials/header')
+
+<div>
 @include("partials/navbar")
-
-
 <main>
+
     <div class="conteneur">
            <div>
                 <h2> <u>Les évènements</u></h2>
@@ -37,6 +38,7 @@
 
     <script src="/js/insertEvent.js"></script>
   </main>
+</div>
 </body>
 
 </html>
