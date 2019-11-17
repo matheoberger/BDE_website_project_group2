@@ -23,7 +23,17 @@ class eventController extends Controller
         } else {
             $imageName = time() . '.' . request()->image->getClientOriginalExtension();
             request()->image->move(public_path('images'), $imageName);
-
+            $bdd = new PDO("mysql:host=localhost;dbname=bde_cesi;charset=UTF8", "root", "");
+            $requete = $bdd->prepare("CALL `addPicture`(:title, :url, :id_user);");
+            $requete->bindValue(':title', $imageName, PDO::PARAM_STR);
+            $requete->bindValue(':url', "images/$imageName", PDO::PARAM_STR);
+            $requete->bindValue(':id_user', session('id_user'), PDO::PARAM_INT);
+            $requete->execute();
+            $requete->closeCursor();
+            $requete = $bdd->prepare("CALL `addPictureOnEvent`(:id_event);");
+            $requete->bindValue(':id_event', $id, PDO::PARAM_INT);
+            $requete->execute();
+            $requete->closeCursor();
             $error = "Upload réussi";
             $color = 'green';
         }
