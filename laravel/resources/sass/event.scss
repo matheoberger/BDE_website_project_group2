@@ -1,14 +1,8 @@
 @import "./responsive.scss";
 
 body {
-    // !!!!!!!!!!!!! erreur W3C !!!!!!!!!!!!!!
     background: linear-gradient(70deg, $grey_1, darken($grey_1, 40));
     text-align: center;
-
-    //   -webkit-filter: blur(50px);
-    /* Safari 6.0 -
-     9.0 */
-    //    filter: grayscale(100%);
 }
 
 main {
@@ -17,13 +11,14 @@ main {
 
 body img {
     filter: blur(0px);
-
     transition: 0.5s;
-    // !!!!!!!!!!!!! erreur W3C !!!!!!!!!!!!!!
+
     &:hover {
         filter: blur(4px);
     }
 }
+
+
 
 h2 {
     font-family: $roboto;
@@ -31,6 +26,8 @@ h2 {
     font-size: 5vw;
 }
 
+
+// Définit les propriétés basiques d'un bouton
 .btn {
     border: none;
     /* Remove borders */
@@ -44,6 +41,7 @@ h2 {
     margin: $px_2;
 }
 
+/* bouton d'ajout d'event*/
 .add_event {
     background-color: $blue_2;
     transition: 0.5s;
@@ -53,6 +51,7 @@ h2 {
     }
 }
 
+/* conteneur générale pour les events*/
 .conteneur {
     background: linear-gradient(180deg, $red, darken($red, 30));
     margin: $px_2;
@@ -63,6 +62,7 @@ h2 {
     justify-content: center;
 }
 
+/* La section des events, image, descriptions et nom*/
 section {
     margin: $px_20;
     display: flex;
@@ -70,11 +70,13 @@ section {
     font-family: $roboto;
 }
 
+/*Uniquement pour le nom et la description*/
 article {
     font-family: $roboto;
     height: $cube_dimension;
     width: $cube_dimension;
 }
+
 
 .btTxt_submit {
     object-fit: cover;
@@ -82,15 +84,15 @@ article {
     width: $cube_dimension;
     height: $cube_dimension;
     display: block;
-
     filter: blur(0px);
     transition: 0.5s;
-    // !!!!!!!!!!!!! erreur W3C !!!!!!!!!!!!!!
+
     &:hover {
         filter: blur(4px);
     }
 }
 
+/* Propriété pour les images des events */
 article img {
     object-fit: cover;
     justify-content: flex-end;
@@ -105,12 +107,10 @@ aside {
     height: $cube_dimension;
     width: $cube_dimension;
     overflow: auto;
-    // !!!!!!!!!!!!! erreur W3C !!!!!!!!!!!!!!
     padding: bottom;
-
     background-color: $blue_1;
     transition: 0.5s;
-    // !!!!!!!!!!!!! erreur W3C !!!!!!!!!!!!!!
+
     &:hover {
         background-color: darken($red, 10);
     }
@@ -122,6 +122,5 @@ aside {
     display: inline-block;
     flex-wrap: wrap;
     justify-content: flex-end;
-
     margin: -2px 0 0 -2px;
 }
