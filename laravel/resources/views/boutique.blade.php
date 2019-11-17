@@ -5,7 +5,6 @@ $requete = $bdd2->prepare("CALL `getCategories`");
 $requete->execute();
 $categories = $requete->fetchAll();
 $requete->closeCursor();
-echo json_encode($categories);
 ?>
 
 
@@ -80,10 +79,10 @@ echo json_encode($categories);
 
                         <p>prix</p>
                         <div class="s lidecontainer">
-                            <input id="boutique__slider" type="range" min="1" max="1000" value="50" class="slider"
-                                id="myRange" oninput="slider(this.value)">
+                            <input class="boutique__slider" id="boutique__slider" type="range" min="1" max="1000"
+                                value="50" class="slider" oninput="slider(this.value)">
                         </div>
-                        <p id="sliderValue"></p>
+                        <p id="sliderValue">1000</p>
 
                     </div>
 

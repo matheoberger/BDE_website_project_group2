@@ -16,20 +16,20 @@ class insertProduct {
      */
 
     newProduct(articleIndex, articleNumber, price, categorie) {
+        $("#js-spinner").addClass("spinner__display");
         if (categorie == "Toutes") {
-            this.getProduct(articleIndex, articleNumber, price, categorie).then(
+            console.log("Toutes");
+            console.log(categorie);
+            this.getProduct(articleIndex, articleNumber, price).then(
                 productList => {
-                    $("js-spinner").removeClass("spinner__display");
-                    $("js-spinner").addClass("spinner__display--none");
                     productList.forEach(this.createProduct.bind(this));
                 }
             );
         } else {
+            console.log("else : ");
+            console.log(categorie);
             this.getProduct(articleIndex, articleNumber, price, categorie).then(
                 productList => {
-                    $("js-spinner").removeClass("spinner__display");
-                    $("js-spinner").addClass("spinner__display--none");
-
                     productList.forEach(this.createProduct.bind(this));
                 }
             );
@@ -44,20 +44,32 @@ class insertProduct {
      * getProduct execute la requête HTTP get destinée à l'API, les données sont récupérées en asynchrone
      *
      */
-
     getProduct(articleIndex, articleNumber, price, categorie) {
-        $("js-spinner").addClass("spinner__display");
-        console.log(
-            `http://localhost:3000/produits/${articleIndex}/${articleNumber}?prixMin=0&prixMax=${price}&categorie="${categorie}"`
-        );
-        return new Promise(resolve => {
-            $.get(
-                `http://localhost:3000/produits/${articleIndex}/${articleNumber}?prixMin=0&prixMax=${price}&categorie=${categorie}`,
-                function(data, status) {
-                    resolve(data);
-                }
+        if (categorie) {
+            console.log(
+                `http://localhost:3000/produits/${articleIndex}/${articleNumber}?prixMin=0&prixMax=${price}&categorie="${categorie}"`
             );
-        });
+            return new Promise(resolve => {
+                $.get(
+                    `http://localhost:3000/produits/${articleIndex}/${articleNumber}?prixMin=0&prixMax=${price}&categorie=${categorie}`,
+                    function(data, status) {
+                        resolve(data);
+                    }
+                );
+            });
+        } else {
+            console.log(
+                `http://localhost:3000/produits/${articleIndex}/${articleNumber}?prixMin=0&prixMax=${price}`
+            );
+            return new Promise(resolve => {
+                $.get(
+                    `http://localhost:3000/produits/${articleIndex}/${articleNumber}?prixMin=0&prixMax=${price}`,
+                    function(data, status) {
+                        resolve(data);
+                    }
+                );
+            });
+        }
     }
 
     /**
@@ -90,6 +102,8 @@ class insertProduct {
      *
      */
     loadProduct(productElement) {
+        $("#js-spinner").removeClass("spinner__display");
+        $("#js-spinner").addClass("spinner__display--none");
         $("#js-productContainer").append(productElement);
     }
 }
@@ -107,15 +121,32 @@ $(document).ready(function() {
     var articleNumber = numberArticleLoad;
     var articleInc = numberArticleLoad;
     var categorie = "Toutes";
-    var price = 1000;
     const productLoader = new insertProduct();
+    documentPrice = document.getElementById("sliderValue").innerHTML;
+    var price = documentPrice.substring(0, documentPrice.length - 1);
 
-    var categorie = "";
+    productLoader.newProduct(articleIndex, articleNumber, price, categorie);
+    articleIndex += articleInc;
+    console.log("initilisation");
+    initialize = true;
+
+    $(document).on("change", "#boutique__slider", function() {
+        $("#js-productContainer").empty();
+        articleIndex = 0;
+        documentPrice = document.getElementById("sliderValue").innerHTML;
+        price = documentPrice.substring(0, documentPrice.length - 1);
+        console.log(price);
+        $("#js-productContainer").empty();
+        productLoader.newProduct(articleIndex, articleNumber, price, categorie);
+    });
 
     $("select")
         .change(function() {
-            categorie = "";
             $("select option:selected").each(function() {
+                categorie = "";
+                articleIndex = 0;
+                console.log("categorie reset");
+
                 categorie += $(this).text();
                 console.log(categorie);
                 $("#js-productContainer").empty();
@@ -130,15 +161,24 @@ $(document).ready(function() {
         })
         .change();
 
-    price = document.getElementById("sliderValue").innerHTML;
+    // $(document).on("change", "boutique__slider", console.log("has changed"));
 
-    productLoader.newProduct(articleIndex, articleNumber, price, categorie);
-    articleIndex += articleInc;
+    // window.onscroll = function(ev) {
+    //     if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+    //         console.log("you're at the bottom of the page");
+
+    //     }
+    // };
 
     $(window).scroll(function() {
+        // console.log($(window).scrollTop());
+        // console.log($(window).height());
+        // console.log($(document).height());
+        // console.log($(window).scrollTop() + $(window).height());
+
         if (
-            Math.round($(window).scrollTop() + $(window).height()) ==
-            $(document).height()
+            Math.round($(window).scrollTop() + $(window).height()) >=
+            $(document).height() - 1
         ) {
             productLoader.newProduct(
                 articleIndex,

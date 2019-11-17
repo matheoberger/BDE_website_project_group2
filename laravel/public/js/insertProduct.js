@@ -127,16 +127,18 @@ function () {
     value: function newProduct(articleIndex, articleNumber, price, categorie) {
       var _this = this;
 
+      $("#js-spinner").addClass("spinner__display");
+
       if (categorie == "Toutes") {
-        this.getProduct(articleIndex, articleNumber, price, categorie).then(function (productList) {
-          $("js-spinner").removeClass("spinner__display");
-          $("js-spinner").addClass("spinner__display--none");
+        console.log("Toutes");
+        console.log(categorie);
+        this.getProduct(articleIndex, articleNumber, price).then(function (productList) {
           productList.forEach(_this.createProduct.bind(_this));
         });
       } else {
+        console.log("else : ");
+        console.log(categorie);
         this.getProduct(articleIndex, articleNumber, price, categorie).then(function (productList) {
-          $("js-spinner").removeClass("spinner__display");
-          $("js-spinner").addClass("spinner__display--none");
           productList.forEach(_this.createProduct.bind(_this));
         });
       }
@@ -153,13 +155,21 @@ function () {
   }, {
     key: "getProduct",
     value: function getProduct(articleIndex, articleNumber, price, categorie) {
-      $("js-spinner").addClass("spinner__display");
-      console.log("http://localhost:3000/produits/".concat(articleIndex, "/").concat(articleNumber, "?prixMin=0&prixMax=").concat(price, "&categorie=\"").concat(categorie, "\""));
-      return new Promise(function (resolve) {
-        $.get("http://localhost:3000/produits/".concat(articleIndex, "/").concat(articleNumber, "?prixMin=0&prixMax=").concat(price, "&categorie=").concat(categorie), function (data, status) {
-          resolve(data);
+      if (categorie) {
+        console.log("http://localhost:3000/produits/".concat(articleIndex, "/").concat(articleNumber, "?prixMin=0&prixMax=").concat(price, "&categorie=\"").concat(categorie, "\""));
+        return new Promise(function (resolve) {
+          $.get("http://localhost:3000/produits/".concat(articleIndex, "/").concat(articleNumber, "?prixMin=0&prixMax=").concat(price, "&categorie=").concat(categorie), function (data, status) {
+            resolve(data);
+          });
         });
-      });
+      } else {
+        console.log("http://localhost:3000/produits/".concat(articleIndex, "/").concat(articleNumber, "?prixMin=0&prixMax=").concat(price));
+        return new Promise(function (resolve) {
+          $.get("http://localhost:3000/produits/".concat(articleIndex, "/").concat(articleNumber, "?prixMin=0&prixMax=").concat(price), function (data, status) {
+            resolve(data);
+          });
+        });
+      }
     }
     /**
      *
@@ -191,6 +201,8 @@ function () {
   }, {
     key: "loadProduct",
     value: function loadProduct(productElement) {
+      $("#js-spinner").removeClass("spinner__display");
+      $("#js-spinner").addClass("spinner__display--none");
       $("#js-productContainer").append(productElement);
     }
   }]);
@@ -211,23 +223,45 @@ $(document).ready(function () {
   var articleNumber = numberArticleLoad;
   var articleInc = numberArticleLoad;
   var categorie = "Toutes";
-  var price = 1000;
   var productLoader = new insertProduct();
-  var categorie = "";
+  documentPrice = document.getElementById("sliderValue").innerHTML;
+  var price = documentPrice.substring(0, documentPrice.length - 1);
+  productLoader.newProduct(articleIndex, articleNumber, price, categorie);
+  articleIndex += articleInc;
+  console.log("initilisation");
+  initialize = true;
+  $(document).on("change", "#boutique__slider", function () {
+    $("#js-productContainer").empty();
+    articleIndex = 0;
+    documentPrice = document.getElementById("sliderValue").innerHTML;
+    price = documentPrice.substring(0, documentPrice.length - 1);
+    console.log(price);
+    $("#js-productContainer").empty();
+    productLoader.newProduct(articleIndex, articleNumber, price, categorie);
+  });
   $("select").change(function () {
-    categorie = "";
     $("select option:selected").each(function () {
+      categorie = "";
+      articleIndex = 0;
+      console.log("categorie reset");
       categorie += $(this).text();
       console.log(categorie);
       $("#js-productContainer").empty();
       productLoader.newProduct(articleIndex, articleNumber, price, categorie);
     });
-  }).change();
-  price = document.getElementById("sliderValue").innerHTML;
-  productLoader.newProduct(articleIndex, articleNumber, price, categorie);
-  articleIndex += articleInc;
+  }).change(); // $(document).on("change", "boutique__slider", console.log("has changed"));
+  // window.onscroll = function(ev) {
+  //     if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+  //         console.log("you're at the bottom of the page");
+  //     }
+  // };
+
   $(window).scroll(function () {
-    if (Math.round($(window).scrollTop() + $(window).height()) == $(document).height()) {
+    // console.log($(window).scrollTop());
+    // console.log($(window).height());
+    // console.log($(document).height());
+    // console.log($(window).scrollTop() + $(window).height());
+    if (Math.round($(window).scrollTop() + $(window).height()) >= $(document).height() - 1) {
       productLoader.newProduct(articleIndex, articleNumber, price, categorie);
       articleIndex += articleInc;
     }
