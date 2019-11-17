@@ -86,21 +86,15 @@ $requete->closeCursor();
                                 data-content="Article ajouté au panier." style="">
                                 Acheter
                             </button>
-
-
-
-                            <!-- <script>
-                            $(function() {
-                                $('[data-toggle="popover"]').popover()
-                            })
-                            $('.popover-dismiss').popover({
-                                trigger: 'focus'
-                            })
-                            </script>
-                            <a tabindex="0" class="btn btn-lg btn-danger" role="button" data-toggle="popover"
-                                data-trigger="focus" title="Dismissible popover"
-                                data-content="And here's some amazing content. It's very engaging. Right?">Dismissible
-                                popover</a> -->
+                            <form method="post" action="" name="form">
+                                <select name="category">
+                                <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </form>
                         </p>
                     </div>
                     <div class="contenu__text">
@@ -142,42 +136,49 @@ $(document).ready(function() {
 <script>
 function clickDetected() {
 
-    <
-    ? php
-    if (session('email')) {
+    <?php
+        if (session('email')) {
 
-        $requete = $bdd2 - > prepare("CALL `getBasketFromEmail`(:user_email);");
-        $requete - > bindValue(':user_email', session('email'), PDO::PARAM_STR);
-        $requete - > execute();
-        $doesBasketExist = $requete - > fetchAll();
-        $requete - > closeCursor();
-        // var_dump($doesBasketExist);
+            // if (isset($_POST['category']))
+            // {
+                // $category = $_POST['category'];
+                // var_dump ($category);
+            // }
+            // $selectOption = $_POST['article__number'];
+            // var_dump ($selectOption);
 
-        if ($doesBasketExist) {
-            var_dump("existe");
+            $requete = $bdd2->prepare("CALL `getBasketFromEmail`(:user_email);");
+            $requete->bindValue(':user_email', session('email'), PDO::PARAM_STR);
+            $requete->execute();
+            $doesBasketExist = $requete->fetchAll();
+            $requete->closeCursor();
+            // var_dump($doesBasketExist);
 
-            $requete = $bdd2 - > prepare("CALL `addProductToBasket`(:id_product);");
-            $requete - > bindValue(':id_product', $id, PDO::PARAM_INT);
-            $requete - > execute();
-            // $product = $requete -> fetchAll();
-            $requete - > closeCursor();
-        } else {
-            var_dump("existe pas");
-            var_dump(session('user_id'));
+            if ($doesBasketExist) {
+                var_dump("existe");
 
-            $requete = $bdd2 - > prepare("CALL `newBasket`(:id_user) ;");
-            $requete - > bindValue(':id_user', session('id_user'), PDO::PARAM_INT);
-            $requete - > execute();
-            $product = $requete - > fetchAll();
-            $requete - > closeCursor();
-            $requete = $bdd2 - > prepare("CALL `addProductToBasket`(:id_product);");
-            $requete - > bindValue(':id_product', $id, PDO::PARAM_INT);
-            $requete - > execute();
-            // $product = $requete -> fetchAll();
-            $requete - > closeCursor();
-        }
-    } ? >
+                $requete = $bdd2->prepare("CALL `addProductToBasket`(:id_product);");
+                $requete->bindValue(':id_product', $id, PDO::PARAM_INT);
+                $requete->execute();
+                // $product = $requete -> fetchAll();
+                $requete->closeCursor();
+            } else {
+                
+                $requete = $bdd2->prepare("CALL `newBasket`(:id_user) ;");
+                $requete->bindValue(':id_user', session('id_user'), PDO::PARAM_INT);
+                $requete->execute();
+                $product = $requete->fetchAll();
+                $requete->closeCursor();
+                $requete = $bdd2->prepare("CALL `addProductToBasket`(:id_user,:id_product,:amount);");
+                $requete->bindValue(':id_user', session('id_user'), PDO::PARAM_INT);
+                $requete->bindValue(':id_product', $id, PDO::PARAM_INT);
+                $requete->bindValue(':amount', 1, PDO::PARAM_INT);
 
+                $requete->execute();
+                // $product = $requete -> fetchAll();
+                $requete->closeCursor();
+            }
+        } ?>
     console.log("article ajouté au panier");
 
     function setBasketArticle() {}
