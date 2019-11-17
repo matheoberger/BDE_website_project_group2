@@ -13,15 +13,35 @@ $images = $requete2->fetchAll();
 $requete->closeCursor();
 ?>
 
+
+
 <!DOCTYPE html>
 <html lang="fr">
+
 
 <head>
     <title>Article</title>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="/css/app.css" />
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+
+    <script src="../js/bootstrap.bundle.min.js">
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
 
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/app.css" />
+
     <link rel="stylesheet" type="text/css" href="/css/header.css">
     <link rel="stylesheet" type="text/css" href="/css/navbar.css">
     <link rel="stylesheet" type="text/css" href="/css/footer.css">
@@ -29,7 +49,6 @@ $requete->closeCursor();
 </head>
 
 <body>
-
     @include('partials/header')
     <main>
         @include("partials/navbar")
@@ -63,7 +82,25 @@ $requete->closeCursor();
                             </select>
                         </p>
                         <p class="buy">
-                            <button> Acheter </button>
+                            <button onclick="clickDetected();" type="button" data-toggle="popover"
+                                data-content="Article ajouté au panier." style="">
+                                Acheter
+                            </button>
+
+
+
+                            <!-- <script>
+                            $(function() {
+                                $('[data-toggle="popover"]').popover()
+                            })
+                            $('.popover-dismiss').popover({
+                                trigger: 'focus'
+                            })
+                            </script>
+                            <a tabindex="0" class="btn btn-lg btn-danger" role="button" data-toggle="popover"
+                                data-trigger="focus" title="Dismissible popover"
+                                data-content="And here's some amazing content. It's very engaging. Right?">Dismissible
+                                popover</a> -->
                         </p>
                     </div>
                     <div class="contenu__text">
@@ -85,7 +122,66 @@ $requete->closeCursor();
             @include("partials/footer")
         </div>
 
+        </div>
+
     </main>
 </body>
+
+<script>
+$(document).ready(function() {
+    $('[data-toggle="popover"]').popover({
+        placement: 'left',
+        trigger: 'focus'
+    });
+});
+</script>
+
+
+
+
+<script>
+function clickDetected() {
+
+    <
+    ? php
+    if (session('email')) {
+
+        $requete = $bdd2 - > prepare("CALL `getBasketFromEmail`(:user_email);");
+        $requete - > bindValue(':user_email', session('email'), PDO::PARAM_STR);
+        $requete - > execute();
+        $doesBasketExist = $requete - > fetchAll();
+        $requete - > closeCursor();
+        // var_dump($doesBasketExist);
+
+        if ($doesBasketExist) {
+            var_dump("existe");
+
+            $requete = $bdd2 - > prepare("CALL `addProductToBasket`(:id_product);");
+            $requete - > bindValue(':id_product', $id, PDO::PARAM_INT);
+            $requete - > execute();
+            // $product = $requete -> fetchAll();
+            $requete - > closeCursor();
+        } else {
+            var_dump("existe pas");
+            var_dump(session('user_id'));
+
+            $requete = $bdd2 - > prepare("CALL `newBasket`(:id_user) ;");
+            $requete - > bindValue(':id_user', session('id_user'), PDO::PARAM_INT);
+            $requete - > execute();
+            $product = $requete - > fetchAll();
+            $requete - > closeCursor();
+            $requete = $bdd2 - > prepare("CALL `addProductToBasket`(:id_product);");
+            $requete - > bindValue(':id_product', $id, PDO::PARAM_INT);
+            $requete - > execute();
+            // $product = $requete -> fetchAll();
+            $requete - > closeCursor();
+        }
+    } ? >
+
+    console.log("article ajouté au panier");
+
+    function setBasketArticle() {}
+}
+</script>
 
 </html>

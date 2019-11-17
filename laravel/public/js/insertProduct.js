@@ -91,133 +91,9 @@
   !*** ./resources/js/insertProduct.js ***!
   \***************************************/
 /*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-/**
- * La classe insertProduct regroupe les méthodes
- * permettant le chargement depuis l'API de nouveaux
- * articles en les inserant directement en Jquery
- * dans le fichier HTML boutique
- */
-var insertProduct =
-/*#__PURE__*/
-function () {
-  function insertProduct() {
-    _classCallCheck(this, insertProduct);
-  }
-
-  _createClass(insertProduct, [{
-    key: "newProduct",
-
-    /**
-     *
-     * @param {number} articleIndex : représente le nombre d'article déjà chargé, utile pour l'API qui l'enverra à la procédure
-     * @param {number} articleNumber  : représente le nnombre d'articles que l'on veut charger à partir de l'index
-     *
-     * New product régit toutes les méthodes de la classe insertProduct, un tableau de produit est d'abord chargé,
-     * puis détaché en objets (les articles) puis mis en forme pour être insérés dans le fichier HTML
-     *
-     */
-    value: function newProduct(articleIndex, articleNumber) {
-      var _this = this;
-
-      if ("") {}
-
-      this.getProduct(articleIndex, articleNumber).then(function (productList) {
-        $("js-spinner").removeClass("spinner__display");
-        $("js-spinner").addClass("spinner__display--none");
-        productList.forEach(_this.createProduct.bind(_this));
-      });
-    }
-    /**
-     *
-     * @param {number} articleIndex : représente le nombre d'article déjà chargé, utile pour l'API qui l'enverra à la procédure
-     * @param {number} articleNumber  : représente le nnombre d'articles que l'on veut charger à partir de l'index
-     *
-     * getProduct execute la requête HTTP get destinée à l'API, les données sont récupérées en asynchrone
-     *
-     */
-
-  }, {
-    key: "getProduct",
-    value: function getProduct(articleIndex, articleNumber) {
-      $("js-spinner").addClass("spinner__display");
-      return new Promise(function (resolve) {
-        $.get("http://localhost:3000/produits/".concat(articleIndex, "/").concat(articleNumber), function (data, status) {
-          resolve(data);
-        });
-      });
-    }
-    /**
-     *
-     * @param {*} product
-     *
-     *createProduct permet de mettre en forme chaque article pour qu'ils puissent être insérés dans le fichier HTML
-     *
-     */
-    //  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  //
-    //  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  //
-    //  mettre un attribut alt aux images
-    //  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  //
-    //  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  //
-
-  }, {
-    key: "createProduct",
-    value: function createProduct(product) {
-      var productElement = "<div class=\"product\">\n        <a href=\"/boutique/".concat(product.id_products, "\"><img src=\"").concat(product.image, "\" class=\"product__image\"/></a>\n        <div class=\"product__title\">").concat(product.title, "</div>\n        <div class=\"product__price\"><b>").concat(product.price, "\u20AC</b></div>\n    </div>");
-      this.loadProduct(productElement);
-    }
-    /**
-     *
-     * @param {*} productElement
-     *
-     * loadProduct insert productElement dans le div dépendant de la classe js-productContainer
-     *
-     */
-
-  }, {
-    key: "loadProduct",
-    value: function loadProduct(productElement) {
-      $("#js-productContainer").append(productElement);
-    }
-  }]);
-
-  return insertProduct;
-}();
-/**
- * Une fois que le document est "prêt",
- * une nouvelle classe inserProduct est crée puis on charge les articles
- * à chaque fois que la position du curseur dans la fenêtre atteint la fin du document
- *
- */
-
-
-$(document).ready(function () {
-  var articleIndex = 0;
-  var numberArticleLoad = 3;
-  var articleNumber = numberArticleLoad;
-  var articleInc = numberArticleLoad;
-  var coucou = new insertProduct();
-  coucou.newProduct(articleIndex, articleNumber);
-  articleIndex += articleInc;
-  $(window).scroll(function () {
-    console.log($(window).scrollTop());
-    console.log($(window).height());
-    console.log($(document).height());
-
-    if (Math.round($(window).scrollTop() + $(window).height()) >= $(document).height() - 10) {
-      console.log("sscroll");
-      coucou.newProduct(articleIndex, articleNumber);
-      articleIndex += articleInc;
-    }
-  });
-});
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: D:\\Multimedia\\Desktop\\EXIA\\A2\\Projet\\WEB\\BDE_website_project_group2\\laravel\\resources\\js\\insertProduct.js: Unexpected token (18:0)\n\n\u001b[0m \u001b[90m 16 | \u001b[39m\u001b[90m     */\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 17 | \u001b[39m    newProduct(articleIndex\u001b[33m,\u001b[39m articleNumber) {\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 18 | \u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<\u001b[39m \u001b[33mHEAD\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    | \u001b[39m\u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 19 | \u001b[39m\u001b[33m===\u001b[39m\u001b[33m===\u001b[39m\u001b[33m=\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 20 | \u001b[39m        \u001b[36mif\u001b[39m (\u001b[32m\"\"\u001b[39m) {\u001b[0m\n\u001b[0m \u001b[90m 21 | \u001b[39m            $(\u001b[32m\"js-spinner\"\u001b[39m)\u001b[33m.\u001b[39maddClass(\u001b[32m\"spinner__display\"\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n    at Parser.raise (D:\\Multimedia\\Desktop\\EXIA\\A2\\Projet\\WEB\\BDE_website_project_group2\\laravel\\node_modules\\@babel\\parser\\lib\\index.js:6932:17)\n    at Parser.unexpected (D:\\Multimedia\\Desktop\\EXIA\\A2\\Projet\\WEB\\BDE_website_project_group2\\laravel\\node_modules\\@babel\\parser\\lib\\index.js:8325:16)\n    at Parser.parseExprAtom (D:\\Multimedia\\Desktop\\EXIA\\A2\\Projet\\WEB\\BDE_website_project_group2\\laravel\\node_modules\\@babel\\parser\\lib\\index.js:9584:20)\n    at Parser.parseExprSubscripts (D:\\Multimedia\\Desktop\\EXIA\\A2\\Projet\\WEB\\BDE_website_project_group2\\laravel\\node_modules\\@babel\\parser\\lib\\index.js:9167:23)\n    at Parser.parseMaybeUnary (D:\\Multimedia\\Desktop\\EXIA\\A2\\Projet\\WEB\\BDE_website_project_group2\\laravel\\node_modules\\@babel\\parser\\lib\\index.js:9147:21)\n    at Parser.parseExprOps (D:\\Multimedia\\Desktop\\EXIA\\A2\\Projet\\WEB\\BDE_website_project_group2\\laravel\\node_modules\\@babel\\parser\\lib\\index.js:9013:23)\n    at Parser.parseMaybeConditional (D:\\Multimedia\\Desktop\\EXIA\\A2\\Projet\\WEB\\BDE_website_project_group2\\laravel\\node_modules\\@babel\\parser\\lib\\index.js:8986:23)\n    at Parser.parseMaybeAssign (D:\\Multimedia\\Desktop\\EXIA\\A2\\Projet\\WEB\\BDE_website_project_group2\\laravel\\node_modules\\@babel\\parser\\lib\\index.js:8932:21)\n    at Parser.parseExpression (D:\\Multimedia\\Desktop\\EXIA\\A2\\Projet\\WEB\\BDE_website_project_group2\\laravel\\node_modules\\@babel\\parser\\lib\\index.js:8882:23)\n    at Parser.parseStatementContent (D:\\Multimedia\\Desktop\\EXIA\\A2\\Projet\\WEB\\BDE_website_project_group2\\laravel\\node_modules\\@babel\\parser\\lib\\index.js:10742:23)\n    at Parser.parseStatement (D:\\Multimedia\\Desktop\\EXIA\\A2\\Projet\\WEB\\BDE_website_project_group2\\laravel\\node_modules\\@babel\\parser\\lib\\index.js:10613:17)\n    at Parser.parseBlockOrModuleBlockBody (D:\\Multimedia\\Desktop\\EXIA\\A2\\Projet\\WEB\\BDE_website_project_group2\\laravel\\node_modules\\@babel\\parser\\lib\\index.js:11189:25)\n    at Parser.parseBlockBody (D:\\Multimedia\\Desktop\\EXIA\\A2\\Projet\\WEB\\BDE_website_project_group2\\laravel\\node_modules\\@babel\\parser\\lib\\index.js:11176:10)\n    at Parser.parseBlock (D:\\Multimedia\\Desktop\\EXIA\\A2\\Projet\\WEB\\BDE_website_project_group2\\laravel\\node_modules\\@babel\\parser\\lib\\index.js:11160:10)\n    at Parser.parseFunctionBody (D:\\Multimedia\\Desktop\\EXIA\\A2\\Projet\\WEB\\BDE_website_project_group2\\laravel\\node_modules\\@babel\\parser\\lib\\index.js:10179:24)\n    at Parser.parseFunctionBodyAndFinish (D:\\Multimedia\\Desktop\\EXIA\\A2\\Projet\\WEB\\BDE_website_project_group2\\laravel\\node_modules\\@babel\\parser\\lib\\index.js:10149:10)\n    at Parser.parseMethod (D:\\Multimedia\\Desktop\\EXIA\\A2\\Projet\\WEB\\BDE_website_project_group2\\laravel\\node_modules\\@babel\\parser\\lib\\index.js:10103:10)\n    at Parser.pushClassMethod (D:\\Multimedia\\Desktop\\EXIA\\A2\\Projet\\WEB\\BDE_website_project_group2\\laravel\\node_modules\\@babel\\parser\\lib\\index.js:11593:30)\n    at Parser.parseClassMemberWithIsStatic (D:\\Multimedia\\Desktop\\EXIA\\A2\\Projet\\WEB\\BDE_website_project_group2\\laravel\\node_modules\\@babel\\parser\\lib\\index.js:11513:12)\n    at Parser.parseClassMember (D:\\Multimedia\\Desktop\\EXIA\\A2\\Projet\\WEB\\BDE_website_project_group2\\laravel\\node_modules\\@babel\\parser\\lib\\index.js:11455:10)\n    at D:\\Multimedia\\Desktop\\EXIA\\A2\\Projet\\WEB\\BDE_website_project_group2\\laravel\\node_modules\\@babel\\parser\\lib\\index.js:11410:14\n    at Parser.withTopicForbiddingContext (D:\\Multimedia\\Desktop\\EXIA\\A2\\Projet\\WEB\\BDE_website_project_group2\\laravel\\node_modules\\@babel\\parser\\lib\\index.js:10488:14)\n    at Parser.parseClassBody (D:\\Multimedia\\Desktop\\EXIA\\A2\\Projet\\WEB\\BDE_website_project_group2\\laravel\\node_modules\\@babel\\parser\\lib\\index.js:11387:10)\n    at Parser.parseClass (D:\\Multimedia\\Desktop\\EXIA\\A2\\Projet\\WEB\\BDE_website_project_group2\\laravel\\node_modules\\@babel\\parser\\lib\\index.js:11361:22)\n    at Parser.parseStatementContent (D:\\Multimedia\\Desktop\\EXIA\\A2\\Projet\\WEB\\BDE_website_project_group2\\laravel\\node_modules\\@babel\\parser\\lib\\index.js:10655:21)\n    at Parser.parseStatement (D:\\Multimedia\\Desktop\\EXIA\\A2\\Projet\\WEB\\BDE_website_project_group2\\laravel\\node_modules\\@babel\\parser\\lib\\index.js:10613:17)\n    at Parser.parseBlockOrModuleBlockBody (D:\\Multimedia\\Desktop\\EXIA\\A2\\Projet\\WEB\\BDE_website_project_group2\\laravel\\node_modules\\@babel\\parser\\lib\\index.js:11189:25)\n    at Parser.parseBlockBody (D:\\Multimedia\\Desktop\\EXIA\\A2\\Projet\\WEB\\BDE_website_project_group2\\laravel\\node_modules\\@babel\\parser\\lib\\index.js:11176:10)\n    at Parser.parseTopLevel (D:\\Multimedia\\Desktop\\EXIA\\A2\\Projet\\WEB\\BDE_website_project_group2\\laravel\\node_modules\\@babel\\parser\\lib\\index.js:10544:10)\n    at Parser.parse (D:\\Multimedia\\Desktop\\EXIA\\A2\\Projet\\WEB\\BDE_website_project_group2\\laravel\\node_modules\\@babel\\parser\\lib\\index.js:12053:10)\n    at parse (D:\\Multimedia\\Desktop\\EXIA\\A2\\Projet\\WEB\\BDE_website_project_group2\\laravel\\node_modules\\@babel\\parser\\lib\\index.js:12104:38)\n    at parser (D:\\Multimedia\\Desktop\\EXIA\\A2\\Projet\\WEB\\BDE_website_project_group2\\laravel\\node_modules\\@babel\\core\\lib\\transformation\\normalize-file.js:168:34)\n    at normalizeFile (D:\\Multimedia\\Desktop\\EXIA\\A2\\Projet\\WEB\\BDE_website_project_group2\\laravel\\node_modules\\@babel\\core\\lib\\transformation\\normalize-file.js:102:11)\n    at runSync (D:\\Multimedia\\Desktop\\EXIA\\A2\\Projet\\WEB\\BDE_website_project_group2\\laravel\\node_modules\\@babel\\core\\lib\\transformation\\index.js:44:43)\n    at runAsync (D:\\Multimedia\\Desktop\\EXIA\\A2\\Projet\\WEB\\BDE_website_project_group2\\laravel\\node_modules\\@babel\\core\\lib\\transformation\\index.js:35:14)\n    at D:\\Multimedia\\Desktop\\EXIA\\A2\\Projet\\WEB\\BDE_website_project_group2\\laravel\\node_modules\\@babel\\core\\lib\\transform.js:34:34");
 
 /***/ }),
 
@@ -228,7 +104,7 @@ $(document).ready(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\axelb\Documents\GitHub\BDE_website_project_group2\laravel\resources\js\insertProduct.js */"./resources/js/insertProduct.js");
+module.exports = __webpack_require__(/*! D:\Multimedia\Desktop\EXIA\A2\Projet\WEB\BDE_website_project_group2\laravel\resources\js\insertProduct.js */"./resources/js/insertProduct.js");
 
 
 /***/ })
