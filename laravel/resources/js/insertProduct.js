@@ -15,12 +15,42 @@ class insertProduct {
      *
      */
     newProduct(articleIndex, articleNumber) {
-        this.getProduct(articleIndex, articleNumber).then(productList => {
-            $("js-spinner").removeClass("spinner__display");
-            $("js-spinner").addClass("spinner__display--none");
+        var categorie = "";
 
-            productList.forEach(this.createProduct.bind(this));
-        });
+        $("select")
+            .change(function() {
+                $("select option:selected").each(function() {
+                    categorie += $(this).text() + " ";
+                });
+                console.log(categorie);
+            })
+            .change();
+
+        if ((categorie = "Toutes")) {
+            this.getProduct(
+                articleIndex,
+                articleNumber,
+                maxPrice,
+                minPrice
+            ).then(productList => {
+                $("js-spinner").removeClass("spinner__display");
+                $("js-spinner").addClass("spinner__display--none");
+                productList.forEach(this.createProduct.bind(this));
+            });
+        } else {
+            this.getProduct(
+                articleIndex,
+                articleNumber,
+                maxPrice,
+                minPrice,
+                categorie
+            ).then(productList => {
+                $("js-spinner").removeClass("spinner__display");
+                $("js-spinner").addClass("spinner__display--none");
+
+                productList.forEach(this.createProduct.bind(this));
+            });
+        }
     }
 
     /**
@@ -32,11 +62,11 @@ class insertProduct {
      *
      */
 
-    getProduct(articleIndex, articleNumber) {
+    getProduct(articleIndex, articleNumber, maxPrice, minPrice, categorie) {
         $("js-spinner").addClass("spinner__display");
         return new Promise(resolve => {
             $.get(
-                `http://localhost:3000/produits/${articleIndex}/${articleNumber}`,
+                `http://localhost:3000/produits/${articleIndex}/${articleNumber}?prixMax=${maxPrice}&prixMin=${minPrice}&categorie="${categorie}"`,
                 function(data, status) {
                     resolve(data);
                 }
@@ -97,14 +127,10 @@ $(document).ready(function() {
     articleIndex += articleInc;
 
     $(window).scroll(function() {
-        console.log($(window).scrollTop());
-        console.log($(window).height());
-        console.log($(document).height());
         if (
             Math.round($(window).scrollTop() + $(window).height()) >=
             $(document).height() - 10
         ) {
-            console.log("sscroll");
             coucou.newProduct(articleIndex, articleNumber);
             articleIndex += articleInc;
         }

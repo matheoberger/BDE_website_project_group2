@@ -124,3 +124,24 @@ p {
     background: #4caf50; /* Green background */
     cursor: pointer; /* Cursor on hover */
 }
+
+input {
+    width: 340px;
+    height: 35px;
+    border: 1px solid gray;
+    padding-left: 10px;
+    margin-top: 8px;
+    border-radius: 5px;
+}
+select {
+    background-color: white;
+    background-repeat: no-repeat;
+    background-position: 300px;
+    width: 353px;
+
+    font-family: $roboto;
+
+    background-color: white;
+    -webkit-appearance: none;
+    outline: none;
+}

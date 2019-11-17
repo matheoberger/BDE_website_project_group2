@@ -5,7 +5,7 @@ $requete = $bdd2->prepare("CALL `getCategories`");
 $requete->execute();
 $categories = $requete->fetchAll();
 $requete->closeCursor();
-var_dump($categories);
+echo json_encode($categories);
 ?>
 
 
@@ -65,8 +65,17 @@ var_dump($categories);
                         </a>
 
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <select name="categories" multiple="multiple">
+                                <option class='dropdown-item' href='#'>Toutes</option>
+                                <?php foreach ($categories as $categorie) {
+                                    echo "<option class='dropdown-item' href='#'>{$categorie["title"]}</option>";
+                                } ?>
+                            </select>
+                        </div>
+
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                             <?php foreach ($categories as $categorie) {
-                                echo "<a class='dropdown-item' href='#'>{$categorie["title"]}</a>";
+                                echo "<option selected='selected' class='dropdown-item' href='#'>{$categorie["title"]}</option>";
                             } ?>
                         </div>
 
