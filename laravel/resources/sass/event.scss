@@ -19,7 +19,11 @@ body img {
     }
 }
 
-
+nav.sidebar img {
+    &:hover {
+        filter: blur(0px);
+    }
+}
 
 h2 {
     font-family: $roboto;
