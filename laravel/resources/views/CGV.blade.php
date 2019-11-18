@@ -5,11 +5,14 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="../js/bootstrap.bundle.min.js">
     </script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
     </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
     <title> Conditions générales de vente</title>
     <meta charset="UTF-8" />
@@ -49,12 +52,15 @@
                                 <div class="card">
                                     <div class="card-header" id="headingOne">
                                         <h3 class="mb-0">
-                                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-controls="collapseOne" aria-expanded="false">
+                                            <button class="btn btn-link" type="button" data-toggle="collapse"
+                                                data-target="#collapseOne" aria-controls="collapseOne"
+                                                aria-expanded="false">
                                                 Définitions
                                             </button>
                                         </h3>
                                     </div>
-                                    <div id="collapseOne" class="collapse show " aria-labelledby="headingOne" data-parent="#accordionExample ">
+                                    <div id="collapseOne" class="collapse show " aria-labelledby="headingOne"
+                                        data-parent="#accordionExample ">
                                         <div class="card-body">
                                             <div class="CGV__article">
                                                 Chacun des termes mentionnés ci-dessous aura dans les présentes
@@ -137,7 +143,7 @@
                                                 cliquant sur le
                                                 <a href="contact"> lien
                                                     présent</a>
-                                                sur le Site Internet et les Applications.
+                                                sur le Site Internet .
                                             </div>
                                             <div class="CGV__article">
                                                 Site Internet : désigne le site internet exploité par Boutique BDE Cesi
@@ -167,12 +173,15 @@
                                 <div class="card">
                                     <div class="card-header " id="headingTwo">
                                         <h3 class="mb-0">
-                                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                                data-target="#collapseTwo" aria-expanded="false"
+                                                aria-controls="collapseTwo">
                                                 Objet
                                             </button>
                                         </h3>
                                     </div>
-                                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                                        data-parent="#accordionExample">
                                         <div class="card-body ">
                                             <div class="CGV__article">
                                                 Les présentes Conditions Générales de Vente (CGV) établissent les
@@ -190,16 +199,18 @@
                                 <div class="card">
                                     <div class="card-header" id="headingThree">
                                         <h3 class="mb-0">
-                                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                                data-target="#collapseThree" aria-expanded="false"
+                                                aria-controls="collapseThree">
                                                 Acceptation
                                             </button>
                                         </h3>
                                     </div>
-                                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                                        data-parent="#accordionExample">
                                         <div class="card-body">
                                             <div class="CGV__article">
-                                                Toute souscription d'option(s) payante(s) et/ou achat de crédits par un
-                                                Annonceur vaut
+                                                Toute souscription d'option(s) payante(s) et/ou achatutlisateur vaut
                                                 acceptation
                                                 pleine et entière des CGV en vigueur.
                                             </div>
@@ -209,18 +220,19 @@
                                 <div class="card">
                                     <div class="card-header" id="headingFor">
                                         <h3 class="mb-0">
-                                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFor" aria-expanded="false" aria-controls="collapseFor">
+                                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                                data-target="#collapseFor" aria-expanded="false"
+                                                aria-controls="collapseFor">
                                                 Prix
                                             </button>
                                         </h3>
                                     </div>
-                                    <div id="collapseFor" class="collapse" aria-labelledby="headingFor" data-parent="#accordionExample">
+                                    <div id="collapseFor" class="collapse" aria-labelledby="headingFor"
+                                        data-parent="#accordionExample">
                                         <div class="card-body">
                                             <div class="CGV__article">
-                                                Les tarifs appliqués sont ceux en vigueur au jour de l'achat d'une ou
-                                                des option(s)
-                                                payante(s) ou
-                                                d'une offre de crédits par l'Annonceur. LBC FRANCE se réserve la
+                                                Les tarifs appliqués sont ceux en vigueur au jour de l'achat. Boutique
+                                                BDE Cesi Bordeaux se réserve la
                                                 possibilité de modifier
                                                 ses
                                                 prix à
@@ -232,24 +244,27 @@
                                 <div class="card">
                                     <div class="card-header" id="headingFive">
                                         <h3 class="mb-0">
-                                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                                                Paiement et facturation
+                                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                                data-target="#collapseFive" aria-expanded="false"
+                                                aria-controls="collapseFive">
+                                                Paiement, facturation et condition de remboursement
                                             </button>
                                         </h3>
                                     </div>
-                                    <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+                                    <div id="collapseFive" class="collapse" aria-labelledby="headingFive"
+                                        data-parent="#accordionExample">
                                         <div class="card-body">
                                             <div class="CGV__article">
                                                 7.1 Options payantes
 
-                                                La souscription à une ou des option(s) payante(s) peut se faire par tout
-                                                Annonceur
+                                                L'achat peut se faire par tout
+                                                utilisateur
                                                 connecté
                                                 à son
                                                 Compte Personnel :
 
-                                                par carte bancaire depuis le Site Internet et les Applications ;
-                                                par crédits depuis le Site Internet et les Applications. Si le solde de
+                                                par carte bancaire depuis le Site Internet ;
+                                                par crédits depuis le Site Internet. Si le solde de
                                                 crédits est
                                                 insuffisant,
                                                 l'Annonceur peut compléter son règlement par un paiement par carte
@@ -313,7 +328,8 @@
 
                                                 En cas de suppression d'Annonce
 
-                                                Si la diffusion d'une Annonce est refusée par LBC FRANCE en raison de sa
+                                                Si la diffusion d'une Annonce est refusée par Boutique BDE Cesi Bordeaux
+                                                en raison de sa
                                                 non-conformité
                                                 aux
                                                 règles
@@ -325,7 +341,7 @@
                                                 l'Annonce ne sera pas prélevé et un email sera adressé à l'Annonceur
                                                 l'informant que son
                                                 Annonce a
-                                                été refusée par LBC FRANCE et ne sera pas diffusée ;
+                                                été refusée par Boutique BDE Cesi Bordeaux et ne sera pas diffusée ;
                                                 les crédits utilisés pour payer le montant de la ou des option(s)
                                                 payante(s) ne seront
                                                 pas
@@ -338,7 +354,8 @@
                                                 sommes payées seront restituées sous forme de crédits, ce que
                                                 l'Annonceur reconnait et
                                                 accepte.
-                                                En revanche, si LBC FRANCE était contraint de supprimer l'Annonce en
+                                                En revanche, si Boutique BDE Cesi Bordeaux était contraint de supprimer
+                                                l'Annonce en
                                                 cours de diffusion
                                                 en
                                                 raison de
@@ -346,7 +363,8 @@
                                                 notamment parce que
                                                 son
                                                 contenu a
-                                                été, légitimement, signalé comme abusif, LBC FRANCE ne remboursera pas à
+                                                été, légitimement, signalé comme abusif, Boutique BDE Cesi Bordeaux ne
+                                                remboursera pas à
                                                 l'Annonceur les
                                                 crédits
                                                 et/ou le montant de la ou des option(s) payante(s) souscrite(s) lors du
@@ -380,7 +398,8 @@
                                                 d'un délai de quatorze (14) jours francs pour se rétracter. Toutefois,
                                                 en validant la
                                                 commande,
-                                                l'Annonceur accepte que LBC FRANCE commence à exécuter la prestation et
+                                                l'Annonceur accepte que Boutique BDE Cesi Bordeaux commence à exécuter
+                                                la prestation et
                                                 renonce
                                                 expressément
                                                 à son
@@ -392,15 +411,19 @@
                                 <div class="card">
                                     <div class="card-header" id="headingSix">
                                         <h3 class="mb-0">
-                                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                                data-target="#collapseSix" aria-expanded="false"
+                                                aria-controls="collapseSix">
                                                 Responsabilité, force majeure
                                             </button>
                                         </h3>
                                     </div>
-                                    <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionExample">
+                                    <div id="collapseSix" class="collapse" aria-labelledby="headingSix"
+                                        data-parent="#accordionExample">
                                         <div class="card-body">
                                             <div class="CGV__article">
-                                                La responsabilité de LBC FRANCE ne peut être engagée en cas
+                                                La responsabilité de Boutique BDE Cesi Bordeaux ne peut être engagée en
+                                                cas
                                                 d'inexécution ou de mauvaise
                                                 exécution
                                                 de la commande due, soit du fait de l'Annonceur, soit d'un cas de force
@@ -412,17 +435,21 @@
                                 <div class="card">
                                     <div class="card-header" id="headingSeven">
                                         <h3 class="mb-0">
-                                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                                data-target="#collapseSeven" aria-expanded="false"
+                                                aria-controls="collapseSeven">
                                                 Modification des CGV
                                             </button>
                                         </h3>
                                     </div>
-                                    <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordionExample">
+                                    <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven"
+                                        data-parent="#accordionExample">
                                         <div class="card-body">
                                             <div class="CGV__article">
-                                                Les présentes CGV sont applicables à partir du 08 février 2017.
+                                                Les présentes CGV sont applicables à partir du 18 novembre 2019.
 
-                                                LBC FRANCE se réserve la possibilité, à tout moment, de modifier en tout
+                                                Boutique BDE Cesi Bordeaux se réserve la possibilité, à tout moment, de
+                                                modifier en tout
                                                 ou partie les
                                                 CGV.
 
@@ -438,59 +465,93 @@
                                 <div class="card">
                                     <div class="card-header" id="headingEight">
                                         <h3 class="mb-0">
-                                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                                data-target="#collapseEight" aria-expanded="false"
+                                                aria-controls="collapseEight">
                                                 Divers
                                             </button>
                                         </h3>
                                     </div>
-                                    <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#accordionExample">
-                                        <div class="card-body">
-                                            <div class="CGV__article">
-                                                Tout traitement de données personnelles dans le cadre des présentes est
-                                                soumis aux
-                                                dispositions de
-                                                notre politique de confidentialité, qui fait partie intégrante des
-                                                présentes CGV.
-
-                                                Si une partie des CGV devait s'avérer illégale, invalide ou
-                                                inapplicable, pour quelque
-                                                raison que ce
-                                                soit, les dispositions en question seraient réputées non écrites, sans
-                                                remettre en cause
-                                                la
-                                                validité
-                                                des autres dispositions qui continueront de s'appliquer entre les
-                                                Annonceurs et LBC
-                                                FRANCE,
-                                                sauf
-                                                s'il s'agissait d'une clause impulsive et déterminante ayant amené l'une
-                                                des Parties à
-                                                souscrire à
-                                                l'Option payante.
-
-                                                Toute réclamation doit être adressée au Service Client de LBC FRANCE.
-
-                                                Les Utilisateurs sont informés de la liste d’opposition au démarchage
-                                                téléphonique «
-                                                Bloctel
-                                                » sur
-                                                laquelle ils peuvent s’inscrire : https://conso.bloctel.fr/.
-
-                                                Les CGV sont soumises au droit français.
+                                    <div class="card">
+                                        <div class="card-header" id="headingEight">
+                                            <h3 class="mb-0">
+                                                <button class="btn btn-link collapsed" type="button"
+                                                    data-toggle="collapse" data-target="#collapseEight"
+                                                    aria-expanded="false" aria-controls="collapseEight">
+                                                    Droit à l'oubli
+                                                </button>
+                                            </h3>
+                                        </div>
+                                        <div id="collapseEight" class="collapse" aria-labelledby="headingEight"
+                                            data-parent="#accordionExample">
+                                            <div class="card-body">
+                                                <div class="CGV__article">
+                                                    Ces présentes CGV sont soumises à la loi française, par conséquent
+                                                    les conditions relatives au droit à l'oubli d'un utilisateur sont
+                                                    respectées.
+                                                </div>
                                             </div>
                                         </div>
+
                                     </div>
+                                    <div class="card">
+                                        <div id="collapseNine" class="collapse" aria-labelledby="headingNine"
+                                            data-parent="#accordionExample">
+                                            <div class="card-body">
+                                                <div class="CGV__article">
+                                                    Tout traitement de données personnelles dans le cadre des présentes
+                                                    est
+                                                    soumis aux
+                                                    dispositions de
+                                                    notre politique de confidentialité, qui fait partie intégrante des
+                                                    présentes CGV.
+
+                                                    Si une partie des CGV devait s'avérer illégale, invalide ou
+                                                    inapplicable, pour quelque
+                                                    raison que ce
+                                                    soit, les dispositions en question seraient réputées non écrites,
+                                                    sans
+                                                    remettre en cause
+                                                    la
+                                                    validité
+                                                    des autres dispositions qui continueront de s'appliquer entre les
+                                                    Annonceurs et LBC
+                                                    FRANCE,
+                                                    sauf
+                                                    s'il s'agissait d'une clause impulsive et déterminante ayant amené
+                                                    l'une
+                                                    des Parties à
+                                                    souscrire à
+                                                    l'Option payante.
+
+                                                    Toute réclamation doit être adressée au Service Client de Boutique
+                                                    BDE
+                                                    Cesi Bordeaux.
+
+                                                    Les Utilisateurs sont informés de la liste d’opposition au
+                                                    démarchage
+                                                    téléphonique «
+                                                    Bloctel
+                                                    » sur
+                                                    laquelle ils peuvent s’inscrire : https://conso.bloctel.fr/.
+
+                                                    Les CGV sont soumises au droit français.
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
                                 </div>
+
                             </div>
 
                         </div>
 
                     </div>
-
+                    @include("partials/footer")
                 </div>
-                @include("partials/footer")
             </div>
-        </div>
     </main>
 </body>
 

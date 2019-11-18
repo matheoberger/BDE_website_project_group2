@@ -15,6 +15,8 @@
     <link rel="stylesheet" type="text/css" href="css/navbar.css">
     <link rel="stylesheet" type="text/css" href="css/footer.css">
     <link rel="stylesheet" href="/css/event.css" />
+    <link rel="stylesheet" type="text/css" href="css/breadcrumb.css">
+
 
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 </head>
@@ -26,23 +28,31 @@
         <div class="conteneur">
             <div class="contenu">
                 <div class="panier__body">
-
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a class="breadcrumb--white" href='/'>Accueil</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Evenements
+                            </li>
+                        </ol>
+                    </nav>
                     <div>
                         <h2> <u>Les évènements</u></h2>
                     </div>
                     <?php
-          if (session('role') == 'Administrator') {
-            echo "<form action='/newEvent' method='get'>
+                    if (session('role') == 'Administrator') {
+                        echo "<form action='/newEvent' method='get'>
                             <button class='btn add_event'>Ajouter un event</button>
                     </form> ";
-          };
-          ?>
+                    };
+                    ?>
                     <div id="js-contenair_event"></div>
                 </div>
             </div>
             <script src="/js/insertEvent.js"></script>
         </div>
         </div>
+        @include("partials/footer")
+
         </div>
     </main>
 </body>
