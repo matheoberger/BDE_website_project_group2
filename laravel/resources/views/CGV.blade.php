@@ -463,15 +463,6 @@
                                     </div>
                                 </div>
                                 <div class="card">
-                                    <div class="card-header" id="headingEight">
-                                        <h3 class="mb-0">
-                                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                                                data-target="#collapseEight" aria-expanded="false"
-                                                aria-controls="collapseEight">
-                                                Divers
-                                            </button>
-                                        </h3>
-                                    </div>
                                     <div class="card">
                                         <div class="card-header" id="headingEight">
                                             <h3 class="mb-0">
@@ -549,9 +540,12 @@
                         </div>
 
                     </div>
-                    @include("partials/footer")
                 </div>
+
+                @include("partials/footer")
             </div>
+        </div>
+
     </main>
 </body>
 

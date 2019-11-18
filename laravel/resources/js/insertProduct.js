@@ -18,16 +18,12 @@ class insertProduct {
     newProduct(articleIndex, articleNumber, price, categorie) {
         $("#js-spinner").addClass("spinner__display");
         if (categorie == "Toutes") {
-            console.log("Toutes");
-            console.log(categorie);
             this.getProduct(articleIndex, articleNumber, price).then(
                 productList => {
                     productList.forEach(this.createProduct.bind(this));
                 }
             );
         } else {
-            console.log("else : ");
-            console.log(categorie);
             this.getProduct(articleIndex, articleNumber, price, categorie).then(
                 productList => {
                     productList.forEach(this.createProduct.bind(this));
@@ -46,9 +42,6 @@ class insertProduct {
      */
     getProduct(articleIndex, articleNumber, price, categorie) {
         if (categorie) {
-            console.log(
-                `http://localhost:3000/produits/${articleIndex}/${articleNumber}?prixMin=0&prixMax=${price}&categorie="${categorie}"`
-            );
             return new Promise(resolve => {
                 $.get(
                     `http://localhost:3000/produits/${articleIndex}/${articleNumber}?prixMin=0&prixMax=${price}&categorie=${categorie}`,
@@ -58,9 +51,6 @@ class insertProduct {
                 );
             });
         } else {
-            console.log(
-                `http://localhost:3000/produits/${articleIndex}/${articleNumber}?prixMin=0&prixMax=${price}`
-            );
             return new Promise(resolve => {
                 $.get(
                     `http://localhost:3000/produits/${articleIndex}/${articleNumber}?prixMin=0&prixMax=${price}`,
@@ -80,14 +70,9 @@ class insertProduct {
      *
      */
 
-    //  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  //
-    //  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  //
-    //  mettre un attribut alt aux images
-    //  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  //
-    //  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  //
     createProduct(product) {
         var productElement = `<div class="product">
-        <a href="/boutique/${product.id_products}"><img src="${product.image}" class="product__image"/></a>
+        <a href="/boutique/${product.id_products}"><img alt="product image" src="${product.image}" class="product__image"/></a>
         <div class="product__title">${product.title}</div>
         <div class="product__price"><b>${product.price}€</b></div>
     </div>`;
@@ -127,28 +112,31 @@ $(document).ready(function() {
 
     productLoader.newProduct(articleIndex, articleNumber, price, categorie);
     articleIndex += articleInc;
-    console.log("initilisation");
-    initialize = true;
 
+    /**
+     * On observe la page de la boutique pour savoir si le slider a été bougé,
+     *  si c'est le cas, on clean la page et on la recharge avec le nouveau prix de la requête get
+     */
     $(document).on("change", "#boutique__slider", function() {
         $("#js-productContainer").empty();
         articleIndex = 0;
         documentPrice = document.getElementById("sliderValue").innerHTML;
         price = documentPrice.substring(0, documentPrice.length - 1);
-        console.log(price);
         $("#js-productContainer").empty();
         productLoader.newProduct(articleIndex, articleNumber, price, categorie);
     });
 
+    /**
+     * On ovserve l'onglet de choix de catégorie, si un nouvelle est selectionnée,
+     * on recharge les articles avec le nouvel attribut
+     */
     $("select")
         .change(function() {
             $("select option:selected").each(function() {
                 categorie = "";
                 articleIndex = 0;
-                console.log("categorie reset");
 
                 categorie += $(this).text();
-                console.log(categorie);
                 $("#js-productContainer").empty();
 
                 productLoader.newProduct(
@@ -161,21 +149,10 @@ $(document).ready(function() {
         })
         .change();
 
-    // $(document).on("change", "boutique__slider", console.log("has changed"));
-
-    // window.onscroll = function(ev) {
-    //     if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
-    //         console.log("you're at the bottom of the page");
-
-    //     }
-    // };
-
+    /**
+     * Dès que le scroll atteint le bas de la page, on appelle la suite des articles
+     */
     $(window).scroll(function() {
-        // console.log($(window).scrollTop());
-        // console.log($(window).height());
-        // console.log($(document).height());
-        // console.log($(window).scrollTop() + $(window).height());
-
         if (
             Math.round($(window).scrollTop() + $(window).height()) >=
             $(document).height() - 1
