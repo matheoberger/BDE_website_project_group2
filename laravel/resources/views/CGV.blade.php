@@ -436,47 +436,72 @@
                                     </div>
                                 </div>
                                 <div class="card">
-                                    <div class="card-header" id="headingEight">
-                                        <h3 class="mb-0">
-                                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
-                                                Divers
-                                            </button>
-                                        </h3>
+
+                                    <div class="card">
+                                        <div class="card-header" id="headingEight">
+                                            <h3 class="mb-0">
+                                                <button class="btn btn-link collapsed" type="button"
+                                                    data-toggle="collapse" data-target="#collapseEight"
+                                                    aria-expanded="false" aria-controls="collapseEight">
+                                                    Droit à l'oubli
+                                                </button>
+                                            </h3>
+                                        </div>
+                                        <div id="collapseEight" class="collapse" aria-labelledby="headingEight"
+                                            data-parent="#accordionExample">
+                                            <div class="card-body">
+                                                <div class="CGV__article">
+                                                    Ces présentes CGV sont soumises à la loi française, par conséquent
+                                                    les conditions relatives au droit à l'oubli d'un utilisateur sont
+                                                    respectées.
+                                                </div>
+                                            </div>
+                                        </div>
+
                                     </div>
-                                    <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#accordionExample">
-                                        <div class="card-body">
-                                            <div class="CGV__article">
-                                                Tout traitement de données personnelles dans le cadre des présentes est
-                                                soumis aux
-                                                dispositions de
-                                                notre politique de confidentialité, qui fait partie intégrante des
-                                                présentes CGV.
+                                    <div class="card">
+                                        <div id="collapseNine" class="collapse" aria-labelledby="headingNine"
+                                            data-parent="#accordionExample">
+                                            <div class="card-body">
+                                                <div class="CGV__article">
+                                                    Tout traitement de données personnelles dans le cadre des présentes
+                                                    est
+                                                    soumis aux
+                                                    dispositions de
+                                                    notre politique de confidentialité, qui fait partie intégrante des
+                                                    présentes CGV.
 
-                                                Si une partie des CGV devait s'avérer illégale, invalide ou
-                                                inapplicable, pour quelque
-                                                raison que ce
-                                                soit, les dispositions en question seraient réputées non écrites, sans
-                                                remettre en cause
-                                                la
-                                                validité
-                                                des autres dispositions qui continueront de s'appliquer entre les
-                                                Annonceurs et LBC
-                                                FRANCE,
-                                                sauf
-                                                s'il s'agissait d'une clause impulsive et déterminante ayant amené l'une
-                                                des Parties à
-                                                souscrire à
-                                                l'Option payante.
+                                                    Si une partie des CGV devait s'avérer illégale, invalide ou
+                                                    inapplicable, pour quelque
+                                                    raison que ce
+                                                    soit, les dispositions en question seraient réputées non écrites,
+                                                    sans
+                                                    remettre en cause
+                                                    la
+                                                    validité
+                                                    des autres dispositions qui continueront de s'appliquer entre les
+                                                    Annonceurs et LBC
+                                                    FRANCE,
+                                                    sauf
+                                                    s'il s'agissait d'une clause impulsive et déterminante ayant amené
+                                                    l'une
+                                                    des Parties à
+                                                    souscrire à
+                                                    l'Option payante.
 
-                                                Toute réclamation doit être adressée au Service Client de LBC FRANCE.
+                                                    Toute réclamation doit être adressée au Service Client de Boutique
+                                                    BDE
+                                                    Cesi Bordeaux.
 
-                                                Les Utilisateurs sont informés de la liste d’opposition au démarchage
-                                                téléphonique «
-                                                Bloctel
-                                                » sur
-                                                laquelle ils peuvent s’inscrire : https://conso.bloctel.fr/.
+                                                    Les Utilisateurs sont informés de la liste d’opposition au
+                                                    démarchage
+                                                    téléphonique «
+                                                    Bloctel
+                                                    » sur
+                                                    laquelle ils peuvent s’inscrire : https://conso.bloctel.fr/.
 
-                                                Les CGV sont soumises au droit français.
+                                                    Les CGV sont soumises au droit français.
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -488,9 +513,11 @@
                     </div>
 
                 </div>
+
                 @include("partials/footer")
             </div>
         </div>
+
     </main>
 </body>
 

@@ -81,61 +81,40 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 6);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./resources/js/products.js":
-/*!**********************************!*\
-  !*** ./resources/js/products.js ***!
-  \**********************************/
+/***/ "./resources/js/editEvent.js":
+/*!***********************************!*\
+  !*** ./resources/js/editEvent.js ***!
+  \***********************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-var input = document.getElementById("productSearch");
-var container = document.getElementById("js-autoCompletionContainer");
-/**
- * @function autocompletion récupère le texte dans l'input et l'envoie à lAPI qui répond avec une liste de mots possibles
- * @param {string} text filtre texte pour l'autocomplétion
- */
+var button = document.getElementById("save");
+var place = document.getElementById("place");
+var replacer = document.getElementById("titleReplacer");
+var title = document.getElementById("title");
+var form = document.getElementById("editEvent-Form");
 
-function autocompletion(text) {
-  $.get("http://localhost:3000/autocompletion/produits/?description=".concat(text), function (data, status) {
-    container.innerHTML = "";
-    data.forEach(function (element) {
-      var div = document.createElement("a");
-      div.addEventListener("click", function (event) {
-        input.focus();
-        var temp = input.value.split(" ");
-        temp[temp.length - 1] = event.srcElement.innerText;
-        console.log(temp);
-        input.value = temp.join(" ");
-        input.value += " ";
-        autocompletion("");
-      });
-      div.className = "searchProduct";
-      div.innerText = element;
-      container.appendChild(div);
-    });
-  });
-}
-
-input.addEventListener("keyup", function (e) {
-  var temp = input.value.split(" ");
-  autocompletion(temp[temp.length - 1]);
-});
+button.onclick = function (e) {
+  e.preventDefault();
+  replacer.value = title.value;
+  form.submit();
+};
 
 /***/ }),
 
-/***/ 3:
-/*!****************************************!*\
-  !*** multi ./resources/js/products.js ***!
-  \****************************************/
+/***/ 6:
+/*!*****************************************!*\
+  !*** multi ./resources/js/editEvent.js ***!
+  \*****************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\home\jambon\Documents\Code\CESI\BDE_website_project_group2\laravel\resources\js\products.js */"./resources/js/products.js");
+module.exports = __webpack_require__(/*! D:\home\jambon\Documents\Code\CESI\BDE_website_project_group2\laravel\resources\js\editEvent.js */"./resources/js/editEvent.js");
 
 
 /***/ })

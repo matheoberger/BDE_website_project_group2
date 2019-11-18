@@ -86,56 +86,73 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./resources/js/products.js":
-/*!**********************************!*\
-  !*** ./resources/js/products.js ***!
-  \**********************************/
+/***/ "./resources/js/insertDataToEvent.js":
+/*!*******************************************!*\
+  !*** ./resources/js/insertDataToEvent.js ***!
+  \*******************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-var input = document.getElementById("productSearch");
-var container = document.getElementById("js-autoCompletionContainer");
-/**
- * @function autocompletion récupère le texte dans l'input et l'envoie à lAPI qui répond avec une liste de mots possibles
- * @param {string} text filtre texte pour l'autocomplétion
- */
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-function autocompletion(text) {
-  $.get("http://localhost:3000/autocompletion/produits/?description=".concat(text), function (data, status) {
-    container.innerHTML = "";
-    data.forEach(function (element) {
-      var div = document.createElement("a");
-      div.addEventListener("click", function (event) {
-        input.focus();
-        var temp = input.value.split(" ");
-        temp[temp.length - 1] = event.srcElement.innerText;
-        console.log(temp);
-        input.value = temp.join(" ");
-        input.value += " ";
-        autocompletion("");
-      });
-      div.className = "searchProduct";
-      div.innerText = element;
-      container.appendChild(div);
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var Image =
+/*#__PURE__*/
+function () {
+  function Image(_ref) {
+    var _this = this;
+
+    var url = _ref.url,
+        comments = _ref.comments,
+        nbrlike = _ref.nbrlike;
+
+    _classCallCheck(this, Image);
+
+    this.closed = false;
+    this.divs = "<div class=\"public_img\">\n        <img src=\"/".concat(url, "\" alt=\"party\">\n        <i onclick=\"likeDislike(this)\" class=\"fa fa-thumbs-up\"></i>\n        <p>Like : ").concat(nbrlike, "</p>\n        <button class=\"btn warning\">Signaler</button>\n        <button class=\"btn delete\">Supprimer</button>\n        <div class=\"comments\">Commentaires :<br>\n        ");
+    comments.forEach(function (e) {
+      _this.addComment(e);
     });
-  });
-}
+  }
 
-input.addEventListener("keyup", function (e) {
-  var temp = input.value.split(" ");
-  autocompletion(temp[temp.length - 1]);
+  _createClass(Image, [{
+    key: "addComment",
+    value: function addComment(_ref2) {
+      var description = _ref2.description,
+          id_users = _ref2.id_users;
+      this.divs += "<div class=\"comment\">".concat(id_users, " : ").concat(description, "</div>");
+    }
+  }, {
+    key: "element",
+    get: function get() {
+      return this.divs + "</div></div>";
+    }
+  }]);
+
+  return Image;
+}();
+
+var gallery = document.getElementById("js-picture-gallery");
+$.get("http://localhost:3000/event/".concat(id), function (data, status) {
+  data.forEach(function (element) {
+    var currentImg = new Image(element);
+    gallery.innerHTML += currentImg.element;
+  });
 });
 
 /***/ }),
 
 /***/ 3:
-/*!****************************************!*\
-  !*** multi ./resources/js/products.js ***!
-  \****************************************/
+/*!*************************************************!*\
+  !*** multi ./resources/js/insertDataToEvent.js ***!
+  \*************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\home\jambon\Documents\Code\CESI\BDE_website_project_group2\laravel\resources\js\products.js */"./resources/js/products.js");
+module.exports = __webpack_require__(/*! C:\Users\Cthulhu\Documents\Programmation\Laravel\laravel\resources\js\insertDataToEvent.js */"./resources/js/insertDataToEvent.js");
 
 
 /***/ })

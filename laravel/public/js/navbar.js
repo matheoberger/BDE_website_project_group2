@@ -81,61 +81,42 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./resources/js/products.js":
-/*!**********************************!*\
-  !*** ./resources/js/products.js ***!
-  \**********************************/
+/***/ "./resources/js/navbar.js":
+/*!********************************!*\
+  !*** ./resources/js/navbar.js ***!
+  \********************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-var input = document.getElementById("productSearch");
-var container = document.getElementById("js-autoCompletionContainer");
-/**
- * @function autocompletion récupère le texte dans l'input et l'envoie à lAPI qui répond avec une liste de mots possibles
- * @param {string} text filtre texte pour l'autocomplétion
- */
+var navbar = document.getElementById("js-navbar");
+var button = document.getElementById("js-hamburger");
+var sw = 0; //Pour les mobiles, gère la nabvar qui part et qui revient en appuyant sur le bouton hamburger
 
-function autocompletion(text) {
-  $.get("http://localhost:3000/autocompletion/produits/?description=".concat(text), function (data, status) {
-    container.innerHTML = "";
-    data.forEach(function (element) {
-      var div = document.createElement("a");
-      div.addEventListener("click", function (event) {
-        input.focus();
-        var temp = input.value.split(" ");
-        temp[temp.length - 1] = event.srcElement.innerText;
-        console.log(temp);
-        input.value = temp.join(" ");
-        input.value += " ";
-        autocompletion("");
-      });
-      div.className = "searchProduct";
-      div.innerText = element;
-      container.appendChild(div);
-    });
-  });
-}
-
-input.addEventListener("keyup", function (e) {
-  var temp = input.value.split(" ");
-  autocompletion(temp[temp.length - 1]);
+button.addEventListener("click", function (e) {
+  if (sw == 0) {
+    sw++;
+    navbar.style = "transform: translateX(0px);";
+  } else {
+    sw = 0;
+    navbar.style = "";
+  }
 });
 
 /***/ }),
 
-/***/ 3:
-/*!****************************************!*\
-  !*** multi ./resources/js/products.js ***!
-  \****************************************/
+/***/ 5:
+/*!**************************************!*\
+  !*** multi ./resources/js/navbar.js ***!
+  \**************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\home\jambon\Documents\Code\CESI\BDE_website_project_group2\laravel\resources\js\products.js */"./resources/js/products.js");
+module.exports = __webpack_require__(/*! D:\home\jambon\Documents\Code\CESI\BDE_website_project_group2\laravel\resources\js\navbar.js */"./resources/js/navbar.js");
 
 
 /***/ })
