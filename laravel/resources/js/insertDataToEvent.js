@@ -1,3 +1,4 @@
+console.debug("Element from : insertDataToEvent.js");
 const gallery = document.getElementById("js-picture-gallery");
 /**
  * La classe insertImage regroupe les méthodes
@@ -14,18 +15,22 @@ class Image {
          *  Chaque pages est chargé avec un id qui lui est propre lié à ses éléments
          */
         this.divs =
-            `<div class="public_img">
+            `<article>
+            <section>
+            <div class="public_img">
 
         <img src="/${url}" alt="party">
         <form action='/report/${this.id_pictures}' methode="get">
         <button type="submit" class="btn add_comment">Signalez</button></form>
+            </section>
+            <aside>
         <p>Likes : <p id="js-number-likes-${this.id_pictures}">${nbrlike}</p></p>
 
 
         ${button}` +
             (() => {
                 if (registered) {
-                    return `<i id="js-like-${id_pictures}" class="fa fa-thumbs-up"></i><form id="${this.id}">
+                    return `<i id="js-like-${id_pictures}" class="fa fa-thumbs-up"></i><form id="${this.id}" >
                 <input type="text" name="description" />
                 <button type="submit" class="btn add_comment">Ajouter un commentaire</button>
 
@@ -35,7 +40,7 @@ class Image {
                 }
             })() +
             `
-        <div class="comments">Commentaires :<br>
+        <div class="comments" id="comments_id">Commentaires :<br>
         `;
         comments.forEach(e => {
             this.addComment(e);
@@ -44,6 +49,7 @@ class Image {
 
     /* ajoute un commentaire à l'élément DOM */
     addComment({ description, id_users }) {
+        console.log(this.submitted);
         if (!this.submitted) {
             this.divs += `<div class="comment">${id_users} : ${description}</div>`;
             return;
@@ -51,10 +57,8 @@ class Image {
         var div = document.createElement("div");
         div.className = "comment";
         div.innerText = `${id_users} : ${description}`;
-        document
-            .getElementById(this.id)
-            .parentElement.getElementsByClassName("comments")[0]
-            .appendChild(div);
+        console.log(div);
+        document.getElementById("comments_id").appendChild(div);
     }
     //Fait une requête AJAX pour disliker
     /* Liker une photo */
@@ -111,8 +115,11 @@ class Image {
         this.submitted = true;
         gallery.innerHTML += this.element;
         if (registered) {
-            /* Si utilisateur inscrit, ajouter le script de handle pour ajouter un commentaire */
-            document.getElementById(this.id).onsubmit = e => {
+            console.log(document.getElementById(this.id));
+            /* Si utilisateur inscrit, ajouter le script d
+            e handle pour ajouter un commentaire */
+            document.getElementById(this.id).addEventListener("submit", e => {
+                console.log(e);
                 e.preventDefault();
                 var object = {
                     description: e.target.description.value,
@@ -123,7 +130,7 @@ class Image {
                 this.postComment(object);
 
                 //console.log(object);
-            };
+            });
             //Si utilisateur inscrit, ajouter le script de handle pour like/dislike une photo
             document.getElementById(
                 `js-like-${this.id_pictures}`
@@ -151,13 +158,15 @@ class Image {
         return `js-form-${this.id_pictures}`;
     }
     get element() {
-        return this.divs + "</div></div>";
+        return this.divs + "</aside></div></div>";
     }
 }
 
 $.get(`http://localhost:3000/event/${id}`, function(data, status) {
+    /*console.debug(data);
+    console.debug(status);*/
     data.forEach(element => {
-        console.log(button);
+        //console.log(button);
         if (!button) {
             var button = "";
         }

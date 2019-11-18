@@ -99,6 +99,7 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
+console.debug("Element from : insertDataToEvent.js");
 var gallery = document.getElementById("js-picture-gallery");
 /**
  * La classe insertImage regroupe les méthodes
@@ -126,13 +127,13 @@ function () {
      *  Chaque pages est chargé avec un id qui lui est propre lié à ses éléments
      */
 
-    this.divs = "<div class=\"public_img\">\n\n        <img src=\"/".concat(url, "\" alt=\"party\">\n        <form action='/report/").concat(this.id_pictures, "' methode=\"get\">\n        <button type=\"submit\" class=\"btn add_comment\">Signalez</button></form>\n        <p>Likes : <p id=\"js-number-likes-").concat(this.id_pictures, "\">").concat(nbrlike, "</p></p>\n\n\n        ").concat(button) + function () {
+    this.divs = "<article>\n            <section>\n            <div class=\"public_img\">\n\n        <img src=\"/".concat(url, "\" alt=\"party\">\n        <form action='/report/").concat(this.id_pictures, "' methode=\"get\">\n        <button type=\"submit\" class=\"btn add_comment\">Signalez</button></form>\n            </section>\n            <aside>\n        <p>Likes : <p id=\"js-number-likes-").concat(this.id_pictures, "\">").concat(nbrlike, "</p></p>\n\n\n        ").concat(button) + function () {
       if (registered) {
-        return "<i id=\"js-like-".concat(id_pictures, "\" class=\"fa fa-thumbs-up\"></i><form id=\"").concat(_this.id, "\">\n                <input type=\"text\" name=\"description\" />\n                <button type=\"submit\" class=\"btn add_comment\">Ajouter un commentaire</button>\n\n                </form>");
+        return "<i id=\"js-like-".concat(id_pictures, "\" class=\"fa fa-thumbs-up\"></i><form id=\"").concat(_this.id, "\" >\n                <input type=\"text\" name=\"description\" />\n                <button type=\"submit\" class=\"btn add_comment\">Ajouter un commentaire</button>\n\n                </form>");
       } else {
         return "";
       }
-    }() + "\n        <div class=\"comments\">Commentaires :<br>\n        ";
+    }() + "\n        <div class=\"comments\" id=\"comments_id\">Commentaires :<br>\n        ";
 
     comments.forEach(function (e) {
       _this.addComment(e);
@@ -146,6 +147,7 @@ function () {
     value: function addComment(_ref2) {
       var description = _ref2.description,
           id_users = _ref2.id_users;
+      console.log(this.submitted);
 
       if (!this.submitted) {
         this.divs += "<div class=\"comment\">".concat(id_users, " : ").concat(description, "</div>");
@@ -155,7 +157,8 @@ function () {
       var div = document.createElement("div");
       div.className = "comment";
       div.innerText = "".concat(id_users, " : ").concat(description);
-      document.getElementById(this.id).parentElement.getElementsByClassName("comments")[0].appendChild(div);
+      console.log(div);
+      document.getElementById("comments_id").appendChild(div);
     } //Fait une requête AJAX pour disliker
 
     /* Liker une photo */
@@ -206,8 +209,12 @@ function () {
       gallery.innerHTML += this.element;
 
       if (registered) {
-        /* Si utilisateur inscrit, ajouter le script de handle pour ajouter un commentaire */
-        document.getElementById(this.id).onsubmit = function (e) {
+        console.log(document.getElementById(this.id));
+        /* Si utilisateur inscrit, ajouter le script d
+        e handle pour ajouter un commentaire */
+
+        document.getElementById(this.id).addEventListener("submit", function (e) {
+          console.log(e);
           e.preventDefault();
           var object = {
             description: e.target.description.value,
@@ -218,8 +225,7 @@ function () {
 
           _this2.postComment(object); //console.log(object);
 
-        }; //Si utilisateur inscrit, ajouter le script de handle pour like/dislike une photo
-
+        }); //Si utilisateur inscrit, ajouter le script de handle pour like/dislike une photo
 
         document.getElementById("js-like-".concat(this.id_pictures)).onclick = function (e) {
           var object = {
@@ -246,7 +252,7 @@ function () {
   }, {
     key: "element",
     get: function get() {
-      return this.divs + "</div></div>";
+      return this.divs + "</aside></div></div>";
     }
   }]);
 
@@ -254,9 +260,10 @@ function () {
 }();
 
 $.get("http://localhost:3000/event/".concat(id), function (data, status) {
+  /*console.debug(data);
+  console.debug(status);*/
   data.forEach(function (element) {
-    console.log(button);
-
+    //console.log(button);
     if (!button) {
       var button = "";
     }

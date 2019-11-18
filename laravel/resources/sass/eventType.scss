@@ -10,6 +10,8 @@ body {
     border: 0.3vw solid $blue_1;
 }
 
+
+
 nav.sidebar {
     background: black;
     font-family: "Roboto";
@@ -100,8 +102,16 @@ p {
     font-size: 2vw;
 }
 
+.btn_conteneur {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    justify-content: center;
+}
+
 .conteneur {
     background: linear-gradient(70deg, $grey_1, darken($grey_1, 30));
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     font-family: $roboto;
@@ -117,6 +127,10 @@ section {
 
 article {
     font-family: $roboto;
+    display: flex;
+    flex-wrap: nowrap;
+    border: 0.5vw solid #181818;
+
 }
 
 .picture_gallery {
@@ -125,20 +139,22 @@ article {
     text-align: center;
 }
 
-.btn {
+.pannel_event {
+    border: 0.5vw solid #181818;
+}
+
+.btn_conteneur .btn {
     border: none;
     /* Remove borders */
     color: white;
     /* Add a text color */
-
-    /* padding: 1.5vw 3.5vw; */
     /* Add some padding */
     cursor: pointer;
     /* Add a pointer cursor on mouse-over */
-    font-size: 1.5vw;
     margin: $px_2;
     height: 5vw;
-    width: 15vw;
+    padding: 0px 1vw 0px 1vw;
+
 }
 
 .fa {
@@ -227,6 +243,12 @@ article {
 
 }
 
+img {
+    &:hover {
+        filter: blur(0px);
+    }
+}
+
 .public_img {
     transition: 0.2s;
     margin: 0 10% 5% 10%;
@@ -245,7 +267,6 @@ aside {
 
 /* Section commentaire */
 .comments {
-    margin: $px_2;
     font-family: "Roboto", italic;
     height: $cube_dimension;
     width: $cube_dimension;
