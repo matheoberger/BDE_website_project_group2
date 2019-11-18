@@ -37,9 +37,7 @@ $requete->closeCursor();
 
         <div class="contenu">
             <div class="contenu__main">
-                <div class=welcome--boutique><img class=welcome--boutique__image
-                        src='https://mir-s3-cdn-cf.behance.net/project_modules/fs/a3ea7277681027.5c8f34c397dcf.jpg'
-                        alt="welcom_image_shop">
+                <div class=welcome--boutique><img class=welcome--boutique__image src='https://mir-s3-cdn-cf.behance.net/project_modules/fs/a3ea7277681027.5c8f34c397dcf.jpg' alt="welcom_image_shop">
                 </div>
 
                 <div class=topSelling>
@@ -52,9 +50,7 @@ $requete->closeCursor();
                     <nav class="navbar navbar-light bg-light filter__element" id="search">
                         <form class="form-inline" onsubmit="return false">
                             <div class="input-group">
-                                <input class="boutique__searchbar" id="productSearch" type="text" class="form-control"
-                                    placeholder="rechercher un goodie" aria-label="boutique searchbar"
-                                    aria-describedby="basic-addon1" oninput="searchbar(this.value)">
+                                <input class="boutique__searchbar" id="productSearch" type="text" class="form-control" placeholder="rechercher un goodie" aria-label="boutique searchbar" aria-describedby="basic-addon1" oninput="searchbar(this.value)">
                             </div>
                             <i class="fa fa-search" aria-hidden="true"></i>
                         </form>
@@ -64,8 +60,7 @@ $requete->closeCursor();
                     <div id="searchbar__value" style="display :none"> </div>
 
                     <div class="dropdown filter__element">
-                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Catégorie
                         </a>
 
@@ -86,8 +81,7 @@ $requete->closeCursor();
 
                         <p>prix</p>
                         <div class="s lidecontainer">
-                            <input class="boutique__slider" id="boutique__slider" type="range" min="1" max="1000"
-                                value="50" class="slider" oninput="slider(this.value)">
+                            <input class="boutique__slider" id="boutique__slider" type="range" min="1" max="1000" value="50" class="slider" oninput="slider(this.value)">
                         </div>
                         <p id="sliderValue">1000</p>
 
@@ -112,13 +106,13 @@ $requete->closeCursor();
 
 
 <script>
-function slider(val) {
-    document.getElementById("sliderValue").innerHTML = val + "€";
-}
+    function slider(val) {
+        document.getElementById("sliderValue").innerHTML = val + "€";
+    }
 
-function searchbar(val) {
-    document.getElementById("searchbar__value").innerHTML = val;
-}
+    function searchbar(val) {
+        document.getElementById("searchbar__value").innerHTML = val;
+    }
 </script>
 <script src="js/insertProduct.js"></script>
 

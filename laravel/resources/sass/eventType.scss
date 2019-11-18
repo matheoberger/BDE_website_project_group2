@@ -10,8 +10,6 @@ body {
     border: 0.3vw solid $blue_1;
 }
 
-
-
 nav.sidebar {
     background: black;
     font-family: "Roboto";
@@ -82,7 +80,6 @@ nav.sidebar .link:hover::before {
     }*/
 }
 
-
 main {
     text-align: center;
 }
@@ -116,7 +113,6 @@ p {
     flex-wrap: wrap;
     font-family: $roboto;
     min-height: 100%;
-
 }
 
 section {
@@ -132,7 +128,6 @@ article {
     display: flex;
     flex-wrap: nowrap;
     border: 0.5vw solid #181818;
-
 }
 
 .picture_gallery {
@@ -157,18 +152,15 @@ article {
     font-size: 1.5vw;
     height: 5vw;
     padding: 0px 1vw 0px 1vw;
-
 }
 
 .btn {
     font-size: 1.5vw;
     color: white;
-
 }
 
 .fa-thumbs-up {
     margin: 0 0 0 1vw;
-
 }
 
 .fa {
@@ -223,7 +215,6 @@ article {
     background-color: #46a049;
 }
 
-
 /* Orange */
 .add_picture:hover {
     background: darken($orange_3, 10);
@@ -260,7 +251,6 @@ article {
     height: 100%;
     object-fit: cover;
     border: 1vw solid darken($red, 10);
-
 }
 
 img {
@@ -283,7 +273,6 @@ aside {
     padding: bottom;
     transition: 0.2s;
     font-size: 2vw;
-
 }
 
 /* Section commentaire */
