@@ -17,14 +17,11 @@ if (session("email")) {
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="../js/bootstrap.bundle.min.js">
     </script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
     </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
 
     <title>Panier</title>
@@ -61,15 +58,18 @@ if (session("email")) {
                         <div class="panier__commande">
                             <h3>TOTAL : <?php
                                         $total = 0;
-                                        foreach ($basket as $product) {
-                                            $requete = $bdd2->prepare("CALL `getPhotoFromProduct`(:id_product)");
-                                            $requete->bindValue(":id_product", $product['id_products'], PDO::PARAM_STR);
-                                            $requete->execute();
-                                            $pictures = $requete->fetchAll();
-                                            $requete->closeCursor();
-                                            $total += $product['price'] * $product['amount'];
-                                        }
-                                        echo "$total €"; ?> </h3>
+                                        if (isset($basket)) {
+                                            foreach ($basket as $product) {
+                                                $requete = $bdd2->prepare("CALL `getPhotoFromProduct`(:id_product)");
+                                                $requete->bindValue(":id_product", $product['id_products'], PDO::PARAM_STR);
+                                                $requete->execute();
+                                                $pictures = $requete->fetchAll();
+                                                $requete->closeCursor();
+                                                $total += $product['price'] * $product['amount'];
+                                            }
+                                            echo "$total €";
+                                        } ?> </h3>
+
                             <a href="/order ">
 
                                 <h3 class="panier__roboto">Commander</h3>
@@ -79,9 +79,10 @@ if (session("email")) {
                         <div>
                             <ul class="list-unstyled">
                                 <?php
-                                $total = 0;
-                                foreach ($basket as $product) {
-                                    echo "
+                                if (isset($basket)) {
+                                    $total = 0;
+                                    foreach ($basket as $product) {
+                                        echo "
                         <li class='media'>  
                         <div class='panier__article'>
 
@@ -99,6 +100,7 @@ if (session("email")) {
                 
                         </div>
                     </li>";
+                                    }
                                 } ?>
                             </ul>
                         </div>

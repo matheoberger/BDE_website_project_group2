@@ -275,7 +275,7 @@ $.get("http://localhost:3000/event/".concat(id), function (data, status) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\Multimedia\Desktop\EXIA\A2\Projet\WEB\BDE_website_project_group2\laravel\resources\js\insertDataToEvent.js */"./resources/js/insertDataToEvent.js");
+module.exports = __webpack_require__(/*! C:\Users\axelb\Documents\GitHub\BDE_website_project_group2\laravel\resources\js\insertDataToEvent.js */"./resources/js/insertDataToEvent.js");
 
 
 /***/ })
