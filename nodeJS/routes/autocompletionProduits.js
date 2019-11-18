@@ -47,7 +47,7 @@ async function getFilteredProductArray(
 }
 
 module.exports = {
-  route: "/autocompletion/produits/",
+  route: "/autocompletion/produits/:start/:number",
   get: (req, res) => {
     getFilteredProductArray(req.params, req.query).then(products => {
       res.send(products);
