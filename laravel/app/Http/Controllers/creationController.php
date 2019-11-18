@@ -26,7 +26,7 @@ class creationController extends Controller
     {
         if (session('role') ==  "Administrator") {
             //on test les entrées
-            $validator = Validator::make($request->all(), ['title' => 'required|min:4', 'place' => 'required', 'description' => 'required|min:10|max:255', 'price' => 'required|numeric|min:0.1|max:1000']);
+            $validator = Validator::make($request->all(), ['title' => 'required|min:4',  'description' => 'required|min:10|max:255', 'price' => 'required|numeric|min:0.1|max:1000']);
             if ($validator->messages()->first()) {
                 //si il y a des erreurs on renvoi la première
                 $error = $validator->messages()->first();
