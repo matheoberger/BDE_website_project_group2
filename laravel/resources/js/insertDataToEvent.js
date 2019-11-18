@@ -1,8 +1,18 @@
 const gallery = document.getElementById("js-picture-gallery");
+/**
+ * La classe insertImage regroupe les méthodes
+ * permettant le chargement depuis l'API de nouvelles
+ * images en les inserant directement en Jquery
+ * dans le fichier HTML event
+ */
 class Image {
     constructor({ url, comments, nbrlike, id_pictures }, button) {
         this.id_pictures = id_pictures;
         this.closed = false;
+
+        /** L'insertion dynamique des éléments HTML
+         *  Chaque pages est chargé avec un id qui lui est propre lié à ses éléments
+         */
         this.divs =
             `<div class="public_img">
 
@@ -32,7 +42,7 @@ class Image {
         });
     }
 
-    //ajoute un commentaire à l'élément DOM
+    /* ajoute un commentaire à l'élément DOM */
     addComment({ description, id_users }) {
         if (!this.submitted) {
             this.divs += `<div class="comment">${id_users} : ${description}</div>`;
@@ -46,6 +56,7 @@ class Image {
             .parentElement.getElementsByClassName("comments")[0]
             .appendChild(div);
     }
+    /* Liker une photo */
     like(object) {
         var id = this.id_pictures;
         $.post(`http://localhost:8000/likePicture/`, object, function(
@@ -93,12 +104,12 @@ class Image {
         );
     }
 
-    //Ajoute l'élément image au DOM
+    /* Ajoute l'élément image au DOM */
     submitElement() {
         this.submitted = true;
         gallery.innerHTML += this.element;
         if (registered) {
-            //Si utilisateur inscrit, ajouter le script de handle pour ajouter un commentaire
+            /* Si utilisateur inscrit, ajouter le script de handle pour ajouter un commentaire */
             document.getElementById(this.id).onsubmit = e => {
                 e.preventDefault();
                 var object = {
