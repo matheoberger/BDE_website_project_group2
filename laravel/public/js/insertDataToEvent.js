@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -127,15 +127,9 @@ function () {
      *  Chaque pages est chargé avec un id qui lui est propre lié à ses éléments
      */
 
-<<<<<<< HEAD
-    this.divs = "<div class=\"public_img\">\n\n        <img src=\"/".concat(url, "\" alt=\"party\">\n        <form action='/report/").concat(this.id_pictures, "' methode=\"get\">\n        <button type=\"submit\" class=\"btn add_comment\">Signalez</button></form>\n        <p>Likes : <p id=\"js-number-likes-").concat(this.id_pictures, "\">").concat(nbrlike, "</p></p>\n\n\n        ").concat(button) + function () {
-      if (registered) {
-        return "<i id=\"js-like-".concat(id_pictures, "\" class=\"fa fa-thumbs-up\"></i><form id=\"").concat(_this.id, "\">\n                <input type=\"text\" name=\"description\" />\n                <button type=\"submit\" class=\"btn add_comment\">Ajouter un commentaire</button>\n\n                </form>");
-=======
     this.divs = "<article>\n            <section>\n            <div class=\"public_img\">\n\n        <img src=\"/".concat(url, "\" alt=\"party\">\n        <form action='/report/").concat(this.id_pictures, "' methode=\"get\">\n        <button type=\"submit\" class=\"btn add_comment\">Signalez</button></form>\n            </section>\n            <aside>\n            <div class=\"conteneur_like\"\n        <p>Likes : <p id=\"js-number-likes-").concat(this.id_pictures, "\">").concat(nbrlike, "</p></p>\n\n\n        ").concat(button) + function () {
       if (registered) {
         return "<i id=\"js-like-".concat(id_pictures, "\" class=\"fa fa-thumbs-up\"></i><form id=\"").concat(_this.id, "\"></div>\n                <input type=\"text\" name=\"description\" />\n                <button type=\"submit\" class=\"btn add_comment\">Ajouter un commentaire</button>\n\n                </form>");
->>>>>>> origin/remi_beta_0.1
       } else {
         return "";
       }
@@ -215,17 +209,12 @@ function () {
       gallery.innerHTML += this.element;
 
       if (registered) {
-<<<<<<< HEAD
-        /* Si utilisateur inscrit, ajouter le script de handle pour ajouter un commentaire */
-        document.getElementById(this.id).onsubmit = function (e) {
-=======
         console.log(document.getElementById(this.id));
         /* Si utilisateur inscrit, ajouter le script d
         e handle pour ajouter un commentaire */
 
         document.getElementById(this.id).addEventListener("submit", function (e) {
           console.log(e);
->>>>>>> origin/remi_beta_0.1
           e.preventDefault();
           var object = {
             description: e.target.description.value,
@@ -286,18 +275,14 @@ $.get("http://localhost:3000/event/".concat(id), function (data, status) {
 
 /***/ }),
 
-/***/ 3:
+/***/ 4:
 /*!*************************************************!*\
   !*** multi ./resources/js/insertDataToEvent.js ***!
   \*************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-<<<<<<< HEAD
 module.exports = __webpack_require__(/*! C:\Users\axelb\Documents\GitHub\BDE_website_project_group2\laravel\resources\js\insertDataToEvent.js */"./resources/js/insertDataToEvent.js");
-=======
-module.exports = __webpack_require__(/*! C:\Users\Cthulhu\Documents\Programmation\Laravel\laravel\resources\js\insertDataToEvent.js */"./resources/js/insertDataToEvent.js");
->>>>>>> origin/remi_beta_0.1
 
 
 /***/ })

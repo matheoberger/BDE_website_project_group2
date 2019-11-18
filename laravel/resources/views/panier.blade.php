@@ -68,7 +68,7 @@ if (session("email")) {
                                                 $total += $product['price'] * $product['amount'];
                                             }
                                             echo "$total €";
-                                        } ?> </h3>
+                                        } ?> </h3>P
 
                             <a href="/order ">
 
