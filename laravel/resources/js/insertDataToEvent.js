@@ -24,13 +24,14 @@ class Image {
         <button type="submit" class="btn add_comment">Signalez</button></form>
             </section>
             <aside>
+            <div class="conteneur_like"
         <p>Likes : <p id="js-number-likes-${this.id_pictures}">${nbrlike}</p></p>
 
 
         ${button}` +
             (() => {
                 if (registered) {
-                    return `<i id="js-like-${id_pictures}" class="fa fa-thumbs-up"></i><form id="${this.id}" >
+                    return `<i id="js-like-${id_pictures}" class="fa fa-thumbs-up"></i><form id="${this.id}"></div>
                 <input type="text" name="description" />
                 <button type="submit" class="btn add_comment">Ajouter un commentaire</button>
 

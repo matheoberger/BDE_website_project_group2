@@ -157,6 +157,11 @@ article {
 
 }
 
+.fa-thumbs-up {
+    margin: 0 0 0 1vw;
+
+}
+
 .fa {
     font-size: 3vw;
     margin-bottom: 10px;
@@ -230,6 +235,12 @@ article {
     background-color: #2196f3;
 }
 
+.conteneur_like {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
 /* Blue */
 .add_comment:hover {
     background: #0b7dda;
@@ -263,6 +274,7 @@ aside {
     padding: bottom;
     transition: 0.2s;
     font-size: 2vw;
+
 }
 
 /* Section commentaire */
@@ -271,7 +283,7 @@ aside {
     height: $cube_dimension;
     width: $cube_dimension;
     overflow: auto;
-    padding: bottom;
     transition: 0.2s;
     font-size: 2vw;
+    max-height: 25vw;
 }

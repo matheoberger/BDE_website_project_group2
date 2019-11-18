@@ -127,9 +127,9 @@ function () {
      *  Chaque pages est chargé avec un id qui lui est propre lié à ses éléments
      */
 
-    this.divs = "<article>\n            <section>\n            <div class=\"public_img\">\n\n        <img src=\"/".concat(url, "\" alt=\"party\">\n        <form action='/report/").concat(this.id_pictures, "' methode=\"get\">\n        <button type=\"submit\" class=\"btn add_comment\">Signalez</button></form>\n            </section>\n            <aside>\n        <p>Likes : <p id=\"js-number-likes-").concat(this.id_pictures, "\">").concat(nbrlike, "</p></p>\n\n\n        ").concat(button) + function () {
+    this.divs = "<article>\n            <section>\n            <div class=\"public_img\">\n\n        <img src=\"/".concat(url, "\" alt=\"party\">\n        <form action='/report/").concat(this.id_pictures, "' methode=\"get\">\n        <button type=\"submit\" class=\"btn add_comment\">Signalez</button></form>\n            </section>\n            <aside>\n            <div class=\"conteneur_like\"\n        <p>Likes : <p id=\"js-number-likes-").concat(this.id_pictures, "\">").concat(nbrlike, "</p></p>\n\n\n        ").concat(button) + function () {
       if (registered) {
-        return "<i id=\"js-like-".concat(id_pictures, "\" class=\"fa fa-thumbs-up\"></i><form id=\"").concat(_this.id, "\" >\n                <input type=\"text\" name=\"description\" />\n                <button type=\"submit\" class=\"btn add_comment\">Ajouter un commentaire</button>\n\n                </form>");
+        return "<i id=\"js-like-".concat(id_pictures, "\" class=\"fa fa-thumbs-up\"></i><form id=\"").concat(_this.id, "\"></div>\n                <input type=\"text\" name=\"description\" />\n                <button type=\"submit\" class=\"btn add_comment\">Ajouter un commentaire</button>\n\n                </form>");
       } else {
         return "";
       }
