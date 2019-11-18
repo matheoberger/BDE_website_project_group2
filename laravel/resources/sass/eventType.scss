@@ -115,10 +115,8 @@ p {
     display: flex;
     flex-wrap: wrap;
     font-family: $roboto;
-<<<<<<< HEAD
     min-height: 100%;
-=======
->>>>>>> parent of f6fcad2... update
+
 }
 
 section {
@@ -156,8 +154,15 @@ article {
     cursor: pointer;
     /* Add a pointer cursor on mouse-over */
     margin: $px_2;
+    font-size: 1.5vw;
     height: 5vw;
     padding: 0px 1vw 0px 1vw;
+
+}
+
+.btn {
+    font-size: 1.5vw;
+    color: white;
 
 }
 
