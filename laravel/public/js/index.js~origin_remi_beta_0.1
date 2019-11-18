@@ -81,61 +81,73 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./resources/js/products.js":
-/*!**********************************!*\
-  !*** ./resources/js/products.js ***!
-  \**********************************/
+/***/ "./resources/js/index.js":
+/*!*******************************!*\
+  !*** ./resources/js/index.js ***!
+  \*******************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-var input = document.getElementById("productSearch");
-var container = document.getElementById("js-autoCompletionContainer");
-/**
- * @function autocompletion récupère le texte dans l'input et l'envoie à lAPI qui répond avec une liste de mots possibles
- * @param {string} text filtre texte pour l'autocomplétion
- */
+window.verifForm = function (form) {
+  //lancer les différents tests poru vérifier les champs du formulaire
+  if (verifMail(form.email) && verifObject(form.object) && verifText(form.subject)) return true;else {
+    alert("Veuillez remplir correctement tous les champs");
+    return false;
+  }
+};
 
-function autocompletion(text) {
-  $.get("http://localhost:3000/autocompletion/produits/?description=".concat(text), function (data, status) {
-    container.innerHTML = "";
-    data.forEach(function (element) {
-      var div = document.createElement("a");
-      div.addEventListener("click", function (event) {
-        input.focus();
-        var temp = input.value.split(" ");
-        temp[temp.length - 1] = event.srcElement.innerText;
-        console.log(temp);
-        input.value = temp.join(" ");
-        input.value += " ";
-        autocompletion("");
-      });
-      div.className = "searchProduct";
-      div.innerText = element;
-      container.appendChild(div);
-    });
-  });
-}
+window.verifMail = function (champ) {
+  isAnEmail = false;
 
-input.addEventListener("keyup", function (e) {
-  var temp = input.value.split(" ");
-  autocompletion(temp[temp.length - 1]);
-});
+  for (var j = 1; j < champ.value.length; j++) {
+    //chercher le caractère @
+    if (champ.value.charAt(j) == "@") {
+      //verifier qu'il y a au moins 4 caractère dérrière @
+      if (j < champ.value.length - 4) {
+        for (var k = j; k < champ.value.length - 2; k++) {
+          //verifier qu'il y a un point derière @
+          if (champ.value.charAt(k) == ".") {
+            isAnEmail = true;
+          }
+        }
+      }
+    }
+  }
+
+  return isAnEmail;
+};
+
+window.verifObject = function (champ) {
+  if (champ.value.length <= 10) {
+    return false;
+  } else {
+    return true;
+  }
+};
+
+window.verifText = function (champ) {
+  if (champ.value.length <= 50) {
+    return false;
+  } else {
+    return true;
+  }
+};
 
 /***/ }),
 
-/***/ 3:
-/*!****************************************!*\
-  !*** multi ./resources/js/products.js ***!
-  \****************************************/
+/***/ 1:
+/*!*************************************!*\
+  !*** multi ./resources/js/index.js ***!
+  \*************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\home\jambon\Documents\Code\CESI\BDE_website_project_group2\laravel\resources\js\products.js */"./resources/js/products.js");
+module.exports = __webpack_require__(/*! C:\Users\Cthulhu\Documents\Programmation\Laravel\laravel\resources\js\index.js */"./resources/js/index.js");
 
 
 /***/ })

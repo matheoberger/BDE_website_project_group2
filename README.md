@@ -1,4 +1,4 @@
-# Website of the killing death
+# WEB Project group 2
 
 This is the second project of second year of IT high school.
 
@@ -10,6 +10,7 @@ We were asked to make a new website for the Cesi Bordeaux's students.
    ```bash
    git clone github.com/matheoberger/BDE_website_project_group2
    ```
+2. insert the sql dump on your database (name of the database : bde_cesi) from the SQL-dump branch.
 2. run the install.cmd file
    > Note : This will install all the dependencies
 2. run the start.cmd file

@@ -6,7 +6,7 @@ var connection = mysql.createConnection({
   database: "bde_cesi"
 });
 connection.connect();
-
+//lie les events à leurs images
 async function mapped(results) {
   return Promise.all(
     results.map(async function(element) {
@@ -20,7 +20,6 @@ async function mapped(results) {
           }
         );
       });
-      console.log(element);
       return element;
     })
   );

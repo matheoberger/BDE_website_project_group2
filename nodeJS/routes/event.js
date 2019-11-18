@@ -6,7 +6,7 @@ var connection = mysql.createConnection({
   database: "bde_cesi"
 });
 connection.connect();
-
+//lie les photos à leurs commentaires
 async function mapped(results) {
   return Promise.all(
     results.map(async function(element) {

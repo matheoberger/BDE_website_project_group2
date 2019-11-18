@@ -18,7 +18,7 @@ class Image {
 
         <img src="/${url}" alt="party">
         <form action='/report/${this.id_pictures}' methode="get">
-        <button type="submit" class="btn add_comment">Signalez</button>
+        <button type="submit" class="btn add_comment">Signalez</button></form>
         <p>Likes : <p id="js-number-likes-${this.id_pictures}">${nbrlike}</p></p>
 
 
@@ -56,6 +56,7 @@ class Image {
             .parentElement.getElementsByClassName("comments")[0]
             .appendChild(div);
     }
+    //Fait une requête AJAX pour disliker
     /* Liker une photo */
     like(object) {
         var id = this.id_pictures;
@@ -72,6 +73,7 @@ class Image {
             }
         });
     }
+    //Fait une requête AJAX pour liker
     dislike(object) {
         var id = this.id_pictures;
         $.post(`http://localhost:8000/dislikePicture/`, object, function(

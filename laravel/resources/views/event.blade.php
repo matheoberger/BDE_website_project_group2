@@ -51,10 +51,11 @@
             <script src="/js/insertEvent.js"></script>
         </div>
         </div>
-        @include("partials/footer")
 
         </div>
     </main>
+    @include("partials/footer")
+
 </body>
 
 </html>

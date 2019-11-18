@@ -188,9 +188,6 @@
                             fasse
                             usage de ses Données pour le contacter afin de l’informer sur son offre de services, et de
                             connaître son avis quant aux services rendus.
-                            La Société est responsable de traitement des Données du Client. A ce titre, elle peut être
-                            contactée via e-mail à l’adresse suivante : bonnefous ((@)) bonnefous.com ou par courrier à
-                            l’adresse postale suivante : 30 bis rue Émile Menier – 75 116 PARIS
                             Les Données du Client sont traitées par la Société, les membres de son personnel, et ses
                             sous-traitants dans le respect des finalités sus-décrites. A ce titre, ces Données peuvent
                             faire
