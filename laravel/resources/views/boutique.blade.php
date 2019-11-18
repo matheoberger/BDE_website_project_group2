@@ -36,13 +36,12 @@ $requete->closeCursor();
 
         <div class="contenu">
             <div class="contenu__main">
-                <div class=welcome--boutique><img class=welcome--boutique__image
-                        src='https://mir-s3-cdn-cf.behance.net/project_modules/fs/a3ea7277681027.5c8f34c397dcf.jpg'
-                        alt="welcom_image_shop">
+                <div class=welcome--boutique><img class=welcome--boutique__image src='https://mir-s3-cdn-cf.behance.net/project_modules/fs/a3ea7277681027.5c8f34c397dcf.jpg' alt="welcom_image_shop">
                 </div>
 
                 <div class=topSelling>
                     <p>Les trois les plus vendus</p>
+                    <a href="/CGV">Conditions générales de ventes</a>
                     @include("partials/shopCarousel")
                 </div>
 
@@ -51,36 +50,33 @@ $requete->closeCursor();
                         <form class="form-inline">
                             <div class="input-group">
 
-                                <input type="text" class="form-control" placeholder="rechercher un goodie"
-                                    aria-label="Username" aria-describedby="basic-addon1">
+                                <input type="text" class="form-control" placeholder="rechercher un goodie" aria-label="Username" aria-describedby="basic-addon1">
                             </div>
                         </form>
                     </nav>
                     <div class="dropdown filter__element">
-                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Catégorie
                         </a>
 
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                             <select name="categories" multiple="multiple">
-                                <option class='dropdown-item' href='#'>Toutes</option>
+                                <option class='dropdown-item'>Toutes</option>
                                 <?php foreach ($categories as $categorie) {
-                                    echo "<option class='dropdown-item' href='#'>{$categorie["title"]}</option>";
+                                    echo "<option class='dropdown-item'>{$categorie["title"]}</option>";
                                 } ?>
                             </select>
                         </div>
 
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                             <?php foreach ($categories as $categorie) {
-                                echo "<option selected='selected' class='dropdown-item' href='#'>{$categorie["title"]}</option>";
+                                echo "<option selected='selected' class='dropdown-item'>{$categorie["title"]}</option>";
                             } ?>
                         </div>
 
                         <p>prix</p>
                         <div class="s lidecontainer">
-                            <input class="boutique__slider" id="boutique__slider" type="range" min="1" max="1000"
-                                value="50" class="slider" oninput="slider(this.value)">
+                            <input class="boutique__slider" id="boutique__slider" type="range" min="1" max="1000" value="50" class="slider" oninput="slider(this.value)">
                         </div>
                         <p id="sliderValue">1000</p>
 
@@ -105,9 +101,9 @@ $requete->closeCursor();
 
 
 <script>
-function slider(val) {
-    document.getElementById("sliderValue").innerHTML = val + "€";
-}
+    function slider(val) {
+        document.getElementById("sliderValue").innerHTML = val + "€";
+    }
 </script>
 <script src="js/insertProduct.js"></script>
 
