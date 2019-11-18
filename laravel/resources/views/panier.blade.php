@@ -17,11 +17,14 @@ if (session("email")) {
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="../js/bootstrap.bundle.min.js">
     </script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
     </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
 
     <title>Panier</title>
@@ -42,7 +45,6 @@ if (session("email")) {
         <div class="conteneur">
             <div class="contenu">
                 <div class="panier__body">
-                    <h1 class="panier__title">Panier</h1>
 
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
@@ -52,35 +54,59 @@ if (session("email")) {
                             </li>
                         </ol>
                     </nav>
+                    <h5 class="panier__title">Détail de votre panier</h5>
 
-                </div>
+                    <div>
 
-                <ul class="list-unstyled">
-                    <?php foreach ($basket as $product) {
-                        $requete = $bdd2->prepare("CALL `getPhotoFromProduct`(:id_product)");
-                        $requete->bindValue(":id_product", $product['id_products'], PDO::PARAM_STR);
-                        $requete->execute();
-                        $pictures = $requete->fetchAll();
-                        $requete->closeCursor();
-                        echo "<li class='media'>
-                        <img src='/{$pictures[0]['url']}' class='mr-3' alt='...'>
-                        <div class='media-body'>
-                            <h5 class='mt-0 mb-1'>{$product['title']}</h5>
-                            {$product['description']} --- {$product['price']} --- quantité : {$product['amount']}
-                            <a href='/remove/{$product['id_products']}'>Retirer</a>
-                            <form name = 'amount_form' action='/amount/{$product['id_products']}'>
-                            <input type='text' id='amount' name='amount' required'>
-                            </form>
+                        <div class="panier__commande">
+                            <h3>TOTAL : <?php
+                                        $total = 0;
+                                        foreach ($basket as $product) {
+                                            $requete = $bdd2->prepare("CALL `getPhotoFromProduct`(:id_product)");
+                                            $requete->bindValue(":id_product", $product['id_products'], PDO::PARAM_STR);
+                                            $requete->execute();
+                                            $pictures = $requete->fetchAll();
+                                            $requete->closeCursor();
+                                            $total += $product['price'] * $product['amount'];
+                                        }
+                                        echo "$total €"; ?> </h3>
+                            <a href="/order ">
+
+                                <h3 class="panier__roboto">Commander</h3>
+                            </a>
                         </div>
-                        
+
+                        <div>
+                            <ul class="list-unstyled">
+                                <?php
+                                $total = 0;
+                                foreach ($basket as $product) {
+                                    echo "
+                        <li class='media'>  
+                        <div class='panier__article'>
+
+                        <div><img src='/{$pictures[0]['url']}' class='mr-3 panier__img' alt='...'></div>
+
+                        <div class='media-body article__body'  style='clear:right'>
+               
+                            <h3 class='mt-0'>{$product['title']}</h3>
+                             {$product['price']}€ - quantité : {$product['amount']}
+                            </div>
+                            <a href='/remove/{$product['id_products']}'>Retirer</a>
+                            <form  name = 'amount_form' action='/amount/{$product['id_products']}'>
+                            <input placeholder='Entrez une quantité' type='text' id='amount' name='amount' required'>
+                            </form>
+                
+                        </div>
                     </li>";
-                    } ?>
-                </ul>
-                <a href="/order">Commander </a>
+                                } ?>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
                 @include("partials/footer")
             </div>
         </div>
-
     </main>
 </body>
 

@@ -8,16 +8,16 @@ use PDO;
 
 class creationController extends Controller
 {
-    public function newProduct(Request $request)
+    public function newProduct()
     {
         if (session('role') ==  "Administrator") {
             return view('newProduct');
         }
     }
 
-    public function newEvent(Request $request)
+    public function newEvent()
     {
-        if (session('role' == "Administrator")) {
+        if (session('role') == "Administrator") {
             return view('newEvent');
         }
     }
@@ -26,7 +26,7 @@ class creationController extends Controller
     {
         if (session('role') ==  "Administrator") {
             //on test les entrées
-            $validator = Validator::make($request->all(), ['title' => 'required|min:4', 'place' => 'required', 'description' => 'required|min:10|max:255', 'price' => 'required|numeric|min:0.1|max:1000']);
+            $validator = Validator::make($request->all(), ['title' => 'required|min:4',  'description' => 'required|min:10|max:255', 'price' => 'required|numeric|min:0.1|max:1000']);
             if ($validator->messages()->first()) {
                 //si il y a des erreurs on renvoi la première
                 $error = $validator->messages()->first();
@@ -88,5 +88,14 @@ class creationController extends Controller
             //on f
             return view('newEvent', ['error' => $error, 'color' => $color]);
         }
+    }
+    public function deleteEvent($id)
+    {
+        $bdd = new PDO("mysql:host=localhost;dbname=bde_cesi;charset=UTF8", "root", "");
+        $requete = $bdd->prepare("CALL `deleteEvent`(:id_event);");
+        $requete->bindValue(':id_event', $id, PDO::PARAM_STR);
+        $requete->execute();
+        $requete->closeCursor();
+        return redirect('/event');
     }
 }

@@ -1,9 +1,12 @@
 <header class="header">
     <nav class="customNavbar customNavbar--desktop">
         <a href="https://www.cesi.fr">
-            <img src="https://www.cesi.fr/wp-content/uploads/2018/09/cesi-logo.png" class="customNavbar customNavbar__logo" alt="cesi_logo" />
+            <img src="https://www.cesi.fr/wp-content/uploads/2018/09/cesi-logo.png"
+                class="customNavbar customNavbar__logo" alt="cesi_logo" />
         </a>
-        <h1>BDE CESI BORDEAUX</h1>
+        <a href='/'>
+            <h1>BDE CESI BORDEAUX</h1>
+        </a>
         <div class="customNavbar customNavbar--right">
 
             <img src="/images/bell.png" class="customNavbar customNavbar__notification" alt="notification_bell" />
@@ -18,8 +21,8 @@
             }
             ?>
             <script>
-                //Ligne pour supprimer cookie
-                // document.cookie = "accept_cookie = cookie ; expires=" + new Date("1970-01-01").toUTCString() + "; path=/";
+            //Ligne pour supprimer cookie
+            // document.cookie = "accept_cookie = cookie ; expires=" + new Date("1970-01-01").toUTCString() + "; path=/";
             </script>
             <?php
             if (!isset($_COOKIE['accept_cookie'])) {

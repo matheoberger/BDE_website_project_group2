@@ -7,7 +7,7 @@ body {
 }
 
 main {
-    justify-content: center;
+    // justify-content: center;
 }
 
 body img {
@@ -24,13 +24,11 @@ nav.sidebar img {
         filter: blur(0px);
     }
 }
-
 h2 {
     font-family: $roboto;
     text-align: center;
     font-size: 5vw;
 }
-
 
 // Définit les propriétés basiques d'un bouton
 .btn {
@@ -59,12 +57,12 @@ h2 {
 /* conteneur générale pour les events*/
 .conteneur {
     background: linear-gradient(180deg, $red, darken($red, 30));
-    margin: $px_2;
+    // margin: $px_2;
     display: inline-block;
     flex-wrap: wrap;
     text-align: center;
     font-family: $roboto;
-    justify-content: center;
+    // justify-content: center;
 }
 
 /* La section des events, image, descriptions et nom*/
@@ -81,7 +79,6 @@ article {
     height: $cube_dimension;
     width: $cube_dimension;
 }
-
 
 .btTxt_submit {
     object-fit: cover;
@@ -128,4 +125,9 @@ aside {
     flex-wrap: wrap;
     justify-content: flex-end;
     margin: -2px 0 0 -2px;
+}
+
+.panier__body {
+    padding: none;
+    margin: none;
 }
