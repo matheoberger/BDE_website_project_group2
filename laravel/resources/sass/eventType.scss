@@ -102,12 +102,6 @@ p {
     font-size: 2vw;
 }
 
-.btn {
-    padding: 1vw 2vw;
-    font-size: 1.5vw;
-    color: white;
-}
-
 .btn_conteneur {
     display: flex;
     flex-wrap: nowrap;
@@ -121,7 +115,10 @@ p {
     display: flex;
     flex-wrap: wrap;
     font-family: $roboto;
+<<<<<<< HEAD
     min-height: 100%;
+=======
+>>>>>>> parent of f6fcad2... update
 }
 
 section {
@@ -159,9 +156,8 @@ article {
     cursor: pointer;
     /* Add a pointer cursor on mouse-over */
     margin: $px_2;
-    height: 4vw;
+    height: 5vw;
     padding: 0px 1vw 0px 1vw;
-    font-size: 1.5vw;
 
 }
 
