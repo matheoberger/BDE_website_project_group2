@@ -1,4 +1,4 @@
-# Website of the killing death
+#WEB Project group 2
 
 This is the second project of second year of IT high school.
 
