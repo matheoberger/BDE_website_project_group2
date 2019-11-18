@@ -14,6 +14,7 @@ $requete->closeCursor();
     <title>Boutique</title>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="css/app.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
@@ -59,17 +60,22 @@ $requete->closeCursor();
 
                 <div class="boutique__filter">
                     <nav class="navbar navbar-light bg-light filter__element" id="search">
-                        <form class="form-inline">
+                        <form class="form-inline" onsubmit="return false">
                             <div class="input-group">
-
-                                <input id="productSearch" type="text" class="form-control" placeholder="rechercher un goodie"
-                                    aria-label="Username" aria-describedby="basic-addon1">
+                                <input class="boutique__searchbar" id="productSearch" type="text" class="form-control"
+                                    placeholder="rechercher un goodie" aria-label="boutique searchbar"
+                                    aria-describedby="basic-addon1" oninput="searchbar(this.value)">
                             </div>
+                            <i class="fa fa-search" aria-hidden="true"></i>
                         </form>
                         <div id="js-autoCompletionContainer"></div>
+
                     </nav>
+                    <div id="searchbar__value" style="display :none"> </div>
+
                     <div class="dropdown filter__element">
-                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Catégorie
                         </a>
 
@@ -117,9 +123,13 @@ $requete->closeCursor();
 
 
 <script>
-    function slider(val) {
-        document.getElementById("sliderValue").innerHTML = val + "€";
-    }
+function slider(val) {
+    document.getElementById("sliderValue").innerHTML = val + "€";
+}
+
+function searchbar(val) {
+    document.getElementById("searchbar__value").innerHTML = val;
+}
 </script>
 <script src="js/insertProduct.js"></script>
 

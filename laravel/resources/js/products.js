@@ -23,6 +23,7 @@ function autocompletion(text) {
                 div.className = "searchProduct";
                 div.innerText = element;
                 container.appendChild(div);
+                searchbar(input.value);
             });
         }
     );

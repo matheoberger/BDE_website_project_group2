@@ -76,8 +76,9 @@ async function getFilteredProductArray(
             e.price < prixMax &&
             e.price > prixMin &&
             categorie.indexOf(e.categorie) != -1 &&
-            (e.title.indexOf(description) != -1 ||
-              e.description.indexOf(description) != -1)
+            (e.title.toUpperCase().indexOf(description.toUpperCase()) != -1 ||
+              e.description.toUpperCase().indexOf(description.toUpperCase()) !=
+                -1)
           );
         });
         resolve(results[0].slice(start, start + number));

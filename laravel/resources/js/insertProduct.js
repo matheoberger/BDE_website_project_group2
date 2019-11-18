@@ -15,21 +15,17 @@ class insertProduct {
      *
      */
 
-    newProduct(articleIndex, articleNumber, price, categorie) {
+    newProduct(articleIndex, articleNumber, price, categorie, description) {
         $("#js-spinner").addClass("spinner__display");
-        if (categorie == "Toutes") {
-            this.getProduct(articleIndex, articleNumber, price).then(
-                productList => {
-                    productList.forEach(this.createProduct.bind(this));
-                }
-            );
-        } else {
-            this.getProduct(articleIndex, articleNumber, price, categorie).then(
-                productList => {
-                    productList.forEach(this.createProduct.bind(this));
-                }
-            );
-        }
+        this.getProduct(
+            articleIndex,
+            articleNumber,
+            price,
+            categorie,
+            description
+        ).then(productList => {
+            productList.forEach(this.createProduct.bind(this));
+        });
     }
 
     /**
@@ -40,26 +36,24 @@ class insertProduct {
      * getProduct execute la requête HTTP get destinée à l'API, les données sont récupérées en asynchrone
      *
      */
-    getProduct(articleIndex, articleNumber, price, categorie) {
-        if (categorie) {
-            return new Promise(resolve => {
-                $.get(
-                    `http://localhost:3000/produits/${articleIndex}/${articleNumber}?prixMin=0&prixMax=${price}&categorie=${categorie}`,
-                    function(data, status) {
-                        resolve(data);
-                    }
-                );
+    getProduct(articleIndex, articleNumber, price, categorie, description) {
+        return new Promise(resolve => {
+            var url = `http://localhost:3000/produits/${articleIndex}/${articleNumber}?`;
+
+            if (description) {
+                url += `description=${description}&`;
+            }
+            if (categorie) {
+                url += `categorie=${categorie}&`;
+            }
+            if (price) {
+                url += `prixMax=${price}&`;
+            }
+            console.log(url);
+            $.get(url, function(data, status) {
+                resolve(data);
             });
-        } else {
-            return new Promise(resolve => {
-                $.get(
-                    `http://localhost:3000/produits/${articleIndex}/${articleNumber}?prixMin=0&prixMax=${price}`,
-                    function(data, status) {
-                        resolve(data);
-                    }
-                );
-            });
-        }
+        });
     }
 
     /**
@@ -105,13 +99,15 @@ $(document).ready(function() {
     var numberArticleLoad = 3;
     var articleNumber = numberArticleLoad;
     var articleInc = numberArticleLoad;
-    var categorie = "Toutes";
+    var categorie = "";
+    var description = "";
     const productLoader = new insertProduct();
+
     documentPrice = document.getElementById("sliderValue").innerHTML;
     var price = documentPrice.substring(0, documentPrice.length - 1);
 
-    productLoader.newProduct(articleIndex, articleNumber, price, categorie);
-    articleIndex += articleInc;
+    // productLoader.newProduct(articleIndex, articleNumber);
+    // articleIndex += articleInc;
 
     /**
      * On observe la page de la boutique pour savoir si le slider a été bougé,
@@ -123,11 +119,19 @@ $(document).ready(function() {
         documentPrice = document.getElementById("sliderValue").innerHTML;
         price = documentPrice.substring(0, documentPrice.length - 1);
         $("#js-productContainer").empty();
-        productLoader.newProduct(articleIndex, articleNumber, price, categorie);
+        console.log("load product slider");
+        productLoader.newProduct(
+            articleIndex,
+            articleNumber,
+            price,
+            categorie,
+            description
+        );
+        articleIndex += articleInc;
     });
 
     /**
-     * On ovserve l'onglet de choix de catégorie, si un nouvelle est selectionnée,
+     * On observe l'onglet de choix de catégorie, si un nouvelle est selectionnée,
      * on recharge les articles avec le nouvel attribut
      */
     $("select")
@@ -137,25 +141,51 @@ $(document).ready(function() {
                 articleIndex = 0;
 
                 categorie += $(this).text();
+                if (categorie == "Toutes") {
+                    categorie = "";
+                }
                 $("#js-productContainer").empty();
+                console.log("load product categorie");
 
                 productLoader.newProduct(
                     articleIndex,
                     articleNumber,
                     price,
-                    categorie
+                    categorie,
+                    description
                 );
+                articleIndex += articleInc;
             });
         })
         .change();
+
+    $(".boutique__searchbar").on("keyup", function(e) {
+        if (e.keyCode === 13) {
+            description = document.getElementById("searchbar__value").innerHTML;
+            console.log("searchSend ! ");
+            console.log(description);
+            $("#js-productContainer").empty();
+            // $(window).scrollTop(0);
+            articleIndex = 0;
+            console.log("load product search");
+            productLoader.newProduct(
+                articleIndex,
+                articleNumber,
+                price,
+                categorie,
+                description
+            );
+            articleIndex += articleInc;
+        }
+    });
 
     /**
      * Dès que le scroll atteint le bas de la page, on appelle la suite des articles
      */
     $(window).scroll(function() {
-        /*console.log($(window).scrollTop());
+        console.log($(window).scrollTop());
         console.log($(window).height());
-        console.log($(document).height());*/
+        console.log($(document).height());
         if (
             Math.round($(window).scrollTop() + $(window).height()) >=
             $(document).height() - 1
@@ -164,7 +194,8 @@ $(document).ready(function() {
                 articleIndex,
                 articleNumber,
                 price,
-                categorie
+                categorie,
+                description
             );
             articleIndex += articleInc;
         }

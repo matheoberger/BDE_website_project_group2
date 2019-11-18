@@ -34,25 +34,31 @@ class BasketController extends Controller
 
     public function addInBasket($id)
     {
-        $bdd2 = new PDO("mysql:host=localhost;dbname=bde_cesi;charset=UTF8", "root", "");
-        $requete = $bdd2->prepare("CALL `getBasketFromEmail`(:userID)");
-        $requete->bindValue(":userID", session("email"), PDO::PARAM_STR);
-        $requete->execute();
-        $result2 = $requete->fetchAll();
-        $requete->closeCursor();
-        if (empty($result2)) {
-            $requete = $bdd2->prepare("CALL `newBasket`(:userID)");
-            $requete->bindValue(":userID", session("id_user"), PDO::PARAM_STR);
+        if (session('id_user')) {
+            $bdd2 = new PDO("mysql:host=localhost;dbname=bde_cesi;charset=UTF8", "root", "");
+            $requete = $bdd2->prepare("CALL `getBasketFromEmail`(:userID)");
+            $requete->bindValue(":userID", session("email"), PDO::PARAM_STR);
+            $requete->execute();
+            $result2 = $requete->fetchAll();
+            $requete->closeCursor();
+            if (empty($result2)) {
+                $requete = $bdd2->prepare("CALL `newBasket`(:userID)");
+                $requete->bindValue(":userID", session("id_user"), PDO::PARAM_STR);
+                $requete->execute();
+                $requete->closeCursor();
+            }
+
+            $requete = $bdd2->prepare("CALL `addProductToBasket`(:userID, :productID, 1)");
+            $requete->bindValue(":userID", session("id_user"), PDO::PARAM_INT);
+            $requete->bindValue(":productID", $id, PDO::PARAM_INT);
             $requete->execute();
             $requete->closeCursor();
+            return redirect("/boutique/$id");
+        } else {
+            $error = "Vous devez être connecté";
+            $color = "red";
+            return redirect('login');
         }
-
-        $requete = $bdd2->prepare("CALL `addProductToBasket`(:userID, :productID, 1)");
-        $requete->bindValue(":userID", session("id_user"), PDO::PARAM_INT);
-        $requete->bindValue(":productID", $id, PDO::PARAM_INT);
-        $requete->execute();
-        $requete->closeCursor();
-        return redirect("/boutique/$id");
     }
 
     public function changeAmountInBasket($id, Request $request)
