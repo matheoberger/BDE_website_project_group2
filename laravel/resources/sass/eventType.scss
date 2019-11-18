@@ -85,6 +85,7 @@ nav.sidebar .link:hover::before {
 
 main {
     text-align: center;
+    justify-content: center;
 }
 
 h2 {
@@ -102,6 +103,12 @@ p {
     font-size: 2vw;
 }
 
+.btn {
+    padding: 1vw 2vw;
+    font-size: 1.5vw;
+    color: white;
+}
+
 .btn_conteneur {
     display: flex;
     flex-wrap: nowrap;
@@ -111,10 +118,9 @@ p {
 
 .conteneur {
     background: linear-gradient(70deg, $grey_1, darken($grey_1, 30));
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
     font-family: $roboto;
+    width: 100%;
+
 }
 
 section {
@@ -152,8 +158,9 @@ article {
     cursor: pointer;
     /* Add a pointer cursor on mouse-over */
     margin: $px_2;
-    height: 5vw;
+    height: 4vw;
     padding: 0px 1vw 0px 1vw;
+    font-size: 1.5vw;
 
 }
 
