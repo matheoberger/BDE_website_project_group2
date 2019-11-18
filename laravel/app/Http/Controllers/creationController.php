@@ -82,7 +82,7 @@ class creationController extends Controller
                 $requete2 = $bdd->prepare("CALL `setDefaultPicturesEvent`();");
                 $requete2->execute();
                 $requete2->closeCursor();
-                $error = "Ajoute de l'événement réussi";
+                $error = "Ajout de l'événement réussi";
                 $color = 'green';
             }
             //on f
