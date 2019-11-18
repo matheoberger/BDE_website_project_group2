@@ -85,7 +85,6 @@ nav.sidebar .link:hover::before {
 
 main {
     text-align: center;
-    justify-content: center;
 }
 
 h2 {
@@ -118,9 +117,11 @@ p {
 
 .conteneur {
     background: linear-gradient(70deg, $grey_1, darken($grey_1, 30));
-    font-family: $roboto;
     width: 100%;
-
+    display: flex;
+    flex-wrap: wrap;
+    font-family: $roboto;
+    min-height: 100%;
 }
 
 section {

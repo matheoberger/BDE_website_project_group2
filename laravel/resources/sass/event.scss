@@ -6,24 +6,19 @@ body {
     background: linear-gradient(70deg, $red, darken($blue_1, 20));
 }
 
-main {
-    // justify-content: center;
-}
 
 body img {
     filter: blur(0px);
     transition: 0.5s;
+}
 
+.btTxt_submit {
     &:hover {
         filter: blur(4px);
     }
 }
 
-nav.sidebar img {
-    &:hover {
-        filter: blur(0px);
-    }
-}
+
 h2 {
     font-family: $roboto;
     text-align: center;
