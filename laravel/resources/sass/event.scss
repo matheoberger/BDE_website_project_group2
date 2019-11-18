@@ -12,6 +12,12 @@ body img {
     transition: 0.5s;
 }
 
+.event__body {
+    border-right: 1vw solid $grey_3;
+    border-left: 1vw solid $grey_3;
+
+}
+
 .btTxt_submit {
     &:hover {
         filter: blur(4px);
