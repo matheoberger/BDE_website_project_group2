@@ -1,4 +1,5 @@
 <?php
+
 $bdd2 = new PDO("mysql:host=localhost;dbname=bde_cesi;charset=UTF8", "root", "");
 $requete = $bdd2->prepare("CALL `getCategories`");
 $requete->execute();
@@ -24,9 +25,6 @@ $requete->closeCursor();
     <link rel="stylesheet" type="text/css" href="css/header.css">
     <link rel="stylesheet" type="text/css" href="css/navbar.css">
     <link rel="stylesheet" type="text/css" href="css/footer.css">
-    <link rel="stylesheet" type="text/css" href="css/breadcrumb.css">
-
-
 
 </head>
 
@@ -38,14 +36,6 @@ $requete->closeCursor();
 
         <div class="contenu">
             <div class="contenu__main">
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a class="breadcrumb--white" href='/'>Accueil</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Boutique
-                        </li>
-
-                    </ol>
-                </nav>
                 <div class=welcome--boutique><img class=welcome--boutique__image
                         src='https://mir-s3-cdn-cf.behance.net/project_modules/fs/a3ea7277681027.5c8f34c397dcf.jpg'
                         alt="welcom_image_shop">
@@ -89,7 +79,7 @@ $requete->closeCursor();
 
                         <p>prix</p>
                         <div class="s lidecontainer">
-                            <input class="boutique__slider" id="boutique__slider" type="range" min="1" max="100"
+                            <input class="boutique__slider" id="boutique__slider" type="range" min="1" max="1000"
                                 value="50" class="slider" oninput="slider(this.value)">
                         </div>
                         <p id="sliderValue">1000</p>
@@ -105,7 +95,6 @@ $requete->closeCursor();
                 </div>
             </div>
             @include("partials/footer")
-
         </div>
 
 

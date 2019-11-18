@@ -135,7 +135,7 @@ article {
     /* Add some padding */
     cursor: pointer;
     /* Add a pointer cursor on mouse-over */
-    font-size: 15%;
+    font-size: 1.5vw;
     margin: $px_2;
     height: 5vw;
     width: 15vw;
@@ -223,7 +223,8 @@ article {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    // border: 0.1vw solid darken($red, 10);
+    border: 1vw solid darken($red, 10);
+
 }
 
 .public_img {
@@ -252,14 +253,4 @@ aside {
     padding: bottom;
     transition: 0.2s;
     font-size: 2vw;
-}
-
-.event__title {
-    text-align: center;
-    padding-top: 3%;
-    color: white;
-}
-
-.event__article {
-    background-color: white;
 }

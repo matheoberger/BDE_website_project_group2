@@ -30,26 +30,13 @@ if (session('role')) {
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <title>Event</title>
+    <title>Events</title>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-    
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="/css/eventType.css" />
     <link rel="stylesheet" href="/css/header.css" />
-    <link rel="stylesheet" type="text/css" href="/css/app.css">
-    <link rel="stylesheet" type="text/css" href="/css/footer.css">
-    <link rel="stylesheet" href="/css/event.css" />
-   <link rel="stylesheet" type="text/css" href="/css/breadcrumb.css">
-    <link rel="stylesheet" type="text/css" href="/css/navbar.css">
 
 
 
@@ -57,73 +44,56 @@ if (session('role')) {
 </head>
 
 <body>
-    @include('partials/header')
+
+    @include('/partials/header')
 
     <main>
-    @include("partials/navbar")
 
+        <div>
+            <h2><?php echo $event[0]["title_events"] ?></h2>
+        </div>
         <div class="conteneur">
-            <div class="contenu">
-                <div class="event__body">
-                <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a class="breadcrumb--white" href='/'>Accueil</a></li>
-                            <li class="breadcrumb-item"><a class="breadcrumb--white" href='/event'>Evenements</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Evenement
-                            </li>
-                        </ol>
-                    </nav>
 
-                <div>
-                    <h2 class="event__title"><?php echo $event[0]["title_events"] ?></h2>
+            <section>
+                <article>
+                    <h3><?php echo $event[0]["place"] ?></h3>
+                    <p><?php echo $event[0]["description"] ?></p>
+                </article>
+                <div class="picture_gallery" id="js-picture-gallery"><br>
+
                 </div>
-
-                <section>
-
-                <div>
-                    <div class="event__article">
-
-                        <h3><?php echo $event[0]["place"] ?></h3>
-                        <p><?php echo $event[0]["description"] ?></p>
-                        </div>
-
-                    </div>
-
-                    <div class="picture_gallery" id="js-picture-gallery"><br>
-
-                    </div>
-                    <aside>Pannel event :
-                        <br>
-                        <?php echo "<form action='/addpicture/$id'>
+                <aside>Pannel event :
+                    <br>
+                    <?php echo "<form action='/addpicture/$id'>
                         <button type='submit' class='btn add_picture'>Ajouter photo </button>
                     </form>" ?>
 
-                        <?php
-                        if (session('role') == 'Administrator') {
-                            echo "<form action='/event/$id/edit/' method='get'><button class='btn edit_event'>Modifier event</button></form>";
-                            echo "<form action='/deleteEvent/$id' method='get'>
+                    <?php
+                    if (session('role') == 'Administrator') {
+                        echo "<form action='/event/$id/edit/' method='get'><button class='btn edit_event'>Modifier event</button></form>";
+                        echo "<form action='/deleteEvent/$id' method='get'>
                                 <button class='btn edit_event'>Supprimer event</button></form>";
-                        };
-                        ?>
-                        <?php
-
+                    };
+                    ?>
+                    <?php
                         if (empty($isRegistered)) {
                             echo '
 
+
                     <form action="/event/participate" method="post">
-                        <input type="hidden" name="event" value="'.$id .'"/>
-                        <input type="hidden" name="_token" value="'.csrf_token().'"/>
-                        <button type="submit" class="btn participate">'."Participer à l'event".'</button>
+                        <input type="hidden" name="event" value="' . $id . '"/>
+                        <input type="hidden" name="_token" value="' . csrf_token() . '"/>
+                        <button type="submit" class="btn participate">' . "Participer à l'event"  . '</button>
                     </form>';
-                        } else {
-                            echo '
+                    } else {
+                        echo '
                     <form action="/event/leave" method="post">
-                        <input type="hidden" name="event" value="'.$id.'"/>
+                        <input type="hidden" name="event" value="' . $id . '"/>
                         <input type="hidden" name="_token" value="' . csrf_token() . '"/>
                         <button type="submit" class="btn participate">' . "Quitter l'event"  . '</button>
                     </form>';
-                        };
-                        echo '<form action="/download/' . $id . '">
+                    };
+                    echo '<form action="/download/' . $id . '">
                     <select name="format" required>
                         <option value="">-- Choisissez le format --</option>
                         <option value="csv">CSV</option>
@@ -132,48 +102,51 @@ if (session('role')) {
                     <button type="submit" class="btn download">Télécharger</button>
                 </form>'
 
-                        ?>
+                    ?>
 
-                    </aside>
-                </section>
-                </div>
-            </div>
+
+                </aside>
+
+
+
+            </section>
 
         </div>
+        </div>
     </main>
+    <script>
+        var id = <?php echo $id ?>;
+        <?php
 
+        if (session('role') == 'Moderator') {
+            echo 'var button = "<button class=' . "'btn warning'" . '>Signaler</button>";';
+        }
+
+        if (session('role') == 'Administrator') {
+            echo 'var button = "<button class=' . "'btn delete'" . '>Supprimer</button>";';
+        }
+        if (csrf_token()) {
+            echo 'var token = "' . csrf_token() . '";';
+        };
+        if (session('id_user')) {
+            echo 'var id_user = ' . session('id_user') . ';';
+        }
+        if (!empty($isRegistered)) {
+            echo 'var registered = true;';
+        }
+        if (empty($isRegistered)) {
+            echo 'var registered = false;';
+        }
+
+        ?>
+    </script>
+    <script src="/js/insertDataToEvent.js">
+    </script>
 </body>
 
 
 
 
-<script>
-    var id = <?php echo $id ?>;
-    <?php
 
-    if (session('role') == 'Moderator') {
-        echo 'var button = "<button class=' . "'btn warning'" . '>Signaler</button>";';
-    }
-
-    if (session('role') == 'Administrator') {
-        echo 'var button = "<button class=' . "'btn delete'" . '>Supprimer</button>";';
-    }
-    if (csrf_token()) {
-        echo 'var token = "' . csrf_token() . '";';
-    };
-    if (session('id_user')) {
-        echo 'var id_user = ' . session('id_user') . ';';
-    }
-    if (!empty($isRegistered)) {
-        echo 'var registered = true;';
-    }
-    if (empty($isRegistered)) {
-        echo 'var registered = false;';
-    }
-
-    ?>
-</script>
-<script src="/js/insertDataToEvent.js">
-</script>
 
 </html>
