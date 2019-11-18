@@ -28,7 +28,7 @@ class Image {
                     return `<i id="js-like-${id_pictures}" class="fa fa-thumbs-up"></i><form id="${this.id}">
                 <input type="text" name="description" />
                 <button type="submit" class="btn add_comment">Ajouter un commentaire</button>
-               
+
                 </form>`;
                 } else {
                     return "";
