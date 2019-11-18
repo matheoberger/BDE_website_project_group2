@@ -43,6 +43,7 @@ Route::get("/newEvent", 'creationController@newEvent');
 Route::get("/newProduct", 'creationController@newProduct');
 Route::post("/newEvent", 'creationController@newEventVerif');
 Route::post("/newProduct", 'creationController@newProductVerif');
+Route::get("/deleteEvent/{id}", 'creationController@deleteEvent');
 
 Route::post('/comment', 'commentPicture');
 
@@ -80,6 +81,7 @@ Route::get('/event/{id}/edit', function ($id) {
 });
 Route::get('/addpicture/{id}', 'eventController@addpicture');
 Route::post('/addpicture/{id}', 'eventController@addpictureVerif');
+Route::get('/report/{id}', 'eventController@reportPicture');
 
 
 Route::get('/CGV', function () {
