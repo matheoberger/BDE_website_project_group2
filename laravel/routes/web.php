@@ -81,6 +81,7 @@ Route::get('/event/{id}/edit', function ($id) {
 });
 Route::get('/addpicture/{id}', 'eventController@addpicture');
 Route::post('/addpicture/{id}', 'eventController@addpictureVerif');
+Route::get('/report/{id}', 'eventController@reportPicture');
 
 
 Route::get('/CGV', function () {

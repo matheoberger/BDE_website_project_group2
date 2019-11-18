@@ -7,6 +7,8 @@ class Image {
             `<div class="public_img">
 
         <img src="/${url}" alt="party">
+        <form action='/report/${this.id_pictures}' methode="get">
+        <button type="submit" class="btn add_comment">Signalez</button>
         <p>Likes : <p id="js-number-likes-${this.id_pictures}">${nbrlike}</p></p>
 
 
@@ -16,6 +18,7 @@ class Image {
                     return `<i id="js-like-${id_pictures}" class="fa fa-thumbs-up"></i><form id="${this.id}">
                 <input type="text" name="description" />
                 <button type="submit" class="btn add_comment">Ajouter un commentaire</button>
+               
                 </form>`;
                 } else {
                     return "";

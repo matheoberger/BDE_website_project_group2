@@ -39,4 +39,14 @@ class eventController extends Controller
         }
         return view('addpicture', ['error' => $error, 'color' => $color, 'image' => $imageName, 'id' => $id]);
     }
+
+    public function reportPicture($id)
+    {
+        $bdd = new PDO("mysql:host=localhost;dbname=bde_cesi;charset=UTF8", "root", "");
+        $requete = $bdd->prepare("CALL `setPictureVisibility`(:id_picture, 0);");
+        $requete->bindValue(':id_picture', $id, PDO::PARAM_INT);
+        $requete->execute();
+        $requete->closeCursor();
+        return back();
+    }
 }
