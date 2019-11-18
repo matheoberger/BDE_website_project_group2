@@ -10,6 +10,8 @@ body {
     border: 0.3vw solid $blue_1;
 }
 
+
+
 nav.sidebar {
     background: black;
     font-family: "Roboto";
@@ -100,11 +102,21 @@ p {
     font-size: 2vw;
 }
 
+.btn_conteneur {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    justify-content: center;
+}
+
 .conteneur {
     background: linear-gradient(70deg, $grey_1, darken($grey_1, 30));
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     font-family: $roboto;
+    min-height: 100%;
+
 }
 
 section {
@@ -117,6 +129,10 @@ section {
 
 article {
     font-family: $roboto;
+    display: flex;
+    flex-wrap: nowrap;
+    border: 0.5vw solid #181818;
+
 }
 
 .picture_gallery {
@@ -125,20 +141,34 @@ article {
     text-align: center;
 }
 
-.btn {
+.pannel_event {
+    border: 0.5vw solid #181818;
+}
+
+.btn_conteneur .btn {
     border: none;
     /* Remove borders */
     color: white;
     /* Add a text color */
-
-    /* padding: 1.5vw 3.5vw; */
     /* Add some padding */
     cursor: pointer;
     /* Add a pointer cursor on mouse-over */
-    font-size: 15%;
     margin: $px_2;
+    font-size: 1.5vw;
     height: 5vw;
-    width: 15vw;
+    padding: 0px 1vw 0px 1vw;
+
+}
+
+.btn {
+    font-size: 1.5vw;
+    color: white;
+
+}
+
+.fa-thumbs-up {
+    margin: 0 0 0 1vw;
+
 }
 
 .fa {
@@ -214,6 +244,12 @@ article {
     background-color: #2196f3;
 }
 
+.conteneur_like {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
 /* Blue */
 .add_comment:hover {
     background: #0b7dda;
@@ -223,7 +259,14 @@ article {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    // border: 0.1vw solid darken($red, 10);
+    border: 1vw solid darken($red, 10);
+
+}
+
+img {
+    &:hover {
+        filter: blur(0px);
+    }
 }
 
 .public_img {
@@ -240,26 +283,16 @@ aside {
     padding: bottom;
     transition: 0.2s;
     font-size: 2vw;
+
 }
 
 /* Section commentaire */
 .comments {
-    margin: $px_2;
     font-family: "Roboto", italic;
     height: $cube_dimension;
     width: $cube_dimension;
     overflow: auto;
-    padding: bottom;
     transition: 0.2s;
     font-size: 2vw;
-}
-
-.event__title {
-    text-align: center;
-    padding-top: 3%;
-    color: white;
-}
-
-.event__article {
-    background-color: white;
+    max-height: 25vw;
 }

@@ -30,13 +30,13 @@ if (session('role')) {
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <title>Event</title>
+<title>Event</title>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-    
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
@@ -47,13 +47,8 @@ if (session('role')) {
     <link rel="stylesheet" href="/css/header.css" />
     <link rel="stylesheet" type="text/css" href="/css/app.css">
     <link rel="stylesheet" type="text/css" href="/css/footer.css">
-    <link rel="stylesheet" href="/css/event.css" />
    <link rel="stylesheet" type="text/css" href="/css/breadcrumb.css">
     <link rel="stylesheet" type="text/css" href="/css/navbar.css">
-
-
-
-
 </head>
 
 <body>
@@ -61,40 +56,12 @@ if (session('role')) {
 
     <main>
     @include("partials/navbar")
-
         <div class="conteneur">
             <div class="contenu">
-                <div class="event__body">
-                <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a class="breadcrumb--white" href='/'>Accueil</a></li>
-                            <li class="breadcrumb-item"><a class="breadcrumb--white" href='/event'>Evenements</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Evenement
-                            </li>
-                        </ol>
-                    </nav>
+                <div class="pannel_event">
+                    <div class="btn_conteneur">
 
-                <div>
-                    <h2 class="event__title"><?php echo $event[0]["title_events"] ?></h2>
-                </div>
-
-                <section>
-
-                <div>
-                    <div class="event__article">
-
-                        <h3><?php echo $event[0]["place"] ?></h3>
-                        <p><?php echo $event[0]["description"] ?></p>
-                        </div>
-
-                    </div>
-
-                    <div class="picture_gallery" id="js-picture-gallery"><br>
-
-                    </div>
-                    <aside>Pannel event :
-                        <br>
-                        <?php echo "<form action='/addpicture/$id'>
+                    <?php echo "<form action='/addpicture/$id'>
                         <button type='submit' class='btn add_picture'>Ajouter photo </button>
                     </form>" ?>
 
@@ -134,15 +101,26 @@ if (session('role')) {
 
                         ?>
 
-                    </aside>
-                </section>
-                </div>
-            </div>
+                    </div>
+                    <h2><?php echo $event[0]["title_events"] ?></h2>
+                    <p><?php echo $event[0]["description"] ?></p>
 
+                </div>
+
+                <div class="picture_gallery" id="js-picture-gallery"><br>
+
+
+
+                </div>
+
+
+
+
+            </div>
         </div>
     </main>
 
-</body>
+    </body>
 
 
 

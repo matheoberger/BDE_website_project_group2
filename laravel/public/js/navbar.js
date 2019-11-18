@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -109,14 +109,18 @@ button.addEventListener("click", function (e) {
 
 /***/ }),
 
-/***/ 5:
+/***/ 4:
 /*!**************************************!*\
   !*** multi ./resources/js/navbar.js ***!
   \**************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+<<<<<<< HEAD
 module.exports = __webpack_require__(/*! C:\Users\axelb\Documents\GitHub\BDE_website_project_group2\laravel\resources\js\navbar.js */"./resources/js/navbar.js");
+=======
+module.exports = __webpack_require__(/*! C:\Users\Cthulhu\Documents\Programmation\Laravel\laravel\resources\js\navbar.js */"./resources/js/navbar.js");
+>>>>>>> origin/remi_beta_0.1
 
 
 /***/ })

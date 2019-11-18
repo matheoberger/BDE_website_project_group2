@@ -46,9 +46,6 @@ $requete->closeCursor();
     <link rel="stylesheet" type="text/css" href="/css/navbar.css">
     <link rel="stylesheet" type="text/css" href="/css/footer.css">
     <link rel="stylesheet" type="text/css" href="/css/article.css">
-    <link rel="stylesheet" type="text/css" href="css/breadcrumb.css">
-
-
 </head>
 
 <body>
@@ -56,14 +53,6 @@ $requete->closeCursor();
     <main>
         @include("partials/navbar")
         <div class="contenu">
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a class="breadcrumb--white" href='/'>Accueil</a></li>
-                    <li class="breadcrumb-item"><a class="breadcrumb--white" href='/boutique'>Boutique</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Article
-                    </li>
-                </ol>
-            </nav>
             <div class="flexbox">
                 <div class="pictures">
                     <?php

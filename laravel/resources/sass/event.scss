@@ -6,28 +6,27 @@ body {
     background: linear-gradient(70deg, $red, darken($blue_1, 20));
 }
 
-main {
-    // justify-content: center;
-}
 
 body img {
     filter: blur(0px);
     transition: 0.5s;
+}
 
+.btTxt_submit {
     &:hover {
         filter: blur(4px);
     }
 }
 
-nav.sidebar img {
-    &:hover {
-        filter: blur(0px);
-    }
+p {
+    font-size: 1vw;
 }
+
+
 h2 {
     font-family: $roboto;
     text-align: center;
-    font-size: 5vw;
+    font-size: 3vw;
 }
 
 // Définit les propriétés basiques d'un bouton
@@ -54,6 +53,12 @@ h2 {
     }
 }
 
+.contenu {
+    justify-content: center;
+    flex-direction: row;
+    background: linear-gradient(70deg, $grey_1, darken($grey_1, 20));
+}
+
 /* conteneur générale pour les events*/
 .conteneur {
     background: linear-gradient(180deg, $red, darken($red, 30));
@@ -61,7 +66,10 @@ h2 {
     display: inline-block;
     flex-wrap: wrap;
     text-align: center;
+    justify-content: center;
     font-family: $roboto;
+    width: 100%;
+
     // justify-content: center;
 }
 
