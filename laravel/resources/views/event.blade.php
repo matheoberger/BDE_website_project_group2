@@ -25,8 +25,7 @@
         @include("partials/navbar")
         <div class="conteneur">
             <div class="contenu">
-                <div class="panier__body">
-
+                <div class="event__body">
                     <div>
                         <h2> <u>Les évènements</u></h2>
                     </div>
