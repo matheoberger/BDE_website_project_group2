@@ -1,0 +1,42 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap%22");
+@font-face {
+    font-family: "Lemon/Milk";
+    src: url("/fonts/LemonMilk/LemonMilk.otf") format("truetype");
+}
+
+$very_small: 434px !default;
+$small: 468px !default;
+$medium: 880px !default;
+$large: 1000px !default;
+
+$very_small-up: "only screen and (min-device-width: #{$very_small}), (min-width: #{$very_small})";
+$very_small-down: "only screen and (max-device-width: #{$very_small}), (max-width: #{$very_small})";
+
+$small-up: "only screen and (min-device-width: #{$small}), (min-width: #{$small})";
+$small-down: "only screen and (max-device-width: #{$small}), (max-width: #{$small})";
+
+$medium-up: "only screen and (min-device-width: #{$medium}), (min-width: #{$medium})";
+$medium-down: "only screen and (max-device-width: #{$medium}), (max-width: #{$medium})";
+
+$large-up: "only screen and (min-device-width: #{$large}), (min-width: #{$large})";
+$large-down: "only screen and (max-device-width: #{$large}), (max-width: #{$large})";
+
+$grey_1: #9d9f9d;
+$grey_2: #757575;
+$grey_3: #383838;
+$orange_3: #eb7500;
+$orange_1: #ffc252;
+$orange_2: #eb7500;
+$green: #d1e000;
+$red: #da5d5d;
+$blue_1: #5d89da;
+$blue_2: #00a390;
+// $roboto: "Roboto", bolder;
+$px_2: 2px 2px 2px 2px;
+$px_20: 20px 20px 20px 20px;
+$roboto: "Roboto", sans-serif;
+$px_2: 2px 2px 2px 2px;
+$px_20: 20px 20px 20px 20px;
+$cube_dimension: 30vw;
+$cube_dimension_small: 200px;
+$cube_dimension_very_small: 100px;

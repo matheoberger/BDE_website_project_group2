@@ -1,0 +1,141 @@
+/* Made with love by Mutiullah Samim*/
+
+@import "./responsive.scss";
+
+html {
+    height: 100%;
+}
+
+.conteneur {
+    width: calc(100% - 250px);
+}
+
+.contenu {
+    height: 100%;
+}
+
+.login_container {
+    background-color: black;
+    background-image: url("../images/event.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0px;
+}
+
+.d-flex {
+    width: 100%;
+}
+
+.card {
+    min-width: 50%;
+    margin-top: auto;
+    margin-bottom: auto;
+    background-color: rgba(0, 0, 0, 0.575) !important;
+}
+
+.social_icon {
+    top: -20px !important;
+}
+
+.social_icon span {
+    font-size: 35px;
+    margin-left: 10px;
+}
+
+.social_icon span a {
+    color: $orange_1;
+}
+
+.social_icon span:hover {
+    color: white;
+    cursor: pointer;
+}
+
+.card-header h3 {
+    margin-top: 25px;
+    color: white;
+    font-family: $roboto;
+    text-align: center;
+}
+
+.card-footer a {
+    color: $orange_1;
+}
+
+.social_icon {
+    position: absolute;
+    right: 20px;
+    top: -45px;
+}
+
+.input-group-prepend span {
+    background-color: $orange_1;
+    color: black;
+    border: 0 !important;
+}
+
+.remember {
+    color: white;
+    width: 100%;
+}
+
+.remember input {
+    width: 20px;
+    height: 20px;
+    margin-left: 15px;
+    margin-right: 5px;
+}
+
+.login_btn {
+    margin-top: 15px;
+    color: black;
+    background-color: $orange_1;
+    font-family: $roboto;
+}
+
+.login_btn:hover {
+    color: black;
+    background-color: white;
+}
+
+.links {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    color: white;
+    font-family: $roboto;
+}
+
+.links a {
+    width: 100%;
+    margin-left: 4px;
+}
+
+.errorMessage {
+    color: red;
+    text-align: center;
+    font-family: $roboto;
+}
+
+@media (max-width: $medium) {
+    .card {
+        width: 100% !important;
+        margin: 20px;
+    }
+
+    .form-control,
+    .remember,
+    .links {
+        font-size: small;
+    }
+
+    .conteneur {
+        width: 100%;
+    }
+}

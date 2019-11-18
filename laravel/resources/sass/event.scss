@@ -1,0 +1,133 @@
+@import "./responsive.scss";
+
+/* Mise en page de la page d'events */
+
+body {
+    background: linear-gradient(70deg, $red, darken($blue_1, 20));
+}
+
+main {
+    // justify-content: center;
+}
+
+body img {
+    filter: blur(0px);
+    transition: 0.5s;
+
+    &:hover {
+        filter: blur(4px);
+    }
+}
+
+nav.sidebar img {
+    &:hover {
+        filter: blur(0px);
+    }
+}
+h2 {
+    font-family: $roboto;
+    text-align: center;
+    font-size: 5vw;
+}
+
+// Définit les propriétés basiques d'un bouton
+.btn {
+    border: none;
+    /* Remove borders */
+    color: white;
+    /* Add a text color */
+    padding: 1.5vw 3.5vw;
+    /* Add some padding */
+    cursor: pointer;
+    /* Add a pointer cursor on mouse-over */
+    font-size: 1.5vw;
+    margin: $px_2;
+}
+
+/* bouton d'ajout d'event*/
+.add_event {
+    background-color: $blue_2;
+    transition: 0.5s;
+
+    &:hover {
+        background-color: darken($blue_2, 20);
+    }
+}
+
+/* conteneur générale pour les events*/
+.conteneur {
+    background: linear-gradient(180deg, $red, darken($red, 30));
+    // margin: $px_2;
+    display: inline-block;
+    flex-wrap: wrap;
+    text-align: center;
+    font-family: $roboto;
+    // justify-content: center;
+}
+
+/* La section des events, image, descriptions et nom*/
+section {
+    margin: $px_20;
+    display: flex;
+    flex-wrap: nowrap;
+    font-family: $roboto;
+}
+
+/*Uniquement pour le nom et la description*/
+article {
+    font-family: $roboto;
+    height: $cube_dimension;
+    width: $cube_dimension;
+}
+
+.btTxt_submit {
+    object-fit: cover;
+    justify-content: flex-end;
+    width: $cube_dimension;
+    height: $cube_dimension;
+    display: block;
+    filter: blur(0px);
+    transition: 0.5s;
+
+    &:hover {
+        filter: blur(4px);
+    }
+}
+
+/* Propriété pour les images des events */
+article img {
+    object-fit: cover;
+    justify-content: flex-end;
+    width: $cube_dimension;
+    height: $cube_dimension;
+    display: block;
+}
+
+aside {
+    margin: $px_2;
+    font-family: "Roboto", italic;
+    height: $cube_dimension;
+    width: $cube_dimension;
+    overflow: auto;
+    padding: bottom;
+    background-color: $blue_1;
+    transition: 0.5s;
+
+    &:hover {
+        background-color: darken($red, 10);
+    }
+
+    font-size: 2vw;
+}
+
+.event_description {
+    display: inline-block;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    margin: -2px 0 0 -2px;
+}
+
+.panier__body {
+    padding: none;
+    margin: none;
+}
