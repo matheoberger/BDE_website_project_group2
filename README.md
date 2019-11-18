@@ -10,6 +10,7 @@ We were asked to make a new website for the Cesi Bordeaux's students.
    ```bash
    git clone github.com/matheoberger/BDE_website_project_group2
    ```
+2. insert the sql dump on your database (name of the database : bde_cesi) from the SQL branch.
 2. run the install.cmd file
    > Note : This will install all the dependencies
 2. run the start.cmd file
