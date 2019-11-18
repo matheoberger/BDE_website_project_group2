@@ -14,13 +14,22 @@ class insertProduct {
      * puis détaché en objets (les articles) puis mis en forme pour être insérés dans le fichier HTML
      *
      */
-    newProduct(articleIndex, articleNumber) {
-        this.getProduct(articleIndex, articleNumber).then(productList => {
-            $("js-spinner").removeClass("spinner__display");
-            $("js-spinner").addClass("spinner__display--none");
 
-            productList.forEach(this.createProduct.bind(this));
-        });
+    newProduct(articleIndex, articleNumber, price, categorie) {
+        $("#js-spinner").addClass("spinner__display");
+        if (categorie == "Toutes") {
+            this.getProduct(articleIndex, articleNumber, price).then(
+                productList => {
+                    productList.forEach(this.createProduct.bind(this));
+                }
+            );
+        } else {
+            this.getProduct(articleIndex, articleNumber, price, categorie).then(
+                productList => {
+                    productList.forEach(this.createProduct.bind(this));
+                }
+            );
+        }
     }
 
     /**
@@ -31,17 +40,26 @@ class insertProduct {
      * getProduct execute la requête HTTP get destinée à l'API, les données sont récupérées en asynchrone
      *
      */
-
-    getProduct(articleIndex, articleNumber) {
-        $("js-spinner").addClass("spinner__display");
-        return new Promise(resolve => {
-            $.get(
-                `http://localhost:3000/produits/${articleIndex}/${articleNumber}`,
-                function(data, status) {
-                    resolve(data);
-                }
-            );
-        });
+    getProduct(articleIndex, articleNumber, price, categorie) {
+        if (categorie) {
+            return new Promise(resolve => {
+                $.get(
+                    `http://localhost:3000/produits/${articleIndex}/${articleNumber}?prixMin=0&prixMax=${price}&categorie=${categorie}`,
+                    function(data, status) {
+                        resolve(data);
+                    }
+                );
+            });
+        } else {
+            return new Promise(resolve => {
+                $.get(
+                    `http://localhost:3000/produits/${articleIndex}/${articleNumber}?prixMin=0&prixMax=${price}`,
+                    function(data, status) {
+                        resolve(data);
+                    }
+                );
+            });
+        }
     }
 
     /**
@@ -52,14 +70,9 @@ class insertProduct {
      *
      */
 
-    //  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  //
-    //  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  //
-    //  mettre un attribut alt aux images
-    //  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  //
-    //  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  //
     createProduct(product) {
         var productElement = `<div class="product">
-        <a href="/boutique/${product.id_products}"><img src="${product.image}" class="product__image"/></a>
+        <a href="/boutique/${product.id_products}"><img alt="product image" src="${product.image}" class="product__image"/></a>
         <div class="product__title">${product.title}</div>
         <div class="product__price"><b>${product.price}€</b></div>
     </div>`;
@@ -74,6 +87,8 @@ class insertProduct {
      *
      */
     loadProduct(productElement) {
+        $("#js-spinner").removeClass("spinner__display");
+        $("#js-spinner").addClass("spinner__display--none");
         $("#js-productContainer").append(productElement);
     }
 }
@@ -90,22 +105,67 @@ $(document).ready(function() {
     var numberArticleLoad = 3;
     var articleNumber = numberArticleLoad;
     var articleInc = numberArticleLoad;
+    var categorie = "Toutes";
+    const productLoader = new insertProduct();
+    documentPrice = document.getElementById("sliderValue").innerHTML;
+    var price = documentPrice.substring(0, documentPrice.length - 1);
 
-    const coucou = new insertProduct();
-
-    coucou.newProduct(articleIndex, articleNumber);
+    productLoader.newProduct(articleIndex, articleNumber, price, categorie);
     articleIndex += articleInc;
 
+    /**
+     * On observe la page de la boutique pour savoir si le slider a été bougé,
+     *  si c'est le cas, on clean la page et on la recharge avec le nouveau prix de la requête get
+     */
+    $(document).on("change", "#boutique__slider", function() {
+        $("#js-productContainer").empty();
+        articleIndex = 0;
+        documentPrice = document.getElementById("sliderValue").innerHTML;
+        price = documentPrice.substring(0, documentPrice.length - 1);
+        $("#js-productContainer").empty();
+        productLoader.newProduct(articleIndex, articleNumber, price, categorie);
+    });
+
+    /**
+     * On ovserve l'onglet de choix de catégorie, si un nouvelle est selectionnée,
+     * on recharge les articles avec le nouvel attribut
+     */
+    $("select")
+        .change(function() {
+            $("select option:selected").each(function() {
+                categorie = "";
+                articleIndex = 0;
+
+                categorie += $(this).text();
+                $("#js-productContainer").empty();
+
+                productLoader.newProduct(
+                    articleIndex,
+                    articleNumber,
+                    price,
+                    categorie
+                );
+            });
+        })
+        .change();
+
+    /**
+     * Dès que le scroll atteint le bas de la page, on appelle la suite des articles
+     */
     $(window).scroll(function() {
         /*console.log($(window).scrollTop());
         console.log($(window).height());
         console.log($(document).height());*/
         if (
             Math.round($(window).scrollTop() + $(window).height()) >=
-            $(document).height() - 10
+            $(document).height() - 1
         ) {
-            //console.log("sscroll");
-            coucou.newProduct(articleIndex, articleNumber);
+            productLoader.newProduct(
+                articleIndex,
+                articleNumber,
+                price,
+                categorie
+            );
             articleIndex += articleInc;
         }
     });

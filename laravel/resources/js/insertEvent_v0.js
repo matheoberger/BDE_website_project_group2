@@ -1,32 +1,83 @@
-console.log("Signal from : insertEvent_v0.js");
-
-class Image {
-    constructor({ url }) {
-        this.closed = false;
-        this.divs = `<div class="public_img">
-        <img src="/${url}" alt="party">
-        <i onclick="likeDislike(this)" class="fa fa-thumbs-up"></i>
-        <p>Like : ${nbrlike}</p>
-        <button class="btn warning">Signaler</button>
-        <button class="btn delete">Supprimer</button>
-        <div class="comments">Commentaires :<br>
-        `;
-        comments.forEach(e => {
-            this.addComment(e);
+/**La classe insert Event
+ * Elle regroupe l'ensemble des méthodes pour créer et insérer des events
+ * Les events sont générer avec leur id et les informations leur étant propres
+ */
+class insertEvent {
+    newEvent(eventIndex, eventNumber) {
+        this.getEvent(eventIndex, eventNumber).then(eventList => {
+            $("js-spinner").removeClass("spinner__display");
+            $("js-spinner").addClass("spinner__display--none");
+            eventList.forEach(this.createEvent.bind(this));
+            //console.log("newEvent()");
         });
     }
-    addComment({ description, id_users }) {
-        this.divs += `<div class="comment">${id_users} : ${description}</div>`;
+
+    getEvent(eventIndex, eventNumber) {
+        $("js-spinner").addClass("spinner__display");
+        return new Promise(resolve => {
+            $.get(
+                `http://localhost:3000/events/${eventIndex}/${eventNumber}`,
+                function(data, status) {
+                    console.log(data);
+                    resolve(data);
+                }
+            );
+            //console.log("getEvent()");
+        });
     }
-    get element() {
-        return this.divs + "</div></div>";
+
+    createEvent(event) {
+        console.log(event);
+        var eventElement = `<section>
+        <article>
+        <a href="/event/${event.id_events}">
+        <input type="image" src="/${event.image}" name="saveForm" class="btTxt_submit" id="saveForm" />
+        </a>
+        </article>
+        <div class="event_description">
+            <aside>
+            <h2>${event.title_events}</h2>
+            <p>${event.description}</p>
+            </aside>
+        </div>
+    </section>`;
+        this.loadEvent(eventElement);
+        /* console.log("createEvent()");
+        console.log("eventElement: " + eventElement);*/
+    }
+
+    loadEvent(eventElement) {
+        $("#js-contenair_event").append(eventElement);
     }
 }
 
-const gallery = document.getElementById("js-picture-gallery");
-$.get(`http://localhost:3000/event/${id}`, function(data, status) {
-    data.forEach(element => {
-        var currentImg = new Image(element);
-        gallery.innerHTML += currentImg.element;
+/** Charge les éléments au fil de l'eau
+ * eventNumber = Nombre d'éléments à load
+ * Prends la position du scroll pour faire le chargement au fil de l'eau
+ */
+$(document).ready(function() {
+    var eventIndex = 0;
+    var numberEventLoad = 3;
+    var eventNumber = numberEventLoad;
+    var eventInc = numberEventLoad;
+    const hey = new insertEvent();
+
+    hey.newEvent(eventIndex, eventNumber);
+    eventIndex += eventInc;
+
+    $(window).scroll(function() {
+        /*
+        console.log($(window).scrollTop());
+        console.log($(window).height());
+        console.log($(document).height());
+        */
+        if (
+            Math.round($(window).scrollTop() + $(window).height()) >=
+            $(document).height() - 10
+        ) {
+            // console.log("sscroll");
+            hey.newEvent(eventIndex, eventNumber);
+            eventIndex += eventInc;
+        }
     });
 });

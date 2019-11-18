@@ -1,10 +1,10 @@
 @import "./responsive.scss";
 
+
+/* Barre de navigation */
 .breadcrumb {
-    //!!!!!!!!!!!!! erreur W3C !!!!!!!!!!!!!!!!!
     display: -ms-flexbox;
     display: flex;
-    //!!!!!!!!!!!!! erreur W3C !!!!!!!!!!!!!!!!!
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     padding: 0.75rem 1rem;
@@ -15,6 +15,7 @@
     font-family: $roboto;
     color: white;
 }
+
 .breadcrumb-item.active {
     color: white;
 }

@@ -5,9 +5,11 @@
     padding: 5px;
     color: white;
 }
+
 .header a {
     color: white;
 }
+
 .customNavbar {
     font-family: "Roboto";
     display: flex;
@@ -31,17 +33,20 @@
     height: 50px;
     filter: invert(1);
 }
+
 .customNavbar .customNavbar__notification {
-    filter: invert(4%) sepia(99%) saturate(7455%) hue-rotate(4deg)
-        brightness(88%) contrast(101%);
+    filter: invert(4%) sepia(99%) saturate(7455%) hue-rotate(4deg) brightness(88%) contrast(101%);
 }
+
 .customNavbar--right {
     justify-content: flex-end;
 }
+
 .customNavbar--right .customNavbar {
     margin-right: 10px;
     justify-content: flex-end;
 }
+
 .customNavbar__logo {
     margin-left: 5px;
 }
@@ -50,11 +55,12 @@
     display: none;
 }
 
-// !!!!!!!!!!!!! erreur W3C !!!!!!!!!!!!!!
+/* Responsive Header */
 @media #{$medium-down} {
     .customNavbar--desktop {
         display: none;
     }
+
     .customNavbar--mobile {
         display: flex;
     }
