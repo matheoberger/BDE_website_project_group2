@@ -53,6 +53,7 @@ $requete->closeCursor();
 
                 <div class=topSelling>
                     <p>Les trois les plus vendus</p>
+                    <a href="/CGV">Conditions générales de ventes</a>
                     @include("partials/shopCarousel")
                 </div>
 
@@ -68,23 +69,22 @@ $requete->closeCursor();
                         <div id="js-autoCompletionContainer"></div>
                     </nav>
                     <div class="dropdown filter__element">
-                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Catégorie
                         </a>
 
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                             <select name="categories" multiple="multiple">
-                                <option class='dropdown-item' href='#'>Toutes</option>
+                                <option class='dropdown-item'>Toutes</option>
                                 <?php foreach ($categories as $categorie) {
-                                    echo "<option class='dropdown-item' href='#'>{$categorie["title"]}</option>";
+                                    echo "<option class='dropdown-item'>{$categorie["title"]}</option>";
                                 } ?>
                             </select>
                         </div>
 
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                             <?php foreach ($categories as $categorie) {
-                                echo "<option selected='selected' class='dropdown-item' href='#'>{$categorie["title"]}</option>";
+                                echo "<option selected='selected' class='dropdown-item'>{$categorie["title"]}</option>";
                             } ?>
                         </div>
 
@@ -117,9 +117,9 @@ $requete->closeCursor();
 
 
 <script>
-function slider(val) {
-    document.getElementById("sliderValue").innerHTML = val + "€";
-}
+    function slider(val) {
+        document.getElementById("sliderValue").innerHTML = val + "€";
+    }
 </script>
 <script src="js/insertProduct.js"></script>
 
