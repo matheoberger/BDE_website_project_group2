@@ -29,11 +29,9 @@ if (session('role')) {
 
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <title>Event</title>
     <meta charset="UTF-8" />
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
@@ -111,6 +109,7 @@ if (session('role')) {
 
                         if (empty($isRegistered)) {
                             echo '
+
                     <form action="/event/participate" method="post">
                         <input type="hidden" name="event" value="'.$id .'"/>
                         <input type="hidden" name="_token" value="'.csrf_token().'"/>
@@ -139,8 +138,8 @@ if (session('role')) {
                 </section>
                 </div>
             </div>
-        </div>
 
+        </div>
     </main>
 
 </body>
