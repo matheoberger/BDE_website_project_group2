@@ -135,7 +135,7 @@ input.addEventListener("keyup", function (e) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\home\jambon\Documents\Code\CESI\BDE_website_project_group2\laravel\resources\js\products.js */"./resources/js/products.js");
+module.exports = __webpack_require__(/*! C:\Users\Cthulhu\Documents\Programmation\Laravel\laravel\resources\js\products.js */"./resources/js/products.js");
 
 
 /***/ })
